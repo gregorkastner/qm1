@@ -1,0 +1,1335 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QuM2 – Session 7 (Inference Based on Two Samples)</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 6709--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse15.html" >next</a>] [<a 
+href="QuMWikiMasterse13.html" >prev</a>] [<a 
+href="QuMWikiMasterse13.html#tailQuMWikiMasterse13.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse14.html">tail</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse14.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.7   </span> <a 
+ id="x18-170002.7"></a>QuM2 – Session 7 (Inference Based on Two Samples)</h3>
+<!--l. 6711--><p class="noindent" >Let the body heights of the people in one population be normal distributed with
+<!--l. 6711--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>7</mn><mn>0</mn></math> and
+<!--l. 6711--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>7</mn><mo 
+class="MathClass-punc">.</mo><mn>5</mn></math>, and in the other population
+be normal distributed with <!--l. 6712--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>μ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>8</mn><mn>0</mn></math>
+and <!--l. 6712--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>7</mn><mo 
+class="MathClass-punc">.</mo><mn>5</mn></math>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8066"><span 
+class="cmtt-12">mu.population.1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8067"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8068"><span 
+class="cmtt-12">170</span></span>
+<br /><span id="textcolor8069"><span 
+class="cmtt-12">sigma.population.1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8070"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8071"><span 
+class="cmtt-12">7.5</span></span>
+<br /><span id="textcolor8072"><span 
+class="cmtt-12">mu.population.2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8073"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8074"><span 
+class="cmtt-12">180</span></span>
+<br /><span id="textcolor8075"><span 
+class="cmtt-12">sigma.population.2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8076"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8077"><span 
+class="cmtt-12">7.5</span></span>
+</div>
+</div>
+</div>
+<!--l. 6725--><p class="noindent" >Two samples are drawn out of this population.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8078"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor8079"><span 
+class="cmtt-12">(</span></span><span id="textcolor8080"><span 
+class="cmtt-12">1007</span></span><span id="textcolor8081"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor8082"><span 
+class="cmtt-12">sample.1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8083"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8084"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor8085"><span 
+class="cmtt-12">(</span></span><span id="textcolor8086"><span 
+class="cmtt-12">50</span></span><span id="textcolor8087"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8088"><span 
+class="cmtt-12">mean</span></span><span id="textcolor8089"><span 
+class="cmtt-12">=mu.population.1,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8090"><span 
+class="cmtt-12">sd</span></span><span id="textcolor8091"><span 
+class="cmtt-12">=sigma.population.1)</span></span>
+<br /><span id="textcolor8092"><span 
+class="cmtt-12">sample.2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8093"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8094"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor8095"><span 
+class="cmtt-12">(</span></span><span id="textcolor8096"><span 
+class="cmtt-12">50</span></span><span id="textcolor8097"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8098"><span 
+class="cmtt-12">mean</span></span><span id="textcolor8099"><span 
+class="cmtt-12">=mu.population.2,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8100"><span 
+class="cmtt-12">sd</span></span><span id="textcolor8101"><span 
+class="cmtt-12">=sigma.population.2)</span></span>
+</div>
+</div>
+</div>
+<!--l. 6737--><p class="noindent" >There are two main methods for analysing the samples to get inference on the relationship of their
+means depending on the background of the data.
+</p><!--l. 6741--><p class="noindent" >If the two samples are independent arising from two unrelated populations
+with the same variances, then the two samples do not affect each other. and a
+<!--l. 6743--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test
+for independent samples can be used. In case of large sample sizes,
+i.,e. <!--l. 6744--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">≫</mo> <mn>3</mn><mn>0</mn></math> and
+                                                                                            
+                                                                                            
+<!--l. 6744--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">≫</mo> <mn>3</mn><mn>0</mn></math>, the variances
+<!--l. 6745--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></math> and
+<!--l. 6745--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></math> do not have to be equal. For
+smaller sample sizes a <!--l. 6746--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test must
+not be performed if the variances <!--l. 6747--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></math>
+and <!--l. 6747--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></math>
+are not equal. In this case a Welch-test has to be used.
+</p>
+<div class="table">
+                                                                                            
+                                                                                            
+<!--l. 6750--><p class="noindent" ><a 
+ id="x18-170015"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                            
+                                                                                            
+ <div class="caption" 
+><span class="id">Table 2.5: </span><span  
+class="content"><!--l. 6751--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test
+for two independent samples</span></div><!--tex4ht:label?: x18-170015 -->
+<div class="tabular"> <table id="TBL-26" class="tabular" 
+rules="groups" 
+><colgroup id="TBL-26-1g"><col 
+id="TBL-26-1" /><col 
+id="TBL-26-2" /></colgroup><colgroup id="TBL-26-3g"><col 
+id="TBL-26-3" /><col 
+id="TBL-26-4" /></colgroup><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-1-"><td  style="text-align:left; white-space:nowrap;" id="TBL-26-1-1"  
+class="td11">                                                                                                                                                                   </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-1-2"  
+class="td11">        </td><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-26-1-3"  
+class="td11">                                                                                <div class="multicolumn"  style="text-align:center; white-space:nowrap;">sample size</div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-2-"><td colspan="2" style="text-align:left; white-space:nowrap;" id="TBL-26-2-1"  
+class="td11"><div class="multicolumn"  style="text-align:left; white-space:nowrap;"></div>                                                                                                                                                                                                            </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-2-3"  
+class="td11">large                                                                                                                             </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-2-4"  
+class="td11">small                                                                                                                             </td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-3-"><td  style="text-align:left; white-space:nowrap;" id="TBL-26-3-1"  
+class="td11"><!--l. 6756--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></math> and <!--l. 6756--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math> are</td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-3-2"  
+class="td11">known   </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-3-3"  
+class="td11"><!--l. 6756--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>z</mi> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+></mrow> 
+   <mrow 
+><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+></mrow></mfrac>   </math>              </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-3-4"  
+class="td11"><!--l. 6756--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+></mrow> 
+ <mrow 
+><msqrt><mrow><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>p</mi> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+><mfenced separators="" 
+open="("  close=")" ><mrow> <mfrac> <mrow 
+> <mn>1</mn></mrow>
+<mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow></mfrac><mo 
+class="MathClass-bin">+</mo> <mfrac><mrow 
+><mn>1</mn></mrow>
+<mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow></mfrac></mrow></mfenced></mrow></msqrt></mrow></mfrac>  </math>              </td>
+</tr><tr 
+class="vspace" style="font-size:4.0pt"><td 
+> </td><td 
+> </td><td 
+> </td><td 
+> </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-4-"><td  style="text-align:left; white-space:nowrap;" id="TBL-26-4-1"  
+class="td11">                                                                                                                                                                    </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-4-2"  
+class="td11">        </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-4-3"  
+class="td11">where <!--l. 6757--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msqrt><mrow><mfrac><mrow 
+><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+></mrow>
+ <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow></mfrac>  <mo 
+class="MathClass-bin">+</mo> <mfrac><mrow 
+><msubsup><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></mrow> 
+ <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow></mfrac></mrow></msqrt> </math></td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-4-4"  
+class="td11">where <!--l. 6757--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>p</mi></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>1</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+><mo 
+class="MathClass-bin">+</mo><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></mrow> 
+          <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">+</mo><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><mn>2</mn></mrow></mfrac>         </math></td>
+</tr><tr 
+class="vspace" style="font-size:4.0pt"><td 
+> </td><td 
+> </td><td 
+> </td><td 
+> </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-5-"><td  style="text-align:left; white-space:nowrap;" id="TBL-26-5-1"  
+class="td11">                                                                                                                                                                    </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-5-2"  
+class="td11">unknown</td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-5-3"  
+class="td11"><!--l. 6758--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>z</mi> <mo 
+class="MathClass-rel">≈</mo><mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+></mrow> 
+  <mrow 
+><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>σ</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover></mrow><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+></mrow></mfrac>  </math>              </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-5-4"  
+class="td11"><!--l. 6758--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+></mrow> 
+  <mrow 
+><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>σ</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover></mrow><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+></mrow></mfrac>  </math>              </td>
+</tr><tr 
+class="vspace" style="font-size:4.0pt"><td 
+> </td><td 
+> </td><td 
+> </td><td 
+> </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-6-"><td  style="text-align:left; white-space:nowrap;" id="TBL-26-6-1"  
+class="td11">                                                                                                                                                                    </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-6-2"  
+class="td11">        </td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-6-3"  
+class="td11">where <!--l. 6759--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>σ</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover></mrow><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msqrt><mrow><mfrac><mrow 
+><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>1</mn> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+></mrow>
+ <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow></mfrac>  <mo 
+class="MathClass-bin">+</mo> <mfrac><mrow 
+><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>2</mn></mrow></msubsup 
+></mrow> 
+ <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow></mfrac></mrow></msqrt> </math></td><td  style="text-align:left; white-space:nowrap;" id="TBL-26-6-4"  
+class="td11">where <!--l. 6759--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>σ</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover></mrow><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <msqrt><mrow><mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn> </mrow> </msub 
+> <mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>1</mn> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+><mo 
+class="MathClass-bin">+</mo><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn> </mrow> </msub 
+> <mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><msubsup><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mn>2</mn> </mrow> <mrow 
+>  <mn>2</mn> </mrow> </msubsup 
+></mrow>
+          <mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">+</mo><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><mn>2</mn></mrow></mfrac>          <mo 
+class="MathClass-bin">⋅</mo><mfenced separators="" 
+open="("  close=")" ><mrow><mfrac><mrow 
+><mn>1</mn></mrow>
+<mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mrow></mfrac>  <mo 
+class="MathClass-bin">+</mo>  <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow></mfrac></mrow></mfenced></mrow></msqrt></math></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-26-7-"><td  style="text-align:left; white-space:nowrap;" id="TBL-26-7-1"  
+class="td11">                                                                                                                                                                    </td></tr></table>
+</div>
+<!--l. 6762--><p class="noindent" ><span 
+class="cmti-10x-x-109">Note: </span><span 
+class="cmr-10x-x-109">Despite </span><!--l. 6762--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></math>
+<span 
+class="cmr-10x-x-109">and </span><!--l. 6762--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math> <span 
+class="cmr-10x-x-109">are</span>
+<span 
+class="cmr-10x-x-109">unknown, </span><!--l. 6762--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn></math>
+<span 
+class="cmr-10x-x-109">is known.</span><br />
+<span 
+class="cmr-10x-x-109">In case the sample size is small the formulas for the</span>
+<!--l. 6762--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math><span 
+class="cmr-10x-x-109">-value</span>
+<span 
+class="cmr-10x-x-109">are the same for known and unknown standard deviations.</span><br />
+                                                                                            
+                                                                                            
+</p>
+</div><hr class="endfloat" />
+</div>
+<!--l. 6766--><p class="noindent" >If the two samples are pairwise dependent, e. g. coming from two different
+surveys on the same individuals, then it must not be conducted a
+<!--l. 6768--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test for independent samples. In
+this case a paired <!--l. 6769--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test has to be
+performed. It is the same test as a <!--l. 6770--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test
+for the sample of differences, which have to be normally distributed for a small sample size
+<!--l. 6771--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi> <mo 
+class="MathClass-rel">≤</mo> <mn>3</mn><mn>0</mn></math>.
+</p>
+<div class="table">
+                                                                                            
+                                                                                            
+<!--l. 6773--><p class="noindent" ><a 
+ id="x18-170026"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                            
+                                                                                            
+ <div class="caption" 
+><span class="id">Table 2.6: </span><span  
+class="content"><!--l. 6774--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test
+for two dependent samples</span></div><!--tex4ht:label?: x18-170026 -->
+<div class="tabular"> <table id="TBL-27" class="tabular" 
+rules="groups" 
+><colgroup id="TBL-27-1g"><col 
+id="TBL-27-1" /><col 
+id="TBL-27-2" /></colgroup><colgroup id="TBL-27-3g"><col 
+id="TBL-27-3" /><col 
+id="TBL-27-4" /></colgroup><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-27-1-"><td  style="text-align:left; white-space:nowrap;" id="TBL-27-1-1"  
+class="td11">                                                                               </td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-1-2"  
+class="td11">        </td><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-27-1-3"  
+class="td11">                                                                          <div class="multicolumn"  style="text-align:center; white-space:nowrap;">sample size</div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-27-2-"><td colspan="2" style="text-align:left; white-space:nowrap;" id="TBL-27-2-1"  
+class="td11"><div class="multicolumn"  style="text-align:left; white-space:nowrap;"></div>                                                                                                         </td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-2-3"  
+class="td11">large                                                                                                                     </td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-2-4"  
+class="td11">small                                                                                                                    </td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-27-3-"><td  style="text-align:left; white-space:nowrap;" id="TBL-27-3-1"  
+class="td11"><!--l. 6779--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mi 
+>d</mi></mrow></msub 
+></math> is</td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-3-2"  
+class="td11">known   </td><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-27-3-3"  
+class="td11">                                                         <div class="multicolumn"  style="text-align:center; white-space:nowrap;">This case is not possible, since there is no population.</div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-27-4-"><td  style="text-align:left; white-space:nowrap;" id="TBL-27-4-1"  
+class="td11">                                                                                </td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-4-2"  
+class="td11">unknown</td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-4-3"  
+class="td11"><!--l. 6780--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>z</mi> <mo 
+class="MathClass-rel">≈</mo><mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+></mrow> 
+      <mrow 
+><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>d</mi></mrow></msub 
+><mo 
+class="MathClass-bin">∕</mo><msqrt><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>d</mi></mrow></msub 
+></mrow></msqrt></mrow></mfrac>     </math></td><td  style="text-align:left; white-space:nowrap;" id="TBL-27-4-4"  
+class="td11"><!--l. 6780--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow><mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>0</mn></mrow></msub 
+></mrow> 
+      <mrow 
+><msub><mrow 
+><mi 
+>s</mi></mrow><mrow 
+><mi 
+>d</mi></mrow></msub 
+><mo 
+class="MathClass-bin">∕</mo><msqrt><mrow><msub><mrow 
+><mi 
+>n</mi></mrow><mrow 
+><mi 
+>d</mi></mrow></msub 
+></mrow></msqrt></mrow></mfrac>     </math></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-27-5-"><td  style="text-align:left; white-space:nowrap;" id="TBL-27-5-1"  
+class="td11">                                                                                </td></tr></table>
+</div>
+<!--l. 6783--><p class="noindent" ><span 
+class="cmti-10x-x-109">Note: </span><span 
+class="cmr-10x-x-109">Despite </span><!--l. 6783--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></math>
+<span 
+class="cmr-10x-x-109">and </span><!--l. 6783--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math> <span 
+class="cmr-10x-x-109">are</span>
+<span 
+class="cmr-10x-x-109">unknown, </span><!--l. 6783--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn></math>
+<span 
+class="cmr-10x-x-109">is known.</span><br />
+<span 
+class="cmr-10x-x-109">In case the sample size is small the formulas for the</span>
+<!--l. 6783--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math><span 
+class="cmr-10x-x-109">-value</span>
+<span 
+class="cmr-10x-x-109">are the same for known and unknown standard deviations.</span><br />
+                                                                                            
+                                                                                            
+</p>
+</div><hr class="endfloat" />
+</div>
+<!--l. 6787--><p class="noindent" >So assume now that the body heights of people of two different islands are compared. This is the
+result:
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8102"><span 
+class="cmtt-12">t.test</span></span><span id="textcolor8103"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8104"><span 
+class="cmtt-12">sample.1,</span><span 
+class="cmtt-12"> sample.2,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8105"><span 
+class="cmtt-12">alternative</span></span><span id="textcolor8106"><span 
+class="cmtt-12">=</span></span><span id="textcolor8107"><span 
+class="cmtt-12">c</span></span><span id="textcolor8108"><span 
+class="cmtt-12">(</span></span><span id="textcolor8109"><span 
+class="cmtt-12">&#x0022;two.sided&#x0022;</span></span><span id="textcolor8110"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8111"><span 
+class="cmtt-12">&#x0022;less&#x0022;</span></span><span id="textcolor8112"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8113"><span 
+class="cmtt-12">&#x0022;greater&#x0022;</span></span><span id="textcolor8114"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8115"><span 
+class="cmtt-12">mu</span></span><span id="textcolor8116"><span 
+class="cmtt-12">=</span></span><span id="textcolor8117"><span 
+class="cmtt-12">0</span></span><span id="textcolor8118"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8119"><span 
+class="cmtt-12">paired</span></span><span id="textcolor8120"><span 
+class="cmtt-12">=</span></span><span id="textcolor8121"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor8122"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8123"><span 
+class="cmtt-12">var.equal</span></span><span id="textcolor8124"><span 
+class="cmtt-12">=</span></span><span id="textcolor8125"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor8126"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8127"><span 
+class="cmtt-12">conf.level</span></span><span id="textcolor8128"><span 
+class="cmtt-12">=</span></span><span id="textcolor8129"><span 
+class="cmtt-12">0.95</span></span>
+<br /><span id="textcolor8130"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-421">
+##
+ <br />##  Two Sample t-test
+ <br />##
+ <br />## data:  sample.1 and sample.2
+ <br />## t = -8.3542, df = 98, p-value = 4.425e-13
+ <br />## alternative hypothesis: true difference in means is not equal to 0
+ <br />## 95 percent confidence interval:
+ <br />##  -14.032965  -8.645841
+ <br />## sample estimates:
+ <br />## mean of x mean of y
+ <br />##  170.2163  181.5557
+</div>
+<!--l. 6813--><p class="nopar" >
+</p>
+</div>
+<!--l. 6817--><p class="noindent" >In another case, teenagers are measured and a few years later the same people are
+measured again. The two samples are not independent any more. Therefore, a paired
+<!--l. 6820--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test
+has to be used.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8131"><span 
+class="cmtt-12">plot</span></span><span id="textcolor8132"><span 
+class="cmtt-12">(sample.1,</span><span 
+class="cmtt-12"> sample.2,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8133"><span 
+class="cmtt-12">asp</span></span><span id="textcolor8134"><span 
+class="cmtt-12">=</span></span><span id="textcolor8135"><span 
+class="cmtt-12">c</span></span><span id="textcolor8136"><span 
+class="cmtt-12">(</span></span><span id="textcolor8137"><span 
+class="cmtt-12">1</span></span><span id="textcolor8138"><span 
+class="cmtt-12">,</span></span><span id="textcolor8139"><span 
+class="cmtt-12">1</span></span><span id="textcolor8140"><span 
+class="cmtt-12">))</span></span>
+<br /><span id="textcolor8141"><span 
+class="cmtt-12">abline</span></span><span id="textcolor8142"><span 
+class="cmtt-12">(</span></span><span id="textcolor8143"><span 
+class="cmtt-12">a</span></span><span id="textcolor8144"><span 
+class="cmtt-12">=</span></span><span id="textcolor8145"><span 
+class="cmtt-12">0</span></span><span id="textcolor8146"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8147"><span 
+class="cmtt-12">b</span></span><span id="textcolor8148"><span 
+class="cmtt-12">=</span></span><span id="textcolor8149"><span 
+class="cmtt-12">1</span></span><span id="textcolor8150"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x18-170038"></a>
+                                                                                            
+                                                                                            
+<!--l. 6829--><p class="noindent" ><img 
+src="figure/session7scatterpairedt-1.png" alt="PIC"  
+width="481" height="481"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.8: </span><span  
+class="content">Scatterplot of the paired sample with <!--l. 6829--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>4</mn><msup><mrow 
+><mn>5</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">∘</mo></mrow></msup 
+></math>-line</span></div><!--tex4ht:label?: x18-170038 -->
+                                                                                            
+                                                                                            
+</div><hr class="endfigure" />
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8151"><span 
+class="cmtt-12">plot</span></span><span id="textcolor8152"><span 
+class="cmtt-12">(sample.2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8153"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8154"><span 
+class="cmtt-12">sample.1)</span></span>
+<br /><span id="textcolor8155"><span 
+class="cmtt-12">abline</span></span><span id="textcolor8156"><span 
+class="cmtt-12">(</span></span><span id="textcolor8157"><span 
+class="cmtt-12">h</span></span><span id="textcolor8158"><span 
+class="cmtt-12">=</span></span><span id="textcolor8159"><span 
+class="cmtt-12">0</span></span><span id="textcolor8160"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x18-170049"></a>
+                                                                                            
+                                                                                            
+<!--l. 6842--><p class="noindent" ><img 
+src="figure/session7diffpairedt-1.png" alt="PIC"  
+width="481" height="481"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.9: </span><span  
+class="content">Plot of the differences per pair with <!--l. 6842--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>0</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">∘</mo></mrow></msup 
+></math>-line</span></div><!--tex4ht:label?: x18-170049 -->
+                                                                                            
+                                                                                            
+</div><hr class="endfigure" />
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8161"><span 
+class="cmtt-12">t.test</span></span><span id="textcolor8162"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8163"><span 
+class="cmtt-12">sample.1,</span><span 
+class="cmtt-12"> sample.2,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8164"><span 
+class="cmtt-12">alternative</span></span><span id="textcolor8165"><span 
+class="cmtt-12">=</span></span><span id="textcolor8166"><span 
+class="cmtt-12">c</span></span><span id="textcolor8167"><span 
+class="cmtt-12">(</span></span><span id="textcolor8168"><span 
+class="cmtt-12">&#x0022;two.sided&#x0022;</span></span><span id="textcolor8169"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8170"><span 
+class="cmtt-12">&#x0022;less&#x0022;</span></span><span id="textcolor8171"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8172"><span 
+class="cmtt-12">&#x0022;greater&#x0022;</span></span><span id="textcolor8173"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8174"><span 
+class="cmtt-12">mu</span></span><span id="textcolor8175"><span 
+class="cmtt-12">=</span></span><span id="textcolor8176"><span 
+class="cmtt-12">0</span></span><span id="textcolor8177"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8178"><span 
+class="cmtt-12">paired</span></span><span id="textcolor8179"><span 
+class="cmtt-12">=</span></span><span id="textcolor8180"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor8181"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8182"><span 
+class="cmtt-12">var.equal</span></span><span id="textcolor8183"><span 
+class="cmtt-12">=</span></span><span id="textcolor8184"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor8185"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8186"><span 
+class="cmtt-12">conf.level</span></span><span id="textcolor8187"><span 
+class="cmtt-12">=</span></span><span id="textcolor8188"><span 
+class="cmtt-12">0.95</span></span>
+<br /><span id="textcolor8189"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-422">
+##
+ <br />##  Paired t-test
+ <br />##
+ <br />## data:  sample.1 and sample.2
+ <br />## t = -8.611, df = 49, p-value = 2.257e-11
+ <br />## alternative hypothesis: true difference in means is not equal to 0
+ <br />## 95 percent confidence interval:
+ <br />##  -13.985709  -8.693097
+ <br />## sample estimates:
+ <br />## mean of the differences
+ <br />##                -11.3394
+</div>
+<!--l. 6871--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8190"><span 
+class="cmtt-12">t.test</span></span><span id="textcolor8191"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8192"><span 
+class="cmtt-12">sample.1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8193"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8194"><span 
+class="cmtt-12">sample.2,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8195"><span 
+class="cmtt-12">alternative</span></span><span id="textcolor8196"><span 
+class="cmtt-12">=</span></span><span id="textcolor8197"><span 
+class="cmtt-12">c</span></span><span id="textcolor8198"><span 
+class="cmtt-12">(</span></span><span id="textcolor8199"><span 
+class="cmtt-12">&#x0022;two.sided&#x0022;</span></span><span id="textcolor8200"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8201"><span 
+class="cmtt-12">&#x0022;less&#x0022;</span></span><span id="textcolor8202"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8203"><span 
+class="cmtt-12">&#x0022;greater&#x0022;</span></span><span id="textcolor8204"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8205"><span 
+class="cmtt-12">mu</span></span><span id="textcolor8206"><span 
+class="cmtt-12">=</span></span><span id="textcolor8207"><span 
+class="cmtt-12">0</span></span><span id="textcolor8208"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8209"><span 
+class="cmtt-12">paired</span></span><span id="textcolor8210"><span 
+class="cmtt-12">=</span></span><span id="textcolor8211"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor8212"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor8213"><span 
+class="cmtt-12">var.equal</span></span><span id="textcolor8214"><span 
+class="cmtt-12">=</span></span><span id="textcolor8215"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor8216"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor8217"><span 
+class="cmtt-12">conf.level</span></span><span id="textcolor8218"><span 
+class="cmtt-12">=</span></span><span id="textcolor8219"><span 
+class="cmtt-12">0.95</span></span>
+<br /><span id="textcolor8220"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-423">
+##
+ <br />##  One Sample t-test
+ <br />##
+ <br />## data:  sample.1 - sample.2
+ <br />## t = -8.611, df = 49, p-value = 2.257e-11
+ <br />## alternative hypothesis: true mean is not equal to 0
+ <br />## 95 percent confidence interval:
+ <br />##  -13.985709  -8.693097
+ <br />## sample estimates:
+ <br />## mean of x
+ <br />##  -11.3394
+</div>
+<!--l. 6893--><p class="nopar" >
+</p>
+</div>
+<!--l. 6897--><p class="noindent" >In both of the tests, the interpretation of the results is like in the one-sample
+<!--l. 6897--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>t</mi></math>-test.
+</p><!--l. 6899--><p class="noindent" >If <!--l. 6899--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>σ</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>0</mn></math> is
+not known, then the parameter <span id="textcolor8221"><span 
+class="cmtt-12">var.equal</span></span> has to be set to <span id="textcolor8222"><span 
+class="cmtt-12">FALSE</span></span> (by default).
+                                                                                            
+                                                                                            
+</p>
+<!--l. 6909--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse15.html" >next</a>] [<a 
+href="QuMWikiMasterse13.html" >prev</a>] [<a 
+href="QuMWikiMasterse13.html#tailQuMWikiMasterse13.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse14.html" >front</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse14.html" >up</a>] </p></div>
+<!--l. 6909--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse14.html"></a> </p> 
+</body> 
+</html>

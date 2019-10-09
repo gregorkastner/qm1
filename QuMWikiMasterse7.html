@@ -1,0 +1,2942 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QM1 – Session 7 (Matrix Algebra)</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 3296--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse6.html" >prev</a>] [<a 
+href="QuMWikiMasterse6.html#tailQuMWikiMasterse6.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse7.html">tail</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse7.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.7   </span> <a 
+ id="x10-90001.7"></a>QM1 – Session 7 (Matrix Algebra)</h3>
+<!--l. 3298--><p class="noindent" >To get an intuition, a linear algebra video series starting with this one is recommended.
+</p><!--l. 3300--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12"> &#x003C;iframe</span><span 
+class="cmtt-12"> width=&#x0022;1280&#x0022;</span><span 
+class="cmtt-12"> height=&#x0022;720&#x0022;</span><span 
+class="cmtt-12"> src=&#x0022;https://www.youtube.com/embed/GNcFjFmqEc8&#x0022;</span><span 
+class="cmtt-12"> frameborder=&#x0022;0&#x0022;</span><span 
+class="cmtt-12"> allow=&#x0022;accelerometer;</span><span 
+class="cmtt-12"> autoplay;</span><span 
+class="cmtt-12"> encrypted-media;</span><span 
+class="cmtt-12"> gyroscope;</span><span 
+class="cmtt-12"> picture-in-picture&#x0022;</span><span 
+class="cmtt-12"> allowfullscreen&#x003E;</span><span 
+class="cmtt-12"> &#x003C;/iframe&#x003E;</span><span 
+class="cmtt-12"> </span></span></span>
+</p><!--l. 3302--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">D<span 
+class="small-caps">e</span><span 
+class="small-caps">f</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">f</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 3304--><p class="noindent" ><span 
+class="cmss-12">R</span> is not only capable of calculating with vectors, but also capable of calculating with matrices. Thus,
+in this capter, we will introduce the basics in this chapter.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3349"><span 
+class="cmtt-12">myMatrix1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3350"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3351"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3352"><span 
+class="cmtt-12">(</span></span><span id="textcolor3353"><span 
+class="cmtt-12">1</span></span><span id="textcolor3354"><span 
+class="cmtt-12">:</span></span><span id="textcolor3355"><span 
+class="cmtt-12">6</span></span><span id="textcolor3356"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3357"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3358"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3359"><span 
+class="cmtt-12">2</span></span><span id="textcolor3360"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3361"><span 
+class="cmtt-12">ncol</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3362"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3363"><span 
+class="cmtt-12">3</span></span><span id="textcolor3364"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3365"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> creates</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> assigns</span><span 
+class="cmitt-10x-x-120"> it</span></span>
+<br /><span id="textcolor3366"><span 
+class="cmtt-12">myMatrix1</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-226">
+##      [,1] [,2] [,3]
+ <br />## [1,]    1    3    5
+ <br />## [2,]    2    4    6
+</div>
+<!--l. 3318--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3367"><span 
+class="cmtt-12">myMatrix2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3368"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3369"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3370"><span 
+class="cmtt-12">(</span></span><span id="textcolor3371"><span 
+class="cmtt-12">1</span></span><span id="textcolor3372"><span 
+class="cmtt-12">:</span></span><span id="textcolor3373"><span 
+class="cmtt-12">4</span></span><span id="textcolor3374"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3375"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3376"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3377"><span 
+class="cmtt-12">2</span></span><span id="textcolor3378"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3379"><span 
+class="cmtt-12">byrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3380"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3381"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor3382"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3383"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> byrow</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> fills</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> rowwise</span></span>
+<br /><span id="textcolor3384"><span 
+class="cmtt-12">myMatrix2</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-227">
+##      [,1] [,2]
+ <br />## [1,]    1    2
+ <br />## [2,]    3    4
+</div>
+<!--l. 3327--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3385"><span 
+class="cmtt-12">str</span></span><span id="textcolor3386"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3387"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> structure</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0027;myMatrix1&#x0027;,</span><span 
+class="cmitt-10x-x-120"> mind</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;int&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-228">
+##  int [1:2, 1:3] 1 2 3 4 5 6
+</div>
+<!--l. 3333--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3388"><span 
+class="cmtt-12">class</span></span><span id="textcolor3389"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3390"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;matrix&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-229">
+## [1] &#x0022;matrix&#x0022;
+</div>
+<!--l. 3339--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3391"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor3392"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3393"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> type</span><span 
+class="cmitt-10x-x-120"> &#x0022;integer&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-230">
+## [1] &#x0022;integer&#x0022;
+</div>
+<!--l. 3345--><p class="nopar" >
+</p>
+</div>
+<!--l. 3351--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">I<span 
+class="small-caps">n</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span><span 
+class="small-caps">x</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span></span>
+</p><!--l. 3353--><p class="noindent" >To access a matrix, square brackets have to be used, similar to vectors. The only difference is that
+now two arguments, seperated by a comma, have to be specified.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3394"><span 
+class="cmtt-12">myMatrix1[</span></span><span id="textcolor3395"><span 
+class="cmtt-12">1</span></span><span id="textcolor3396"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3397"><span 
+class="cmtt-12">1</span></span><span id="textcolor3398"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3399"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;top-left&#x0027;</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-231">
+## [1] 1
+</div>
+<!--l. 3368--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3400"><span 
+class="cmtt-12">myMatrix1[</span></span><span id="textcolor3401"><span 
+class="cmtt-12">1</span></span><span id="textcolor3402"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3403"><span 
+class="cmtt-12">2</span></span><span id="textcolor3404"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3405"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;top-second-left&#x0027;</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-232">
+## [1] 3
+</div>
+<!--l. 3374--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3406"><span 
+class="cmtt-12">myMatrix1[</span></span><span id="textcolor3407"><span 
+class="cmtt-12">1</span></span><span id="textcolor3408"><span 
+class="cmtt-12">:</span></span><span id="textcolor3409"><span 
+class="cmtt-12">2</span></span><span id="textcolor3410"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3411"><span 
+class="cmtt-12">1</span></span><span id="textcolor3412"><span 
+class="cmtt-12">:</span></span><span id="textcolor3413"><span 
+class="cmtt-12">2</span></span><span id="textcolor3414"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3415"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;top-left&#x0027;</span><span 
+class="cmitt-10x-x-120"> 2x2</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0022;myMatrix1&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-233">
+##      [,1] [,2]
+ <br />## [1,]    1    3
+ <br />## [2,]    2    4
+</div>
+<!--l. 3382--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3416"><span 
+class="cmtt-12">myMatrix1[</span></span><span id="textcolor3417"><span 
+class="cmtt-12">1</span></span><span id="textcolor3418"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> ]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3419"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> row</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-234">
+## [1] 1 3 5
+</div>
+<!--l. 3388--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3420"><span 
+class="cmtt-12">myMatrix1[,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3421"><span 
+class="cmtt-12">1</span></span><span id="textcolor3422"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3423"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> column</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-235">
+## [1] 1 2
+</div>
+<!--l. 3394--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3424"><span 
+class="cmtt-12">class</span></span><span id="textcolor3425"><span 
+class="cmtt-12">(myMatrix1[,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3426"><span 
+class="cmtt-12">1</span></span><span id="textcolor3427"><span 
+class="cmtt-12">])</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3428"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;integer&#x0022;,</span><span 
+class="cmitt-10x-x-120"> i.e.</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> only</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-236">
+## [1] &#x0022;integer&#x0022;
+</div>
+<!--l. 3400--><p class="nopar" >
+</p>
+</div>
+<!--l. 3405--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">R</span><span 
+class="cmcsc-10x-x-144"> <span 
+class="small-caps">d</span><span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">p</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">d</span><span 
+class="small-caps">i</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">s</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">s</span> (<span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">l</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">t</span><span 
+class="small-caps">o</span><span 
+class="small-caps">l</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">w</span><span 
+class="small-caps">i</span><span 
+class="small-caps">s</span><span 
+class="small-caps">e</span>)</span>
+</p><!--l. 3407--><p class="noindent" >As seen before, accessing a row or a column leads to a vector. <span 
+class="cmss-12">R</span> automatically casts to a
+simpler class. In some applications it is essential to preserve the character of a row or
+column vector. This typecasting can be prevented and, consequentely, the class <span id="textcolor3429"><span 
+class="cmtt-12">matrix</span></span> is
+preserved.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3430"><span 
+class="cmtt-12">myMatrix1[,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3431"><span 
+class="cmtt-12">1</span></span><span id="textcolor3432"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3433"><span 
+class="cmtt-12">drop</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3434"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3435"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor3436"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3437"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> column</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> as</span><span 
+class="cmitt-10x-x-120"> column</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-237">
+##      [,1]
+ <br />## [1,]    1
+ <br />## [2,]    2
+</div>
+<!--l. 3422--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3438"><span 
+class="cmtt-12">class</span></span><span id="textcolor3439"><span 
+class="cmtt-12">(myMatrix1[,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3440"><span 
+class="cmtt-12">1</span></span><span id="textcolor3441"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3442"><span 
+class="cmtt-12">drop</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3443"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3444"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor3445"><span 
+class="cmtt-12">])</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3446"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> still</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;matrix&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-238">
+## [1] &#x0022;matrix&#x0022;
+</div>
+<!--l. 3428--><p class="nopar" >
+</p>
+</div>
+<!--l. 3433--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">I<span 
+class="small-caps">n</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span><span 
+class="small-caps">x</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span> <span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 3435--><p class="noindent" >Like vectors, also matrices can get names, i. e. rownames and columnnames.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3447"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3448"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3449"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3450"><span 
+class="cmtt-12">(</span></span><span id="textcolor3451"><span 
+class="cmtt-12">1</span></span><span id="textcolor3452"><span 
+class="cmtt-12">:</span></span><span id="textcolor3453"><span 
+class="cmtt-12">12</span></span><span id="textcolor3454"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3455"><span 
+class="cmtt-12">nrow</span></span><span id="textcolor3456"><span 
+class="cmtt-12">=</span></span><span id="textcolor3457"><span 
+class="cmtt-12">4</span></span><span id="textcolor3458"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3459"><span 
+class="cmtt-12">ncol</span></span><span id="textcolor3460"><span 
+class="cmtt-12">=</span></span><span id="textcolor3461"><span 
+class="cmtt-12">3</span></span><span id="textcolor3462"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor3463"><span 
+class="cmtt-12">myMatrixRowNames</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3464"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3465"><span 
+class="cmtt-12">c</span></span><span id="textcolor3466"><span 
+class="cmtt-12">(</span></span><span id="textcolor3467"><span 
+class="cmtt-12">&#x0022;A&#x0022;</span></span><span id="textcolor3468"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3469"><span 
+class="cmtt-12">&#x0022;B&#x0022;</span></span><span id="textcolor3470"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3471"><span 
+class="cmtt-12">&#x0022;C&#x0022;</span></span><span id="textcolor3472"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3473"><span 
+class="cmtt-12">&#x0022;D&#x0022;</span></span><span id="textcolor3474"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor3475"><span 
+class="cmtt-12">myMatrixColNames</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3476"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3477"><span 
+class="cmtt-12">c</span></span><span id="textcolor3478"><span 
+class="cmtt-12">(</span></span><span id="textcolor3479"><span 
+class="cmtt-12">&#x0022;One&#x0022;</span></span><span id="textcolor3480"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3481"><span 
+class="cmtt-12">&#x0022;Two&#x0022;</span></span><span id="textcolor3482"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3483"><span 
+class="cmtt-12">&#x0022;Three&#x0022;</span></span><span id="textcolor3484"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor3485"><span 
+class="cmtt-12">rownames</span></span><span id="textcolor3486"><span 
+class="cmtt-12">(myMatrix3)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3487"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> regarding</span><span 
+class="cmitt-10x-x-120"> matrices,</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> called</span><span 
+class="cmitt-10x-x-120"> rownames</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-239">
+## NULL
+</div>
+<!--l. 3447--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3488"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor3489"><span 
+class="cmtt-12">(myMatrix3)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3490"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> colnames,</span><span 
+class="cmitt-10x-x-120"> repectively</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-240">
+## NULL
+</div>
+<!--l. 3453--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3491"><span 
+class="cmtt-12">rownames</span></span><span id="textcolor3492"><span 
+class="cmtt-12">(myMatrix3)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3493"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3494"><span 
+class="cmtt-12">myMatrixRowNames</span></span>
+<br /><span id="textcolor3495"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor3496"><span 
+class="cmtt-12">(myMatrix3)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3497"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3498"><span 
+class="cmtt-12">myMatrixColNames</span></span>
+<br /><span id="textcolor3499"><span 
+class="cmtt-12">rownames</span></span><span id="textcolor3500"><span 
+class="cmtt-12">(myMatrix3)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-241">
+## [1] &#x0022;A&#x0022; &#x0022;B&#x0022; &#x0022;C&#x0022; &#x0022;D&#x0022;
+</div>
+<!--l. 3461--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3501"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor3502"><span 
+class="cmtt-12">(myMatrix3)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-242">
+## [1] &#x0022;One&#x0022;   &#x0022;Two&#x0022;   &#x0022;Three&#x0022;
+</div>
+<!--l. 3467--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3503"><span 
+class="cmtt-12">myMatrix3</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-243">
+##   One Two Three
+ <br />## A   1   5     9
+ <br />## B   2   6    10
+ <br />## C   3   7    11
+ <br />## D   4   8    12
+</div>
+<!--l. 3477--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3504"><span 
+class="cmtt-12">myMatrix3[</span></span><span id="textcolor3505"><span 
+class="cmtt-12">3</span></span><span id="textcolor3506"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3507"><span 
+class="cmtt-12">2</span></span><span id="textcolor3508"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-244">
+## [1] 7
+</div>
+<!--l. 3483--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3509"><span 
+class="cmtt-12">myMatrix3[</span></span><span id="textcolor3510"><span 
+class="cmtt-12">&#x0022;C&#x0022;</span></span><span id="textcolor3511"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3512"><span 
+class="cmtt-12">&#x0022;Two&#x0022;</span></span><span id="textcolor3513"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-245">
+## [1] 7
+</div>
+<!--l. 3489--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3514"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3515"><span 
+class="cmtt-12">&#x003C;-</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3516"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3517"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3518"><span 
+class="cmtt-12">1</span></span><span id="textcolor3519"><span 
+class="cmtt-12">:</span></span><span id="textcolor3520"><span 
+class="cmtt-12">12</span></span><span id="textcolor3521"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3522"><span 
+class="cmtt-12">nrow</span></span><span id="textcolor3523"><span 
+class="cmtt-12">=</span></span><span id="textcolor3524"><span 
+class="cmtt-12">4</span></span><span id="textcolor3525"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3526"><span 
+class="cmtt-12">ncol</span></span><span id="textcolor3527"><span 
+class="cmtt-12">=</span></span><span id="textcolor3528"><span 
+class="cmtt-12">3</span></span><span id="textcolor3529"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3530"><span 
+class="cmtt-12">dimnames</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3531"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3532"><span 
+class="cmtt-12">list</span></span><span id="textcolor3533"><span 
+class="cmtt-12">(myMatrixRowNames,</span><span 
+class="cmtt-12"> myMatrixColNames)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3534"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> setting</span><span 
+class="cmitt-10x-x-120"> dimnames</span><span 
+class="cmitt-10x-x-120"> directly</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3535"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor3536"><span 
+class="cmtt-12">myMatrix3</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-246">
+##   One Two Three
+ <br />## A   1   5     9
+ <br />## B   2   6    10
+ <br />## C   3   7    11
+ <br />## D   4   8    12
+</div>
+<!--l. 3504--><p class="nopar" >
+</p>
+</div>
+<!--l. 3510--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">U<span 
+class="small-caps">s</span><span 
+class="small-caps">e</span><span 
+class="small-caps">f</span><span 
+class="small-caps">u</span><span 
+class="small-caps">l</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">x</span> <span 
+class="small-caps">h</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">d</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span></span>
+</p><!--l. 3512--><p class="noindent" >Some useful functions are presented.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3537"><span 
+class="cmtt-12">nrow</span></span><span id="textcolor3538"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3539"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> number</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> rows</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-247">
+## [1] 2
+</div>
+<!--l. 3521--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3540"><span 
+class="cmtt-12">ncol</span></span><span id="textcolor3541"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3542"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> number</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> columns</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-248">
+## [1] 3
+</div>
+<!--l. 3527--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3543"><span 
+class="cmtt-12">dim</span></span><span id="textcolor3544"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3545"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> both</span><span 
+class="cmitt-10x-x-120"> dimensions</span><span 
+class="cmitt-10x-x-120"> as</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> (nrows,</span><span 
+class="cmitt-10x-x-120"> ncolumns)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-249">
+## [1] 2 3
+</div>
+<!--l. 3533--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3546"><span 
+class="cmtt-12">rbind</span></span><span id="textcolor3547"><span 
+class="cmtt-12">(myMatrix1,</span><span 
+class="cmtt-12"> myMatrix3)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3548"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> binds</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> (or</span><span 
+class="cmitt-10x-x-120"> more)</span><span 
+class="cmitt-10x-x-120"> matrices</span><span 
+class="cmitt-10x-x-120"> rowwise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-250">
+##   One Two Three
+ <br />##     1   3     5
+ <br />##     2   4     6
+ <br />## A   1   5     9
+ <br />## B   2   6    10
+ <br />## C   3   7    11
+ <br />## D   4   8    12
+</div>
+<!--l. 3545--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3549"><span 
+class="cmtt-12">cbind</span></span><span id="textcolor3550"><span 
+class="cmtt-12">(myMatrix1,</span><span 
+class="cmtt-12"> myMatrix2)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3551"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> binds</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> (or</span><span 
+class="cmitt-10x-x-120"> more)</span><span 
+class="cmitt-10x-x-120"> matrices</span><span 
+class="cmitt-10x-x-120"> columnwise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-251">
+##      [,1] [,2] [,3] [,4] [,5]
+ <br />## [1,]    1    3    5    1    2
+ <br />## [2,]    2    4    6    3    4
+</div>
+<!--l. 3553--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3552"><span 
+class="cmtt-12">diag</span></span><span id="textcolor3553"><span 
+class="cmtt-12">(</span></span><span id="textcolor3554"><span 
+class="cmtt-12">3</span></span><span id="textcolor3555"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3556"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> creates</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> identity</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> rank</span><span 
+class="cmitt-10x-x-120"> 3</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-252">
+##      [,1] [,2] [,3]
+ <br />## [1,]    1    0    0
+ <br />## [2,]    0    1    0
+ <br />## [3,]    0    0    1
+</div>
+<!--l. 3562--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3557"><span 
+class="cmtt-12">diag</span></span><span id="textcolor3558"><span 
+class="cmtt-12">(</span></span><span id="textcolor3559"><span 
+class="cmtt-12">x</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3560"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3561"><span 
+class="cmtt-12">2</span></span><span id="textcolor3562"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3563"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3564"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3565"><span 
+class="cmtt-12">3</span></span><span id="textcolor3566"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3567"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> creates</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> diagonal</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> 2s</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> rank</span><span 
+class="cmitt-10x-x-120"> 3</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-253">
+##      [,1] [,2] [,3]
+ <br />## [1,]    2    0    0
+ <br />## [2,]    0    2    0
+ <br />## [3,]    0    0    2
+</div>
+<!--l. 3571--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3568"><span 
+class="cmtt-12">diag</span></span><span id="textcolor3569"><span 
+class="cmtt-12">(myMatrix2)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3570"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3571"><span 
+class="cmtt-12">7</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3572"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> sets</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> diagonal</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 7</span></span>
+<br /><span id="textcolor3573"><span 
+class="cmtt-12">myMatrix2</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-254">
+##      [,1] [,2]
+ <br />## [1,]    7    2
+ <br />## [2,]    3    7
+</div>
+<!--l. 3580--><p class="nopar" >
+</p>
+</div>
+<!--l. 3584--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">M<span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">x</span> <span 
+class="small-caps">d</span><span 
+class="small-caps">e</span><span 
+class="small-caps">f</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">u</span><span 
+class="small-caps">s</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">r</span><span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">y</span><span 
+class="small-caps">c</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span></span>
+</p><!--l. 3586--><p class="noindent" >As seen concerning vectors, also when matrices are defined, <span 
+class="cmss-12">R</span> recycles.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3574"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3575"><span 
+class="cmtt-12">(</span></span><span id="textcolor3576"><span 
+class="cmtt-12">c</span></span><span id="textcolor3577"><span 
+class="cmtt-12">(</span></span><span id="textcolor3578"><span 
+class="cmtt-12">1</span></span><span id="textcolor3579"><span 
+class="cmtt-12">,</span></span><span id="textcolor3580"><span 
+class="cmtt-12">2</span></span><span id="textcolor3581"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3582"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3583"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3584"><span 
+class="cmtt-12">3</span></span><span id="textcolor3585"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3586"><span 
+class="cmtt-12">ncol</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3587"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3588"><span 
+class="cmtt-12">4</span></span><span id="textcolor3589"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3590"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> get</span><span 
+class="cmitt-10x-x-120"> recycled</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 12</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> </span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-255">
+##      [,1] [,2] [,3] [,4]
+ <br />## [1,]    1    2    1    2
+ <br />## [2,]    2    1    2    1
+ <br />## [3,]    1    2    1    2
+</div>
+<!--l. 3598--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3591"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3592"><span 
+class="cmtt-12">(</span></span><span id="textcolor3593"><span 
+class="cmtt-12">1</span></span><span id="textcolor3594"><span 
+class="cmtt-12">:</span></span><span id="textcolor3595"><span 
+class="cmtt-12">5</span></span><span id="textcolor3596"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3597"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3598"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3599"><span 
+class="cmtt-12">3</span></span><span id="textcolor3600"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3601"><span 
+class="cmtt-12">ncol</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3602"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3603"><span 
+class="cmtt-12">4</span></span><span id="textcolor3604"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3605"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> 12</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> multiple</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> 5</span></span>
+</div>
+</div>
+<!--l. 3604--><p class="noindent" ><span 
+class="cmtt-12">## Warning in matrix(1:5, nrow = 3, ncol = 4): data length [5] is not a sub-multiple</span>
+<span 
+class="cmtt-12">or multiple of the number of rows [3]</span>
+                                                                                            
+                                                                                            
+</p>
+<div class="verbatim" id="verbatim-256">
+##      [,1] [,2] [,3] [,4]
+ <br />## [1,]    1    4    2    5
+ <br />## [2,]    2    5    3    1
+ <br />## [3,]    3    1    4    2
+</div>
+<!--l. 3609--><p class="nopar" >
+</p>
+</div>
+<!--l. 3613--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">C<span 
+class="small-caps">o</span><span 
+class="small-caps">m</span><span 
+class="small-caps">p</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3606"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3607"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3608"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3609"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3610"><span 
+class="cmtt-12">1.01</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3611"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> multiplies</span><span 
+class="cmitt-10x-x-120"> every</span><span 
+class="cmitt-10x-x-120"> entry</span><span 
+class="cmitt-10x-x-120"> by</span><span 
+class="cmitt-10x-x-120"> 1.01</span></span>
+<br /><span id="textcolor3612"><span 
+class="cmtt-12">myMatrix4[</span></span><span id="textcolor3613"><span 
+class="cmtt-12">2</span></span><span id="textcolor3614"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3615"><span 
+class="cmtt-12">1</span></span><span id="textcolor3616"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3617"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3618"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3619"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> sets</span><span 
+class="cmitt-10x-x-120"> one</span><span 
+class="cmitt-10x-x-120"> entry</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 2</span></span>
+<br /><span id="textcolor3620"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3621"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3622"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3623"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> compares</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrices</span><span 
+class="cmitt-10x-x-120"> entrywise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-257">
+##     One   Two Three
+ <br />## A FALSE FALSE FALSE
+ <br />## B  TRUE FALSE FALSE
+ <br />## C FALSE FALSE FALSE
+ <br />## D FALSE FALSE FALSE
+</div>
+<!--l. 3628--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3624"><span 
+class="cmtt-12">any</span></span><span id="textcolor3625"><span 
+class="cmtt-12">(myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3626"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3627"><span 
+class="cmtt-12">myMatrix4)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3628"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Is</span><span 
+class="cmitt-10x-x-120"> any</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> boolean</span><span 
+class="cmitt-10x-x-120"> values</span><span 
+class="cmitt-10x-x-120"> &#x0022;TRUE&#x0022;?</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-258">
+## [1] TRUE
+</div>
+<!--l. 3634--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3629"><span 
+class="cmtt-12">all</span></span><span id="textcolor3630"><span 
+class="cmtt-12">(myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3631"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3632"><span 
+class="cmtt-12">myMatrix4)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3633"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Are</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> boolean</span><span 
+class="cmitt-10x-x-120"> values</span><span 
+class="cmitt-10x-x-120"> &#x0022;TRUE&#x0022;?</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-259">
+## [1] FALSE
+</div>
+<!--l. 3640--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3634"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3635"><span 
+class="cmtt-12">&#x003C;=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3636"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3637"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> elementwise</span><span 
+class="cmitt-10x-x-120"> comparison</span><span 
+class="cmitt-10x-x-120"> like</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> &#x0027;vectors&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-260">
+##    One  Two Three
+ <br />## A TRUE TRUE  TRUE
+ <br />## B TRUE TRUE  TRUE
+ <br />## C TRUE TRUE  TRUE
+ <br />## D TRUE TRUE  TRUE
+</div>
+<!--l. 3650--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3638"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3639"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3640"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3641"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> elementwise</span><span 
+class="cmitt-10x-x-120"> comparison</span><span 
+class="cmitt-10x-x-120"> like</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> &#x0027;vectors&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-261">
+##     One  Two Three
+ <br />## A  TRUE TRUE  TRUE
+ <br />## B FALSE TRUE  TRUE
+ <br />## C  TRUE TRUE  TRUE
+ <br />## D  TRUE TRUE  TRUE
+</div>
+<!--l. 3660--><p class="nopar" >
+</p>
+</div>
+<!--l. 3664--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">C<span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">c</span><span 
+class="small-caps">u</span><span 
+class="small-caps">l</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">w</span><span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 3666--><p class="noindent" >When calculating with matrices, it has to be strictly distiguished between elementwise operations and
+matrix algebra.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3642"><span 
+class="cmtt-12">myMatrix1</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-262">
+##      [,1] [,2] [,3]
+ <br />## [1,]    1    3    5
+ <br />## [2,]    2    4    6
+</div>
+<!--l. 3678--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3643"><span 
+class="cmtt-12">t</span></span><span id="textcolor3644"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3645"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> transposes</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-263">
+##      [,1] [,2]
+ <br />## [1,]    1    2
+ <br />## [2,]    3    4
+ <br />## [3,]    5    6
+</div>
+<!--l. 3687--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3646"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3647"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3648"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3649"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> adds</span><span 
+class="cmitt-10x-x-120"> up</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> matrices</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-264">
+##    One   Two Three
+ <br />## A 2.01 10.05 18.09
+ <br />## B 4.00 12.06 20.10
+ <br />## C 6.03 14.07 22.11
+ <br />## D 8.04 16.08 24.12
+</div>
+<!--l. 3697--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3650"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3651"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3652"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3653"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> substracts</span><span 
+class="cmitt-10x-x-120"> one</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> another</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-265">
+##     One   Two Three
+ <br />## A -0.01 -0.05 -0.09
+ <br />## B  0.00 -0.06 -0.10
+ <br />## C -0.03 -0.07 -0.11
+ <br />## D -0.04 -0.08 -0.12
+</div>
+<!--l. 3707--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3654"><span 
+class="cmtt-12">(M5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3655"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3656"><span 
+class="cmtt-12">1.5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3657"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3658"><span 
+class="cmtt-12">(myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3659"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3660"><span 
+class="cmtt-12">myMatrix4))</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3661"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> multiplies</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> sum</span><span 
+class="cmitt-10x-x-120"> by</span><span 
+class="cmitt-10x-x-120"> 1.5</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-266">
+##      One    Two  Three
+ <br />## A  3.015 15.075 27.135
+ <br />## B  6.000 18.090 30.150
+ <br />## C  9.045 21.105 33.165
+ <br />## D 12.060 24.120 36.180
+</div>
+<!--l. 3717--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3662"><span 
+class="cmtt-12">M6</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3663"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3664"><span 
+class="cmtt-12">1.5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3665"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3666"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3667"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3668"><span 
+class="cmtt-12">1.5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3669"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3670"><span 
+class="cmtt-12">myMatrix4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3671"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> does</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> same</span><span 
+class="cmitt-10x-x-120"> like</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> code</span><span 
+class="cmitt-10x-x-120"> above,</span><span 
+class="cmitt-10x-x-120"> but</span><span 
+class="cmitt-10x-x-120"> differently</span></span>
+<br /><span id="textcolor3672"><span 
+class="cmtt-12">M5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3673"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3674"><span 
+class="cmtt-12">M6</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3675"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> compares</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> matrices</span><span 
+class="cmitt-10x-x-120"> elementwise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-267">
+##     One   Two Three
+ <br />## A FALSE FALSE  TRUE
+ <br />## B  TRUE  TRUE FALSE
+ <br />## C  TRUE  TRUE  TRUE
+ <br />## D FALSE FALSE  TRUE
+</div>
+<!--l. 3728--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3676"><span 
+class="cmtt-12">M5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3677"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3678"><span 
+class="cmtt-12">M6</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3679"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> due</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> number</span><span 
+class="cmitt-10x-x-120"> representation</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> computers</span><span 
+class="cmitt-10x-x-120"> there</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> artefacts</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-268">
+##             One           Two        Three
+ <br />## A -4.440892e-16  1.776357e-15 0.000000e+00
+ <br />## B  0.000000e+00  0.000000e+00 3.552714e-15
+ <br />## C  0.000000e+00  0.000000e+00 0.000000e+00
+ <br />## D -1.776357e-15 -3.552714e-15 0.000000e+00
+</div>
+<!--l. 3738--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3680"><span 
+class="cmtt-12">round</span></span><span id="textcolor3681"><span 
+class="cmtt-12">(M5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3682"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3683"><span 
+class="cmtt-12">M6,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3684"><span 
+class="cmtt-12">digits</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3685"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3686"><span 
+class="cmtt-12">13</span></span><span id="textcolor3687"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3688"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> rounded,</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> 0</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-269">
+##   One Two Three
+ <br />## A   0   0     0
+ <br />## B   0   0     0
+ <br />## C   0   0     0
+ <br />## D   0   0     0
+</div>
+<!--l. 3748--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3689"><span 
+class="cmtt-12">all.equal</span></span><span id="textcolor3690"><span 
+class="cmtt-12">(M5,</span><span 
+class="cmtt-12"> M6)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3691"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> tests</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> objects</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> nearly</span><span 
+class="cmitt-10x-x-120"> equal</span><span 
+class="cmitt-10x-x-120"> </span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-270">
+## [1] TRUE
+</div>
+<!--l. 3754--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span id="textcolor3692"><span 
+class="cmtt-12">t</span></span><span id="textcolor3693"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3694"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3695"><span 
+class="cmtt-12">myMatrix2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3696"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> performs</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> multiplications</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-271">
+##      [,1] [,2]
+ <br />## [1,]   13   16
+ <br />## [2,]   33   34
+ <br />## [3,]   53   52
+</div>
+<!--l. 3763--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3697"><span 
+class="cmtt-12">myMatrix1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3698"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3699"><span 
+class="cmtt-12">myMatrix2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3700"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> does</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> work</span><span 
+class="cmitt-10x-x-120"> due</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> wrong</span><span 
+class="cmitt-10x-x-120"> dimensions</span></span>
+</div>
+</div>
+<!--l. 3769--><p class="noindent" ><span 
+class="cmtt-12">## Error in myMatrix1 %*% myMatrix2: non-conformable arguments</span></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span id="textcolor3701"><span 
+class="cmtt-12">crossprod</span></span><span id="textcolor3702"><span 
+class="cmtt-12">(myMatrix1,</span><span 
+class="cmtt-12"> myMatrix2)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3703"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> transposes</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> multiplies</span><span 
+class="cmitt-10x-x-120"> them</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-272">
+##      [,1] [,2]
+ <br />## [1,]   13   16
+ <br />## [2,]   33   34
+ <br />## [3,]   53   52
+</div>
+<!--l. 3777--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3704"><span 
+class="cmtt-12">tcrossprod</span></span><span id="textcolor3705"><span 
+class="cmtt-12">(myMatrix3,</span><span 
+class="cmtt-12"> myMatrix4)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3706"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> transposes</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> second</span><span 
+class="cmitt-10x-x-120"> matrix</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> multiplies</span><span 
+class="cmitt-10x-x-120"> them</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-273">
+##        A      B      C      D
+ <br />## A 108.07 123.20 138.37 153.52
+ <br />## B 123.22 141.36 159.58 177.76
+ <br />## C 138.37 159.52 180.79 202.00
+ <br />## D 153.52 177.68 202.00 226.24
+</div>
+<!--l. 3787--><p class="nopar" >
+</p>
+</div>
+<!--l. 3791--><p class="noindent" ><span id="textcolor3707">Market share example</span>
+</p><!--l. 3793--><p class="noindent" >Initially, three firms, <!--l. 3793--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>,
+<!--l. 3793--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>B</mi></math>, and
+<!--l. 3793--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>, share the market for a
+certain commodity. Firm <!--l. 3794--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math>
+has <!--l. 3794--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn><mn>0</mn><mi 
+>%</mi></math> of the
+market, <!--l. 3794--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>B</mi></math>
+has <!--l. 3794--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>6</mn><mn>0</mn><mi 
+>%</mi></math>,
+and <!--l. 3794--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>
+has the rest. In the course of the next year, the following changes occur: firm
+<!--l. 3796--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math> keeps
+<!--l. 3796--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>8</mn><mn>5</mn><mi 
+>%</mi></math> of its customers
+while losing <!--l. 3796--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn><mi 
+>%</mi></math>
+to <!--l. 3796--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>B</mi></math> and
+<!--l. 3796--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mi 
+>%</mi></math> to
+<!--l. 3796--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>; firm
+<!--l. 3797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>B</mi></math> keeps
+<!--l. 3797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn><mn>5</mn><mi 
+>%</mi></math> of its customers,
+while losing <!--l. 3797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mi 
+>%</mi></math>
+to <!--l. 3797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math> and
+<!--l. 3797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn><mn>5</mn><mi 
+>%</mi></math> to
+<!--l. 3797--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>; and firm
+<!--l. 3798--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math> keeps
+<!--l. 3798--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>8</mn><mn>5</mn><mi 
+>%</mi></math> of its customers,
+while losing <!--l. 3798--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mi 
+>%</mi></math>
+to <!--l. 3798--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math> and
+<!--l. 3798--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn><mi 
+>%</mi></math> to
+<!--l. 3798--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>B</mi></math>. Find the transition
+matrix <!--l. 3799--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>T</mi></mstyle></math> and the
+market share vector <!--l. 3799--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>s</mi></mstyle></math>.
+Find the values of <!--l. 3800--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>T</mi><mi 
+>s</mi></mstyle></math>,
+<!--l. 3800--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>T</mi></mstyle><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mstyle mathvariant="bold"><mi 
+>T</mi><mi 
+>s</mi></mstyle></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+<!--l. 3800--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>T</mi></mstyle><mstyle mathsize="1.19em"><mfenced separators="" 
+open="("  close="" ><mrow></mrow></mfenced></mstyle><mstyle mathvariant="bold"><mi 
+>T</mi></mstyle><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mstyle mathvariant="bold"><mi 
+>T</mi><mi 
+>s</mi></mstyle></mrow><mo 
+class="MathClass-close">)</mo></mrow><mstyle mathsize="1.19em"><mfenced separators="" 
+open=")"  close="" ><mrow></mrow></mfenced></mstyle></math>,
+etc.!
+</p><!--l. 3802--><p class="noindent" >–
+                                                                                            
+                                                                                            
+</p><!--l. 3804--><p class="noindent" >Firm <!--l. 3804--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>
+has <!--l. 3804--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn><mn>0</mn><mi 
+>%</mi></math>.
+</p><!--l. 3806--><p class="noindent" >The first entry of a column vector is the share of
+<!--l. 3806--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>A</mi></math> in the market, the
+second entry the share of <!--l. 3807--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>B</mi></math>
+and the third of <!--l. 3808--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>C</mi></math>.
+Thus
+</p>
+<div class="math-display"><!--l. 3810--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+<mstyle mathvariant="bold"><mi 
+>s</mi></mstyle> <mo 
+class="MathClass-rel">=</mo> <mfenced separators="" 
+open="("  close=")" ><mrow> <mtable  align="axis" style=""  
+equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn></mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>6</mn></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>2</mn></mtd></mtr><!--c--></mtable>                                                                                                                     </mrow></mfenced>
+</mrow></math></div>
+<!--l. 3812--><p class="nopar" >
+</p><!--l. 3814--><p class="noindent" >When writing the shares for one firm in one row and one state in one column, conequentely
+</p>
+<div class="math-display"><!--l. 3817--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+<mstyle mathvariant="bold"><mi 
+>T</mi></mstyle> <mo 
+class="MathClass-rel">=</mo> <mfenced separators="" 
+open="("  close=")" ><mrow> <mtable  align="axis" style=""  
+equalrows="false" columnlines="none none" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>8</mn><mn>5</mn></mtd><mtd 
+class="array"  columnalign="center"> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn> </mtd><mtd 
+class="array"  columnalign="center"> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn> </mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>5</mn></mtd> <mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>5</mn><mn>5</mn></mtd> <mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>5</mn></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>1</mn> </mtd><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>3</mn><mn>5</mn></mtd><mtd 
+class="array"  columnalign="center"><mn>0</mn><mo 
+class="MathClass-punc">.</mo><mn>8</mn><mn>5</mn></mtd></mtr><!--c c c--></mtable>                                                                                                         </mrow></mfenced>
+</mrow></math></div>
+<!--l. 3819--><p class="nopar" >
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3708"><span 
+class="cmtt-12">(sharemarket</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3709"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3710"><span 
+class="cmtt-12">c</span></span><span id="textcolor3711"><span 
+class="cmtt-12">(</span></span><span id="textcolor3712"><span 
+class="cmtt-12">0.2</span></span><span id="textcolor3713"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3714"><span 
+class="cmtt-12">0.6</span></span><span id="textcolor3715"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3716"><span 
+class="cmtt-12">0.2</span></span><span id="textcolor3717"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-274">
+## [1] 0.2 0.6 0.2
+</div>
+<!--l. 3828--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3718"><span 
+class="cmtt-12">(transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3719"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3720"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3721"><span 
+class="cmtt-12">(</span></span><span id="textcolor3722"><span 
+class="cmtt-12">c</span></span><span id="textcolor3723"><span 
+class="cmtt-12">(</span></span><span id="textcolor3724"><span 
+class="cmtt-12">85</span></span><span id="textcolor3725"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3726"><span 
+class="cmtt-12">5</span></span><span id="textcolor3727"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3728"><span 
+class="cmtt-12">10</span></span><span id="textcolor3729"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3730"><span 
+class="cmtt-12">10</span></span><span id="textcolor3731"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3732"><span 
+class="cmtt-12">55</span></span><span id="textcolor3733"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3734"><span 
+class="cmtt-12">35</span></span><span id="textcolor3735"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3736"><span 
+class="cmtt-12">10</span></span><span id="textcolor3737"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3738"><span 
+class="cmtt-12">5</span></span><span id="textcolor3739"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3740"><span 
+class="cmtt-12">85</span></span><span id="textcolor3741"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3742"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3743"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3744"><span 
+class="cmtt-12">3</span></span><span id="textcolor3745"><span 
+class="cmtt-12">)</span></span><span id="textcolor3746"><span 
+class="cmtt-12">/</span></span><span id="textcolor3747"><span 
+class="cmtt-12">100</span></span><span id="textcolor3748"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-275">
+##      [,1] [,2] [,3]
+ <br />## [1,] 0.85 0.10 0.10
+ <br />## [2,] 0.05 0.55 0.05
+ <br />## [3,] 0.10 0.35 0.85
+</div>
+<!--l. 3837--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3749"><span 
+class="cmtt-12">transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3750"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3751"><span 
+class="cmtt-12">sharemarket</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-276">
+##      [,1]
+ <br />## [1,] 0.25
+ <br />## [2,] 0.35
+ <br />## [3,] 0.40
+</div>
+<!--l. 3846--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3752"><span 
+class="cmtt-12">transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3753"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3754"><span 
+class="cmtt-12">transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3755"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3756"><span 
+class="cmtt-12">sharemarket</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-277">
+##        [,1]
+ <br />## [1,] 0.2875
+ <br />## [2,] 0.2250
+ <br />## [3,] 0.4875
+</div>
+<!--l. 3855--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3757"><span 
+class="cmtt-12">transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3758"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3759"><span 
+class="cmtt-12">transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3760"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3761"><span 
+class="cmtt-12">transmat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3762"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3763"><span 
+class="cmtt-12">sharemarket</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-278">
+##          [,1]
+ <br />## [1,] 0.315625
+ <br />## [2,] 0.162500
+ <br />## [3,] 0.521875
+</div>
+<!--l. 3864--><p class="nopar" >
+</p>
+</div>
+<!--l. 3870--><p class="noindent" >To invert matrices <span id="textcolor3764"><span 
+class="cmtt-12">solve</span></span> can be used.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3765"><span 
+class="cmtt-12">solve</span></span><span id="textcolor3766"><span 
+class="cmtt-12">(myMatrix2)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3767"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> inverts</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> matrix</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-279">
+##             [,1]        [,2]
+ <br />## [1,]  0.16279070 -0.04651163
+ <br />## [2,] -0.06976744  0.16279070
+</div>
+<!--l. 3881--><p class="nopar" >
+</p>
+</div>
+<!--l. 3885--><p class="noindent" >Solve is generally used for solving systems of linear equations like this
+</p><!--tex4ht:inline--><!--l. 3926--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mtable 
+columnalign="left" class="align-star">
+                     <mtr><mtd 
+columnalign="right" class="align-odd"> <mtable  align="axis" style=""  
+equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mo 
+class="MathClass-rel">⋯</mo> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mo 
+class="MathClass-rel">⋯</mo> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mo 
+class="MathClass-rel">⋯</mo> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center">                          <mo 
+class="MathClass-op">⋮</mo>                  </mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+>
+<mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mo 
+class="MathClass-rel">⋯</mo> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>p</mi></mrow></msub 
+></mtd></mtr><!--c--></mtable>                                                                                         </mtd>                                                                                                                   <mtd 
+class="align-even"> <mtable  align="axis" style=""  
+equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">=</mo></mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">=</mo></mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">=</mo></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-rel">=</mo></mtd></mtr><!--c--></mtable>                                                                                                                       <mtable  align="axis" style=""  
+equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mtd>
+                                                                                                                                                                          </mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mtd>
+                                                                                                                                                                          </mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+></mtd>
+                                                                                                                                                                          </mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo></mtd> </mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+>
+<mi 
+>p</mi></mrow></msub 
+></mtd> </mtr> <!--c--></mtable>                                                                                                                                           <mspace width="2em"/></mtd>                     <mtd 
+columnalign="right" class="align-label"></mtd>                     <mtd 
+class="align-label">
+                     <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"> <mfenced separators="" 
+open="("  close=")" ><mrow> <mtable  align="axis" style=""  
+equalrows="false" columnlines="none none none none" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><mo 
+class="MathClass-op">…</mo><mspace width="0.3em" class="thinspace"/></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><mo 
+class="MathClass-op">…</mo><mspace width="0.3em" class="thinspace"/></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>3</mn><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><mo 
+class="MathClass-op">…</mo><mspace width="0.3em" class="thinspace"/></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center">  <mo 
+class="MathClass-op">⋮</mo> </mtd><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd><mtd 
+class="array"  columnalign="center"><mo 
+class="MathClass-rel">⋱</mo></mtd><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+>
+<mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mn>1</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mn>2</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mn>3</mn></mrow></msub 
+></mtd><mtd 
+class="array"  columnalign="center"><mo 
+class="MathClass-op">…</mo><mspace width="0.3em" class="thinspace"/></mtd><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>c</mi></mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>p</mi></mrow></msub 
+></mtd></mtr><!--ccccc--></mtable>                                                                                                                        </mrow></mfenced> <mfenced separators="" 
+open="("  close=")" ><mrow> <mtable  align="axis" style=""  
+equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo> </mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+>
+<mi 
+>p</mi></mrow></msub 
+></mtd></mtr><!--c--></mtable>                                                                                                                                           </mrow></mfenced></mtd>                     <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo> <mfenced separators="" 
+open="("  close=")" ><mrow> <mtable  align="axis" style=""  
+equalrows="false" equalcolumns="false" class="array"> <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+></mtd>
+</mtr>  <mtr><mtd 
+class="array"  columnalign="center"> <mo 
+class="MathClass-op">⋮</mo></mtd></mtr>  <mtr><mtd 
+class="array"  columnalign="center"><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+>
+<mi 
+>p</mi></mrow></msub 
+></mtd></mtr><!--c--></mtable>                                                                                                                                           </mrow></mfenced><mspace width="2em"/></mtd>                                                                                                              <mtd 
+columnalign="right" class="align-label"></mtd>                     <mtd 
+class="align-label">
+                     <mspace width="2em"/></mtd></mtr><mtr><mtd 
+columnalign="right" class="align-odd"><mstyle mathvariant="bold"><mi 
+>c</mi></mstyle><mstyle mathvariant="bold"><mi 
+>x</mi></mstyle></mtd>                                                                                                                                                                                                             <mtd 
+class="align-even"> <mo 
+class="MathClass-rel">=</mo> <mstyle mathvariant="bold"><mi 
+>d</mi></mstyle><mspace width="2em"/></mtd>                                                                                                                                                                                                         <mtd 
+columnalign="right" class="align-label"></mtd>                     <mtd 
+class="align-label">
+<mspace width="2em"/></mtd></mtr></mtable></math>
+<!--l. 3928--><p class="noindent" >As seen above, if <!--l. 3928--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>d</mi></mstyle></math> is
+the identity matrix, <!--l. 3928--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>c</mi></mstyle></math>
+is inverted.
+</p><!--l. 3930--><p class="noindent" ><span id="textcolor3768">A simple example of a Leontief model</span>
+</p><!--l. 3932--><p class="noindent" >A simple economy has three industries: fishing, forestry, and boatbuilding. Producing
+</p>
+      <ul class="itemize1">
+      <li class="itemize"><!--l. 3938--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math>
+      ton of fish requires <!--l. 3938--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>α</mi> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><mn>2</mn></mrow></mfrac></math>
+      fishing boats
+      </li>
+      <li class="itemize"><!--l. 3939--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math>
+      ton of timber requires <!--l. 3939--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>β</mi> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mn>1</mn></mrow> 
+<mrow 
+><mn>2</mn></mrow></mfrac></math>
+      tons of fish
+                                                                                            
+                                                                                            
+      </li>
+      <li class="itemize"><!--l. 3940--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math>
+      fishing boat requires <!--l. 3940--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>γ</mi> <mo 
+class="MathClass-rel">=</mo> <mn>2</mn></math>
+      tons of timber</li></ul>
+<!--l. 3942--><p class="noindent" >Assume further that this economy has a final demand of
+<!--l. 3942--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>0</mn><mn>0</mn></math> tons of fish
+and <!--l. 3943--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>d</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>8</mn><mn>0</mn></math>
+tons of timber (and no final demand for boats). How many tons of fish
+<!--l. 3944--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></math>, how many tons of
+timber <!--l. 3945--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math>, and how
+many fishing boats <!--l. 3946--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>3</mn></mrow></msub 
+></math>
+have to be produced?
+</p><!--l. 3948--><p class="noindent" >–
+</p><!--l. 3950--><p class="noindent" >The input-output matrix is obtained by writing the final (output) proportions of goods in one row per good. So e. g. fish
+gets row <!--l. 3951--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math>, timber gets
+row <!--l. 3952--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn></math> and the category of
+fishing boats gets row <!--l. 3953--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn></math>.
+</p><!--l. 3955--><p class="noindent" >According to the specifications above of the input-output matrix, the final demand and the system of
+linear equations, the <span 
+class="cmss-12">R</span>-code looks like this:
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3769"><span 
+class="cmtt-12">(iomat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3770"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3771"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor3772"><span 
+class="cmtt-12">(</span></span><span id="textcolor3773"><span 
+class="cmtt-12">c</span></span><span id="textcolor3774"><span 
+class="cmtt-12">(</span></span><span id="textcolor3775"><span 
+class="cmtt-12">1</span></span><span id="textcolor3776"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3777"><span 
+class="cmtt-12">0</span></span><span id="textcolor3778"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3779"><span 
+class="cmtt-12">-</span></span><span id="textcolor3780"><span 
+class="cmtt-12">.5</span></span><span id="textcolor3781"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3782"><span 
+class="cmtt-12">-</span></span><span id="textcolor3783"><span 
+class="cmtt-12">.25</span></span><span id="textcolor3784"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3785"><span 
+class="cmtt-12">1</span></span><span id="textcolor3786"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3787"><span 
+class="cmtt-12">0</span></span><span id="textcolor3788"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3789"><span 
+class="cmtt-12">0</span></span><span id="textcolor3790"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3791"><span 
+class="cmtt-12">-</span></span><span id="textcolor3792"><span 
+class="cmtt-12">2</span></span><span id="textcolor3793"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3794"><span 
+class="cmtt-12">1</span></span><span id="textcolor3795"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3796"><span 
+class="cmtt-12">nrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3797"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3798"><span 
+class="cmtt-12">3</span></span><span id="textcolor3799"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-280">
+##      [,1]  [,2] [,3]
+ <br />## [1,]  1.0 -0.25    0
+ <br />## [2,]  0.0  1.00   -2
+ <br />## [3,] -0.5  0.00    1
+</div>
+<!--l. 3970--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3800"><span 
+class="cmtt-12">(demandfinal</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3801"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3802"><span 
+class="cmtt-12">c</span></span><span id="textcolor3803"><span 
+class="cmtt-12">(</span></span><span id="textcolor3804"><span 
+class="cmtt-12">100</span></span><span id="textcolor3805"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3806"><span 
+class="cmtt-12">80</span></span><span id="textcolor3807"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3808"><span 
+class="cmtt-12">0</span></span><span id="textcolor3809"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-281">
+## [1] 100  80   0
+</div>
+<!--l. 3976--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3810"><span 
+class="cmtt-12">solve</span></span><span id="textcolor3811"><span 
+class="cmtt-12">(iomat,</span><span 
+class="cmtt-12"> demandfinal)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-282">
+## [1] 160 240  80
+</div>
+<!--l. 3982--><p class="nopar" >
+</p>
+</div>
+<!--l. 3990--><p class="noindent" ><span 
+class="cmcsc-10x-x-144"><span 
+class="small-caps">a</span><span 
+class="small-caps">p</span><span 
+class="small-caps">p</span><span 
+class="small-caps">l</span><span 
+class="small-caps">y</span></span>
+</p><!--l. 3992--><p class="noindent" >Taking the sum of all entries of a vector is done via <span id="textcolor3812"><span 
+class="cmtt-12">sum(vector)</span></span>. Taking the sum of all entries of a
+row/ column of a matrix can be done with the <span id="textcolor3813"><span 
+class="cmtt-12">apply</span></span> command.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3814"><span 
+class="cmtt-12">myMatrix3</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3815"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> remember</span><span 
+class="cmitt-10x-x-120"> how</span><span 
+class="cmitt-10x-x-120"> &#x0022;myMatrix3&#x0022;</span><span 
+class="cmitt-10x-x-120"> looks</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-283">
+##   One Two Three
+ <br />## A   1   5     9
+ <br />## B   2   6    10
+ <br />## C   3   7    11
+ <br />## D   4   8    12
+</div>
+<!--l. 4006--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3816"><span 
+class="cmtt-12">apply</span></span><span id="textcolor3817"><span 
+class="cmtt-12">(myMatrix3,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3818"><span 
+class="cmtt-12">1</span></span><span id="textcolor3819"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> sum)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3820"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> applies</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> rowwise</span><span 
+class="cmitt-10x-x-120"> (sum</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> per</span><span 
+class="cmitt-10x-x-120"> row)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-284">
+##  A  B  C  D
+ <br />## 15 18 21 24
+</div>
+<!--l. 4013--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3821"><span 
+class="cmtt-12">apply</span></span><span id="textcolor3822"><span 
+class="cmtt-12">(myMatrix3,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3823"><span 
+class="cmtt-12">2</span></span><span id="textcolor3824"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> sum)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3825"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> applies</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> columnwise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-285">
+##   One   Two Three
+ <br />##    10    26    42
+</div>
+<!--l. 4020--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor3826"><span 
+class="cmtt-12">apply</span></span><span id="textcolor3827"><span 
+class="cmtt-12">(myMatrix3,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor3828"><span 
+class="cmtt-12">1</span></span><span id="textcolor3829"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> max)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor3830"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> applies</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> rowwise</span><span 
+class="cmitt-10x-x-120"> (maximum</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> elements)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-286">
+##  A  B  C  D
+ <br />##  9 10 11 12
+</div>
+<!--l. 4027--><p class="nopar" >
+</p>
+</div>
+                                                                                            
+                                                                                            
+<!--l. 4032--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse6.html" >prev</a>] [<a 
+href="QuMWikiMasterse6.html#tailQuMWikiMasterse6.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse7.html" >front</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse7.html" >up</a>] </p></div>
+<!--l. 4032--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse7.html"></a> </p> 
+</body> 
+</html>

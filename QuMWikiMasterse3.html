@@ -1,0 +1,1764 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QM1 – Session 3 (More about functions)</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 1720--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse4.html" >next</a>] [<a 
+href="QuMWikiMasterse2.html" >prev</a>] [<a 
+href="QuMWikiMasterse2.html#tailQuMWikiMasterse2.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse3.html">tail</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse3.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.3   </span> <a 
+ id="x6-50001.3"></a>QM1 – Session 3 (More about functions)</h3>
+<!--l. 1722--><p class="noindent" ><span id="textcolor1305"><span 
+class="cmtcsc-10x-x-144"><span 
+class="small-caps">i</span><span 
+class="small-caps">f</span> <span 
+class="small-caps">e</span><span 
+class="small-caps">l</span><span 
+class="small-caps">s</span><span 
+class="small-caps">e</span></span></span> <span 
+class="cmcsc-10x-x-144"><span 
+class="small-caps">v</span><span 
+class="small-caps">s</span>.</span><span 
+class="cmcsc-10x-x-144"> </span><span id="textcolor1306"><span 
+class="cmtcsc-10x-x-144"><span 
+class="small-caps">i</span><span 
+class="small-caps">f</span><span 
+class="small-caps">e</span><span 
+class="small-caps">l</span><span 
+class="small-caps">s</span><span 
+class="small-caps">e</span></span></span>
+</p><!--l. 1724--><p class="noindent" >This type command is a conditionally executed statement. If and only if the condition is true, then
+the statement afterwards is executed. In logic, this type of construct would equal an equality. Keep in
+mind, that is not comparable to an implication in logic like if A then B. The statement will not be
+executed if the condition is not fulfilled.
+</p><!--l. 1731--><p class="noindent" >If and only if the condition is not satisfied, then the <span id="textcolor1307"><span 
+class="cmtt-12">else</span></span> branch is executed.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1308"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1309"><span 
+class="cmtt-12">(</span></span><span id="textcolor1310"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor1311"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1312"><span 
+class="cmtt-12">print</span></span><span id="textcolor1313"><span 
+class="cmtt-12">(</span></span><span id="textcolor1314"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor1315"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1316"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Only</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> condition</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> true,</span><span 
+class="cmitt-10x-x-120"> ...</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-106">
+## [1] &#x0022;Woo Hoo!&#x0022;
+</div>
+<!--l. 1741--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1317"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1318"><span 
+class="cmtt-12">(</span></span><span id="textcolor1319"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor1320"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1321"><span 
+class="cmtt-12">print</span></span><span id="textcolor1322"><span 
+class="cmtt-12">(</span></span><span id="textcolor1323"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor1324"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1325"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> statement</span><span 
+class="cmitt-10x-x-120"> afterwards</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> executed.</span></span>
+<br /><span id="textcolor1326"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1327"><span 
+class="cmtt-12">(</span></span><span id="textcolor1328"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;</span></span><span id="textcolor1329"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1330"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> concatenates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> strings</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> &#x0022;prints</span><span 
+class="cmitt-10x-x-120"> them&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-107">
+## Woo Hoo!
+</div>
+<!--l. 1748--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1331"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1332"><span 
+class="cmtt-12">(</span></span><span id="textcolor1333"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor1334"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1335"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1336"><span 
+class="cmtt-12">(</span></span><span id="textcolor1337"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor1338"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1339"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> both</span><span 
+class="cmitt-10x-x-120"> words</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> printed</span><span 
+class="cmitt-10x-x-120"> after</span><span 
+class="cmitt-10x-x-120"> each</span><span 
+class="cmitt-10x-x-120"> other</span><span 
+class="cmitt-10x-x-120"> ...</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1340"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1341"><span 
+class="cmtt-12">(</span></span><span id="textcolor1342"><span 
+class="cmtt-12">&#x0022;Hoo!&#x0022;</span></span><span id="textcolor1343"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1344"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> thus,</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> newline</span><span 
+class="cmitt-10x-x-120"> &#x0027;</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmitt-10x-x-120">n&#x0027;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> needed</span></span>
+<br /><span id="textcolor1345"><span 
+class="cmsy-10x-x-120">}</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-108">
+## Woo Hoo!
+</div>
+<!--l. 1757--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1346"><span 
+class="cmtt-12">f1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1347"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1348"><span 
+class="cmtt-12">function</span></span><span id="textcolor1349"><span 
+class="cmtt-12">(</span></span><span id="textcolor1350"><span 
+class="cmtt-12">x</span></span><span id="textcolor1351"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> x</span></span><span id="textcolor1352"><span 
+class="cmtt-12">^</span></span><span id="textcolor1353"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1354"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> declares</span><span 
+class="cmitt-10x-x-120"> some</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> demonstration</span></span>
+<br /><span id="textcolor1355"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1356"><span 
+class="cmtt-12">(</span></span><span id="textcolor1357"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1358"><span 
+class="cmtt-12">(</span></span><span id="textcolor1359"><span 
+class="cmtt-12">2</span></span><span id="textcolor1360"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1361"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1362"><span 
+class="cmtt-12">3</span></span><span id="textcolor1363"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1364"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1365"><span 
+class="cmtt-12">(</span></span><span id="textcolor1366"><span 
+class="cmtt-12">2</span></span><span id="textcolor1367"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1368"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> f1(2)</span><span 
+class="cmitt-10x-x-120"> =</span><span 
+class="cmitt-10x-x-120"> 4</span><span 
+class="cmitt-10x-x-120"> which</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> obviously</span><span 
+class="cmitt-10x-x-120"> greater</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> 3,</span><span 
+class="cmitt-10x-x-120"> thus</span><span 
+class="cmitt-10x-x-120"> f1(2)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-109">
+## [1] 4
+</div>
+<!--l. 1764--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1369"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1370"><span 
+class="cmtt-12">(</span></span><span id="textcolor1371"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1372"><span 
+class="cmtt-12">(</span></span><span id="textcolor1373"><span 
+class="cmtt-12">2</span></span><span id="textcolor1374"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1375"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1376"><span 
+class="cmtt-12">5</span></span><span id="textcolor1377"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1378"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1379"><span 
+class="cmtt-12">(</span></span><span id="textcolor1380"><span 
+class="cmtt-12">2</span></span><span id="textcolor1381"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1382"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1383"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1384"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0022;else&#x0022;</span><span 
+class="cmitt-10x-x-120"> statement</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> executed</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-110">
+## [1] 5
+</div>
+<!--l. 1770--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1385"><span 
+class="cmtt-12">threshold</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1386"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1387"><span 
+class="cmtt-12">5</span></span>
+<br /><span id="textcolor1388"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1389"><span 
+class="cmtt-12">(</span></span><span id="textcolor1390"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1391"><span 
+class="cmtt-12">(</span></span><span id="textcolor1392"><span 
+class="cmtt-12">2</span></span><span id="textcolor1393"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1394"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1395"><span 
+class="cmtt-12">threshold)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1396"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> statements</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> more</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> one</span><span 
+class="cmitt-10x-x-120"> line,</span><span 
+class="cmitt-10x-x-120"> ...</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1397"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1398"><span 
+class="cmtt-12">(</span></span><span id="textcolor1399"><span 
+class="cmtt-12">2</span></span><span id="textcolor1400"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1401"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> it</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> written</span><span 
+class="cmitt-10x-x-120"> inside</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> block</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> curly</span><span 
+class="cmitt-10x-x-120"> brackets</span></span>
+<br /><span id="textcolor1402"><span 
+class="cmsy-10x-x-120">}</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1403"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1404"><span 
+class="cmsy-10x-x-120">{</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1405"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> same</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> done</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0022;else&#x0022;</span><span 
+class="cmitt-10x-x-120"> code</span><span 
+class="cmitt-10x-x-120"> chunk</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1406"><span 
+class="cmtt-12">threshold</span></span>
+<br /><span id="textcolor1407"><span 
+class="cmsy-10x-x-120">}</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-111">
+## [1] 5
+</div>
+<!--l. 1781--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1408"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1409"><span 
+class="cmtt-12">(</span></span><span id="textcolor1410"><span 
+class="cmtt-12">c</span></span><span id="textcolor1411"><span 
+class="cmtt-12">(</span></span><span id="textcolor1412"><span 
+class="cmtt-12">2</span></span><span id="textcolor1413"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1414"><span 
+class="cmtt-12">3</span></span><span id="textcolor1415"><span 
+class="cmtt-12">))</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1416"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> every</span><span 
+class="cmitt-10x-x-120"> entry</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> value</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> evaluated</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-112">
+## [1] 4 9
+</div>
+<!--l. 1787--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1417"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Due</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> fact</span><span 
+class="cmitt-10x-x-120"> that</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> (in)equality</span><span 
+class="cmitt-10x-x-120"> signs</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> vectorized,</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor1418"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> TRUE</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> FALSE</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> inside</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> condition.</span></span>
+<br /><span id="textcolor1419"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> A</span><span 
+class="cmitt-10x-x-120"> warning</span><span 
+class="cmitt-10x-x-120"> message</span><span 
+class="cmitt-10x-x-120"> explains</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> behavior</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0022;if</span><span 
+class="cmitt-10x-x-120"> else&#x0022;</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> this</span><span 
+class="cmitt-10x-x-120"> case:</span></span>
+<br /><span id="textcolor1420"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> If</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> condition</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> length</span><span 
+class="cmitt-10x-x-120"> &#x003E;</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> only</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> will</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> used.</span></span>
+<br /><span id="textcolor1421"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1422"><span 
+class="cmtt-12">(</span></span><span id="textcolor1423"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1424"><span 
+class="cmtt-12">(</span></span><span id="textcolor1425"><span 
+class="cmtt-12">c</span></span><span id="textcolor1426"><span 
+class="cmtt-12">(</span></span><span id="textcolor1427"><span 
+class="cmtt-12">2</span></span><span id="textcolor1428"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1429"><span 
+class="cmtt-12">3</span></span><span id="textcolor1430"><span 
+class="cmtt-12">))</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1431"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1432"><span 
+class="cmtt-12">5</span></span><span id="textcolor1433"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1434"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1435"><span 
+class="cmtt-12">(</span></span><span id="textcolor1436"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;</span></span><span id="textcolor1437"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1438"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1439"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1440"><span 
+class="cmtt-12">(</span></span><span id="textcolor1441"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;</span></span><span id="textcolor1442"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+<!--l. 1797--><p class="noindent" ><span 
+class="cmtt-12">## Warning in if (f1(c(2, 3)) &#x003E; 5) cat(&#x0022;Woo Hoo!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;) else cat(&#x0022;D’oh!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;): the</span>
+<span 
+class="cmtt-12">condition has length &#x003E; 1 and only the first element will be used</span>
+                                                                                            
+                                                                                            
+</p>
+<div class="verbatim" id="verbatim-113">
+## D&#x0027;oh!
+</div>
+<!--l. 1799--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1443"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1444"><span 
+class="cmtt-12">(</span></span><span id="textcolor1445"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1446"><span 
+class="cmtt-12">(</span></span><span id="textcolor1447"><span 
+class="cmtt-12">c</span></span><span id="textcolor1448"><span 
+class="cmtt-12">(</span></span><span id="textcolor1449"><span 
+class="cmtt-12">3</span></span><span id="textcolor1450"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1451"><span 
+class="cmtt-12">2</span></span><span id="textcolor1452"><span 
+class="cmtt-12">))</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1453"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1454"><span 
+class="cmtt-12">5</span></span><span id="textcolor1455"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1456"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1457"><span 
+class="cmtt-12">(</span></span><span id="textcolor1458"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;</span></span><span id="textcolor1459"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1460"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1461"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1462"><span 
+class="cmtt-12">(</span></span><span id="textcolor1463"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;</span></span><span id="textcolor1464"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+<!--l. 1805--><p class="noindent" ><span 
+class="cmtt-12">## Warning in if (f1(c(3, 2)) &#x003E; 5) cat(&#x0022;Woo Hoo!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;) else cat(&#x0022;D’oh!</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;): the</span>
+<span 
+class="cmtt-12">condition has length &#x003E; 1 and only the first element will be used</span>
+                                                                                            
+                                                                                            
+</p>
+<div class="verbatim" id="verbatim-114">
+## Woo Hoo!
+</div>
+<!--l. 1807--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1465"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> &#x0027;Ifelse&#x0027;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vectorized</span><span 
+class="cmitt-10x-x-120"> form</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0022;if</span><span 
+class="cmitt-10x-x-120"> else&#x0022;.</span></span>
+<br /><span id="textcolor1466"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> It</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> every</span><span 
+class="cmitt-10x-x-120"> TRUE</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> FALSE</span><span 
+class="cmitt-10x-x-120"> inside</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> condition</span><span 
+class="cmitt-10x-x-120"> ...</span></span>
+<br /><span id="textcolor1467"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> either</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> second</span><span 
+class="cmitt-10x-x-120"> part</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> command</span><span 
+class="cmitt-10x-x-120"> (for</span><span 
+class="cmitt-10x-x-120"> TRUE),</span><span 
+class="cmitt-10x-x-120"> ...</span></span>
+<br /><span id="textcolor1468"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> third</span><span 
+class="cmitt-10x-x-120"> part</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> command</span><span 
+class="cmitt-10x-x-120"> (for</span><span 
+class="cmitt-10x-x-120"> FALSE).</span></span>
+<br /><span id="textcolor1469"><span 
+class="cmtt-12">ifelse</span></span><span id="textcolor1470"><span 
+class="cmtt-12">(</span></span><span id="textcolor1471"><span 
+class="cmtt-12">f1</span></span><span id="textcolor1472"><span 
+class="cmtt-12">(</span></span><span id="textcolor1473"><span 
+class="cmtt-12">c</span></span><span id="textcolor1474"><span 
+class="cmtt-12">(</span></span><span id="textcolor1475"><span 
+class="cmtt-12">1</span></span><span id="textcolor1476"><span 
+class="cmtt-12">,</span></span><span id="textcolor1477"><span 
+class="cmtt-12">2</span></span><span id="textcolor1478"><span 
+class="cmtt-12">,</span></span><span id="textcolor1479"><span 
+class="cmtt-12">3</span></span><span id="textcolor1480"><span 
+class="cmtt-12">,</span></span><span id="textcolor1481"><span 
+class="cmtt-12">4</span></span><span id="textcolor1482"><span 
+class="cmtt-12">))</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1483"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1484"><span 
+class="cmtt-12">5</span></span><span id="textcolor1485"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1486"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor1487"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1488"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh&#x0022;</span></span><span id="textcolor1489"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-115">
+## [1] &#x0022;D&#x0027;oh&#x0022;     &#x0022;D&#x0027;oh&#x0022;     &#x0022;Woo Hoo!&#x0022; &#x0022;Woo Hoo!&#x0022;
+</div>
+<!--l. 1817--><p class="nopar" >
+</p>
+</div>
+<!--l. 1823--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">R<span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">y</span><span 
+class="small-caps">c</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">i</span><span 
+class="small-caps">n</span> R</span>
+</p><!--l. 1825--><p class="noindent" ><span 
+class="cmss-12">R</span> replicates a vector as many times as it is reccesary to compare it with another one.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1490"><span 
+class="cmtt-12">1</span></span><span id="textcolor1491"><span 
+class="cmtt-12">:</span></span><span id="textcolor1492"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1493"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1494"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1495"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> 2</span><span 
+class="cmitt-10x-x-120"> becomes</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> ector</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> 2s:</span><span 
+class="cmitt-10x-x-120"> c(2,</span><span 
+class="cmitt-10x-x-120"> 2,</span><span 
+class="cmitt-10x-x-120"> 2)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-116">
+## [1] FALSE FALSE  TRUE
+</div>
+<!--l. 1834--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1496"><span 
+class="cmtt-12">0</span></span><span id="textcolor1497"><span 
+class="cmtt-12">:</span></span><span id="textcolor1498"><span 
+class="cmtt-12">9</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1499"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1500"><span 
+class="cmtt-12">1</span></span><span id="textcolor1501"><span 
+class="cmtt-12">:</span></span><span id="textcolor1502"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1503"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> 1:2</span><span 
+class="cmitt-10x-x-120"> (==</span><span 
+class="cmitt-10x-x-120"> c(1,</span><span 
+class="cmitt-10x-x-120"> 2))</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> replicated</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> oder</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> compared</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> 0:9</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-117">
+##  [1] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+</div>
+<!--l. 1840--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1504"><span 
+class="cmtt-12">0</span></span><span id="textcolor1505"><span 
+class="cmtt-12">:</span></span><span id="textcolor1506"><span 
+class="cmtt-12">9</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1507"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1508"><span 
+class="cmtt-12">1</span></span><span id="textcolor1509"><span 
+class="cmtt-12">:</span></span><span id="textcolor1510"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1511"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> prints</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> warning</span><span 
+class="cmitt-10x-x-120"> message</span><span 
+class="cmitt-10x-x-120"> because</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> lhs</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> multiple</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> rhs</span></span>
+</div>
+</div>
+<!--l. 1846--><p class="noindent" ><span 
+class="cmtt-12">## Warning in 0:9 &#x003E; 1:3: longer object length is not a multiple of shorter object</span>
+<span 
+class="cmtt-12">length</span>
+                                                                                            
+                                                                                            
+</p>
+<div class="verbatim" id="verbatim-118">
+##  [1] FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+</div>
+<!--l. 1848--><p class="nopar" >
+</p>
+</div>
+<!--l. 1854--><p class="noindent" ><span 
+class="cmcsc-10x-x-144"><span 
+class="small-caps">m</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">v</span><span 
+class="small-caps">s</span>.</span><span 
+class="cmcsc-10x-x-144"> <span 
+class="small-caps">p</span><span 
+class="small-caps">m</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span></span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1512"><span 
+class="cmtt-12">data</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1513"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1514"><span 
+class="cmtt-12">1</span></span><span id="textcolor1515"><span 
+class="cmtt-12">:</span></span><span id="textcolor1516"><span 
+class="cmtt-12">10</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1517"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> generates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0022;data&#x0022;,</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> from</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 10</span></span>
+<br /><span id="textcolor1518"><span 
+class="cmtt-12">max</span></span><span id="textcolor1519"><span 
+class="cmtt-12">(</span></span><span id="textcolor1520"><span 
+class="cmtt-12">0</span></span><span id="textcolor1521"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> data)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1522"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> searches</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> maximum</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> its</span><span 
+class="cmitt-10x-x-120"> arguments,</span><span 
+class="cmitt-10x-x-120"> i.e.</span><span 
+class="cmitt-10x-x-120"> 0:10</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-119">
+## [1] 10
+</div>
+<!--l. 1864--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1523"><span 
+class="cmtt-12">max</span></span><span id="textcolor1524"><span 
+class="cmtt-12">(</span></span><span id="textcolor1525"><span 
+class="cmtt-12">5</span></span><span id="textcolor1526"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> data)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1527"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> searches</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> maximum</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> its</span><span 
+class="cmitt-10x-x-120"> arguments,</span><span 
+class="cmitt-10x-x-120"> i.e.</span><span 
+class="cmitt-10x-x-120"> c(5,</span><span 
+class="cmitt-10x-x-120"> 1:10)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-120">
+## [1] 10
+</div>
+<!--l. 1870--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1528"><span 
+class="cmtt-12">pmax</span></span><span id="textcolor1529"><span 
+class="cmtt-12">(</span></span><span id="textcolor1530"><span 
+class="cmtt-12">5</span></span><span id="textcolor1531"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> data)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1532"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> searches</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> parallel</span><span 
+class="cmitt-10x-x-120"> maxima</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> its</span><span 
+class="cmitt-10x-x-120"> arguments</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-121">
+##  [1]  5  5  5  5  5  6  7  8  9 10
+</div>
+<!--l. 1876--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1533"><span 
+class="cmtt-12">pmax</span></span><span id="textcolor1534"><span 
+class="cmtt-12">(</span></span><span id="textcolor1535"><span 
+class="cmtt-12">5</span></span><span id="textcolor1536"><span 
+class="cmtt-12">:</span></span><span id="textcolor1537"><span 
+class="cmtt-12">9</span></span><span id="textcolor1538"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1539"><span 
+class="cmtt-12">0</span></span><span id="textcolor1540"><span 
+class="cmtt-12">:</span></span><span id="textcolor1541"><span 
+class="cmtt-12">14</span></span><span id="textcolor1542"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1543"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> entry</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> compare</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> other</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> entries</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-122">
+##  [1]  5  6  7  8  9  5  6  7  8  9 10 11 12 13 14
+</div>
+<!--l. 1882--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1544"><span 
+class="cmtt-12">pmax</span></span><span id="textcolor1545"><span 
+class="cmtt-12">(</span></span><span id="textcolor1546"><span 
+class="cmtt-12">5</span></span><span id="textcolor1547"><span 
+class="cmtt-12">:</span></span><span id="textcolor1548"><span 
+class="cmtt-12">10</span></span><span id="textcolor1549"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1550"><span 
+class="cmtt-12">0</span></span><span id="textcolor1551"><span 
+class="cmtt-12">:</span></span><span id="textcolor1552"><span 
+class="cmtt-12">14</span></span><span id="textcolor1553"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1554"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> R</span><span 
+class="cmitt-10x-x-120"> recycles</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> prints</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> version</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> warning</span></span>
+</div>
+</div>
+<!--l. 1888--><p class="noindent" ><span 
+class="cmtt-12">## Warning in pmax(5:10, 0:14): an argument will be fractionally recycled</span>
+                                                                                            
+                                                                                            
+</p>
+<div class="verbatim" id="verbatim-123">
+##  [1]  5  6  7  8  9 10  6  7  8  9 10 11 12 13 14
+</div>
+<!--l. 1890--><p class="nopar" >
+</p>
+</div>
+<!--l. 1896--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">A <span 
+class="small-caps">t</span><span 
+class="small-caps">a</span><span 
+class="small-caps">x</span> <span 
+class="small-caps">e</span><span 
+class="small-caps">x</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">p</span><span 
+class="small-caps">l</span><span 
+class="small-caps">e</span></span>
+</p><!--l. 1898--><p class="noindent" >Below a yearly income of <!--l. 1898--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn></math>
+units, no tax has to be paid. Below a yearly income of
+<!--l. 1899--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn></math> units,
+<!--l. 1899--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mfrac><mrow 
+><msup><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+><mo 
+class="MathClass-bin">−</mo><mn>1</mn><mn>0</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn></mrow>
+    <mrow 
+><mn>1</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn></mrow></mfrac>  </math> has to be paid. At and
+above a yearly income of <!--l. 1900--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn></math>
+units, <!--l. 1900--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mfrac><mrow 
+><mi 
+>y</mi><mo 
+class="MathClass-bin">−</mo><mn>6</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>4</mn><mn>0</mn><mn>0</mn></mrow>
+ <mrow 
+><mn>1</mn><mn>0</mn><mn>0</mn><mspace width="0.3em" class="thinspace"/><mn>0</mn><mn>0</mn><mn>0</mn></mrow></mfrac>  </math>
+has to be paid.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1555"><span 
+class="cmtt-12">tax</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1556"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1557"><span 
+class="cmtt-12">function</span></span><span id="textcolor1558"><span 
+class="cmtt-12">(</span></span><span id="textcolor1559"><span 
+class="cmtt-12">income</span></span><span id="textcolor1560"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1561"><span 
+class="cmtt-12">ifelse</span></span><span id="textcolor1562"><span 
+class="cmtt-12">(</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1563"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> needed,</span><span 
+class="cmitt-10x-x-120"> because</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> every</span><span 
+class="cmitt-10x-x-120"> item</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> condition</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> tax</span><span 
+class="cmitt-10x-x-120"> shall</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> comupted</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1564"><span 
+class="cmtt-12">income</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1565"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1566"><span 
+class="cmtt-12">1e5</span></span><span id="textcolor1567"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1568"><span 
+class="cmtt-12">pmax</span></span><span id="textcolor1569"><span 
+class="cmtt-12">(</span></span><span id="textcolor1570"><span 
+class="cmtt-12">0</span></span><span id="textcolor1571"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> (income</span></span><span id="textcolor1572"><span 
+class="cmtt-12">^</span></span><span id="textcolor1573"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1574"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1575"><span 
+class="cmtt-12">1e8</span></span><span id="textcolor1576"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1577"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1578"><span 
+class="cmtt-12">1e6</span></span><span id="textcolor1579"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1580"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> needed,</span><span 
+class="cmitt-10x-x-120"> because</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> tax</span><span 
+class="cmitt-10x-x-120"> must</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> below</span><span 
+class="cmitt-10x-x-120"> 0</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1581"><span 
+class="cmtt-12">(income</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1582"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1583"><span 
+class="cmtt-12">9900</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1584"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1585"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1586"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1587"><span 
+class="cmtt-12">1e5</span></span><span id="textcolor1588"><span 
+class="cmtt-12">)</span></span><span id="textcolor1589"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1590"><span 
+class="cmtt-12">4</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1591"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1592"><span 
+class="cmsy-10x-x-120">}</span></span>
+<br /><span id="textcolor1593"><span 
+class="cmtt-12">tax</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1594"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1595"><span 
+class="cmtt-12">function</span></span><span id="textcolor1596"><span 
+class="cmtt-12">(</span></span><span id="textcolor1597"><span 
+class="cmtt-12">income</span></span><span id="textcolor1598"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1599"><span 
+class="cmtt-12">ifelse</span></span><span id="textcolor1600"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1601"><span 
+class="cmtt-12">income</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1602"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1603"><span 
+class="cmtt-12">1e5</span></span><span id="textcolor1604"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1605"><span 
+class="cmtt-12">pmax</span></span><span id="textcolor1606"><span 
+class="cmtt-12">(</span></span><span id="textcolor1607"><span 
+class="cmtt-12">0</span></span><span id="textcolor1608"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> income</span></span><span id="textcolor1609"><span 
+class="cmtt-12">^</span></span><span id="textcolor1610"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1611"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1612"><span 
+class="cmtt-12">1e6</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1613"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1614"><span 
+class="cmtt-12">100</span></span><span id="textcolor1615"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1616"><span 
+class="cmtt-12">9900</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1617"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1618"><span 
+class="cmtt-12">(income</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1619"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1620"><span 
+class="cmtt-12">1e5</span></span><span id="textcolor1621"><span 
+class="cmtt-12">)</span></span><span id="textcolor1622"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1623"><span 
+class="cmtt-12">4</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1624"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1625"><span 
+class="cmsy-10x-x-120">}</span></span>
+<br /><span id="textcolor1626"><span 
+class="cmtt-12">tax</span></span><span id="textcolor1627"><span 
+class="cmtt-12">(</span></span><span id="textcolor1628"><span 
+class="cmtt-12">c</span></span><span id="textcolor1629"><span 
+class="cmtt-12">(</span></span><span id="textcolor1630"><span 
+class="cmtt-12">40e3</span></span><span id="textcolor1631"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1632"><span 
+class="cmtt-12">50e3</span></span><span id="textcolor1633"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1634"><span 
+class="cmtt-12">60e3</span></span><span id="textcolor1635"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-124">
+## [1] 1500 2400 3500
+</div>
+<!--l. 1923--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1636"><span 
+class="cmtt-12">(</span></span><span id="textcolor1637"><span 
+class="cmtt-12">1e5</span></span><span id="textcolor1638"><span 
+class="cmtt-12">^</span></span><span id="textcolor1639"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1640"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1641"><span 
+class="cmtt-12">1e8</span></span><span id="textcolor1642"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1643"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1644"><span 
+class="cmtt-12">1e6</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1645"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1646"><span 
+class="cmtt-12">(</span></span><span id="textcolor1647"><span 
+class="cmtt-12">1e5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1648"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1649"><span 
+class="cmtt-12">9900</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1650"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1651"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1652"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1653"><span 
+class="cmtt-12">1e5</span></span><span id="textcolor1654"><span 
+class="cmtt-12">)</span></span><span id="textcolor1655"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1656"><span 
+class="cmtt-12">4</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-125">
+## [1] TRUE
+</div>
+<!--l. 1929--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1657"><span 
+class="cmtt-12">income</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1658"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1659"><span 
+class="cmtt-12">seq</span></span><span id="textcolor1660"><span 
+class="cmtt-12">(</span></span><span id="textcolor1661"><span 
+class="cmtt-12">0</span></span><span id="textcolor1662"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1663"><span 
+class="cmtt-12">200e3</span></span><span id="textcolor1664"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1665"><span 
+class="cmtt-12">by</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1666"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1667"><span 
+class="cmtt-12">100</span></span><span id="textcolor1668"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1669"><span 
+class="cmtt-12">par</span></span><span id="textcolor1670"><span 
+class="cmtt-12">(</span></span><span id="textcolor1671"><span 
+class="cmtt-12">lwd</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1672"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1673"><span 
+class="cmtt-12">1.5</span></span><span id="textcolor1674"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1675"><span 
+class="cmtt-12">plot</span></span><span id="textcolor1676"><span 
+class="cmtt-12">(income,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1677"><span 
+class="cmtt-12">tax</span></span><span id="textcolor1678"><span 
+class="cmtt-12">(income),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1679"><span 
+class="cmtt-12">type</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1680"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1681"><span 
+class="cmtt-12">&#x0027;l&#x0027;</span></span><span id="textcolor1682"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1683"><span 
+class="cmtt-12">lty</span></span><span id="textcolor1684"><span 
+class="cmtt-12">=</span></span><span id="textcolor1685"><span 
+class="cmtt-12">5</span></span><span id="textcolor1686"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1687"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1688"><span 
+class="cmtt-12">(income,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1689"><span 
+class="cmtt-12">tax</span></span><span id="textcolor1690"><span 
+class="cmtt-12">(income</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1691"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1692"><span 
+class="cmtt-12">10e3</span></span><span id="textcolor1693"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1694"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1695"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1696"><span 
+class="cmtt-12">2</span></span><span id="textcolor1697"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1698"><span 
+class="cmtt-12">lty</span></span><span id="textcolor1699"><span 
+class="cmtt-12">=</span></span><span id="textcolor1700"><span 
+class="cmtt-12">4</span></span><span id="textcolor1701"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1702"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1703"><span 
+class="cmtt-12">(income,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1704"><span 
+class="cmtt-12">tax</span></span><span id="textcolor1705"><span 
+class="cmtt-12">(</span></span><span id="textcolor1706"><span 
+class="cmtt-12">.95</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1707"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1708"><span 
+class="cmtt-12">income),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1709"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1710"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1711"><span 
+class="cmtt-12">3</span></span><span id="textcolor1712"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1713"><span 
+class="cmtt-12">lty</span></span><span id="textcolor1714"><span 
+class="cmtt-12">=</span></span><span id="textcolor1715"><span 
+class="cmtt-12">3</span></span><span id="textcolor1716"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1717"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1718"><span 
+class="cmtt-12">(income,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1719"><span 
+class="cmtt-12">pmax</span></span><span id="textcolor1720"><span 
+class="cmtt-12">(</span></span><span id="textcolor1721"><span 
+class="cmtt-12">tax</span></span><span id="textcolor1722"><span 
+class="cmtt-12">(income)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1723"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1724"><span 
+class="cmtt-12">1e3</span></span><span id="textcolor1725"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1726"><span 
+class="cmtt-12">0</span></span><span id="textcolor1727"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1728"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1729"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1730"><span 
+class="cmtt-12">4</span></span><span id="textcolor1731"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1732"><span 
+class="cmtt-12">lty</span></span><span id="textcolor1733"><span 
+class="cmtt-12">=</span></span><span id="textcolor1734"><span 
+class="cmtt-12">2</span></span><span id="textcolor1735"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1736"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1737"><span 
+class="cmtt-12">(income,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1738"><span 
+class="cmtt-12">.9</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1739"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1740"><span 
+class="cmtt-12">tax</span></span><span id="textcolor1741"><span 
+class="cmtt-12">(income),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1742"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1743"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1744"><span 
+class="cmtt-12">5</span></span><span id="textcolor1745"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1746"><span 
+class="cmtt-12">lty</span></span><span id="textcolor1747"><span 
+class="cmtt-12">=</span></span><span id="textcolor1748"><span 
+class="cmtt-12">1</span></span><span id="textcolor1749"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1750"><span 
+class="cmtt-12">legend</span></span><span id="textcolor1751"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1752"><span 
+class="cmtt-12">&#x0022;topleft&#x0022;</span></span><span id="textcolor1753"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1754"><span 
+class="cmtt-12">c</span></span><span id="textcolor1755"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1756"><span 
+class="cmtt-12">&#x0022;Regular</span><span 
+class="cmtt-12"> tax&#x0022;</span></span><span id="textcolor1757"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1758"><span 
+class="cmtt-12">&#x0022;Deduct</span><span 
+class="cmtt-12"> 10k</span><span 
+class="cmtt-12"> before</span><span 
+class="cmtt-12"> taxes&#x0022;</span></span><span id="textcolor1759"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1760"><span 
+class="cmtt-12">&#x0022;Deduct</span><span 
+class="cmtt-12"> 5%</span><span 
+class="cmtt-12"> before</span><span 
+class="cmtt-12"> taxes&#x0022;</span></span><span id="textcolor1761"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1762"><span 
+class="cmtt-12">&#x0022;1k</span><span 
+class="cmtt-12"> tax</span><span 
+class="cmtt-12"> credit&#x0022;</span></span><span id="textcolor1763"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1764"><span 
+class="cmtt-12">&#x0022;10%</span><span 
+class="cmtt-12"> tax</span><span 
+class="cmtt-12"> credit&#x0022;</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1765"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1766"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1767"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1768"><span 
+class="cmtt-12">1</span></span><span id="textcolor1769"><span 
+class="cmtt-12">:</span></span><span id="textcolor1770"><span 
+class="cmtt-12">5</span></span><span id="textcolor1771"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1772"><span 
+class="cmtt-12">lty</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1773"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1774"><span 
+class="cmtt-12">5</span></span><span id="textcolor1775"><span 
+class="cmtt-12">:</span></span><span id="textcolor1776"><span 
+class="cmtt-12">1</span></span>
+<br /><span id="textcolor1777"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x6-50015"></a>
+                                                                                            
+                                                                                            
+<!--l. 1959--><p class="noindent" ><img 
+src="figure/qm1session3tax-1.png" alt="PIC"  
+width="481" height="481"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure 1.5: </span><span  
+class="content">A tax example</span></div><!--tex4ht:label?: x6-50015 -->
+                                                                                            
+                                                                                            
+</div><hr class="endfigure" />
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1778"><span 
+class="cmtt-12">par</span></span><span id="textcolor1779"><span 
+class="cmtt-12">(</span></span><span id="textcolor1780"><span 
+class="cmtt-12">lwd</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1781"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1782"><span 
+class="cmtt-12">1</span></span><span id="textcolor1783"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<!--l. 1968--><p class="noindent" >Function values habe to be returned. Otherwise they will be lost after the function has
+terminated.
+</p><!--l. 1972--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">N<span 
+class="small-caps">e</span><span 
+class="small-caps">w</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">m</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">l</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 1974--><p class="noindent" >Given two functions <!--l. 1974--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>f</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>
+and <!--l. 1974--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>g</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>,
+they can be combined to another function.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1784"><span 
+class="cmtt-12">f</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1785"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1786"><span 
+class="cmtt-12">function</span></span><span id="textcolor1787"><span 
+class="cmtt-12">(</span></span><span id="textcolor1788"><span 
+class="cmtt-12">x</span></span><span id="textcolor1789"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1790"><span 
+class="cmtt-12">3</span></span><span id="textcolor1791"><span 
+class="cmtt-12">*</span></span><span id="textcolor1792"><span 
+class="cmtt-12">x</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1793"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1794"><span 
+class="cmtt-12">x</span></span><span id="textcolor1795"><span 
+class="cmtt-12">^</span></span><span id="textcolor1796"><span 
+class="cmtt-12">3</span></span>
+<br /><span id="textcolor1797"><span 
+class="cmtt-12">g</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1798"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1799"><span 
+class="cmtt-12">function</span></span><span id="textcolor1800"><span 
+class="cmtt-12">(</span></span><span id="textcolor1801"><span 
+class="cmtt-12">x</span></span><span id="textcolor1802"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> x</span></span><span id="textcolor1803"><span 
+class="cmtt-12">^</span></span><span id="textcolor1804"><span 
+class="cmtt-12">3</span></span>
+<br /><span id="textcolor1805"><span 
+class="cmtt-12">x</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1806"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1807"><span 
+class="cmtt-12">seq</span></span><span id="textcolor1808"><span 
+class="cmtt-12">(</span></span><span id="textcolor1809"><span 
+class="cmtt-12">-</span></span><span id="textcolor1810"><span 
+class="cmtt-12">5</span></span><span id="textcolor1811"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1812"><span 
+class="cmtt-12">5</span></span><span id="textcolor1813"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1814"><span 
+class="cmtt-12">by</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1815"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1816"><span 
+class="cmtt-12">.01</span></span><span id="textcolor1817"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1818"><span 
+class="cmtt-12">plot</span></span><span id="textcolor1819"><span 
+class="cmtt-12">(x,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1820"><span 
+class="cmtt-12">f</span></span><span id="textcolor1821"><span 
+class="cmtt-12">(x)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1822"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1823"><span 
+class="cmtt-12">g</span></span><span id="textcolor1824"><span 
+class="cmtt-12">(x),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1825"><span 
+class="cmtt-12">type</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1826"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1827"><span 
+class="cmtt-12">&#x0027;l&#x0027;</span></span><span id="textcolor1828"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1829"><span 
+class="cmtt-12">ylab</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1830"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1831"><span 
+class="cmtt-12">&#x0027;&#x0027;</span></span><span id="textcolor1832"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1833"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1834"><span 
+class="cmtt-12">(x,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1835"><span 
+class="cmtt-12">f</span></span><span id="textcolor1836"><span 
+class="cmtt-12">(x)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1837"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1838"><span 
+class="cmtt-12">g</span></span><span id="textcolor1839"><span 
+class="cmtt-12">(x),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1840"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1841"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1842"><span 
+class="cmtt-12">2</span></span><span id="textcolor1843"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1844"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1845"><span 
+class="cmtt-12">(x,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1846"><span 
+class="cmtt-12">f</span></span><span id="textcolor1847"><span 
+class="cmtt-12">(x)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1848"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1849"><span 
+class="cmtt-12">g</span></span><span id="textcolor1850"><span 
+class="cmtt-12">(x),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1851"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1852"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1853"><span 
+class="cmtt-12">3</span></span><span id="textcolor1854"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor1855"><span 
+class="cmtt-12">lines</span></span><span id="textcolor1856"><span 
+class="cmtt-12">(x,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1857"><span 
+class="cmtt-12">f</span></span><span id="textcolor1858"><span 
+class="cmtt-12">(x)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1859"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1860"><span 
+class="cmtt-12">g</span></span><span id="textcolor1861"><span 
+class="cmtt-12">(x),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1862"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1863"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1864"><span 
+class="cmtt-12">4</span></span><span id="textcolor1865"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x6-50026"></a>
+                                                                                            
+                                                                                            
+<!--l. 1996--><p class="noindent" ><img 
+src="figure/qm1session3funct-1.png" alt="PIC"  
+width="481" height="481"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure 1.6: </span><span  
+class="content">Recycling functions</span></div><!--tex4ht:label?: x6-50026 -->
+                                                                                            
+                                                                                            
+</div><hr class="endfigure" />
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1866"><span 
+class="cmtt-12">f</span></span><span id="textcolor1867"><span 
+class="cmtt-12">(</span></span><span id="textcolor1868"><span 
+class="cmtt-12">g</span></span><span id="textcolor1869"><span 
+class="cmtt-12">(</span></span><span id="textcolor1870"><span 
+class="cmtt-12">1</span></span><span id="textcolor1871"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-126">
+## [1] 2
+</div>
+<!--l. 2009--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1872"><span 
+class="cmtt-12">g</span></span><span id="textcolor1873"><span 
+class="cmtt-12">(</span></span><span id="textcolor1874"><span 
+class="cmtt-12">f</span></span><span id="textcolor1875"><span 
+class="cmtt-12">(</span></span><span id="textcolor1876"><span 
+class="cmtt-12">1</span></span><span id="textcolor1877"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-127">
+## [1] 8
+</div>
+<!--l. 2015--><p class="nopar" >
+</p>
+</div>
+                                                                                            
+                                                                                            
+<!--l. 2025--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse4.html" >next</a>] [<a 
+href="QuMWikiMasterse2.html" >prev</a>] [<a 
+href="QuMWikiMasterse2.html#tailQuMWikiMasterse2.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse3.html" >front</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse3.html" >up</a>] </p></div>
+<!--l. 2025--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse3.html"></a> </p> 
+</body> 
+</html>

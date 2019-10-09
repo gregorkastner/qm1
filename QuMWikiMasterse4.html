@@ -1,0 +1,2770 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QM1 – Session 4 (Data)</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 2025--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse5.html" >next</a>] [<a 
+href="QuMWikiMasterse3.html" >prev</a>] [<a 
+href="QuMWikiMasterse3.html#tailQuMWikiMasterse3.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse4.html">tail</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse4.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.4   </span> <a 
+ id="x7-60001.4"></a>QM1 – Session 4 (Data)</h3>
+<!--l. 2027--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">D<span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">a</span> <span 
+class="small-caps">t</span><span 
+class="small-caps">y</span><span 
+class="small-caps">p</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 2029--><p class="noindent" >Many data types are available in <span 
+class="cmss-12">R</span>. The most basic data type <span id="textcolor1878"><span 
+class="cmtt-12">logical</span></span> has been introduced already
+implicitly. It takes either <span id="textcolor1879"><span 
+class="cmtt-12">TRUE</span></span> or <span id="textcolor1880"><span 
+class="cmtt-12">FALSE</span></span>. Also <span id="textcolor1881"><span 
+class="cmtt-12">T</span></span> or <span id="textcolor1882"><span 
+class="cmtt-12">F</span></span> as global variables can be used. It is not advised
+to use those, as they can be over written. Furthermore, it is strongly discouraged to assign objects to
+<span id="textcolor1883"><span 
+class="cmtt-12">T</span></span> or to <span id="textcolor1884"><span 
+class="cmtt-12">F</span></span>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1885"><span 
+class="cmtt-12">myfirsttype</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1886"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1887"><span 
+class="cmtt-12">c</span></span><span id="textcolor1888"><span 
+class="cmtt-12">(</span></span><span id="textcolor1889"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor1890"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1891"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor1892"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1893"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> assigns</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> TRUE</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> FALSE</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> &#x0027;myfirsttype&#x0027;</span></span>
+<br /><span id="textcolor1894"><span 
+class="cmtt-12">str</span></span><span id="textcolor1895"><span 
+class="cmtt-12">(myfirsttype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1896"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> structure</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0027;myfirsttype&#x0027;,</span><span 
+class="cmitt-10x-x-120"> mind</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;logi&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-128">
+##  logi [1:2] TRUE FALSE
+</div>
+<!--l. 2044--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1897"><span 
+class="cmtt-12">class</span></span><span id="textcolor1898"><span 
+class="cmtt-12">(myfirsttype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1899"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;logical&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-129">
+## [1] &#x0022;logical&#x0022;
+</div>
+<!--l. 2050--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1900"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor1901"><span 
+class="cmtt-12">(myfirsttype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1902"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> type</span><span 
+class="cmitt-10x-x-120"> &#x0022;logical&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-130">
+## [1] &#x0022;logical&#x0022;
+</div>
+<!--l. 2056--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1903"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1904"><span 
+class="cmtt-12">(T)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1905"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1906"><span 
+class="cmtt-12">(</span></span><span id="textcolor1907"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor1908"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1909"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1910"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1911"><span 
+class="cmtt-12">(</span></span><span id="textcolor1912"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh!&#x0022;</span></span><span id="textcolor1913"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1914"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Do</span><span 
+class="cmitt-10x-x-120"> NOT</span><span 
+class="cmitt-10x-x-120"> use</span><span 
+class="cmitt-10x-x-120"> &#x0027;T&#x0027;!</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-131">
+## Woo Hoo!
+</div>
+<!--l. 2062--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1915"><span 
+class="cmtt-12">T</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1916"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1917"><span 
+class="cmtt-12">FALSE</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1918"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Do</span><span 
+class="cmitt-10x-x-120"> NOT</span><span 
+class="cmitt-10x-x-120"> assign</span><span 
+class="cmitt-10x-x-120"> objects</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> &#x0027;T&#x0027;!!</span></span>
+<br /><span id="textcolor1919"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1920"><span 
+class="cmtt-12">(T)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1921"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1922"><span 
+class="cmtt-12">(</span></span><span id="textcolor1923"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor1924"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1925"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1926"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1927"><span 
+class="cmtt-12">(</span></span><span id="textcolor1928"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh!&#x0022;</span></span><span id="textcolor1929"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1930"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Do</span><span 
+class="cmitt-10x-x-120"> NOT</span><span 
+class="cmitt-10x-x-120"> use</span><span 
+class="cmitt-10x-x-120"> &#x0027;T&#x0027;!</span><span 
+class="cmitt-10x-x-120"> You</span><span 
+class="cmitt-10x-x-120"> see</span><span 
+class="cmitt-10x-x-120"> why</span><span 
+class="cmitt-10x-x-120"> not!!!</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-132">
+## D&#x0027;oh!
+</div>
+<!--l. 2069--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1931"><span 
+class="cmtt-12">rm</span></span><span id="textcolor1932"><span 
+class="cmtt-12">(T)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1933"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Remove</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> &#x0027;T&#x0027;</span><span 
+class="cmitt-10x-x-120"> right</span><span 
+class="cmitt-10x-x-120"> away!!!!</span></span>
+<br /><span id="textcolor1934"><span 
+class="cmtt-12">if</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1935"><span 
+class="cmtt-12">(T)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1936"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1937"><span 
+class="cmtt-12">(</span></span><span id="textcolor1938"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor1939"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1940"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1941"><span 
+class="cmtt-12">cat</span></span><span id="textcolor1942"><span 
+class="cmtt-12">(</span></span><span id="textcolor1943"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh!&#x0022;</span></span><span id="textcolor1944"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1945"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Although</span><span 
+class="cmitt-10x-x-120"> it</span><span 
+class="cmitt-10x-x-120"> works:</span><span 
+class="cmitt-10x-x-120"> Do</span><span 
+class="cmitt-10x-x-120"> NOT</span><span 
+class="cmitt-10x-x-120"> use</span><span 
+class="cmitt-10x-x-120"> &#x0027;T&#x0027;!!!!!</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-133">
+## Woo Hoo!
+</div>
+<!--l. 2076--><p class="nopar" >
+</p>
+</div>
+<!--l. 2080--><p class="noindent" >Another data type is the one of all numbers without fractional component, i. e. all integers.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1946"><span 
+class="cmtt-12">mysecondtype</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1947"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1948"><span 
+class="cmtt-12">1</span></span><span id="textcolor1949"><span 
+class="cmtt-12">:</span></span><span id="textcolor1950"><span 
+class="cmtt-12">9</span></span>
+<br /><span id="textcolor1951"><span 
+class="cmtt-12">str</span></span><span id="textcolor1952"><span 
+class="cmtt-12">(mysecondtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1953"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> structure</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0027;mysecondtype&#x0027;,</span><span 
+class="cmitt-10x-x-120"> mind</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;int&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-134">
+##  int [1:9] 1 2 3 4 5 6 7 8 9
+</div>
+<!--l. 2090--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1954"><span 
+class="cmtt-12">class</span></span><span id="textcolor1955"><span 
+class="cmtt-12">(mysecondtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1956"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;integer&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-135">
+## [1] &#x0022;integer&#x0022;
+</div>
+<!--l. 2096--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1957"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor1958"><span 
+class="cmtt-12">(mysecondtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1959"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> type</span><span 
+class="cmitt-10x-x-120"> &#x0022;integer&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-136">
+## [1] &#x0022;integer&#x0022;
+</div>
+<!--l. 2102--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1960"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor1961"><span 
+class="cmtt-12">(</span></span><span id="textcolor1962"><span 
+class="cmtt-12">2</span></span><span id="textcolor1963"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1964"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> this</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> NOT</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> integer</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-137">
+## [1] &#x0022;double&#x0022;
+</div>
+<!--l. 2108--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1965"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor1966"><span 
+class="cmtt-12">(</span></span><span id="textcolor1967"><span 
+class="cmtt-12">2L</span></span><span id="textcolor1968"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1969"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0022;L&#x0022;,</span><span 
+class="cmitt-10x-x-120"> representing</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> &#x0022;I&#x0022;</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> integer,</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> integer</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-138">
+## [1] &#x0022;integer&#x0022;
+</div>
+<!--l. 2114--><p class="nopar" >
+</p>
+</div>
+<!--l. 2118--><p class="noindent" >The most common type for real numbers is <span id="textcolor1970"><span 
+class="cmtt-12">double</span></span>.
+</p><!--l. 2120--><p class="noindent" >Therefore, a short introduction to the theory of number representation is given. In mathematics,
+every <!--l. 2121--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>ℝ</mi></math>
+can be decomposed as
+</p>
+<div class="math-display"><!--l. 2122--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                                   <mi 
+>x</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>σ</mi> <mfenced separators="" 
+open="("  close=")" ><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>∞</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>a</mi></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mi 
+>k</mi></mrow></msup 
+></mrow></mfenced> <msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mi 
+>e</mi></mrow></msup 
+>
+</mrow></math></div>
+<!--l. 2124--><p class="nopar" > <!--tex4ht:inline--></p><div class="tabular"> <table id="TBL-3" class="tabular" 
+ 
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1" /><col 
+id="TBL-3-2" /><col 
+id="TBL-3-3" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="text-align:right; white-space:nowrap;" id="TBL-3-1-1"  
+class="td11">where</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-1-2"  
+class="td11"><!--l. 2126--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>σ</mi> <mo 
+class="MathClass-rel">∈</mo><mrow ><mo 
+class="MathClass-open">{</mo><mrow><mo 
+class="MathClass-bin">±</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">}</mo></mrow></math></td><td  style="text-align:left; white-space:nowrap;" id="TBL-3-1-3"  
+class="td11">is the sign of the number,</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="text-align:right; white-space:nowrap;" id="TBL-3-2-1"  
+class="td11">     </td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-2-2"  
+class="td11"><!--l. 2127--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>a</mi></mrow><mrow 
+><mi 
+>k</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">∈</mo><mrow ><mo 
+class="MathClass-open">{</mo><mrow><mn>0</mn><mo 
+class="MathClass-punc">,</mo> <mn>1</mn></mrow><mo 
+class="MathClass-close">}</mo></mrow></math></td><td  style="text-align:left; white-space:nowrap;" id="TBL-3-2-3"  
+class="td11">is the digit                    </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="text-align:right; white-space:nowrap;" id="TBL-3-3-1"  
+class="td11">  and</td><td  style="text-align:center; white-space:nowrap;" id="TBL-3-3-2"  
+class="td11"><!--l. 2128--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>e</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>ℤ</mi></math></td><td  style="text-align:left; white-space:nowrap;" id="TBL-3-3-3"  
+class="td11">is the exponent.             </td></tr></table></div>
+<!--l. 2131--><p class="noindent" >This representation is not unique, since e. g. 
+</p>
+<div class="math-display"><!--l. 2132--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                           <mn>1</mn> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn> <mfenced separators="" 
+open="("  close=")" ><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>∞</mi></mrow></munderover 
+><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mi 
+>k</mi></mrow></msup 
+></mrow></mfenced> <msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>0</mn></mrow></msup 
+> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn> <mfenced separators="" 
+open="("  close=")" ><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mn>1</mn></mrow></munderover 
+><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mi 
+>k</mi></mrow></msup 
+></mrow></mfenced> <msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>1</mn></mrow></msup 
+>
+</mrow></math></div>
+<!--l. 2134--><p class="nopar" >
+</p><!--l. 2136--><p class="noindent" >A more familiar representation will be
+</p>
+                                                                                            
+                                                                                            
+<div class="math-display"><!--l. 2137--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                                 <mi 
+>x</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>σ</mi> <mfenced separators="" 
+open="("  close=")" ><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>∞</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>a</mi></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+><mn>1</mn><msup><mrow 
+><mn>0</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mi 
+>k</mi></mrow></msup 
+></mrow></mfenced> <mn>1</mn><msup><mrow 
+><mn>0</mn></mrow><mrow 
+><mi 
+>e</mi></mrow></msup 
+>
+</mrow></math></div>
+<!--l. 2139--><p class="nopar" > which is isomorph to the decimal system.
+</p><!--l. 2142--><p class="noindent" >Because today’s computers only know applied voltage or no voltage, computers
+work with a cutted of version of the binary representation, a floating point system
+<!--l. 2144--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>F</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mn>2</mn><mo 
+class="MathClass-punc">,</mo><mi 
+>M</mi><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>e</mi></mrow><mrow 
+><mi 
+>m</mi><mi 
+>i</mi><mi 
+>n</mi></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>e</mi></mrow><mrow 
+><mi 
+>m</mi><mi 
+>a</mi><mi 
+>x</mi></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">⊂</mo> <mi 
+>ℚ</mi></math>, where the
+floating point number is a function of the system basis (2 for the binary system), the number of significant digits
+<!--l. 2147--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>M</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>ℕ</mi></math> and the limits of
+the exponent <!--l. 2148--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>e</mi></mrow><mrow 
+><mi 
+>m</mi><mi 
+>i</mi><mi 
+>n</mi></mrow></msub 
+> <mo 
+class="MathClass-rel">≤</mo> <mn>0</mn> <mo 
+class="MathClass-rel">≤</mo> <msub><mrow 
+><mi 
+>e</mi></mrow><mrow 
+><mi 
+>m</mi><mi 
+>a</mi><mi 
+>x</mi></mrow></msub 
+></math>.
+<!--l. 2149--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-rel">∈</mo> <mi 
+>F</mi></math> is
+represented by
+</p>
+<div class="math-display"><!--l. 2150--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                                  <mi 
+>x</mi> <mo 
+class="MathClass-rel">=</mo> <mi 
+>σ</mi> <mfenced separators="" 
+open="("  close=")" ><mrow><munderover accentunder="false" accent="false"><mrow  
+><mo mathsize="big" 
+>∑</mo>
+  </mrow><mrow 
+><mi 
+>k</mi><mo 
+class="MathClass-rel">=</mo><mn>1</mn></mrow><mrow 
+><mi 
+>M</mi></mrow></munderover 
+><msub><mrow 
+><mi 
+>a</mi></mrow><mrow 
+>
+<mi 
+>k</mi></mrow></msub 
+><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mo 
+class="MathClass-bin">−</mo><mi 
+>k</mi></mrow></msup 
+></mrow></mfenced> <msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mi 
+>e</mi></mrow></msup 
+>
+</mrow></math></div>
+<!--l. 2152--><p class="nopar" >
+</p><!--l. 2154--><p class="noindent" ><!--l. 2154--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>a</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn></math> in
+nearly all aplications, the so called hidden bit, and, thus, is usally not saved.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1971"><span 
+class="cmtt-12">.Machine</span></span><span id="textcolor1972"><span 
+class="cmtt-12">$</span></span><span id="textcolor1973"><span 
+class="cmtt-12">double.base</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1974"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> base</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> number</span><span 
+class="cmitt-10x-x-120"> system</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-139">
+## [1] 2
+</div>
+<!--l. 2164--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1975"><span 
+class="cmtt-12">.Machine</span></span><span id="textcolor1976"><span 
+class="cmtt-12">$</span></span><span id="textcolor1977"><span 
+class="cmtt-12">double.digits</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1978"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> number</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> significant</span><span 
+class="cmitt-10x-x-120"> digits</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-140">
+## [1] 53
+</div>
+<!--l. 2170--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1979"><span 
+class="cmtt-12">.Machine</span></span><span id="textcolor1980"><span 
+class="cmtt-12">$</span></span><span id="textcolor1981"><span 
+class="cmtt-12">double.exponent</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1982"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> number</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> bits</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> exponent</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-141">
+## [1] 11
+</div>
+<!--l. 2176--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1983"><span 
+class="cmtt-12">.Machine</span></span><span id="textcolor1984"><span 
+class="cmtt-12">$</span></span><span id="textcolor1985"><span 
+class="cmtt-12">double.min.exp</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1986"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> lower</span><span 
+class="cmitt-10x-x-120"> bound</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> exponent</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-142">
+## [1] -1022
+</div>
+<!--l. 2182--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1987"><span 
+class="cmtt-12">.Machine</span></span><span id="textcolor1988"><span 
+class="cmtt-12">$</span></span><span id="textcolor1989"><span 
+class="cmtt-12">double.max.exp</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1990"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> upper</span><span 
+class="cmitt-10x-x-120"> bound</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> exponent</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-143">
+## [1] 1024
+</div>
+<!--l. 2188--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1991"><span 
+class="cmtt-12">noquote</span></span><span id="textcolor1992"><span 
+class="cmtt-12">(</span></span><span id="textcolor1993"><span 
+class="cmtt-12">unlist</span></span><span id="textcolor1994"><span 
+class="cmtt-12">(</span></span><span id="textcolor1995"><span 
+class="cmtt-12">format</span></span><span id="textcolor1996"><span 
+class="cmtt-12">(.Machine)))</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor1997"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> details</span><span 
+class="cmitt-10x-x-120"> summarized</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-144">
+##            double.eps        double.neg.eps           double.xmin
+ <br />##          2.220446e-16          1.110223e-16         2.225074e-308
+ <br />##           double.xmax           double.base         double.digits
+ <br />##         1.797693e+308                     2                    53
+ <br />##       double.rounding          double.guard     double.ulp.digits
+ <br />##                     5                     0                   -52
+ <br />## double.neg.ulp.digits       double.exponent        double.min.exp
+ <br />##                   -53                    11                 -1022
+ <br />##        double.max.exp           integer.max           sizeof.long
+ <br />##                  1024            2147483647                     4
+ <br />##       sizeof.longlong     sizeof.longdouble        sizeof.pointer
+ <br />##                     8                    16                     8
+</div>
+<!--l. 2205--><p class="nopar" >
+</p>
+</div>
+<div class="table">
+                                                                                            
+                                                                                            
+<!--l. 2210--><p class="noindent" ><a 
+ id="x7-60011"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                            
+                                                                                            
+ <div class="caption" 
+><span class="id">Table 1.1: </span><span  
+class="content">Table for the values of the exponent</span></div><!--tex4ht:label?: x7-60011 -->
+<div class="tabular"> <table id="TBL-4" class="tabular" 
+ 
+><colgroup id="TBL-4-1g"><col 
+id="TBL-4-1" /><col 
+id="TBL-4-2" /><col 
+id="TBL-4-3" /><col 
+id="TBL-4-4" /><col 
+id="TBL-4-5" /><col 
+id="TBL-4-6" /><col 
+id="TBL-4-7" /><col 
+id="TBL-4-8" /><col 
+id="TBL-4-9" /><col 
+id="TBL-4-10" /><col 
+id="TBL-4-11" /><col 
+id="TBL-4-12" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-4-1-"><td  style="text-align:left; white-space:nowrap;" id="TBL-4-1-1"  
+class="td11">Bit           </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-2"  
+class="td11">                                      11                                                            </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-3"  
+class="td11">                                      10                                                            </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-4"  
+class="td11">                                       9                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-5"  
+class="td11">                                       8                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-6"  
+class="td11">                                       7                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-7"  
+class="td11">                                       6                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-8"  
+class="td11">                                       5                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-9"  
+class="td11">                                       4                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-10"  
+class="td11">                                       3                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-11"  
+class="td11">                                       2                                                             </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-1-12"  
+class="td11">                                       1                                                             </td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-2-"><td  style="text-align:left; white-space:nowrap;" id="TBL-4-2-1"  
+class="td11">Standing for</td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-2"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">−</mo></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-3"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>9</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-4"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>8</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-5"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>7</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-6"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>6</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-7"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>5</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-8"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>4</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-9"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>3</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-10"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>2</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-11"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>1</mn></mrow></msup 
+></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-2-12"  
+class="td11"><!--l. 2213--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mn>2</mn></mrow><mrow 
+><mn>0</mn></mrow></msup 
+></math></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-3-"><td  style="text-align:left; white-space:nowrap;" id="TBL-4-3-1"  
+class="td11">Equal to     </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-2"  
+class="td11">                                                                              </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-3"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn><mn>1</mn><mn>2</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-4"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn><mn>5</mn><mn>6</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-5"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>2</mn><mn>8</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-6"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>6</mn><mn>4</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-7"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn><mn>2</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-8"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>6</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-9"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>8</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-10"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>4</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-11"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-3-12"  
+class="td11"><!--l. 2214--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-4-"><td colspan="2" style="text-align:left; white-space:nowrap;" id="TBL-4-4-1"  
+class="td11"><div class="multicolumn"  style="text-align:left; white-space:nowrap;">Cumulative sum</div>                                                                                          </td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-3"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn><mn>2</mn><mn>3</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-4"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn><mn>1</mn><mn>1</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-5"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn><mn>5</mn><mn>5</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-6"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>2</mn><mn>7</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-7"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>6</mn><mn>3</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-8"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn><mn>1</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-9"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>5</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-10"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>7</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-11"  
+class="td11"><!--l. 2215--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn></math></td><td  style="text-align:center; white-space:nowrap;" id="TBL-4-4-12"  
+class="td11">                                                                              </td></tr></table>
+</div>
+                                                                                            
+                                                                                            
+</div><hr class="endfloat" />
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor1998"><span 
+class="cmtt-12">mythirdtype</span></span><span 
+class="cmtt-12"> </span><span id="textcolor1999"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2000"><span 
+class="cmtt-12">seq</span></span><span id="textcolor2001"><span 
+class="cmtt-12">(</span></span><span id="textcolor2002"><span 
+class="cmtt-12">1</span></span><span id="textcolor2003"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2004"><span 
+class="cmtt-12">3</span></span><span id="textcolor2005"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2006"><span 
+class="cmtt-12">by</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2007"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2008"><span 
+class="cmtt-12">.1</span></span><span id="textcolor2009"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor2010"><span 
+class="cmtt-12">str</span></span><span id="textcolor2011"><span 
+class="cmtt-12">(mythirdtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2012"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> structure</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0027;mythirdtype&#x0027;,</span><span 
+class="cmitt-10x-x-120"> mind</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;num&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-145">
+##  num [1:21] 1 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 ...
+</div>
+<!--l. 2227--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2013"><span 
+class="cmtt-12">class</span></span><span id="textcolor2014"><span 
+class="cmtt-12">(mythirdtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2015"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;numeric&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-146">
+## [1] &#x0022;numeric&#x0022;
+</div>
+<!--l. 2233--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2016"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2017"><span 
+class="cmtt-12">(mythirdtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2018"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> type</span><span 
+class="cmitt-10x-x-120"> &#x0022;double&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-147">
+## [1] &#x0022;double&#x0022;
+</div>
+<!--l. 2239--><p class="nopar" >
+</p>
+</div>
+<!--l. 2243--><p class="noindent" >The last type, presented here, can be used for everything and returns the pure characters of the
+values. It is called <span id="textcolor2019"><span 
+class="cmtt-12">character</span></span>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2020"><span 
+class="cmtt-12">myfourthtype</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2021"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2022"><span 
+class="cmtt-12">c</span></span><span id="textcolor2023"><span 
+class="cmtt-12">(</span></span><span id="textcolor2024"><span 
+class="cmtt-12">&#x0022;Woo</span><span 
+class="cmtt-12"> Hoo!&#x0022;</span></span><span id="textcolor2025"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2026"><span 
+class="cmtt-12">&#x0022;D&#x0027;oh!&#x0022;</span></span><span id="textcolor2027"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor2028"><span 
+class="cmtt-12">str</span></span><span id="textcolor2029"><span 
+class="cmtt-12">(myfourthtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2030"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> structure</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0027;myfourthtype&#x0027;,</span><span 
+class="cmitt-10x-x-120"> mind</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;chr&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-148">
+##  chr [1:2] &#x0022;Woo Hoo!&#x0022; &#x0022;D&#x0027;oh!&#x0022;
+</div>
+<!--l. 2254--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2031"><span 
+class="cmtt-12">class</span></span><span id="textcolor2032"><span 
+class="cmtt-12">(myfourthtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2033"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> class</span><span 
+class="cmitt-10x-x-120"> &#x0022;character&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-149">
+## [1] &#x0022;character&#x0022;
+</div>
+<!--l. 2260--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2034"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2035"><span 
+class="cmtt-12">(myfourthtype)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2036"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> type</span><span 
+class="cmitt-10x-x-120"> &#x0022;character&#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-150">
+## [1] &#x0022;character&#x0022;
+</div>
+<!--l. 2266--><p class="nopar" >
+</p>
+</div>
+<!--l. 2271--><p class="noindent" ><span 
+class="cmss-12">R</span> automatically does typecasting. Whenever two types are mixed, e. g. combined inside a vector,
+The objects are translated into the next more general type. The following lines illustrate this
+behavior.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2037"><span 
+class="cmtt-12">c</span></span><span id="textcolor2038"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-151">
+##  [1] 1 0 1 2 3 4 5 6 7 8 9
+</div>
+<!--l. 2283--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2039"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2040"><span 
+class="cmtt-12">(</span></span><span id="textcolor2041"><span 
+class="cmtt-12">c</span></span><span id="textcolor2042"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-152">
+## [1] &#x0022;integer&#x0022;
+</div>
+<!--l. 2289--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2043"><span 
+class="cmtt-12">c</span></span><span id="textcolor2044"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype,</span><span 
+class="cmtt-12"> mythirdtype)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-153">
+##  [1] 1.0 0.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7
+ <br />## [20] 1.8 1.9 2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 2.8 2.9 3.0
+</div>
+<!--l. 2296--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2045"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2046"><span 
+class="cmtt-12">(</span></span><span id="textcolor2047"><span 
+class="cmtt-12">c</span></span><span id="textcolor2048"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype,</span><span 
+class="cmtt-12"> mythirdtype))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-154">
+## [1] &#x0022;double&#x0022;
+</div>
+<!--l. 2302--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2049"><span 
+class="cmtt-12">c</span></span><span id="textcolor2050"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype,</span><span 
+class="cmtt-12"> mythirdtype,</span><span 
+class="cmtt-12"> myfourthtype)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-155">
+##  [1] &#x0022;TRUE&#x0022;     &#x0022;FALSE&#x0022;    &#x0022;1&#x0022;        &#x0022;2&#x0022;        &#x0022;3&#x0022;        &#x0022;4&#x0022;
+ <br />##  [7] &#x0022;5&#x0022;        &#x0022;6&#x0022;        &#x0022;7&#x0022;        &#x0022;8&#x0022;        &#x0022;9&#x0022;        &#x0022;1&#x0022;
+ <br />## [13] &#x0022;1.1&#x0022;      &#x0022;1.2&#x0022;      &#x0022;1.3&#x0022;      &#x0022;1.4&#x0022;      &#x0022;1.5&#x0022;      &#x0022;1.6&#x0022;
+ <br />## [19] &#x0022;1.7&#x0022;      &#x0022;1.8&#x0022;      &#x0022;1.9&#x0022;      &#x0022;2&#x0022;        &#x0022;2.1&#x0022;      &#x0022;2.2&#x0022;
+ <br />## [25] &#x0022;2.3&#x0022;      &#x0022;2.4&#x0022;      &#x0022;2.5&#x0022;      &#x0022;2.6&#x0022;      &#x0022;2.7&#x0022;      &#x0022;2.8&#x0022;
+ <br />## [31] &#x0022;2.9&#x0022;      &#x0022;3&#x0022;        &#x0022;Woo Hoo!&#x0022; &#x0022;D&#x0027;oh!&#x0022;
+</div>
+<!--l. 2313--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2051"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2052"><span 
+class="cmtt-12">(</span></span><span id="textcolor2053"><span 
+class="cmtt-12">c</span></span><span id="textcolor2054"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype,</span><span 
+class="cmtt-12"> mythirdtype,</span><span 
+class="cmtt-12"> myfourthtype))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-156">
+## [1] &#x0022;character&#x0022;
+</div>
+<!--l. 2319--><p class="nopar" >
+</p>
+</div>
+<!--l. 2323--><p class="noindent" >Additionally, typecasting can be performed by hand.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2055"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2056"><span 
+class="cmtt-12">(</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2057"><span 
+class="cmtt-12">c</span></span><span id="textcolor2058"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype,</span><span 
+class="cmtt-12"> mythirdtype))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-157">
+## [1] &#x0022;double&#x0022;
+</div>
+<!--l. 2332--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2059"><span 
+class="cmtt-12">typeof</span></span><span id="textcolor2060"><span 
+class="cmtt-12">(</span></span><span id="textcolor2061"><span 
+class="cmtt-12">as.character</span></span><span id="textcolor2062"><span 
+class="cmtt-12">(</span></span><span id="textcolor2063"><span 
+class="cmtt-12">c</span></span><span id="textcolor2064"><span 
+class="cmtt-12">(myfirsttype,</span><span 
+class="cmtt-12"> mysecondtype,</span><span 
+class="cmtt-12"> mythirdtype)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-158">
+## [1] &#x0022;character&#x0022;
+</div>
+<!--l. 2338--><p class="nopar" >
+</p>
+</div>
+<!--l. 2343--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">S<span 
+class="small-caps">p</span><span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> <span 
+class="small-caps">v</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> (NULL, NA, I<span 
+class="small-caps">n</span><span 
+class="small-caps">f</span>, -I<span 
+class="small-caps">n</span><span 
+class="small-caps">f</span>, N<span 
+class="small-caps">a</span>N)</span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2065"><span 
+class="cmtt-12">myNull</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2066"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2067"><span 
+class="cmtt-12">NULL</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2068"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> initializes</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> object:</span><span 
+class="cmitt-10x-x-120"> It</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> there,</span><span 
+class="cmitt-10x-x-120"> but</span><span 
+class="cmitt-10x-x-120"> nothing</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> contained.</span></span>
+<br /><span id="textcolor2069"><span 
+class="cmtt-12">myNull</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2070"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0022;myNull&#x0022;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> empty</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-159">
+## NULL
+</div>
+<!--l. 2353--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2071"><span 
+class="cmtt-12">myNA</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2072"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2073"><span 
+class="cmtt-12">NA</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2074"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> assignes</span><span 
+class="cmitt-10x-x-120"> NA</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> &#x0022;myNA&#x0022;:</span><span 
+class="cmitt-10x-x-120"> It</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> there,</span><span 
+class="cmitt-10x-x-120"> but</span><span 
+class="cmitt-10x-x-120"> no</span><span 
+class="cmitt-10x-x-120"> information</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> available.</span></span>
+<br /><span id="textcolor2075"><span 
+class="cmtt-12">myNA</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2076"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0022;myNA&#x0022;</span><span 
+class="cmitt-10x-x-120"> contains</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> place</span><span 
+class="cmitt-10x-x-120"> holder</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> available</span><span 
+class="cmitt-10x-x-120"> information.</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-160">
+## [1] NA
+</div>
+<!--l. 2360--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2077"><span 
+class="cmtt-12">3e308</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2078"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> &#x0022;Inf&#x0022;</span><span 
+class="cmitt-10x-x-120"> because</span><span 
+class="cmitt-10x-x-120"> it</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> too</span><span 
+class="cmitt-10x-x-120"> big</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> processed</span><span 
+class="cmitt-10x-x-120"> (see</span><span 
+class="cmitt-10x-x-120"> &#x0022;.Machine&#x0022;)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-161">
+## [1] Inf
+</div>
+<!--l. 2366--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2079"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2080"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2081"><span 
+class="cmtt-12">0</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2082"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> also</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> &#x0022;Inf&#x0022;</span><span 
+class="cmitt-10x-x-120"> (similar</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> limit</span><span 
+class="cmitt-10x-x-120"> calculation</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> Mathematics)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-162">
+## [1] Inf
+</div>
+<!--l. 2372--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2083"><span 
+class="cmtt-12">-</span></span><span id="textcolor2084"><span 
+class="cmtt-12">3e308</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2085"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> &#x0022;-Inf&#x0022;</span><span 
+class="cmitt-10x-x-120"> because</span><span 
+class="cmitt-10x-x-120"> it</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> too</span><span 
+class="cmitt-10x-x-120"> small</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> processed</span><span 
+class="cmitt-10x-x-120"> (see</span><span 
+class="cmitt-10x-x-120"> &#x0022;.Machine&#x0022;)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-163">
+## [1] -Inf
+</div>
+<!--l. 2378--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2086"><span 
+class="cmtt-12">-</span></span><span id="textcolor2087"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2088"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2089"><span 
+class="cmtt-12">0</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2090"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> also</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> &#x0022;-Inf&#x0022;</span><span 
+class="cmitt-10x-x-120"> (similar</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> limit</span><span 
+class="cmitt-10x-x-120"> calculation</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> Mathematics)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-164">
+## [1] -Inf
+</div>
+<!--l. 2384--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2091"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2092"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2093"><span 
+class="cmtt-12">0</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2094"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2095"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2096"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2097"><span 
+class="cmtt-12">0</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2098"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> &#x0027;not</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> number&#x0027;</span><span 
+class="cmitt-10x-x-120"> because</span><span 
+class="cmitt-10x-x-120"> &#x0027;Inf</span><span 
+class="cmitt-10x-x-120"> -</span><span 
+class="cmitt-10x-x-120"> Inf&#x0027;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> defined</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-165">
+## [1] NaN
+</div>
+<!--l. 2390--><p class="nopar" >
+</p>
+</div>
+<!--l. 2396--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">S<span 
+class="small-caps">e</span><span 
+class="small-caps">q</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">f</span> <span 
+class="small-caps">l</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span> 0</span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2099"><span 
+class="cmtt-12">noVec</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2100"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2101"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2102"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0022;noVector&#x0022;</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> 6</span></span>
+<br /><span id="textcolor2103"><span 
+class="cmtt-12">noVec[</span></span><span id="textcolor2104"><span 
+class="cmtt-12">2</span></span><span id="textcolor2105"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2106"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> second</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> this</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> NA,</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> available</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-166">
+## [1] NA
+</div>
+<!--l. 2406--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2107"><span 
+class="cmtt-12">noVec[</span></span><span id="textcolor2108"><span 
+class="cmtt-12">-</span></span><span id="textcolor2109"><span 
+class="cmtt-12">1</span></span><span id="textcolor2110"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2111"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> omitts</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> 1st</span><span 
+class="cmitt-10x-x-120"> element,</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> empty</span><span 
+class="cmitt-10x-x-120"> numeric</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> length</span><span 
+class="cmitt-10x-x-120"> 0</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-167">
+## numeric(0)
+</div>
+<!--l. 2412--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2112"><span 
+class="cmtt-12">noVec</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2113"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2114"><span 
+class="cmtt-12">&#x0022;And</span><span 
+class="cmtt-12"> now,</span><span 
+class="cmtt-12"> the</span><span 
+class="cmtt-12"> same</span><span 
+class="cmtt-12"> procedure</span><span 
+class="cmtt-12"> is</span><span 
+class="cmtt-12"> done</span><span 
+class="cmtt-12"> with</span><span 
+class="cmtt-12"> an</span><span 
+class="cmtt-12"> object</span><span 
+class="cmtt-12"> of</span><span 
+class="cmtt-12"> type</span><span 
+class="cmtt-12"> character!&#x0022;</span></span>
+<br /><span id="textcolor2115"><span 
+class="cmtt-12">noVec[</span></span><span id="textcolor2116"><span 
+class="cmtt-12">-</span></span><span id="textcolor2117"><span 
+class="cmtt-12">1</span></span><span id="textcolor2118"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2119"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> omitts</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> 1st</span><span 
+class="cmitt-10x-x-120"> element,</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> empty</span><span 
+class="cmitt-10x-x-120"> chaaracter</span><span 
+class="cmitt-10x-x-120"> object</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> length</span><span 
+class="cmitt-10x-x-120"> 0</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-168">
+## character(0)
+</div>
+<!--l. 2419--><p class="nopar" >
+</p>
+</div>
+<!--l. 2425--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">N<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">s</span><span 
+class="small-caps">e</span><span 
+class="small-caps">q</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">h</span><span 
+class="small-caps">o</span><span 
+class="small-caps">w</span> <span 
+class="small-caps">t</span><span 
+class="small-caps">o</span> <span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">e</span><span 
+class="small-caps">l</span><span 
+class="small-caps">e</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">t</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span><span 
+class="small-caps">o</span><span 
+class="small-caps">f</span></span>
+</p><!--l. 2427--><p class="noindent" >Elements of vectors can be named and then called by their names
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2120"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2121"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2122"><span 
+class="cmtt-12">1</span></span><span id="textcolor2123"><span 
+class="cmtt-12">:</span></span><span id="textcolor2124"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2125"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0022;myVector&#x0022;</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> &#x0022;1:3&#x0022;</span></span>
+<br /><span id="textcolor2126"><span 
+class="cmtt-12">myVectorNames</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2127"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2128"><span 
+class="cmtt-12">c</span></span><span id="textcolor2129"><span 
+class="cmtt-12">(</span></span><span id="textcolor2130"><span 
+class="cmtt-12">&#x0022;one&#x0022;</span></span><span id="textcolor2131"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2132"><span 
+class="cmtt-12">&#x0022;two&#x0022;</span></span><span id="textcolor2133"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2134"><span 
+class="cmtt-12">&#x0022;three&#x0022;</span></span><span id="textcolor2135"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2136"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> assignes</span><span 
+class="cmitt-10x-x-120"> names</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> &#x0022;myVectorNames&#x0022;</span></span>
+<br /><span id="textcolor2137"><span 
+class="cmtt-12">names</span></span><span id="textcolor2138"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2139"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> &#x0022;NULL&#x0022;,</span><span 
+class="cmitt-10x-x-120"> i.e.</span><span 
+class="cmitt-10x-x-120"> there</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> no</span><span 
+class="cmitt-10x-x-120"> names</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-169">
+## NULL
+</div>
+<!--l. 2438--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2140"><span 
+class="cmtt-12">names</span></span><span id="textcolor2141"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2142"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2143"><span 
+class="cmtt-12">myVectorNames</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2144"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> names</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> get</span><span 
+class="cmitt-10x-x-120"> &#x0022;myVectorNames&#x0022;</span></span>
+<br /><span id="textcolor2145"><span 
+class="cmtt-12">names</span></span><span id="textcolor2146"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2147"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> names</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements,</span><span 
+class="cmitt-10x-x-120"> which</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> &#x0022;NULL&#x0022;</span><span 
+class="cmitt-10x-x-120"> any</span><span 
+class="cmitt-10x-x-120"> more</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-170">
+## [1] &#x0022;one&#x0022;   &#x0022;two&#x0022;   &#x0022;three&#x0022;
+</div>
+<!--l. 2445--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2148"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2149"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> named</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-171">
+##   one   two three
+ <br />##     1     2     3
+</div>
+<!--l. 2452--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2150"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor2151"><span 
+class="cmtt-12">2</span></span><span id="textcolor2152"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2153"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> can</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> accessed</span><span 
+class="cmitt-10x-x-120"> by</span><span 
+class="cmitt-10x-x-120"> their</span><span 
+class="cmitt-10x-x-120"> position</span><span 
+class="cmitt-10x-x-120"> ...</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-172">
+## two
+ <br />##   2
+</div>
+<!--l. 2459--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2154"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor2155"><span 
+class="cmtt-12">&#x0022;two&#x0022;</span></span><span id="textcolor2156"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2157"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> can</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> accessed</span><span 
+class="cmitt-10x-x-120"> by</span><span 
+class="cmitt-10x-x-120"> their</span><span 
+class="cmitt-10x-x-120"> name</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-173">
+## two
+ <br />##   2
+</div>
+<!--l. 2466--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2158"><span 
+class="cmitt-10x-x-120">#####</span></span>
+<br /><span id="textcolor2159"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> SKIP</span><span 
+class="cmitt-10x-x-120"> UNTIL</span><span 
+class="cmitt-10x-x-120"> --</span><span 
+class="cmitt-10x-x-120"> SESSION</span><span 
+class="cmitt-10x-x-120"> 6</span><span 
+class="cmitt-10x-x-120"> (Matrix</span><span 
+class="cmitt-10x-x-120"> ALGEBRA)</span><span 
+class="cmitt-10x-x-120"> --</span></span>
+<br /><span id="textcolor2160"><span 
+class="cmtt-12">myMatrix1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2161"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2162"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor2163"><span 
+class="cmtt-12">(</span></span><span id="textcolor2164"><span 
+class="cmtt-12">1</span></span><span id="textcolor2165"><span 
+class="cmtt-12">:</span></span><span id="textcolor2166"><span 
+class="cmtt-12">12</span></span><span id="textcolor2167"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2168"><span 
+class="cmtt-12">nrow</span></span><span id="textcolor2169"><span 
+class="cmtt-12">=</span></span><span id="textcolor2170"><span 
+class="cmtt-12">4</span></span><span id="textcolor2171"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2172"><span 
+class="cmtt-12">ncol</span></span><span id="textcolor2173"><span 
+class="cmtt-12">=</span></span><span id="textcolor2174"><span 
+class="cmtt-12">3</span></span><span id="textcolor2175"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor2176"><span 
+class="cmtt-12">myMatrixRowNames</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2177"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2178"><span 
+class="cmtt-12">c</span></span><span id="textcolor2179"><span 
+class="cmtt-12">(</span></span><span id="textcolor2180"><span 
+class="cmtt-12">&#x0022;A&#x0022;</span></span><span id="textcolor2181"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2182"><span 
+class="cmtt-12">&#x0022;B&#x0022;</span></span><span id="textcolor2183"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2184"><span 
+class="cmtt-12">&#x0022;C&#x0022;</span></span><span id="textcolor2185"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2186"><span 
+class="cmtt-12">&#x0022;D&#x0022;</span></span><span id="textcolor2187"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor2188"><span 
+class="cmtt-12">myMatrixColNames</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2189"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2190"><span 
+class="cmtt-12">c</span></span><span id="textcolor2191"><span 
+class="cmtt-12">(</span></span><span id="textcolor2192"><span 
+class="cmtt-12">&#x0022;One&#x0022;</span></span><span id="textcolor2193"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2194"><span 
+class="cmtt-12">&#x0022;Two&#x0022;</span></span><span id="textcolor2195"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2196"><span 
+class="cmtt-12">&#x0022;Three&#x0022;</span></span><span id="textcolor2197"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor2198"><span 
+class="cmtt-12">rownames</span></span><span id="textcolor2199"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2200"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> regarding</span><span 
+class="cmitt-10x-x-120"> matrices,</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> called</span><span 
+class="cmitt-10x-x-120"> rownames</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-174">
+## NULL
+</div>
+<!--l. 2477--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2201"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor2202"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2203"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> colnames,</span><span 
+class="cmitt-10x-x-120"> repectively</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-175">
+## NULL
+</div>
+<!--l. 2483--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2204"><span 
+class="cmtt-12">rownames</span></span><span id="textcolor2205"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2206"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2207"><span 
+class="cmtt-12">myMatrixRowNames</span></span>
+<br /><span id="textcolor2208"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor2209"><span 
+class="cmtt-12">(myMatrix1)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2210"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2211"><span 
+class="cmtt-12">myMatrixColNames</span></span>
+<br /><span id="textcolor2212"><span 
+class="cmtt-12">rownames</span></span><span id="textcolor2213"><span 
+class="cmtt-12">(myMatrix1)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-176">
+## [1] &#x0022;A&#x0022; &#x0022;B&#x0022; &#x0022;C&#x0022; &#x0022;D&#x0022;
+</div>
+<!--l. 2491--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2214"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor2215"><span 
+class="cmtt-12">(myMatrix1)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-177">
+## [1] &#x0022;One&#x0022;   &#x0022;Two&#x0022;   &#x0022;Three&#x0022;
+</div>
+<!--l. 2497--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2216"><span 
+class="cmtt-12">myMatrix1</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-178">
+##   One Two Three
+ <br />## A   1   5     9
+ <br />## B   2   6    10
+ <br />## C   3   7    11
+ <br />## D   4   8    12
+</div>
+<!--l. 2507--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2217"><span 
+class="cmtt-12">myMatrix1[</span></span><span id="textcolor2218"><span 
+class="cmtt-12">3</span></span><span id="textcolor2219"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2220"><span 
+class="cmtt-12">2</span></span><span id="textcolor2221"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-179">
+## [1] 7
+</div>
+<!--l. 2513--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2222"><span 
+class="cmtt-12">myMatrix1[</span></span><span id="textcolor2223"><span 
+class="cmtt-12">&#x0022;C&#x0022;</span></span><span id="textcolor2224"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2225"><span 
+class="cmtt-12">&#x0022;Two&#x0022;</span></span><span id="textcolor2226"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-180">
+## [1] 7
+</div>
+<!--l. 2519--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2227"><span 
+class="cmitt-10x-x-120">#####</span></span>
+</div>
+</div>
+</div>
+<!--l. 2528--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">S<span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">i</span><span 
+class="small-caps">p</span><span 
+class="small-caps">u</span><span 
+class="small-caps">l</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span></span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2228"><span 
+class="cmtt-12">somestring</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2229"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2230"><span 
+class="cmtt-12">c</span></span><span id="textcolor2231"><span 
+class="cmtt-12">(</span></span><span id="textcolor2232"><span 
+class="cmtt-12">&#x0022;I</span><span 
+class="cmtt-12"> &#x0022;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2233"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2234"><span 
+class="cmtt-12">&#x0022;go</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2235"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2236"><span 
+class="cmtt-12">&#x0022;swimming</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2237"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2238"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0022;somestring&#x0022;</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> character</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+<br /><span id="textcolor2239"><span 
+class="cmtt-12">anotherstring</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2240"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2241"><span 
+class="cmtt-12">c</span></span><span id="textcolor2242"><span 
+class="cmtt-12">(</span></span><span id="textcolor2243"><span 
+class="cmtt-12">&#x0022;and</span><span 
+class="cmtt-12"> Alex</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2244"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2245"><span 
+class="cmtt-12">&#x0022;to</span><span 
+class="cmtt-12"> the</span><span 
+class="cmtt-12"> sport</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2246"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2247"><span 
+class="cmtt-12">&#x0022;.&#x0022;</span></span><span id="textcolor2248"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2249"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> assigns</span><span 
+class="cmitt-10x-x-120"> another</span><span 
+class="cmitt-10x-x-120"> string</span></span>
+<br />
+<br /><span id="textcolor2250"><span 
+class="cmtt-12">substr</span></span><span id="textcolor2251"><span 
+class="cmtt-12">(somestring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2252"><span 
+class="cmtt-12">2</span></span><span id="textcolor2253"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2254"><span 
+class="cmtt-12">4</span></span><span id="textcolor2255"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2256"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> 2nd,</span><span 
+class="cmitt-10x-x-120"> 3rd</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> 4th</span><span 
+class="cmitt-10x-x-120"> character</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> every</span><span 
+class="cmitt-10x-x-120"> element</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-181">
+## [1] &#x0022; &#x0022;   &#x0022;o &#x0022;  &#x0022;wim&#x0022;
+</div>
+<!--l. 2540--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2257"><span 
+class="cmtt-12">substr</span></span><span id="textcolor2258"><span 
+class="cmtt-12">(anotherstring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2259"><span 
+class="cmtt-12">2</span></span><span id="textcolor2260"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2261"><span 
+class="cmtt-12">3</span></span><span id="textcolor2262"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2263"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> 2nd</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> 3rd</span><span 
+class="cmitt-10x-x-120"> character</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> every</span><span 
+class="cmitt-10x-x-120"> element</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-182">
+## [1] &#x0022;nd&#x0022; &#x0022;o &#x0022; &#x0022;&#x0022;
+</div>
+<!--l. 2546--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2264"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2265"><span 
+class="cmtt-12">(somestring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2266"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2267"><span 
+class="cmtt-12">=</span></span><span id="textcolor2268"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2269"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2270"><span 
+class="cmtt-12">collapse</span></span><span id="textcolor2271"><span 
+class="cmtt-12">=</span></span><span id="textcolor2272"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2273"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2274"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> concetenates</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-183">
+## [1] &#x0022;I go swimming &#x0022;
+</div>
+<!--l. 2552--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2275"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2276"><span 
+class="cmtt-12">(</span></span><span id="textcolor2277"><span 
+class="cmtt-12">&#x0022;and</span><span 
+class="cmtt-12"> Pat</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2278"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2279"><span 
+class="cmtt-12">&#x0022;to</span><span 
+class="cmtt-12"> the</span><span 
+class="cmtt-12"> sport&#x0022;</span></span><span id="textcolor2280"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2281"><span 
+class="cmtt-12">&#x0022;.&#x0022;</span></span><span id="textcolor2282"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2283"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2284"><span 
+class="cmtt-12">=</span></span><span id="textcolor2285"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2286"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2287"><span 
+class="cmtt-12">collapse</span></span><span id="textcolor2288"><span 
+class="cmtt-12">=</span></span><span id="textcolor2289"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2290"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-184">
+## [1] &#x0022;and Pat to the sport.&#x0022;
+</div>
+<!--l. 2558--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2291"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2292"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2293"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2294"><span 
+class="cmtt-12">(somestring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2295"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2296"><span 
+class="cmtt-12">=</span></span><span id="textcolor2297"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2298"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2299"><span 
+class="cmtt-12">collapse</span></span><span id="textcolor2300"><span 
+class="cmtt-12">=</span></span><span id="textcolor2301"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2302"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2303"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2304"><span 
+class="cmtt-12">(anotherstring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2305"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2306"><span 
+class="cmtt-12">=</span></span><span id="textcolor2307"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2308"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2309"><span 
+class="cmtt-12">collapse</span></span><span id="textcolor2310"><span 
+class="cmtt-12">=</span></span><span id="textcolor2311"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2312"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2313"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2314"><span 
+class="cmtt-12">=</span></span><span id="textcolor2315"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span>
+<br /><span id="textcolor2316"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-185">
+## [1] &#x0022;I go swimming and Alex to the sport .&#x0022;
+</div>
+<!--l. 2568--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2317"><span 
+class="cmtt-12">(newstring</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2318"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2319"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2320"><span 
+class="cmtt-12">(somestring,</span><span 
+class="cmtt-12"> anotherstring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2321"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2322"><span 
+class="cmtt-12">=</span></span><span id="textcolor2323"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2324"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2325"><span 
+class="cmtt-12">collapse</span></span><span id="textcolor2326"><span 
+class="cmtt-12">=</span></span><span id="textcolor2327"><span 
+class="cmtt-12">&#x0022;</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2328"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-186">
+## [1] &#x0022;I and Alex  go to the sport  swimming .&#x0022;
+</div>
+<!--l. 2574--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2329"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> &#x0022;sep&#x0022;</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> separates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> on</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> i-th</span><span 
+class="cmitt-10x-x-120"> position</span><span 
+class="cmitt-10x-x-120"> (&#x0022;intra&#x0022;-position-sep)</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor2330"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> &#x0022;collapse&#x0022;</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> separates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> pasted</span><span 
+class="cmitt-10x-x-120"> i-th</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> from</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> pasted</span><span 
+class="cmitt-10x-x-120"> j-th</span><span 
+class="cmitt-10x-x-120"> elements</span></span>
+<br />
+<br /><span id="textcolor2331"><span 
+class="cmtt-12">strsplit</span></span><span id="textcolor2332"><span 
+class="cmtt-12">(newstring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2333"><span 
+class="cmtt-12">&#x0022;</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2334"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2335"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> splits</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> string</span><span 
+class="cmitt-10x-x-120"> where</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmitt-10x-x-120"> occurs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-187">
+## [[1]]
+ <br />##  [1] &#x0022;I&#x0022;        &#x0022;and&#x0022;      &#x0022;Alex&#x0022;     &#x0022;&#x0022;         &#x0022;go&#x0022;       &#x0022;to&#x0022;
+ <br />##  [7] &#x0022;the&#x0022;      &#x0022;sport&#x0022;    &#x0022;&#x0022;         &#x0022;swimming&#x0022; &#x0022;.&#x0022;
+</div>
+<!--l. 2585--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2336"><span 
+class="cmtt-12">strsplit</span></span><span id="textcolor2337"><span 
+class="cmtt-12">(newstring,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2338"><span 
+class="cmtt-12">NULL</span></span><span id="textcolor2339"><span 
+class="cmtt-12">)[[</span></span><span id="textcolor2340"><span 
+class="cmtt-12">1</span></span><span id="textcolor2341"><span 
+class="cmtt-12">]]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2342"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> splits</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> string</span><span 
+class="cmitt-10x-x-120"> everywhere</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-188">
+##  [1] &#x0022;I&#x0022; &#x0022; &#x0022; &#x0022;a&#x0022; &#x0022;n&#x0022; &#x0022;d&#x0022; &#x0022; &#x0022; &#x0022;A&#x0022; &#x0022;l&#x0022; &#x0022;e&#x0022; &#x0022;x&#x0022; &#x0022; &#x0022; &#x0022; &#x0022; &#x0022;g&#x0022; &#x0022;o&#x0022; &#x0022; &#x0022; &#x0022;t&#x0022; &#x0022;o&#x0022; &#x0022; &#x0022; &#x0022;t&#x0022;
+ <br />## [20] &#x0022;h&#x0022; &#x0022;e&#x0022; &#x0022; &#x0022; &#x0022;s&#x0022; &#x0022;p&#x0022; &#x0022;o&#x0022; &#x0022;r&#x0022; &#x0022;t&#x0022; &#x0022; &#x0022; &#x0022; &#x0022; &#x0022;s&#x0022; &#x0022;w&#x0022; &#x0022;i&#x0022; &#x0022;m&#x0022; &#x0022;m&#x0022; &#x0022;i&#x0022; &#x0022;n&#x0022; &#x0022;g&#x0022; &#x0022; &#x0022;
+ <br />## [39] &#x0022;.&#x0022;
+</div>
+<!--l. 2593--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2343"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> &#x0022;[[1]]&#x0022;</span><span 
+class="cmitt-10x-x-120"> picks</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> list</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br />
+<br /><span id="textcolor2344"><span 
+class="cmtt-12">gsub</span></span><span id="textcolor2345"><span 
+class="cmtt-12">(</span></span><span id="textcolor2346"><span 
+class="cmtt-12">&#x0022;</span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2347"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2348"><span 
+class="cmtt-12">&#x0022;</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2349"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> newstring)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2350"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> substitues</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> newstring</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-189">
+## [1] &#x0022;I and Alex go to the sport swimming .&#x0022;
+</div>
+<!--l. 2601--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2351"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Let</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> aim</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> extract</span><span 
+class="cmitt-10x-x-120"> certain</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> various</span><span 
+class="cmitt-10x-x-120"> objects</span></span>
+<br /><span id="textcolor2352"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Thus</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> name</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> objects</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> specified</span></span>
+<br /><span id="textcolor2353"><span 
+class="cmtt-12">myObjectName</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2354"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2355"><span 
+class="cmtt-12">c</span></span><span id="textcolor2356"><span 
+class="cmtt-12">(</span></span><span id="textcolor2357"><span 
+class="cmtt-12">&#x0022;myMatrix&#x0022;</span></span><span id="textcolor2358"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2359"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> only</span><span 
+class="cmitt-10x-x-120"> one</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> this</span><span 
+class="cmitt-10x-x-120"> case</span></span>
+<br /><span id="textcolor2360"><span 
+class="cmtt-12">i</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2361"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2362"><span 
+class="cmtt-12">3L</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2363"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> remember:</span><span 
+class="cmitt-10x-x-120"> &#x0022;L&#x0022;</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> integer</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor2364"><span 
+class="cmtt-12">j</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2365"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2366"><span 
+class="cmtt-12">2L</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2367"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2368"><span 
+class="cmtt-12">(myObjectName,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2369"><span 
+class="cmtt-12">&#x0022;[&#x0022;</span></span><span id="textcolor2370"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> i,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2371"><span 
+class="cmtt-12">&#x0022;,</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2372"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> j,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2373"><span 
+class="cmtt-12">&#x0022;]&#x0022;</span></span><span id="textcolor2374"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2375"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2376"><span 
+class="cmtt-12">=</span></span><span id="textcolor2377"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2378"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-190">
+## [1] &#x0022;myMatrix[3, 2]&#x0022;
+</div>
+<!--l. 2612--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor2379"><span 
+class="cmtt-12">parse</span></span><span id="textcolor2380"><span 
+class="cmtt-12">(</span></span><span id="textcolor2381"><span 
+class="cmtt-12">text</span></span><span id="textcolor2382"><span 
+class="cmtt-12">=</span></span><span id="textcolor2383"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2384"><span 
+class="cmtt-12">(myObjectName,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2385"><span 
+class="cmtt-12">&#x0022;[&#x0022;</span></span><span id="textcolor2386"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> i,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2387"><span 
+class="cmtt-12">&#x0022;,</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2388"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> j,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2389"><span 
+class="cmtt-12">&#x0022;]&#x0022;</span></span><span id="textcolor2390"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2391"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2392"><span 
+class="cmtt-12">=</span></span><span id="textcolor2393"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2394"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-191">
+## expression(myMatrix[3, 2])
+</div>
+<!--l. 2618--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2395"><span 
+class="cmtt-12">eval</span></span><span id="textcolor2396"><span 
+class="cmtt-12">(</span></span><span id="textcolor2397"><span 
+class="cmtt-12">parse</span></span><span id="textcolor2398"><span 
+class="cmtt-12">(</span></span><span id="textcolor2399"><span 
+class="cmtt-12">text</span></span><span id="textcolor2400"><span 
+class="cmtt-12">=</span></span><span id="textcolor2401"><span 
+class="cmtt-12">paste</span></span><span id="textcolor2402"><span 
+class="cmtt-12">(myObjectName,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2403"><span 
+class="cmtt-12">&#x0022;[&#x0022;</span></span><span id="textcolor2404"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> i,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2405"><span 
+class="cmtt-12">&#x0022;,</span><span 
+class="cmtt-12"> &#x0022;</span></span><span id="textcolor2406"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> j,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2407"><span 
+class="cmtt-12">&#x0022;]&#x0022;</span></span><span id="textcolor2408"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor2409"><span 
+class="cmtt-12">sep</span></span><span id="textcolor2410"><span 
+class="cmtt-12">=</span></span><span id="textcolor2411"><span 
+class="cmtt-12">&#x0022;&#x0022;</span></span><span id="textcolor2412"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+<!--l. 2624--><p class="noindent" ><span 
+class="cmtt-12">## Error in eval(parse(text = paste(myObjectName, &#x0022;[&#x0022;, i, &#x0022;, &#x0022;, j, &#x0022;]&#x0022;, sep = &#x0022;&#x0022;))):</span>
+<span 
+class="cmtt-12">object ’myMatrix’ not found</span></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor2413"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Evaluates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> parsed</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> pasted</span><span 
+class="cmitt-10x-x-120"> object.</span></span>
+</div>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<!--l. 2639--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse5.html" >next</a>] [<a 
+href="QuMWikiMasterse3.html" >prev</a>] [<a 
+href="QuMWikiMasterse3.html#tailQuMWikiMasterse3.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse4.html" >front</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse4.html" >up</a>] </p></div>
+<!--l. 2639--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse4.html"></a> </p> 
+</body> 
+</html>

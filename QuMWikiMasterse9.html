@@ -1,0 +1,1758 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QuM2 – Session 2</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 4337--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse10.html" >next</a>] [<a 
+href="QuMWikiMasterse8.html" >prev</a>] [<a 
+href="QuMWikiMasterse8.html#tailQuMWikiMasterse8.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse9.html">tail</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse9.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
+ id="x13-120002.2"></a>QuM2 – Session 2</h3>
+<!--l. 4339--><p class="noindent" >—
+</p><!--l. 4341--><p class="noindent" >Edit (2019-03-18):
+</p><!--l. 4343--><p class="noindent" >As you may have noticed, some objects have been used, which were not created initially.
+</p>
+      <ul class="itemize1">
+      <li class="itemize"> Why have I not noticed that at first sight?
+      </li>
+      <li class="itemize"> As you know, creating an <span 
+class="cmss-12">R</span>script is iteratively done, i. e. a code chunk is written, revised
+      and rewritten.
+      </li>
+      <li class="itemize">  Consequently,  I  advise  adding  <span id="textcolor4245"><span 
+class="cmtt-12">rm(list=setdiff(ls(), c(&#x0022;These&#x0022;, &#x0022;variables&#x0022;,</span>
+      <span 
+class="cmtt-12">&#x0022;will&#x0022;, &#x0022;be&#x0022;, &#x0022;kept&#x0022;)))</span></span>  at   the   beginning   of   your   code.   This   deletes   every
+      (none-hidden) object except the listed objects.
+      </li>
+      <li class="itemize"> Additionally, to explicitly perform a garbage collection (give back unused memory to
+      the operating system), <span id="textcolor4246"><span 
+class="cmtt-12">gc()</span></span> can be called.</li></ul>
+<!--l. 4351--><p class="noindent" >Thus
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4247"><span 
+class="cmtt-12">rm</span></span><span id="textcolor4248"><span 
+class="cmtt-12">(</span></span><span id="textcolor4249"><span 
+class="cmtt-12">list</span></span><span id="textcolor4250"><span 
+class="cmtt-12">=</span></span><span id="textcolor4251"><span 
+class="cmtt-12">setdiff</span></span><span id="textcolor4252"><span 
+class="cmtt-12">(</span></span><span id="textcolor4253"><span 
+class="cmtt-12">ls</span></span><span id="textcolor4254"><span 
+class="cmtt-12">(),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4255"><span 
+class="cmtt-12">c</span></span><span id="textcolor4256"><span 
+class="cmtt-12">(</span></span><span id="textcolor4257"><span 
+class="cmtt-12">&#x0022;MyFilePath&#x0022;</span></span><span id="textcolor4258"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4259"><span 
+class="cmtt-12">&#x0022;MyFilePathOut&#x0022;</span></span><span id="textcolor4260"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4261"><span 
+class="cmtt-12">&#x0022;MyRnwFile&#x0022;</span></span><span id="textcolor4262"><span 
+class="cmtt-12">)))</span></span>
+<br /><span id="textcolor4263"><span 
+class="cmtt-12">gc</span></span><span id="textcolor4264"><span 
+class="cmtt-12">()</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-294">
+##           used (Mb) gc trigger  (Mb) max used  (Mb)
+ <br />## Ncells 1243853 66.5    4983144 266.2  6576090 351.3
+ <br />## Vcells 2869338 21.9   25444568 194.2 59230971 451.9
+</div>
+<!--l. 4363--><p class="nopar" >
+</p>
+</div>
+<!--l. 4367--><p class="noindent" >—
+</p><!--l. 4370--><p class="noindent" ><span id="textcolor4265">Profit Maximization under production constraints</span>
+</p><!--l. 4371--><p class="noindent" >What combination of goods <!--l. 4371--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math>
+and <!--l. 4371--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>y</mi></math>
+should a profit-maximizing firm produce when its total profit function is
+<!--tex4ht:inline--></p><!--l. 4372--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" >
+                           <mi 
+>Π</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mi 
+>x</mi><mo 
+class="MathClass-punc">,</mo><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <mn>8</mn><mn>0</mn><mi 
+>x</mi> <mo 
+class="MathClass-bin">−</mo> <mn>2</mn><msup><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+> <mo 
+class="MathClass-bin">−</mo> <mi 
+>x</mi><mi 
+>y</mi> <mo 
+class="MathClass-bin">−</mo> <mn>3</mn><msup><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mn>2</mn></mrow></msup 
+> <mo 
+class="MathClass-bin">+</mo> <mn>1</mn><mn>0</mn><mn>0</mn><mi 
+>y</mi>
+</math>
+<!--l. 4372--><p class="nopar" > and its maximum output capacity is <!--l. 4373--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>2</mn></math>.
+Calculate the maximum profits <!--l. 4374--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Π</mi></math>
+as well as the effect on profit if the maximum capacity is expanded by
+<!--l. 4374--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math>
+unit.
+</p><!--l. 4376--><p class="noindent" >In this case, a profit function is already given.
+</p><!--l. 4378--><p class="noindent" >As a first step, the profit function has to be transformed into an <span 
+class="cmss-12">R</span>function.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4266"><span 
+class="cmtt-12">profit</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4267"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4268"><span 
+class="cmtt-12">function</span></span><span id="textcolor4269"><span 
+class="cmtt-12">(</span></span><span id="textcolor4270"><span 
+class="cmtt-12">quantity</span></span><span id="textcolor4271"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4272"><span 
+class="cmtt-12">80</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4273"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4274"><span 
+class="cmtt-12">quantity[</span></span><span id="textcolor4275"><span 
+class="cmtt-12">1</span></span><span id="textcolor4276"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4277"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4278"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4279"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4280"><span 
+class="cmtt-12">quantity[</span></span><span id="textcolor4281"><span 
+class="cmtt-12">1</span></span><span id="textcolor4282"><span 
+class="cmtt-12">]</span></span><span id="textcolor4283"><span 
+class="cmtt-12">^</span></span><span id="textcolor4284"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4285"><span 
+class="cmtt-12">-</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4286"><span 
+class="cmtt-12">quantity[</span></span><span id="textcolor4287"><span 
+class="cmtt-12">1</span></span><span id="textcolor4288"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4289"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4290"><span 
+class="cmtt-12">quantity[</span></span><span id="textcolor4291"><span 
+class="cmtt-12">2</span></span><span id="textcolor4292"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4293"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4294"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4295"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4296"><span 
+class="cmtt-12">quantity[</span></span><span id="textcolor4297"><span 
+class="cmtt-12">2</span></span><span id="textcolor4298"><span 
+class="cmtt-12">]</span></span><span id="textcolor4299"><span 
+class="cmtt-12">^</span></span><span id="textcolor4300"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4301"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4302"><span 
+class="cmtt-12">100</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4303"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4304"><span 
+class="cmtt-12">quantity[</span></span><span id="textcolor4305"><span 
+class="cmtt-12">2</span></span><span id="textcolor4306"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+</div>
+<!--l. 4390--><p class="noindent" >Furthermore, a grid is generated and contourlines are plotted to see the indifference curves of the
+<span id="textcolor4307"><span 
+class="cmtt-12">profit</span></span> function and the restriction
+                                                                                            
+                                                                                            
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4308"><span 
+class="cmtt-12">fineness</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4309"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4310"><span 
+class="cmtt-12">1000</span></span>
+<br /><span id="textcolor4311"><span 
+class="cmtt-12">xmesh</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4312"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4313"><span 
+class="cmtt-12">seq</span></span><span id="textcolor4314"><span 
+class="cmtt-12">(</span></span><span id="textcolor4315"><span 
+class="cmtt-12">0</span></span><span id="textcolor4316"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4317"><span 
+class="cmtt-12">12</span></span><span id="textcolor4318"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4319"><span 
+class="cmtt-12">length.out</span></span><span id="textcolor4320"><span 
+class="cmtt-12">=fineness)</span></span>
+<br /><span id="textcolor4321"><span 
+class="cmtt-12">ymesh</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4322"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4323"><span 
+class="cmtt-12">seq</span></span><span id="textcolor4324"><span 
+class="cmtt-12">(</span></span><span id="textcolor4325"><span 
+class="cmtt-12">0</span></span><span id="textcolor4326"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4327"><span 
+class="cmtt-12">12</span></span><span id="textcolor4328"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4329"><span 
+class="cmtt-12">length.out</span></span><span id="textcolor4330"><span 
+class="cmtt-12">=fineness)</span></span>
+<br /><span id="textcolor4331"><span 
+class="cmtt-12">mesh</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4332"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4333"><span 
+class="cmtt-12">expand.grid</span></span><span id="textcolor4334"><span 
+class="cmtt-12">(xmesh,</span><span 
+class="cmtt-12"> ymesh)</span></span>
+<br /><span id="textcolor4335"><span 
+class="cmtt-12">z</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4336"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4337"><span 
+class="cmtt-12">apply</span></span><span id="textcolor4338"><span 
+class="cmtt-12">(mesh,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4339"><span 
+class="cmtt-12">1</span></span><span id="textcolor4340"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> profit)</span></span>
+<br /><span id="textcolor4341"><span 
+class="cmtt-12">str</span></span><span id="textcolor4342"><span 
+class="cmtt-12">(z)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-295">
+##  num [1:1000000] 0 0.961 1.921 2.88 3.839 ...
+</div>
+<!--l. 4405--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4343"><span 
+class="cmtt-12">z</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4344"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4345"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor4346"><span 
+class="cmtt-12">(z,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4347"><span 
+class="cmtt-12">ncol</span></span><span id="textcolor4348"><span 
+class="cmtt-12">=fineness,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4349"><span 
+class="cmtt-12">byrow</span></span><span id="textcolor4350"><span 
+class="cmtt-12">=</span></span><span id="textcolor4351"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor4352"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4353"><span 
+class="cmtt-12">str</span></span><span id="textcolor4354"><span 
+class="cmtt-12">(z)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-296">
+##  num [1:1000, 1:1000] 0 0.961 1.921 2.88 3.839 ...
+</div>
+<!--l. 4412--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4355"><span 
+class="cmtt-12">contour</span></span><span id="textcolor4356"><span 
+class="cmtt-12">(xmesh,</span><span 
+class="cmtt-12"> ymesh,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4357"><span 
+class="cmtt-12">z</span></span><span id="textcolor4358"><span 
+class="cmtt-12">=z,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4359"><span 
+class="cmtt-12">nlevels</span></span><span id="textcolor4360"><span 
+class="cmtt-12">=</span></span><span id="textcolor4361"><span 
+class="cmtt-12">40</span></span><span id="textcolor4362"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4363"><span 
+class="cmtt-12">abline</span></span><span id="textcolor4364"><span 
+class="cmtt-12">(</span></span><span id="textcolor4365"><span 
+class="cmtt-12">a</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4366"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4367"><span 
+class="cmtt-12">12</span></span><span id="textcolor4368"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4369"><span 
+class="cmtt-12">b</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4370"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4371"><span 
+class="cmtt-12">-</span></span><span id="textcolor4372"><span 
+class="cmtt-12">1</span></span><span id="textcolor4373"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4374"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4375"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4376"><span 
+class="cmtt-12">&#x0022;red&#x0022;</span></span><span id="textcolor4377"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x13-120013"></a>
+                                                                                            
+                                                                                            
+<!--l. 4418--><p class="noindent" ><img 
+src="figure/session2_2-1.png" alt="PIC"  
+width="481" height="481"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.3: </span><span  
+class="content">A contour plot with a constraint.</span></div><!--tex4ht:label?: x13-120013 -->
+                                                                                            
+                                                                                            
+</div><hr class="endfigure" />
+<!--l. 4425--><p class="noindent" >The <span id="textcolor4378"><a 
+href="QuMWikiMasterli5.html#glo:constrOptim"><span 
+class="cmtt-12">constrOptim</span></a></span> command is used to evaluate the quantities of goods, which maximize the
+profits subject to the given restriction. According to the form of the restriction inequality
+(<!--l. 4426--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mo 
+class="MathClass-rel">≥</mo></math>), the
+<!--l. 4426--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>u</mi></mstyle></math> matrix
+and the <!--l. 4426--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mstyle mathvariant="bold"><mi 
+>c</mi></mstyle></math>
+vector are the following:
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4379"><span 
+class="cmtt-12">(matrix.u</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4380"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4381"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor4382"><span 
+class="cmtt-12">(</span></span><span id="textcolor4383"><span 
+class="cmtt-12">c</span></span><span id="textcolor4384"><span 
+class="cmtt-12">(</span></span><span id="textcolor4385"><span 
+class="cmtt-12">1</span></span><span id="textcolor4386"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4387"><span 
+class="cmtt-12">0</span></span><span id="textcolor4388"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4389"><span 
+class="cmtt-12">0</span></span><span id="textcolor4390"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4391"><span 
+class="cmtt-12">1</span></span><span id="textcolor4392"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4393"><span 
+class="cmtt-12">-</span></span><span id="textcolor4394"><span 
+class="cmtt-12">1</span></span><span id="textcolor4395"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4396"><span 
+class="cmtt-12">-</span></span><span id="textcolor4397"><span 
+class="cmtt-12">1</span></span><span id="textcolor4398"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4399"><span 
+class="cmtt-12">1</span></span><span id="textcolor4400"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4401"><span 
+class="cmtt-12">1</span></span><span id="textcolor4402"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4403"><span 
+class="cmtt-12">4</span></span><span id="textcolor4404"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4405"><span 
+class="cmtt-12">2</span></span><span id="textcolor4406"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4407"><span 
+class="cmtt-12">byrow</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4408"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4409"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor4410"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-297">
+##      [,1] [,2]
+ <br />## [1,]    1    0
+ <br />## [2,]    0    1
+ <br />## [3,]   -1   -1
+ <br />## [4,]    1    1
+</div>
+<!--l. 4440--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4411"><span 
+class="cmtt-12">(vector.c</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4412"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4413"><span 
+class="cmtt-12">c</span></span><span id="textcolor4414"><span 
+class="cmtt-12">(</span></span><span id="textcolor4415"><span 
+class="cmtt-12">0</span></span><span id="textcolor4416"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4417"><span 
+class="cmtt-12">0</span></span><span id="textcolor4418"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4419"><span 
+class="cmtt-12">-</span></span><span id="textcolor4420"><span 
+class="cmtt-12">12</span></span><span id="textcolor4421"><span 
+class="cmtt-12">-</span></span><span id="textcolor4422"><span 
+class="cmtt-12">1e-5</span></span><span id="textcolor4423"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4424"><span 
+class="cmtt-12">12</span></span><span id="textcolor4425"><span 
+class="cmtt-12">-</span></span><span id="textcolor4426"><span 
+class="cmtt-12">1e-5</span></span><span id="textcolor4427"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-298">
+## [1]   0.00000   0.00000 -12.00001  11.99999
+</div>
+<!--l. 4446--><p class="nopar" >
+</p>
+</div>
+<!--l. 4450--><p class="noindent" >It can be seen that the quantity <!--l. 4450--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math> of
+the first good and the quantity <!--l. 4450--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>y</mi></math> of the
+second good have to be greater than <!--l. 4450--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>0</mn></math>.
+The explicitly mentioned constraint <!--l. 4451--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>y</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>2</mn></math>
+is implemented in two ways: </p>
+      <ul class="itemize1">
+      <li class="itemize"><!--l. 4453--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" > <mo 
+class="MathClass-bin">−</mo> <mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-bin">−</mo><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">≥</mo><mo 
+class="MathClass-bin">−</mo><mn>1</mn><mn>2</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>0</mn><mn>0</mn><mn>1</mn></math>
+      <!--l. 4455--><p class="noindent" >This equation states that at most 12 units (of a mixture of both goods) can be used
+      (<!--l. 4455--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-bin">−</mo><mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-bin">−</mo><mi 
+>y</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">≥</mo> <mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow><mn>1</mn><mn>2</mn> <mo 
+class="MathClass-rel">⇔</mo> <mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>y</mi> <mo 
+class="MathClass-rel">≤</mo> <mn>1</mn><mn>2</mn></math>).
+      Additionally a tolerance is added to the original constraint, respectively subtracted from
+      the transformed constraint, to make it numerically solvable.
+      </p></li>
+      <li class="itemize"><!--l. 4457--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>y</mi> <mo 
+class="MathClass-rel">≥</mo> <mn>1</mn><mn>1</mn><mo 
+class="MathClass-punc">.</mo><mn>9</mn><mn>9</mn><mn>9</mn><mn>9</mn><mn>9</mn></math>
+      <!--l. 4459--><p class="noindent" >This equation states that at least 12 units (of a mixture of both goods) shall be used
+      (<!--l. 4459--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi> <mo 
+class="MathClass-bin">+</mo> <mi 
+>y</mi> <mo 
+class="MathClass-rel">≥</mo> <mn>1</mn><mn>2</mn></math>).
+      This constraint is needed due to the fact that our explicitly given constraint targets using
+      all resources. In this special case, the constraint is not needed, but clarifies the ambition
+      of the problem. Additionally a tolerance is subtracted from the original constraint, to
+      make it numerically solvable.</p></li></ul>
+<!--l. 4462--><p class="noindent" >Using the <span id="textcolor4428"><a 
+href="QuMWikiMasterli5.html#glo:constrOptim"><span 
+class="cmtt-12">constrOptim</span></a></span> function, initial values for our input variables have to be used. Note that
+those have to be inside the feasible set of possible values.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4429"><span 
+class="cmtt-12">sol.cOpt</span></span><span id="textcolor4430"><span 
+class="cmtt-12">=</span></span><span id="textcolor4431"><span 
+class="cmtt-12">constrOptim</span></span><span id="textcolor4432"><span 
+class="cmtt-12">(</span></span><span id="textcolor4433"><span 
+class="cmtt-12">c</span></span><span id="textcolor4434"><span 
+class="cmtt-12">(</span></span><span id="textcolor4435"><span 
+class="cmtt-12">6</span></span><span id="textcolor4436"><span 
+class="cmtt-12">,</span></span><span id="textcolor4437"><span 
+class="cmtt-12">6</span></span><span id="textcolor4438"><span 
+class="cmtt-12">),</span><span 
+class="cmtt-12"> profit,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4439"><span 
+class="cmtt-12">grad</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4440"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4441"><span 
+class="cmtt-12">NULL</span></span><span id="textcolor4442"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4443"><span 
+class="cmtt-12">ui</span></span><span id="textcolor4444"><span 
+class="cmtt-12">=matrix.u,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4445"><span 
+class="cmtt-12">ci</span></span><span id="textcolor4446"><span 
+class="cmtt-12">=vector.c,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4447"><span 
+class="cmtt-12">control</span></span><span id="textcolor4448"><span 
+class="cmtt-12">=</span></span><span id="textcolor4449"><span 
+class="cmtt-12">list</span></span><span id="textcolor4450"><span 
+class="cmtt-12">(</span></span><span id="textcolor4451"><span 
+class="cmtt-12">fnscale</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4452"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4453"><span 
+class="cmtt-12">-</span></span><span id="textcolor4454"><span 
+class="cmtt-12">1</span></span><span id="textcolor4455"><span 
+class="cmtt-12">))</span></span>
+<br /><span id="textcolor4456"><span 
+class="cmtt-12">str</span></span><span id="textcolor4457"><span 
+class="cmtt-12">(sol.cOpt)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4458"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> notice</span><span 
+class="cmitt-10x-x-120"> that</span><span 
+class="cmitt-10x-x-120"> optimal</span><span 
+class="cmitt-10x-x-120"> value</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> lagrange</span><span 
+class="cmitt-10x-x-120"> multiplier</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> part</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> output!</span><span 
+class="cmitt-10x-x-120"> </span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-299">
+## List of 7
+ <br />##  $ par             : num [1:2] 5 7
+ <br />##  $ value           : num 868
+ <br />##  $ counts          : Named num [1:2] 187 NA
+ <br />##   ..- attr(*, &#x0022;names&#x0022;)= chr [1:2] &#x0022;function&#x0022; &#x0022;gradient&#x0022;
+ <br />##  $ convergence     : int 0
+ <br />##  $ message         : NULL
+ <br />##  $ outer.iterations: int 2
+ <br />##  $ barrier.value   : num 0.000967
+</div>
+<!--l. 4482--><p class="nopar" >
+</p>
+</div>
+<!--l. 4486--><p class="noindent" >The code chunk:
+</p>
+<div class="fancyvrb" id="fancyvrb1"><a 
+ id="x13-12003r1"></a><span id="textcolor4459"><span 
+class="cmtt-12">## </span></span><span 
+class="cmtt-12">The</span><span 
+class="cmtt-12"> function</span><span 
+class="cmtt-12"> is</span><span 
+class="cmtt-12"> maximized</span><span 
+class="cmtt-12"> at</span><span 
+class="cmtt-12"> the</span><span 
+class="cmtt-12"> input</span><span 
+class="cmtt-12"> values</span><span 
+class="cmtt-12"> $x^\ast</span><span 
+class="cmtt-12"> =</span><span 
+class="cmtt-12"> \#Sexpr{sol.cOpt$par[1]}$</span>
+<br class="fancyvrb" /><a 
+ id="x13-12005r2"></a><span id="textcolor4460"><span 
+class="cmtt-12">## </span></span><span 
+class="cmtt-12">and</span><span 
+class="cmtt-12"> $y^\ast</span><span 
+class="cmtt-12"> =</span><span 
+class="cmtt-12"> \#Sexpr{sol.cOpt$par[2]}$</span><br class="fancyvrb" /><a 
+ id="x13-12007r3"></a><span id="textcolor4461"><span 
+class="cmtt-12">## </span></span><span 
+class="cmtt-12">with</span><span 
+class="cmtt-12"> a</span><span 
+class="cmtt-12"> maximum</span><span 
+class="cmtt-12"> value</span><span 
+class="cmtt-12"> $\Pi(x^\ast,</span><span 
+class="cmtt-12"> y^\ast)</span><span 
+class="cmtt-12"> =</span><span 
+class="cmtt-12"> \#Sexpr{sol.cOpt$value}$.</span></div>
+<!--l. 4493--><p class="noindent" >compiles – in the “knitted” version (<span 
+class="cmtt-12">knitR</span>, then <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>can be used) of the source code –
+to
+</p><!--l. 4495--><p class="noindent" >The function is maximized at the input values
+<!--l. 4495--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">∗</mo></mrow></msup 
+> <mo 
+class="MathClass-rel">=</mo> <mn>4</mn><mo 
+class="MathClass-punc">.</mo><mn>9</mn><mn>9</mn><mn>9</mn><mn>0</mn><mn>2</mn><mn>3</mn><mn>5</mn></math> and
+<!--l. 4496--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msup><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">∗</mo></mrow></msup 
+> <mo 
+class="MathClass-rel">=</mo> <mn>7</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>0</mn><mn>9</mn><mn>8</mn><mn>6</mn><mn>5</mn></math> with a maximum
+value <!--l. 4497--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Π</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msup><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">∗</mo></mrow></msup 
+><mo 
+class="MathClass-punc">,</mo><msup><mrow 
+><mi 
+>y</mi></mrow><mrow 
+><mo 
+class="MathClass-bin">∗</mo></mrow></msup 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <mn>8</mn><mn>6</mn><mn>8</mn><mo 
+class="MathClass-punc">.</mo><mn>0</mn><mn>0</mn><mn>0</mn><mn>5</mn><mn>2</mn><mn>3</mn><mn>3</mn></math>.
+</p><!--l. 4501--><p class="noindent" ><span id="textcolor4462">Linear programming</span>
+</p><!--l. 4502--><p class="noindent" >A firm produces sleeping bags <!--l. 4502--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+></math>
+and tents <!--l. 4502--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math>. Its
+profit is <!--l. 4503--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn><mn>0</mn></math> dollars per
+sleeping bag and <!--l. 4503--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn><mn>0</mn></math>
+dollars per tent.
+</p>
+<div class="tabular"> <table id="TBL-18" class="tabular" 
+ 
+><colgroup id="TBL-18-1g"><col 
+id="TBL-18-1" /><col 
+id="TBL-18-2" /><col 
+id="TBL-18-3" /><col 
+id="TBL-18-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-18-1-"><td  style="text-align:right; white-space:nowrap;" id="TBL-18-1-1"  
+class="td11">Each sleeping bag requires</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-1-2"  
+class="td11"><!--l. 4506--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>2</mn></math> hours for cutting,</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-1-3"  
+class="td11"><!--l. 4506--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn></math> hours for sewing and</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-1-4"  
+class="td11"><!--l. 4506--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math> hour for waterproofing.         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-18-2-"><td  style="text-align:right; white-space:nowrap;" id="TBL-18-2-1"  
+class="td11">       Each tent requires</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-2-2"  
+class="td11"><!--l. 4507--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn></math> hour for cutting, </td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-2-3"  
+class="td11"><!--l. 4507--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>5</mn></math> hours for sewing and</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-2-4"  
+class="td11"><!--l. 4507--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>3</mn></math> hours for waterproofing.        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-18-3-"><td  style="text-align:right; white-space:nowrap;" id="TBL-18-3-1"  
+class="td11"> The company has at most</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-3-2"  
+class="td11"><!--l. 4508--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>4</mn></math> hours for cutting,</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-3-3"  
+class="td11"><!--l. 4508--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>4</mn><mn>0</mn></math> hours for sewing and</td><td  style="text-align:left; white-space:nowrap;" id="TBL-18-3-4"  
+class="td11"><!--l. 4508--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>8</mn></math> hours for waterproofing a day.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-18-4-"><td  style="text-align:right; white-space:nowrap;" id="TBL-18-4-1"  
+class="td11">                       </td></tr></table>
+</div>
+<!--l. 4511--><p class="noindent" >What is the optimal allocation of resources to maximize profit?
+</p><!--l. 4513--><p class="noindent" >Once the constraints are formulated, they are translated into <span 
+class="cmss-12">R</span>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4463"><span 
+class="cmtt-12">library</span></span><span id="textcolor4464"><span 
+class="cmtt-12">(lpSolve)</span></span>
+                                                                                            
+                                                                                            
+<br /><span id="textcolor4465"><span 
+class="cmitt-10x-x-120">#Deafult</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> minimisation,</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> maximisation</span><span 
+class="cmitt-10x-x-120"> set</span><span 
+class="cmitt-10x-x-120"> direction=&#x0022;max&#x0022;</span></span>
+<br /><span id="textcolor4466"><span 
+class="cmitt-10x-x-120">#Objective</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> constraints</span><span 
+class="cmitt-10x-x-120"> should</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> provided</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector/matrix</span><span 
+class="cmitt-10x-x-120"> form</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor4467"><span 
+class="cmtt-12">(objective</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4468"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4469"><span 
+class="cmtt-12">c</span></span><span id="textcolor4470"><span 
+class="cmtt-12">(</span></span><span id="textcolor4471"><span 
+class="cmtt-12">50</span></span><span id="textcolor4472"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4473"><span 
+class="cmtt-12">30</span></span><span id="textcolor4474"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-300">
+## [1] 50 30
+</div>
+<!--l. 4526--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4475"><span 
+class="cmtt-12">matrix.u.lp</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4476"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4477"><span 
+class="cmtt-12">rbind</span></span><span id="textcolor4478"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4479"><span 
+class="cmtt-12">c</span></span><span id="textcolor4480"><span 
+class="cmtt-12">(</span></span><span id="textcolor4481"><span 
+class="cmtt-12">1</span></span><span id="textcolor4482"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4483"><span 
+class="cmtt-12">0</span></span><span id="textcolor4484"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4485"><span 
+class="cmtt-12">c</span></span><span id="textcolor4486"><span 
+class="cmtt-12">(</span></span><span id="textcolor4487"><span 
+class="cmtt-12">0</span></span><span id="textcolor4488"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4489"><span 
+class="cmtt-12">1</span></span><span id="textcolor4490"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4491"><span 
+class="cmtt-12">c</span></span><span id="textcolor4492"><span 
+class="cmtt-12">(</span></span><span id="textcolor4493"><span 
+class="cmtt-12">2</span></span><span id="textcolor4494"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4495"><span 
+class="cmtt-12">1</span></span><span id="textcolor4496"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4497"><span 
+class="cmtt-12">c</span></span><span id="textcolor4498"><span 
+class="cmtt-12">(</span></span><span id="textcolor4499"><span 
+class="cmtt-12">5</span></span><span id="textcolor4500"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4501"><span 
+class="cmtt-12">5</span></span><span id="textcolor4502"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4503"><span 
+class="cmtt-12">c</span></span><span id="textcolor4504"><span 
+class="cmtt-12">(</span></span><span id="textcolor4505"><span 
+class="cmtt-12">1</span></span><span id="textcolor4506"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4507"><span 
+class="cmtt-12">3</span></span><span id="textcolor4508"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4509"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4510"><span 
+class="cmtt-12">directioneq</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4511"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4512"><span 
+class="cmtt-12">c</span></span><span id="textcolor4513"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4514"><span 
+class="cmtt-12">&#x0022;&#x003E;=&#x0022;</span></span><span id="textcolor4515"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4516"><span 
+class="cmtt-12">&#x0022;&#x003E;=&#x0022;</span></span><span id="textcolor4517"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4518"><span 
+class="cmtt-12">&#x0022;&#x003C;=&#x0022;</span></span><span id="textcolor4519"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4520"><span 
+class="cmtt-12">&#x0022;&#x003C;=&#x0022;</span></span><span id="textcolor4521"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4522"><span 
+class="cmtt-12">&#x0022;&#x003C;=&#x0022;</span></span>
+<br /><span id="textcolor4523"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4524"><span 
+class="cmtt-12">vector.c.lp</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4525"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4526"><span 
+class="cmtt-12">c</span></span><span id="textcolor4527"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4528"><span 
+class="cmtt-12">0</span></span><span id="textcolor4529"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4530"><span 
+class="cmtt-12">0</span></span><span id="textcolor4531"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4532"><span 
+class="cmtt-12">14</span></span><span id="textcolor4533"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4534"><span 
+class="cmtt-12">40</span></span><span id="textcolor4535"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4536"><span 
+class="cmtt-12">18</span></span>
+<br /><span id="textcolor4537"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<!--l. 4553--><p class="noindent" >With this input parameters, the <span id="textcolor4538"><a 
+href="QuMWikiMasterli5.html#glo:lp"><span 
+class="cmtt-12">lp</span></a></span> function can be used.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4539"><span 
+class="cmtt-12">sol.lp</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4540"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4541"><span 
+class="cmtt-12">lp</span></span><span id="textcolor4542"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4543"><span 
+class="cmtt-12">&#x0022;max&#x0022;</span></span><span id="textcolor4544"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4545"><span 
+class="cmtt-12">objective.in</span></span><span id="textcolor4546"><span 
+class="cmtt-12">=objective,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4547"><span 
+class="cmtt-12">const.mat</span></span><span id="textcolor4548"><span 
+class="cmtt-12">=matrix.u.lp,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4549"><span 
+class="cmtt-12">const.dir</span></span><span id="textcolor4550"><span 
+class="cmtt-12">=directioneq,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4551"><span 
+class="cmtt-12">const.rhs</span></span><span id="textcolor4552"><span 
+class="cmtt-12">=vector.c.lp</span></span>
+<br /><span id="textcolor4553"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4554"><span 
+class="cmtt-12">sol.lp</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-301">
+## Success: the objective function is 360
+</div>
+<!--l. 4568--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4555"><span 
+class="cmtt-12">str</span></span><span id="textcolor4556"><span 
+class="cmtt-12">(sol.lp)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4557"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> check</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> structure</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> object</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-302">
+## List of 28
+ <br />##  $ direction       : int 1
+ <br />##  $ x.count         : int 2
+ <br />##  $ objective       : num [1:2] 50 30
+ <br />##  $ const.count     : int 5
+ <br />##  $ constraints     : num [1:4, 1:5] 1 0 2 0 0 1 2 0 2 1 ...
+ <br />##   ..- attr(*, &#x0022;dimnames&#x0022;)=List of 2
+ <br />##   .. ..$ : chr [1:4] &#x0022;&#x0022; &#x0022;&#x0022; &#x0022;const.dir.num&#x0022; &#x0022;const.rhs&#x0022;
+ <br />##   .. ..$ : NULL
+ <br />##  $ int.count       : int 0
+ <br />##  $ int.vec         : int 0
+ <br />##  $ bin.count       : int 0
+ <br />##  $ binary.vec      : int 0
+ <br />##  $ num.bin.solns   : int 1
+ <br />##  $ objval          : num 360
+ <br />##  $ solution        : num [1:2] 6 2
+ <br />##  $ presolve        : int 0
+ <br />##  $ compute.sens    : int 0
+ <br />##  $ sens.coef.from  : num 0
+ <br />##  $ sens.coef.to    : num 0
+ <br />##  $ duals           : num 0
+ <br />##  $ duals.from      : num 0
+ <br />##  $ duals.to        : num 0
+ <br />##  $ scale           : int 196
+ <br />##  $ use.dense       : int 0
+ <br />##  $ dense.col       : int 0
+ <br />##  $ dense.val       : num 0
+ <br />##  $ dense.const.nrow: int 0
+ <br />##  $ dense.ctr       : num 0
+ <br />##  $ use.rw          : int 0
+ <br />##  $ tmp             : chr &#x0022;Nobody will ever look at this&#x0022;
+ <br />##  $ status          : int 0
+ <br />##  - attr(*, &#x0022;class&#x0022;)= chr &#x0022;lp&#x0022;
+</div>
+<!--l. 4606--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4558"><span 
+class="cmtt-12">sol.lp</span></span><span id="textcolor4559"><span 
+class="cmtt-12">$</span></span><span id="textcolor4560"><span 
+class="cmtt-12">solution</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-303">
+## [1] 6 2
+</div>
+<!--l. 4612--><p class="nopar" >
+</p>
+</div>
+<!--l. 4616--><p class="noindent" >By changing the matrix of the constraints slightly, it is possible to restrict the solution values to
+integers.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4561"><span 
+class="cmtt-12">mat.u.lp.2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4562"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4563"><span 
+class="cmtt-12">rbind</span></span><span id="textcolor4564"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4565"><span 
+class="cmtt-12">c</span></span><span id="textcolor4566"><span 
+class="cmtt-12">(</span></span><span id="textcolor4567"><span 
+class="cmtt-12">1</span></span><span id="textcolor4568"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4569"><span 
+class="cmtt-12">0</span></span><span id="textcolor4570"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4571"><span 
+class="cmtt-12">c</span></span><span id="textcolor4572"><span 
+class="cmtt-12">(</span></span><span id="textcolor4573"><span 
+class="cmtt-12">0</span></span><span id="textcolor4574"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4575"><span 
+class="cmtt-12">1</span></span><span id="textcolor4576"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4577"><span 
+class="cmtt-12">c</span></span><span id="textcolor4578"><span 
+class="cmtt-12">(</span></span><span id="textcolor4579"><span 
+class="cmtt-12">2</span></span><span id="textcolor4580"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4581"><span 
+class="cmtt-12">1</span></span><span id="textcolor4582"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4583"><span 
+class="cmtt-12">c</span></span><span id="textcolor4584"><span 
+class="cmtt-12">(</span></span><span id="textcolor4585"><span 
+class="cmtt-12">4</span></span><span id="textcolor4586"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4587"><span 
+class="cmtt-12">4</span></span><span id="textcolor4588"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4589"><span 
+class="cmtt-12">c</span></span><span id="textcolor4590"><span 
+class="cmtt-12">(</span></span><span id="textcolor4591"><span 
+class="cmtt-12">1</span></span><span id="textcolor4592"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4593"><span 
+class="cmtt-12">3</span></span><span id="textcolor4594"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4595"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor4596"><span 
+class="cmitt-10x-x-120">#Solution</span><span 
+class="cmitt-10x-x-120"> without</span><span 
+class="cmitt-10x-x-120"> integer</span><span 
+class="cmitt-10x-x-120"> constraints</span></span>
+<br /><span id="textcolor4597"><span 
+class="cmtt-12">sol.lp.real</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4598"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4599"><span 
+class="cmtt-12">lp</span></span><span id="textcolor4600"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4601"><span 
+class="cmtt-12">&#x0022;max&#x0022;</span></span><span id="textcolor4602"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4603"><span 
+class="cmtt-12">objective.in</span></span><span id="textcolor4604"><span 
+class="cmtt-12">=objective,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4605"><span 
+class="cmtt-12">const.mat</span></span><span id="textcolor4606"><span 
+class="cmtt-12">=mat.u.lp.2,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4607"><span 
+class="cmtt-12">const.dir</span></span><span id="textcolor4608"><span 
+class="cmtt-12">=directioneq,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4609"><span 
+class="cmtt-12">const.rhs</span></span><span id="textcolor4610"><span 
+class="cmtt-12">=vector.c.lp</span></span>
+<br /><span id="textcolor4611"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4612"><span 
+class="cmtt-12">sol.lp.real</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-304">
+## Success: the objective function is 372
+</div>
+<!--l. 4640--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4613"><span 
+class="cmtt-12">sol.lp.real</span></span><span id="textcolor4614"><span 
+class="cmtt-12">$</span></span><span id="textcolor4615"><span 
+class="cmtt-12">solution</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-305">
+## [1] 4.8 4.4
+</div>
+<!--l. 4646--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4616"><span 
+class="cmitt-10x-x-120">#Solution</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> integer</span><span 
+class="cmitt-10x-x-120"> constraints</span></span>
+<br /><span id="textcolor4617"><span 
+class="cmtt-12">sol.lp.integer</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4618"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4619"><span 
+class="cmtt-12">lp</span></span><span id="textcolor4620"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4621"><span 
+class="cmtt-12">&#x0022;max&#x0022;</span></span><span id="textcolor4622"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4623"><span 
+class="cmtt-12">objective.in</span></span><span id="textcolor4624"><span 
+class="cmtt-12">=objective,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4625"><span 
+class="cmtt-12">const.mat</span></span><span id="textcolor4626"><span 
+class="cmtt-12">=mat.u.lp.2,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4627"><span 
+class="cmtt-12">const.dir</span></span><span id="textcolor4628"><span 
+class="cmtt-12">=directioneq,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4629"><span 
+class="cmtt-12">const.rhs</span></span><span id="textcolor4630"><span 
+class="cmtt-12">=vector.c.lp,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4631"><span 
+class="cmtt-12">all.int</span></span><span id="textcolor4632"><span 
+class="cmtt-12">=</span></span><span id="textcolor4633"><span 
+class="cmtt-12">TRUE</span></span>
+<br /><span id="textcolor4634"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor4635"><span 
+class="cmtt-12">sol.lp.integer</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-306">
+## Success: the objective function is 370
+</div>
+<!--l. 4660--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4636"><span 
+class="cmtt-12">sol.lp.integer</span></span><span id="textcolor4637"><span 
+class="cmtt-12">$</span></span><span id="textcolor4638"><span 
+class="cmtt-12">solution</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-307">
+## [1] 5 4
+</div>
+<!--l. 4666--><p class="nopar" >
+</p>
+</div>
+<!--l. 4670--><p class="noindent" >Due to the fact that <!--l. 4670--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>Π</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+><mo 
+class="MathClass-punc">,</mo><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></mrow><mo 
+class="MathClass-close">)</mo></mrow> <mo 
+class="MathClass-rel">=</mo> <mn>5</mn><mn>0</mn><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn></mrow></msub 
+> <mo 
+class="MathClass-bin">+</mo> <mn>3</mn><mn>0</mn><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+></math>,
+<!--l. 4670--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><msub><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>2</mn></mrow></msub 
+> <mo 
+class="MathClass-rel">=</mo> <mo 
+class="MathClass-bin">−</mo><mfrac><mrow 
+><mn>5</mn><mn>0</mn></mrow>
+<mrow 
+><mn>3</mn><mn>0</mn></mrow></mfrac> <mo 
+class="MathClass-bin">+</mo> <mfrac><mrow 
+><mi 
+>Π</mi></mrow> 
+<mrow 
+><mn>3</mn><mn>0</mn></mrow></mfrac></math>. The
+isoprofit lines are parallel linear functions.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor4639"><span 
+class="cmitt-10x-x-120">#&#x0027;Graphical</span><span 
+class="cmitt-10x-x-120"> solution</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> LP</span><span 
+class="cmitt-10x-x-120"> problem</span></span>
+<br />
+<br /><span id="textcolor4640"><span 
+class="cmitt-10x-x-120">#Provide</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> extreme</span><span 
+class="cmitt-10x-x-120"> points</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> constraints</span></span>
+<br /><span id="textcolor4641"><span 
+class="cmtt-12">extreme</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4642"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4643"><span 
+class="cmtt-12">rbind</span></span><span id="textcolor4644"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4645"><span 
+class="cmtt-12">c</span></span><span id="textcolor4646"><span 
+class="cmtt-12">(</span></span><span id="textcolor4647"><span 
+class="cmtt-12">0</span></span><span id="textcolor4648"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4649"><span 
+class="cmtt-12">0</span></span><span id="textcolor4650"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4651"><span 
+class="cmtt-12">c</span></span><span id="textcolor4652"><span 
+class="cmtt-12">(</span></span><span id="textcolor4653"><span 
+class="cmtt-12">0</span></span><span id="textcolor4654"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4655"><span 
+class="cmtt-12">6</span></span><span id="textcolor4656"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4657"><span 
+class="cmtt-12">c</span></span><span id="textcolor4658"><span 
+class="cmtt-12">(</span></span><span id="textcolor4659"><span 
+class="cmtt-12">3</span></span><span id="textcolor4660"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4661"><span 
+class="cmtt-12">5</span></span><span id="textcolor4662"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4663"><span 
+class="cmtt-12">c</span></span><span id="textcolor4664"><span 
+class="cmtt-12">(</span></span><span id="textcolor4665"><span 
+class="cmtt-12">6</span></span><span id="textcolor4666"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4667"><span 
+class="cmtt-12">2</span></span><span id="textcolor4668"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4669"><span 
+class="cmtt-12">c</span></span><span id="textcolor4670"><span 
+class="cmtt-12">(</span></span><span id="textcolor4671"><span 
+class="cmtt-12">7</span></span><span id="textcolor4672"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4673"><span 
+class="cmtt-12">0</span></span><span id="textcolor4674"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4675"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4676"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> create</span><span 
+class="cmitt-10x-x-120"> canvas</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> correct</span><span 
+class="cmitt-10x-x-120"> axes</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor4677"><span 
+class="cmtt-12">plot</span></span><span id="textcolor4678"><span 
+class="cmtt-12">(extreme[,</span></span><span id="textcolor4679"><span 
+class="cmtt-12">1</span></span><span id="textcolor4680"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> extreme[,</span></span><span id="textcolor4681"><span 
+class="cmtt-12">2</span></span><span id="textcolor4682"><span 
+class="cmtt-12">],</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4683"><span 
+class="cmtt-12">asp</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4684"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4685"><span 
+class="cmtt-12">1</span></span><span id="textcolor4686"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4687"><span 
+class="cmtt-12">pch</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4688"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4689"><span 
+class="cmtt-12">NA_integer_</span></span><span id="textcolor4690"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4691"><span 
+class="cmtt-12">main</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4692"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4693"><span 
+class="cmtt-12">&#x0022;Visual</span><span 
+class="cmtt-12"> solution</span><span 
+class="cmtt-12"> to</span><span 
+class="cmtt-12"> the</span><span 
+class="cmtt-12"> LP</span><span 
+class="cmtt-12"> problem&#x0022;</span></span><span id="textcolor4694"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4695"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> feasible</span><span 
+class="cmitt-10x-x-120"> set</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> polygon</span></span>
+<br /><span id="textcolor4696"><span 
+class="cmtt-12">polygon</span></span><span id="textcolor4697"><span 
+class="cmtt-12">(extreme[,</span></span><span id="textcolor4698"><span 
+class="cmtt-12">1</span></span><span id="textcolor4699"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> extreme[,</span></span><span id="textcolor4700"><span 
+class="cmtt-12">2</span></span><span id="textcolor4701"><span 
+class="cmtt-12">],</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4702"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4703"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4704"><span 
+class="cmtt-12">&#x0022;yellow&#x0022;</span></span><span id="textcolor4705"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor4706"><span 
+class="cmtt-12">text</span></span><span id="textcolor4707"><span 
+class="cmtt-12">(extreme,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4708"><span 
+class="cmtt-12">apply</span></span><span id="textcolor4709"><span 
+class="cmtt-12">(extreme,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4710"><span 
+class="cmtt-12">1</span></span><span id="textcolor4711"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4712"><span 
+class="cmtt-12">function</span></span><span id="textcolor4713"><span 
+class="cmtt-12">(</span></span><span id="textcolor4714"><span 
+class="cmtt-12">x</span></span><span id="textcolor4715"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4716"><span 
+class="cmtt-12">paste0</span></span><span id="textcolor4717"><span 
+class="cmtt-12">(</span></span><span id="textcolor4718"><span 
+class="cmtt-12">&#x0022;(&#x0022;</span></span><span id="textcolor4719"><span 
+class="cmtt-12">,x[</span></span><span id="textcolor4720"><span 
+class="cmtt-12">1</span></span><span id="textcolor4721"><span 
+class="cmtt-12">],</span></span><span id="textcolor4722"><span 
+class="cmtt-12">&#x0022;,&#x0022;</span></span><span id="textcolor4723"><span 
+class="cmtt-12">,x[</span></span><span id="textcolor4724"><span 
+class="cmtt-12">2</span></span><span id="textcolor4725"><span 
+class="cmtt-12">],</span></span><span id="textcolor4726"><span 
+class="cmtt-12">&#x0022;)&#x0022;</span></span><span id="textcolor4727"><span 
+class="cmtt-12">)),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4728"><span 
+class="cmtt-12">adj</span></span><span id="textcolor4729"><span 
+class="cmtt-12">=</span></span><span id="textcolor4730"><span 
+class="cmtt-12">c</span></span><span id="textcolor4731"><span 
+class="cmtt-12">(</span></span><span id="textcolor4732"><span 
+class="cmtt-12">0</span></span><span id="textcolor4733"><span 
+class="cmtt-12">,</span></span><span id="textcolor4734"><span 
+class="cmtt-12">0</span></span><span id="textcolor4735"><span 
+class="cmtt-12">),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4736"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4737"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4738"><span 
+class="cmtt-12">1</span></span><span id="textcolor4739"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor4740"><span 
+class="cmitt-10x-x-120">#for</span><span 
+class="cmitt-10x-x-120"> profit=180</span></span>
+<br /><span id="textcolor4741"><span 
+class="cmtt-12">abline</span></span><span id="textcolor4742"><span 
+class="cmtt-12">(</span></span><span id="textcolor4743"><span 
+class="cmtt-12">a</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4744"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4745"><span 
+class="cmtt-12">6</span></span><span id="textcolor4746"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4747"><span 
+class="cmtt-12">b</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4748"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4749"><span 
+class="cmtt-12">-</span></span><span id="textcolor4750"><span 
+class="cmtt-12">5</span></span><span id="textcolor4751"><span 
+class="cmtt-12">/</span></span><span id="textcolor4752"><span 
+class="cmtt-12">3</span></span><span id="textcolor4753"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4754"><span 
+class="cmtt-12">lty</span></span><span id="textcolor4755"><span 
+class="cmtt-12">=</span></span><span id="textcolor4756"><span 
+class="cmtt-12">2</span></span><span id="textcolor4757"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4758"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4759"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4760"><span 
+class="cmtt-12">2</span></span><span id="textcolor4761"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4762"><span 
+class="cmitt-10x-x-120">#for</span><span 
+class="cmitt-10x-x-120"> profit=300</span></span>
+<br /><span id="textcolor4763"><span 
+class="cmtt-12">abline</span></span><span id="textcolor4764"><span 
+class="cmtt-12">(</span></span><span id="textcolor4765"><span 
+class="cmtt-12">a</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4766"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4767"><span 
+class="cmtt-12">10</span></span><span id="textcolor4768"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4769"><span 
+class="cmtt-12">b</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4770"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4771"><span 
+class="cmtt-12">-</span></span><span id="textcolor4772"><span 
+class="cmtt-12">5</span></span><span id="textcolor4773"><span 
+class="cmtt-12">/</span></span><span id="textcolor4774"><span 
+class="cmtt-12">3</span></span><span id="textcolor4775"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4776"><span 
+class="cmtt-12">lty</span></span><span id="textcolor4777"><span 
+class="cmtt-12">=</span></span><span id="textcolor4778"><span 
+class="cmtt-12">2</span></span><span id="textcolor4779"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4780"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4781"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4782"><span 
+class="cmtt-12">2</span></span><span id="textcolor4783"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor4784"><span 
+class="cmitt-10x-x-120">#for</span><span 
+class="cmitt-10x-x-120"> profit=360</span></span>
+<br /><span id="textcolor4785"><span 
+class="cmtt-12">abline</span></span><span id="textcolor4786"><span 
+class="cmtt-12">(</span></span><span id="textcolor4787"><span 
+class="cmtt-12">a</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4788"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4789"><span 
+class="cmtt-12">12</span></span><span id="textcolor4790"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4791"><span 
+class="cmtt-12">b</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4792"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4793"><span 
+class="cmtt-12">-</span></span><span id="textcolor4794"><span 
+class="cmtt-12">5</span></span><span id="textcolor4795"><span 
+class="cmtt-12">/</span></span><span id="textcolor4796"><span 
+class="cmtt-12">3</span></span><span id="textcolor4797"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4798"><span 
+class="cmtt-12">lty</span></span><span id="textcolor4799"><span 
+class="cmtt-12">=</span></span><span id="textcolor4800"><span 
+class="cmtt-12">2</span></span><span id="textcolor4801"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4802"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4803"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4804"><span 
+class="cmtt-12">2</span></span><span id="textcolor4805"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor4806"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> optimum</span></span>
+                                                                                            
+                                                                                            
+<br /><span id="textcolor4807"><span 
+class="cmtt-12">points</span></span><span id="textcolor4808"><span 
+class="cmtt-12">(sol.lp</span></span><span id="textcolor4809"><span 
+class="cmtt-12">$</span></span><span id="textcolor4810"><span 
+class="cmtt-12">solution[</span></span><span id="textcolor4811"><span 
+class="cmtt-12">1</span></span><span id="textcolor4812"><span 
+class="cmtt-12">],</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4813"><span 
+class="cmtt-12">sol.lp</span></span><span id="textcolor4814"><span 
+class="cmtt-12">$</span></span><span id="textcolor4815"><span 
+class="cmtt-12">solution[</span></span><span id="textcolor4816"><span 
+class="cmtt-12">2</span></span><span id="textcolor4817"><span 
+class="cmtt-12">],</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4818"><span 
+class="cmtt-12">pch</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4819"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4820"><span 
+class="cmtt-12">16</span></span><span id="textcolor4821"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor4822"><span 
+class="cmtt-12">col</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4823"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor4824"><span 
+class="cmtt-12">&#x0022;red&#x0022;</span></span><span id="textcolor4825"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<hr class="figure" /><div class="figure" 
+>
+                                                                                            
+                                                                                            
+<a 
+ id="x13-120084"></a>
+                                                                                            
+                                                                                            
+<!--l. 4714--><p class="noindent" ><img 
+src="figure/session2_8-1.png" alt="PIC"  
+width="481" height="481"  />
+<br /> </p><div class="caption" 
+><span class="id">Figure 2.4: </span><span  
+class="content">Linear programming visualized.</span></div><!--tex4ht:label?: x13-120084 -->
+                                                                                            
+                                                                                            
+</div><hr class="endfigure" />
+<!--l. 4723--><p class="noindent" >For the statistical part, a good source of additional knowledge is
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">https://www.youtube.com/user/marinstatlectures/featured</span></span></span>.
+                                                                                            
+                                                                                            
+</p>
+<!--l. 4732--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse10.html" >next</a>] [<a 
+href="QuMWikiMasterse8.html" >prev</a>] [<a 
+href="QuMWikiMasterse8.html#tailQuMWikiMasterse8.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse9.html" >front</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse9.html" >up</a>] </p></div>
+<!--l. 4732--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse9.html"></a> </p> 
+</body> 
+</html>

@@ -1,0 +1,2475 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QuM2 – Session 4 (Descriptive Statistics ctd.)</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 5146--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse12.html" >next</a>] [<a 
+href="QuMWikiMasterse10.html" >prev</a>] [<a 
+href="QuMWikiMasterse10.html#tailQuMWikiMasterse10.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse11.html">tail</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse11.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.4   </span> <a 
+ id="x15-140002.4"></a>QuM2 – Session 4 (Descriptive Statistics ctd.)</h3>
+<!--l. 5148--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">M<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span>, M<span 
+class="small-caps">e</span><span 
+class="small-caps">d</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">d</span> M<span 
+class="small-caps">o</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span></span>
+</p><!--l. 5150--><p class="noindent" >Mean and median can be easily calculated by using these commands, resp. The mode comand exists,
+but gives back the basic structure of an object.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5341"><span 
+class="cmtt-12">heights.even</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5342"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5343"><span 
+class="cmtt-12">as.integer</span></span><span id="textcolor5344"><span 
+class="cmtt-12">(</span></span><span id="textcolor5345"><span 
+class="cmtt-12">round</span></span><span id="textcolor5346"><span 
+class="cmtt-12">(heights</span></span><span id="textcolor5347"><span 
+class="cmtt-12">/</span></span><span id="textcolor5348"><span 
+class="cmtt-12">2</span></span><span id="textcolor5349"><span 
+class="cmtt-12">)</span></span><span id="textcolor5350"><span 
+class="cmtt-12">*</span></span><span id="textcolor5351"><span 
+class="cmtt-12">2</span></span><span id="textcolor5352"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor5353"><span 
+class="cmtt-12">mean</span></span><span id="textcolor5354"><span 
+class="cmtt-12">(heights.even)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-333">
+## [1] 174.9995
+</div>
+<!--l. 5162--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5355"><span 
+class="cmtt-12">median</span></span><span id="textcolor5356"><span 
+class="cmtt-12">(heights.even)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-334">
+## [1] 176
+</div>
+<!--l. 5168--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5357"><span 
+class="cmtt-12">mode</span></span><span id="textcolor5358"><span 
+class="cmtt-12">(heights.even)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-335">
+## [1] &#x0022;numeric&#x0022;
+</div>
+<!--l. 5174--><p class="nopar" >
+</p>
+</div>
+<!--l. 5178--><p class="noindent" >How is it possible to calculate the mode?
+</p><!--l. 5180--><p class="noindent" >First our data is round to even numbers to get more observations of a particular height. Then the <span id="textcolor5359"><span 
+class="cmtt-12">table</span></span>
+command gives back the number of observations of a particular height. The minus sign multiplies this
+numbers by <!--l. 5182--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mo 
+class="MathClass-bin">−</mo><mn>1</mn></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>.
+Consequently the most observed height is the least observed height now. After sorting,there is no
+interest in the number of observations any more. Taking the first entry of this vector gives back the
+mode.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5360"><span 
+class="cmtt-12">?</span></span><span id="textcolor5361"><span 
+class="cmtt-12">table</span></span>
+<br /><span id="textcolor5362"><span 
+class="cmtt-12">?</span></span><span id="textcolor5363"><span 
+class="cmtt-12">sort</span></span>
+<br /><span id="textcolor5364"><span 
+class="cmtt-12">?</span></span><span id="textcolor5365"><span 
+class="cmtt-12">names</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5366"><span 
+class="cmtt-12">table</span></span><span id="textcolor5367"><span 
+class="cmtt-12">(heights.even)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-336">
+## heights.even
+ <br />##    136    138    140    142    144    146    148    150    152    154    156
+ <br />##      1      2     15     29    103    324    870   2094   4989  10656  21450
+ <br />##    158    160    162    164    166    168    170    172    174    176    178
+ <br />##  41323  72606 119891 181888 258282 344261 423863 491394 525812 526024 490695
+ <br />##    180    182    184    186    188    190    192    194    196    198    200
+ <br />## 425437 343492 258916 182793 118249  72183  41447  21863  10633   5074   2008
+ <br />##    202    204    206    208    210    212
+ <br />##    874    314     97     35     10      3
+</div>
+<!--l. 5205--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5368"><span 
+class="cmtt-12">-</span></span><span id="textcolor5369"><span 
+class="cmtt-12">table</span></span><span id="textcolor5370"><span 
+class="cmtt-12">(heights.even)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-337">
+## heights.even
+ <br />##     136     138     140     142     144     146     148     150     152     154
+ <br />##      -1      -2     -15     -29    -103    -324    -870   -2094   -4989  -10656
+ <br />##     156     158     160     162     164     166     168     170     172     174
+ <br />##  -21450  -41323  -72606 -119891 -181888 -258282 -344261 -423863 -491394 -525812
+ <br />##     176     178     180     182     184     186     188     190     192     194
+ <br />## -526024 -490695 -425437 -343492 -258916 -182793 -118249  -72183  -41447  -21863
+ <br />##     196     198     200     202     204     206     208     210     212
+ <br />##  -10633   -5074   -2008    -874    -314     -97     -35     -10      -3
+</div>
+<!--l. 5219--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5371"><span 
+class="cmtt-12">sort</span></span><span id="textcolor5372"><span 
+class="cmtt-12">(</span></span><span id="textcolor5373"><span 
+class="cmtt-12">-</span></span><span id="textcolor5374"><span 
+class="cmtt-12">table</span></span><span id="textcolor5375"><span 
+class="cmtt-12">(heights.even))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-338">
+## heights.even
+ <br />##     176     174     172     178     180     170     168     182     184     166
+ <br />## -526024 -525812 -491394 -490695 -425437 -423863 -344261 -343492 -258916 -258282
+ <br />##     186     164     162     188     160     190     192     158     194     156
+ <br />## -182793 -181888 -119891 -118249  -72606  -72183  -41447  -41323  -21863  -21450
+ <br />##     154     196     198     152     150     200     202     148     146     204
+ <br />##  -10656  -10633   -5074   -4989   -2094   -2008    -874    -870    -324    -314
+ <br />##     144     206     208     142     140     210     212     138     136
+ <br />##    -103     -97     -35     -29     -15     -10      -3      -2      -1
+</div>
+<!--l. 5233--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5376"><span 
+class="cmtt-12">names</span></span><span id="textcolor5377"><span 
+class="cmtt-12">(</span></span><span id="textcolor5378"><span 
+class="cmtt-12">sort</span></span><span id="textcolor5379"><span 
+class="cmtt-12">(</span></span><span id="textcolor5380"><span 
+class="cmtt-12">-</span></span><span id="textcolor5381"><span 
+class="cmtt-12">table</span></span><span id="textcolor5382"><span 
+class="cmtt-12">(heights.even)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-339">
+##  [1] &#x0022;176&#x0022; &#x0022;174&#x0022; &#x0022;172&#x0022; &#x0022;178&#x0022; &#x0022;180&#x0022; &#x0022;170&#x0022; &#x0022;168&#x0022; &#x0022;182&#x0022; &#x0022;184&#x0022; &#x0022;166&#x0022; &#x0022;186&#x0022; &#x0022;164&#x0022;
+ <br />## [13] &#x0022;162&#x0022; &#x0022;188&#x0022; &#x0022;160&#x0022; &#x0022;190&#x0022; &#x0022;192&#x0022; &#x0022;158&#x0022; &#x0022;194&#x0022; &#x0022;156&#x0022; &#x0022;154&#x0022; &#x0022;196&#x0022; &#x0022;198&#x0022; &#x0022;152&#x0022;
+ <br />## [25] &#x0022;150&#x0022; &#x0022;200&#x0022; &#x0022;202&#x0022; &#x0022;148&#x0022; &#x0022;146&#x0022; &#x0022;204&#x0022; &#x0022;144&#x0022; &#x0022;206&#x0022; &#x0022;208&#x0022; &#x0022;142&#x0022; &#x0022;140&#x0022; &#x0022;210&#x0022;
+ <br />## [37] &#x0022;212&#x0022; &#x0022;138&#x0022; &#x0022;136&#x0022;
+</div>
+<!--l. 5242--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5383"><span 
+class="cmtt-12">names</span></span><span id="textcolor5384"><span 
+class="cmtt-12">(</span></span><span id="textcolor5385"><span 
+class="cmtt-12">sort</span></span><span id="textcolor5386"><span 
+class="cmtt-12">(</span></span><span id="textcolor5387"><span 
+class="cmtt-12">-</span></span><span id="textcolor5388"><span 
+class="cmtt-12">table</span></span><span id="textcolor5389"><span 
+class="cmtt-12">(heights.even)))[</span></span><span id="textcolor5390"><span 
+class="cmtt-12">1</span></span><span id="textcolor5391"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-340">
+## [1] &#x0022;176&#x0022;
+</div>
+<!--l. 5248--><p class="nopar" >
+</p>
+</div>
+<!--l. 5252--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">B<span 
+class="small-caps">o</span><span 
+class="small-caps">x</span><span 
+class="small-caps">p</span><span 
+class="small-caps">l</span><span 
+class="small-caps">o</span><span 
+class="small-caps">t</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">u</span><span 
+class="small-caps">t</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 5254--><p class="noindent" >To deepen the knowledge of boxplots in <span 
+class="cmss-12">R</span>, a close look is taken. Thus a boxplot function is
+hand-coded. Be aware, that it cannot compare different variables coded factors.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5392"><span 
+class="cmtt-12">?</span></span><span id="textcolor5393"><span 
+class="cmtt-12">boxplot</span></span>
+<br /><span id="textcolor5394"><span 
+class="cmtt-12">boxplot</span></span><span id="textcolor5395"><span 
+class="cmtt-12">(heights,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5396"><span 
+class="cmtt-12">horizontal</span></span><span id="textcolor5397"><span 
+class="cmtt-12">=</span></span><span id="textcolor5398"><span 
+class="cmtt-12">TRUE</span></span><span id="textcolor5399"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5400"><span 
+class="cmtt-12">outline</span></span><span id="textcolor5401"><span 
+class="cmtt-12">=</span></span><span id="textcolor5402"><span 
+class="cmtt-12">FALSE</span></span><span id="textcolor5403"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<img 
+src="figure/session34boxplot1-1.png" alt="PIC"  
+width="481" height="481"  /> <div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5404"><span 
+class="cmtt-12">?</span></span><span id="textcolor5405"><span 
+class="cmtt-12">quantile</span></span>
+<br /><span id="textcolor5406"><span 
+class="cmtt-12">par</span></span><span id="textcolor5407"><span 
+class="cmtt-12">(</span></span><span id="textcolor5408"><span 
+class="cmtt-12">mfrow</span></span><span id="textcolor5409"><span 
+class="cmtt-12">=</span></span><span id="textcolor5410"><span 
+class="cmtt-12">c</span></span><span id="textcolor5411"><span 
+class="cmtt-12">(</span></span><span id="textcolor5412"><span 
+class="cmtt-12">1</span></span><span id="textcolor5413"><span 
+class="cmtt-12">,</span></span><span id="textcolor5414"><span 
+class="cmtt-12">2</span></span><span id="textcolor5415"><span 
+class="cmtt-12">))</span></span>
+<br /><span id="textcolor5416"><span 
+class="cmtt-12">boxplot</span></span><span id="textcolor5417"><span 
+class="cmtt-12">(heights,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5418"><span 
+class="cmtt-12">range</span></span><span id="textcolor5419"><span 
+class="cmtt-12">=</span></span><span id="textcolor5420"><span 
+class="cmtt-12">0</span></span><span id="textcolor5421"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5422"><span 
+class="cmtt-12">boxplot.stats</span></span><span id="textcolor5423"><span 
+class="cmtt-12">(heights,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5424"><span 
+class="cmtt-12">coef</span></span><span id="textcolor5425"><span 
+class="cmtt-12">=</span></span><span id="textcolor5426"><span 
+class="cmtt-12">2</span></span><span id="textcolor5427"><span 
+class="cmtt-12">)</span></span><span id="textcolor5428"><span 
+class="cmtt-12">$</span></span><span id="textcolor5429"><span 
+class="cmtt-12">stats</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-341">
+## [1] 149.7304 169.9447 175.0005 180.0521 200.2667
+</div>
+<!--l. 5274--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5430"><span 
+class="cmtt-12">(box.marks</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5431"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5432"><span 
+class="cmtt-12">quantile</span></span><span id="textcolor5433"><span 
+class="cmtt-12">(heights,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5434"><span 
+class="cmtt-12">probs</span></span><span id="textcolor5435"><span 
+class="cmtt-12">=</span></span><span id="textcolor5436"><span 
+class="cmtt-12">c</span></span><span id="textcolor5437"><span 
+class="cmtt-12">(</span></span><span id="textcolor5438"><span 
+class="cmtt-12">0</span></span><span id="textcolor5439"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5440"><span 
+class="cmtt-12">.25</span></span><span id="textcolor5441"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5442"><span 
+class="cmtt-12">.5</span></span><span id="textcolor5443"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5444"><span 
+class="cmtt-12">.75</span></span><span id="textcolor5445"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5446"><span 
+class="cmtt-12">1</span></span><span id="textcolor5447"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-342">
+##       0%      25%      50%      75%     100%
+ <br />## 135.2776 169.9447 175.0005 180.0521 211.3804
+</div>
+<!--l. 5281--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5448"><span 
+class="cmtt-12">str</span></span><span id="textcolor5449"><span 
+class="cmtt-12">(box.marks)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-343">
+##  Named num [1:5] 135 170 175 180 211
+ <br />##  - attr(*, &#x0022;names&#x0022;)= chr [1:5] &#x0022;0%&#x0022; &#x0022;25%&#x0022; &#x0022;50%&#x0022; &#x0022;75%&#x0022; ...
+</div>
+<!--l. 5288--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5450"><span 
+class="cmtt-12">plot</span></span><span id="textcolor5451"><span 
+class="cmtt-12">(</span></span><span id="textcolor5452"><span 
+class="cmtt-12">NA</span></span><span id="textcolor5453"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5454"><span 
+class="cmtt-12">ylim</span></span><span id="textcolor5455"><span 
+class="cmtt-12">=</span></span><span id="textcolor5456"><span 
+class="cmtt-12">c</span></span><span id="textcolor5457"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5458"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor5459"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> box.marks[</span></span><span id="textcolor5460"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor5461"><span 
+class="cmtt-12">]),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5462"><span 
+class="cmtt-12">xaxt</span></span><span id="textcolor5463"><span 
+class="cmtt-12">=</span></span><span id="textcolor5464"><span 
+class="cmtt-12">&#x0022;n&#x0022;</span></span><span id="textcolor5465"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5466"><span 
+class="cmtt-12">xlab</span></span><span id="textcolor5467"><span 
+class="cmtt-12">=</span></span><span id="textcolor5468"><span 
+class="cmtt-12">NA</span></span><span id="textcolor5469"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5470"><span 
+class="cmtt-12">ylab</span></span><span id="textcolor5471"><span 
+class="cmtt-12">=</span></span><span id="textcolor5472"><span 
+class="cmtt-12">&#x0022;Boxplot&#x0022;</span></span><span id="textcolor5473"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5474"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5475"><span 
+class="cmtt-12">(</span></span><span id="textcolor5476"><span 
+class="cmtt-12">c</span></span><span id="textcolor5477"><span 
+class="cmtt-12">(</span></span><span id="textcolor5478"><span 
+class="cmtt-12">.9</span></span><span id="textcolor5479"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5480"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor5481"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5482"><span 
+class="cmtt-12">c</span></span><span id="textcolor5483"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5484"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor5485"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5486"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor5487"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5488"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5489"><span 
+class="cmtt-12">(</span></span><span id="textcolor5490"><span 
+class="cmtt-12">c</span></span><span id="textcolor5491"><span 
+class="cmtt-12">(</span></span><span id="textcolor5492"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5493"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5494"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5495"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5496"><span 
+class="cmtt-12">c</span></span><span id="textcolor5497"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5498"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5499"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5500"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5501"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5502"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5503"><span 
+class="cmtt-12">(</span></span><span id="textcolor5504"><span 
+class="cmtt-12">c</span></span><span id="textcolor5505"><span 
+class="cmtt-12">(</span></span><span id="textcolor5506"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5507"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5508"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5509"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5510"><span 
+class="cmtt-12">c</span></span><span id="textcolor5511"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5512"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor5513"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5514"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor5515"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5516"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5517"><span 
+class="cmtt-12">=</span></span><span id="textcolor5518"><span 
+class="cmtt-12">3</span></span><span id="textcolor5519"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5520"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5521"><span 
+class="cmtt-12">(</span></span><span id="textcolor5522"><span 
+class="cmtt-12">c</span></span><span id="textcolor5523"><span 
+class="cmtt-12">(</span></span><span id="textcolor5524"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5525"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5526"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5527"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5528"><span 
+class="cmtt-12">c</span></span><span id="textcolor5529"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5530"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5531"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5532"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5533"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5534"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5535"><span 
+class="cmtt-12">(</span></span><span id="textcolor5536"><span 
+class="cmtt-12">c</span></span><span id="textcolor5537"><span 
+class="cmtt-12">(</span></span><span id="textcolor5538"><span 
+class="cmtt-12">.9</span></span><span id="textcolor5539"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5540"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor5541"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5542"><span 
+class="cmtt-12">c</span></span><span id="textcolor5543"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5544"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor5545"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5546"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor5547"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5548"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5549"><span 
+class="cmtt-12">(</span></span><span id="textcolor5550"><span 
+class="cmtt-12">c</span></span><span id="textcolor5551"><span 
+class="cmtt-12">(</span></span><span id="textcolor5552"><span 
+class="cmtt-12">1</span></span><span id="textcolor5553"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5554"><span 
+class="cmtt-12">1</span></span><span id="textcolor5555"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5556"><span 
+class="cmtt-12">c</span></span><span id="textcolor5557"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5558"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor5559"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5560"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5561"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5562"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5563"><span 
+class="cmtt-12">=</span></span><span id="textcolor5564"><span 
+class="cmtt-12">2</span></span><span id="textcolor5565"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5566"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5567"><span 
+class="cmtt-12">(</span></span><span id="textcolor5568"><span 
+class="cmtt-12">c</span></span><span id="textcolor5569"><span 
+class="cmtt-12">(</span></span><span id="textcolor5570"><span 
+class="cmtt-12">1</span></span><span id="textcolor5571"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5572"><span 
+class="cmtt-12">1</span></span><span id="textcolor5573"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5574"><span 
+class="cmtt-12">c</span></span><span id="textcolor5575"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5576"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5577"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5578"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor5579"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5580"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5581"><span 
+class="cmtt-12">=</span></span><span id="textcolor5582"><span 
+class="cmtt-12">2</span></span><span id="textcolor5583"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5584"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5585"><span 
+class="cmtt-12">(</span></span><span id="textcolor5586"><span 
+class="cmtt-12">c</span></span><span id="textcolor5587"><span 
+class="cmtt-12">(</span></span><span id="textcolor5588"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5589"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5590"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5591"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5592"><span 
+class="cmtt-12">c</span></span><span id="textcolor5593"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5594"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5595"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5596"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5597"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5598"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5599"><span 
+class="cmtt-12">(</span></span><span id="textcolor5600"><span 
+class="cmtt-12">c</span></span><span id="textcolor5601"><span 
+class="cmtt-12">(</span></span><span id="textcolor5602"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5603"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5604"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5605"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5606"><span 
+class="cmtt-12">c</span></span><span id="textcolor5607"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5608"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5609"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5610"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5611"><span 
+class="cmtt-12">]))</span></span>
+</div>
+</div>
+</div>
+<img 
+src="figure/session34boxplot1-2.png" alt="PIC"  
+width="481" height="481"  /> <div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5612"><span 
+class="cmtt-12">par</span></span><span id="textcolor5613"><span 
+class="cmtt-12">(</span></span><span id="textcolor5614"><span 
+class="cmtt-12">mfrow</span></span><span id="textcolor5615"><span 
+class="cmtt-12">=</span></span><span id="textcolor5616"><span 
+class="cmtt-12">c</span></span><span id="textcolor5617"><span 
+class="cmtt-12">(</span></span><span id="textcolor5618"><span 
+class="cmtt-12">1</span></span><span id="textcolor5619"><span 
+class="cmtt-12">,</span></span><span id="textcolor5620"><span 
+class="cmtt-12">1</span></span><span id="textcolor5621"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+</div>
+<!--l. 5311--><p class="noindent" >The ability of plotting outliers (and shortening the whiskers) is added.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5622"><span 
+class="cmtt-12">myBoxplot.stats</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5623"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5624"><span 
+class="cmtt-12">boxplot.stats</span></span><span id="textcolor5625"><span 
+class="cmtt-12">(heights,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5626"><span 
+class="cmtt-12">coef</span></span><span id="textcolor5627"><span 
+class="cmtt-12">=</span></span><span id="textcolor5628"><span 
+class="cmtt-12">2</span></span><span id="textcolor5629"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5630"><span 
+class="cmtt-12">plot</span></span><span id="textcolor5631"><span 
+class="cmtt-12">(</span></span><span id="textcolor5632"><span 
+class="cmtt-12">NA</span></span><span id="textcolor5633"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5634"><span 
+class="cmtt-12">ylim</span></span><span id="textcolor5635"><span 
+class="cmtt-12">=</span></span><span id="textcolor5636"><span 
+class="cmtt-12">c</span></span><span id="textcolor5637"><span 
+class="cmtt-12">(</span></span><span id="textcolor5638"><span 
+class="cmtt-12">min</span></span><span id="textcolor5639"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5640"><span 
+class="cmtt-12">$</span></span><span id="textcolor5641"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5642"><span 
+class="cmtt-12">1</span></span><span id="textcolor5643"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5644"><span 
+class="cmtt-12">$</span></span><span id="textcolor5645"><span 
+class="cmtt-12">out),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5646"><span 
+class="cmtt-12">max</span></span><span id="textcolor5647"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5648"><span 
+class="cmtt-12">$</span></span><span id="textcolor5649"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5650"><span 
+class="cmtt-12">5</span></span><span id="textcolor5651"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5652"><span 
+class="cmtt-12">$</span></span><span id="textcolor5653"><span 
+class="cmtt-12">out)),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5654"><span 
+class="cmtt-12">xaxt</span></span><span id="textcolor5655"><span 
+class="cmtt-12">=</span></span><span id="textcolor5656"><span 
+class="cmtt-12">&#x0022;n&#x0022;</span></span><span id="textcolor5657"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5658"><span 
+class="cmtt-12">xlab</span></span><span id="textcolor5659"><span 
+class="cmtt-12">=</span></span><span id="textcolor5660"><span 
+class="cmtt-12">NA</span></span><span id="textcolor5661"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5662"><span 
+class="cmtt-12">ylab</span></span><span id="textcolor5663"><span 
+class="cmtt-12">=</span></span><span id="textcolor5664"><span 
+class="cmtt-12">&#x0022;Boxplot&#x0022;</span></span><span id="textcolor5665"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5666"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5667"><span 
+class="cmtt-12">(</span></span><span id="textcolor5668"><span 
+class="cmtt-12">c</span></span><span id="textcolor5669"><span 
+class="cmtt-12">(</span></span><span id="textcolor5670"><span 
+class="cmtt-12">.9</span></span><span id="textcolor5671"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5672"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor5673"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5674"><span 
+class="cmtt-12">c</span></span><span id="textcolor5675"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5676"><span 
+class="cmtt-12">$</span></span><span id="textcolor5677"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5678"><span 
+class="cmtt-12">1</span></span><span id="textcolor5679"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5680"><span 
+class="cmtt-12">$</span></span><span id="textcolor5681"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5682"><span 
+class="cmtt-12">1</span></span><span id="textcolor5683"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5684"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5685"><span 
+class="cmtt-12">(</span></span><span id="textcolor5686"><span 
+class="cmtt-12">c</span></span><span id="textcolor5687"><span 
+class="cmtt-12">(</span></span><span id="textcolor5688"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5689"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5690"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5691"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5692"><span 
+class="cmtt-12">c</span></span><span id="textcolor5693"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5694"><span 
+class="cmtt-12">$</span></span><span id="textcolor5695"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5696"><span 
+class="cmtt-12">2</span></span><span id="textcolor5697"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5698"><span 
+class="cmtt-12">$</span></span><span id="textcolor5699"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5700"><span 
+class="cmtt-12">2</span></span><span id="textcolor5701"><span 
+class="cmtt-12">]))</span></span>
+                                                                                            
+                                                                                            
+<br /><span id="textcolor5702"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5703"><span 
+class="cmtt-12">(</span></span><span id="textcolor5704"><span 
+class="cmtt-12">c</span></span><span id="textcolor5705"><span 
+class="cmtt-12">(</span></span><span id="textcolor5706"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5707"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5708"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5709"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5710"><span 
+class="cmtt-12">c</span></span><span id="textcolor5711"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5712"><span 
+class="cmtt-12">$</span></span><span id="textcolor5713"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5714"><span 
+class="cmtt-12">3</span></span><span id="textcolor5715"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5716"><span 
+class="cmtt-12">$</span></span><span id="textcolor5717"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5718"><span 
+class="cmtt-12">3</span></span><span id="textcolor5719"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5720"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5721"><span 
+class="cmtt-12">=</span></span><span id="textcolor5722"><span 
+class="cmtt-12">3</span></span><span id="textcolor5723"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5724"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5725"><span 
+class="cmtt-12">(</span></span><span id="textcolor5726"><span 
+class="cmtt-12">c</span></span><span id="textcolor5727"><span 
+class="cmtt-12">(</span></span><span id="textcolor5728"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5729"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5730"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5731"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5732"><span 
+class="cmtt-12">c</span></span><span id="textcolor5733"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5734"><span 
+class="cmtt-12">$</span></span><span id="textcolor5735"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5736"><span 
+class="cmtt-12">4</span></span><span id="textcolor5737"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5738"><span 
+class="cmtt-12">$</span></span><span id="textcolor5739"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5740"><span 
+class="cmtt-12">4</span></span><span id="textcolor5741"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5742"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5743"><span 
+class="cmtt-12">(</span></span><span id="textcolor5744"><span 
+class="cmtt-12">c</span></span><span id="textcolor5745"><span 
+class="cmtt-12">(</span></span><span id="textcolor5746"><span 
+class="cmtt-12">.9</span></span><span id="textcolor5747"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5748"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor5749"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5750"><span 
+class="cmtt-12">c</span></span><span id="textcolor5751"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5752"><span 
+class="cmtt-12">$</span></span><span id="textcolor5753"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5754"><span 
+class="cmtt-12">5</span></span><span id="textcolor5755"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5756"><span 
+class="cmtt-12">$</span></span><span id="textcolor5757"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5758"><span 
+class="cmtt-12">5</span></span><span id="textcolor5759"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5760"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5761"><span 
+class="cmtt-12">(</span></span><span id="textcolor5762"><span 
+class="cmtt-12">c</span></span><span id="textcolor5763"><span 
+class="cmtt-12">(</span></span><span id="textcolor5764"><span 
+class="cmtt-12">1</span></span><span id="textcolor5765"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5766"><span 
+class="cmtt-12">1</span></span><span id="textcolor5767"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5768"><span 
+class="cmtt-12">c</span></span><span id="textcolor5769"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5770"><span 
+class="cmtt-12">$</span></span><span id="textcolor5771"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5772"><span 
+class="cmtt-12">1</span></span><span id="textcolor5773"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5774"><span 
+class="cmtt-12">$</span></span><span id="textcolor5775"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5776"><span 
+class="cmtt-12">2</span></span><span id="textcolor5777"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5778"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5779"><span 
+class="cmtt-12">=</span></span><span id="textcolor5780"><span 
+class="cmtt-12">2</span></span><span id="textcolor5781"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5782"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5783"><span 
+class="cmtt-12">(</span></span><span id="textcolor5784"><span 
+class="cmtt-12">c</span></span><span id="textcolor5785"><span 
+class="cmtt-12">(</span></span><span id="textcolor5786"><span 
+class="cmtt-12">1</span></span><span id="textcolor5787"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5788"><span 
+class="cmtt-12">1</span></span><span id="textcolor5789"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5790"><span 
+class="cmtt-12">c</span></span><span id="textcolor5791"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5792"><span 
+class="cmtt-12">$</span></span><span id="textcolor5793"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5794"><span 
+class="cmtt-12">4</span></span><span id="textcolor5795"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5796"><span 
+class="cmtt-12">$</span></span><span id="textcolor5797"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5798"><span 
+class="cmtt-12">5</span></span><span id="textcolor5799"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5800"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5801"><span 
+class="cmtt-12">=</span></span><span id="textcolor5802"><span 
+class="cmtt-12">2</span></span><span id="textcolor5803"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5804"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5805"><span 
+class="cmtt-12">(</span></span><span id="textcolor5806"><span 
+class="cmtt-12">c</span></span><span id="textcolor5807"><span 
+class="cmtt-12">(</span></span><span id="textcolor5808"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5809"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5810"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5811"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5812"><span 
+class="cmtt-12">c</span></span><span id="textcolor5813"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5814"><span 
+class="cmtt-12">$</span></span><span id="textcolor5815"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5816"><span 
+class="cmtt-12">2</span></span><span id="textcolor5817"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5818"><span 
+class="cmtt-12">$</span></span><span id="textcolor5819"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5820"><span 
+class="cmtt-12">4</span></span><span id="textcolor5821"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5822"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5823"><span 
+class="cmtt-12">(</span></span><span id="textcolor5824"><span 
+class="cmtt-12">c</span></span><span id="textcolor5825"><span 
+class="cmtt-12">(</span></span><span id="textcolor5826"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5827"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5828"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5829"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5830"><span 
+class="cmtt-12">c</span></span><span id="textcolor5831"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5832"><span 
+class="cmtt-12">$</span></span><span id="textcolor5833"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5834"><span 
+class="cmtt-12">2</span></span><span id="textcolor5835"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5836"><span 
+class="cmtt-12">$</span></span><span id="textcolor5837"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor5838"><span 
+class="cmtt-12">4</span></span><span id="textcolor5839"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5840"><span 
+class="cmtt-12">points</span></span><span id="textcolor5841"><span 
+class="cmtt-12">(</span></span><span id="textcolor5842"><span 
+class="cmtt-12">rep</span></span><span id="textcolor5843"><span 
+class="cmtt-12">(</span></span><span id="textcolor5844"><span 
+class="cmtt-12">1</span></span><span id="textcolor5845"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5846"><span 
+class="cmtt-12">length</span></span><span id="textcolor5847"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor5848"><span 
+class="cmtt-12">$</span></span><span id="textcolor5849"><span 
+class="cmtt-12">out)),</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor5850"><span 
+class="cmtt-12">$</span></span><span id="textcolor5851"><span 
+class="cmtt-12">out)</span></span>
+</div>
+</div>
+</div>
+<img 
+src="figure/session34boxplot2-1.png" alt="PIC"  
+width="481" height="481"  />
+<!--l. 5336--><p class="noindent" >In addition, the length of the whiskers shall not depend on the box length any more, but on a certain
+quantile <!--l. 5336--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>α</mi></math>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5852"><span 
+class="cmtt-12">myAlpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5853"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5854"><span 
+class="cmtt-12">0.001</span></span>
+<br /><span id="textcolor5855"><span 
+class="cmtt-12">(box.marks</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5856"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5857"><span 
+class="cmtt-12">quantile</span></span><span id="textcolor5858"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5859"><span 
+class="cmtt-12">heights,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5860"><span 
+class="cmtt-12">probs</span></span><span id="textcolor5861"><span 
+class="cmtt-12">=</span></span><span id="textcolor5862"><span 
+class="cmtt-12">c</span></span><span id="textcolor5863"><span 
+class="cmtt-12">(</span></span><span id="textcolor5864"><span 
+class="cmtt-12">0</span></span><span id="textcolor5865"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> (myAlpha</span></span><span id="textcolor5866"><span 
+class="cmtt-12">/</span></span><span id="textcolor5867"><span 
+class="cmtt-12">2</span></span><span id="textcolor5868"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5869"><span 
+class="cmtt-12">.25</span></span><span id="textcolor5870"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5871"><span 
+class="cmtt-12">.5</span></span><span id="textcolor5872"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5873"><span 
+class="cmtt-12">.75</span></span><span id="textcolor5874"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> (</span></span><span id="textcolor5875"><span 
+class="cmtt-12">1</span></span><span id="textcolor5876"><span 
+class="cmtt-12">-</span></span><span id="textcolor5877"><span 
+class="cmtt-12">(myAlpha</span></span><span id="textcolor5878"><span 
+class="cmtt-12">/</span></span><span id="textcolor5879"><span 
+class="cmtt-12">2</span></span><span id="textcolor5880"><span 
+class="cmtt-12">)),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5881"><span 
+class="cmtt-12">1</span></span><span id="textcolor5882"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5883"><span 
+class="cmtt-12">))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-344">
+##       0%    0.05%      25%      50%      75%   99.95%     100%
+ <br />## 135.2776 150.2807 169.9447 175.0005 180.0521 199.6292 211.3804
+</div>
+<!--l. 5350--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5884"><span 
+class="cmtt-12">str</span></span><span id="textcolor5885"><span 
+class="cmtt-12">(box.marks)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-345">
+##  Named num [1:7] 135 150 170 175 180 ...
+ <br />##  - attr(*, &#x0022;names&#x0022;)= chr [1:7] &#x0022;0%&#x0022; &#x0022;0.05%&#x0022; &#x0022;25%&#x0022; &#x0022;50%&#x0022; ...
+</div>
+<!--l. 5357--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor5886"><span 
+class="cmtt-12">myBoxplot.Out</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5887"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5888"><span 
+class="cmtt-12">heights[(heights</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5889"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5890"><span 
+class="cmtt-12">box.marks[</span></span><span id="textcolor5891"><span 
+class="cmtt-12">2</span></span><span id="textcolor5892"><span 
+class="cmtt-12">])</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5893"><span 
+class="cmtt-12">|</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5894"><span 
+class="cmtt-12">(heights</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5895"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5896"><span 
+class="cmtt-12">box.marks[</span></span><span id="textcolor5897"><span 
+class="cmtt-12">6</span></span><span id="textcolor5898"><span 
+class="cmtt-12">])]</span></span>
+<br /><span id="textcolor5899"><span 
+class="cmtt-12">plot</span></span><span id="textcolor5900"><span 
+class="cmtt-12">(</span></span><span id="textcolor5901"><span 
+class="cmtt-12">NA</span></span><span id="textcolor5902"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5903"><span 
+class="cmtt-12">ylim</span></span><span id="textcolor5904"><span 
+class="cmtt-12">=</span></span><span id="textcolor5905"><span 
+class="cmtt-12">c</span></span><span id="textcolor5906"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5907"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor5908"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> box.marks[</span></span><span id="textcolor5909"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor5910"><span 
+class="cmtt-12">]),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5911"><span 
+class="cmtt-12">xaxt</span></span><span id="textcolor5912"><span 
+class="cmtt-12">=</span></span><span id="textcolor5913"><span 
+class="cmtt-12">&#x0022;n&#x0022;</span></span><span id="textcolor5914"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5915"><span 
+class="cmtt-12">xlab</span></span><span id="textcolor5916"><span 
+class="cmtt-12">=</span></span><span id="textcolor5917"><span 
+class="cmtt-12">NA</span></span><span id="textcolor5918"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor5919"><span 
+class="cmtt-12">ylab</span></span><span id="textcolor5920"><span 
+class="cmtt-12">=</span></span><span id="textcolor5921"><span 
+class="cmtt-12">&#x0022;Boxplot&#x0022;</span></span><span id="textcolor5922"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5923"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5924"><span 
+class="cmtt-12">(</span></span><span id="textcolor5925"><span 
+class="cmtt-12">c</span></span><span id="textcolor5926"><span 
+class="cmtt-12">(</span></span><span id="textcolor5927"><span 
+class="cmtt-12">.9</span></span><span id="textcolor5928"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5929"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor5930"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5931"><span 
+class="cmtt-12">c</span></span><span id="textcolor5932"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5933"><span 
+class="cmtt-12">2</span></span><span id="textcolor5934"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5935"><span 
+class="cmtt-12">2</span></span><span id="textcolor5936"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5937"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5938"><span 
+class="cmtt-12">(</span></span><span id="textcolor5939"><span 
+class="cmtt-12">c</span></span><span id="textcolor5940"><span 
+class="cmtt-12">(</span></span><span id="textcolor5941"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5942"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5943"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5944"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5945"><span 
+class="cmtt-12">c</span></span><span id="textcolor5946"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5947"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5948"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5949"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor5950"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5951"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5952"><span 
+class="cmtt-12">(</span></span><span id="textcolor5953"><span 
+class="cmtt-12">c</span></span><span id="textcolor5954"><span 
+class="cmtt-12">(</span></span><span id="textcolor5955"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5956"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5957"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5958"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5959"><span 
+class="cmtt-12">c</span></span><span id="textcolor5960"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5961"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor5962"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5963"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor5964"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5965"><span 
+class="cmtt-12">lty</span></span><span id="textcolor5966"><span 
+class="cmtt-12">=</span></span><span id="textcolor5967"><span 
+class="cmtt-12">3</span></span><span id="textcolor5968"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor5969"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5970"><span 
+class="cmtt-12">(</span></span><span id="textcolor5971"><span 
+class="cmtt-12">c</span></span><span id="textcolor5972"><span 
+class="cmtt-12">(</span></span><span id="textcolor5973"><span 
+class="cmtt-12">.8</span></span><span id="textcolor5974"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5975"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor5976"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5977"><span 
+class="cmtt-12">c</span></span><span id="textcolor5978"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5979"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5980"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5981"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor5982"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5983"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5984"><span 
+class="cmtt-12">(</span></span><span id="textcolor5985"><span 
+class="cmtt-12">c</span></span><span id="textcolor5986"><span 
+class="cmtt-12">(</span></span><span id="textcolor5987"><span 
+class="cmtt-12">.9</span></span><span id="textcolor5988"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5989"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor5990"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor5991"><span 
+class="cmtt-12">c</span></span><span id="textcolor5992"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor5993"><span 
+class="cmtt-12">6</span></span><span id="textcolor5994"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor5995"><span 
+class="cmtt-12">6</span></span><span id="textcolor5996"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor5997"><span 
+class="cmtt-12">lines</span></span><span id="textcolor5998"><span 
+class="cmtt-12">(</span></span><span id="textcolor5999"><span 
+class="cmtt-12">c</span></span><span id="textcolor6000"><span 
+class="cmtt-12">(</span></span><span id="textcolor6001"><span 
+class="cmtt-12">1</span></span><span id="textcolor6002"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6003"><span 
+class="cmtt-12">1</span></span><span id="textcolor6004"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6005"><span 
+class="cmtt-12">c</span></span><span id="textcolor6006"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6007"><span 
+class="cmtt-12">2</span></span><span id="textcolor6008"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6009"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6010"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6011"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6012"><span 
+class="cmtt-12">=</span></span><span id="textcolor6013"><span 
+class="cmtt-12">2</span></span><span id="textcolor6014"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6015"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6016"><span 
+class="cmtt-12">(</span></span><span id="textcolor6017"><span 
+class="cmtt-12">c</span></span><span id="textcolor6018"><span 
+class="cmtt-12">(</span></span><span id="textcolor6019"><span 
+class="cmtt-12">1</span></span><span id="textcolor6020"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6021"><span 
+class="cmtt-12">1</span></span><span id="textcolor6022"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6023"><span 
+class="cmtt-12">c</span></span><span id="textcolor6024"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6025"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6026"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6027"><span 
+class="cmtt-12">6</span></span><span id="textcolor6028"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6029"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6030"><span 
+class="cmtt-12">=</span></span><span id="textcolor6031"><span 
+class="cmtt-12">2</span></span><span id="textcolor6032"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6033"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6034"><span 
+class="cmtt-12">(</span></span><span id="textcolor6035"><span 
+class="cmtt-12">c</span></span><span id="textcolor6036"><span 
+class="cmtt-12">(</span></span><span id="textcolor6037"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6038"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6039"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6040"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6041"><span 
+class="cmtt-12">c</span></span><span id="textcolor6042"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6043"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6044"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6045"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6046"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6047"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6048"><span 
+class="cmtt-12">(</span></span><span id="textcolor6049"><span 
+class="cmtt-12">c</span></span><span id="textcolor6050"><span 
+class="cmtt-12">(</span></span><span id="textcolor6051"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor6052"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6053"><span 
+class="cmtt-12">1.2</span></span><span id="textcolor6054"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6055"><span 
+class="cmtt-12">c</span></span><span id="textcolor6056"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6057"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6058"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6059"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6060"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6061"><span 
+class="cmtt-12">points</span></span><span id="textcolor6062"><span 
+class="cmtt-12">(</span></span><span id="textcolor6063"><span 
+class="cmtt-12">rep</span></span><span id="textcolor6064"><span 
+class="cmtt-12">(</span></span><span id="textcolor6065"><span 
+class="cmtt-12">1</span></span><span id="textcolor6066"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6067"><span 
+class="cmtt-12">length</span></span><span id="textcolor6068"><span 
+class="cmtt-12">(myBoxplot.Out)),</span><span 
+class="cmtt-12"> myBoxplot.Out)</span></span>
+</div>
+</div>
+</div>
+<img 
+src="figure/session34boxplot3-1.png" alt="PIC"  
+width="481" height="481"  />
+<!--l. 5379--><p class="noindent" >Furthermore, a density plot is added.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6069"><span 
+class="cmtt-12">plot</span></span><span id="textcolor6070"><span 
+class="cmtt-12">(</span></span><span id="textcolor6071"><span 
+class="cmtt-12">NA</span></span><span id="textcolor6072"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6073"><span 
+class="cmtt-12">ylim</span></span><span id="textcolor6074"><span 
+class="cmtt-12">=</span></span><span id="textcolor6075"><span 
+class="cmtt-12">c</span></span><span id="textcolor6076"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6077"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor6078"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> box.marks[</span></span><span id="textcolor6079"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor6080"><span 
+class="cmtt-12">]),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6081"><span 
+class="cmtt-12">xaxt</span></span><span id="textcolor6082"><span 
+class="cmtt-12">=</span></span><span id="textcolor6083"><span 
+class="cmtt-12">&#x0022;n&#x0022;</span></span><span id="textcolor6084"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6085"><span 
+class="cmtt-12">xlab</span></span><span id="textcolor6086"><span 
+class="cmtt-12">=</span></span><span id="textcolor6087"><span 
+class="cmtt-12">NA</span></span><span id="textcolor6088"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6089"><span 
+class="cmtt-12">ylab</span></span><span id="textcolor6090"><span 
+class="cmtt-12">=</span></span><span id="textcolor6091"><span 
+class="cmtt-12">&#x0022;Boxplot&#x0022;</span></span><span id="textcolor6092"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6093"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6094"><span 
+class="cmtt-12">(</span></span><span id="textcolor6095"><span 
+class="cmtt-12">c</span></span><span id="textcolor6096"><span 
+class="cmtt-12">(</span></span><span id="textcolor6097"><span 
+class="cmtt-12">.9</span></span><span id="textcolor6098"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6099"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6100"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6101"><span 
+class="cmtt-12">c</span></span><span id="textcolor6102"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6103"><span 
+class="cmtt-12">2</span></span><span id="textcolor6104"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6105"><span 
+class="cmtt-12">2</span></span><span id="textcolor6106"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6107"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6108"><span 
+class="cmtt-12">(</span></span><span id="textcolor6109"><span 
+class="cmtt-12">c</span></span><span id="textcolor6110"><span 
+class="cmtt-12">(</span></span><span id="textcolor6111"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6112"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6113"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6114"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6115"><span 
+class="cmtt-12">c</span></span><span id="textcolor6116"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6117"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6118"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6119"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6120"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6121"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6122"><span 
+class="cmtt-12">(</span></span><span id="textcolor6123"><span 
+class="cmtt-12">c</span></span><span id="textcolor6124"><span 
+class="cmtt-12">(</span></span><span id="textcolor6125"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6126"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6127"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6128"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6129"><span 
+class="cmtt-12">c</span></span><span id="textcolor6130"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6131"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor6132"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6133"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor6134"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6135"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6136"><span 
+class="cmtt-12">=</span></span><span id="textcolor6137"><span 
+class="cmtt-12">3</span></span><span id="textcolor6138"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6139"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6140"><span 
+class="cmtt-12">(</span></span><span id="textcolor6141"><span 
+class="cmtt-12">c</span></span><span id="textcolor6142"><span 
+class="cmtt-12">(</span></span><span id="textcolor6143"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6144"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6145"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6146"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6147"><span 
+class="cmtt-12">c</span></span><span id="textcolor6148"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6149"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6150"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6151"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6152"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6153"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6154"><span 
+class="cmtt-12">(</span></span><span id="textcolor6155"><span 
+class="cmtt-12">c</span></span><span id="textcolor6156"><span 
+class="cmtt-12">(</span></span><span id="textcolor6157"><span 
+class="cmtt-12">.9</span></span><span id="textcolor6158"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6159"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6160"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6161"><span 
+class="cmtt-12">c</span></span><span id="textcolor6162"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6163"><span 
+class="cmtt-12">6</span></span><span id="textcolor6164"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6165"><span 
+class="cmtt-12">6</span></span><span id="textcolor6166"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6167"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6168"><span 
+class="cmtt-12">(</span></span><span id="textcolor6169"><span 
+class="cmtt-12">c</span></span><span id="textcolor6170"><span 
+class="cmtt-12">(</span></span><span id="textcolor6171"><span 
+class="cmtt-12">1</span></span><span id="textcolor6172"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6173"><span 
+class="cmtt-12">1</span></span><span id="textcolor6174"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6175"><span 
+class="cmtt-12">c</span></span><span id="textcolor6176"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6177"><span 
+class="cmtt-12">2</span></span><span id="textcolor6178"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6179"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6180"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6181"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6182"><span 
+class="cmtt-12">=</span></span><span id="textcolor6183"><span 
+class="cmtt-12">2</span></span><span id="textcolor6184"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6185"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6186"><span 
+class="cmtt-12">(</span></span><span id="textcolor6187"><span 
+class="cmtt-12">c</span></span><span id="textcolor6188"><span 
+class="cmtt-12">(</span></span><span id="textcolor6189"><span 
+class="cmtt-12">1</span></span><span id="textcolor6190"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6191"><span 
+class="cmtt-12">1</span></span><span id="textcolor6192"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6193"><span 
+class="cmtt-12">c</span></span><span id="textcolor6194"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6195"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6196"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6197"><span 
+class="cmtt-12">6</span></span><span id="textcolor6198"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6199"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6200"><span 
+class="cmtt-12">=</span></span><span id="textcolor6201"><span 
+class="cmtt-12">2</span></span><span id="textcolor6202"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6203"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6204"><span 
+class="cmtt-12">(</span></span><span id="textcolor6205"><span 
+class="cmtt-12">c</span></span><span id="textcolor6206"><span 
+class="cmtt-12">(</span></span><span id="textcolor6207"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6208"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6209"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6210"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6211"><span 
+class="cmtt-12">c</span></span><span id="textcolor6212"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6213"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6214"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6215"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6216"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6217"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6218"><span 
+class="cmtt-12">(</span></span><span id="textcolor6219"><span 
+class="cmtt-12">c</span></span><span id="textcolor6220"><span 
+class="cmtt-12">(</span></span><span id="textcolor6221"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6222"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6223"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6224"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6225"><span 
+class="cmtt-12">c</span></span><span id="textcolor6226"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6227"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6228"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6229"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6230"><span 
+class="cmtt-12">]))</span></span>
+<br /><span id="textcolor6231"><span 
+class="cmtt-12">points</span></span><span id="textcolor6232"><span 
+class="cmtt-12">(</span></span><span id="textcolor6233"><span 
+class="cmtt-12">rep</span></span><span id="textcolor6234"><span 
+class="cmtt-12">(</span></span><span id="textcolor6235"><span 
+class="cmtt-12">1</span></span><span id="textcolor6236"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6237"><span 
+class="cmtt-12">length</span></span><span id="textcolor6238"><span 
+class="cmtt-12">(myBoxplot.Out)),</span><span 
+class="cmtt-12"> myBoxplot.Out)</span></span>
+<br /><span id="textcolor6239"><span 
+class="cmtt-12">heights.density</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6240"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6241"><span 
+class="cmtt-12">density</span></span><span id="textcolor6242"><span 
+class="cmtt-12">(heights)</span></span>
+<br /><span id="textcolor6243"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6244"><span 
+class="cmtt-12">(heights.density</span></span><span id="textcolor6245"><span 
+class="cmtt-12">$</span></span><span id="textcolor6246"><span 
+class="cmtt-12">y</span></span><span id="textcolor6247"><span 
+class="cmtt-12">+</span></span><span id="textcolor6248"><span 
+class="cmtt-12">1</span></span><span id="textcolor6249"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> heights.density</span></span><span id="textcolor6250"><span 
+class="cmtt-12">$</span></span><span id="textcolor6251"><span 
+class="cmtt-12">x)</span></span>
+                                                                                            
+                                                                                            
+</div>
+</div>
+</div>
+<img 
+src="figure/session34boxplot4-1.png" alt="PIC"  
+width="481" height="481"  />
+<!--l. 5405--><p class="noindent" >To be able to use this new tool more efficiently a <span id="textcolor6252"><span 
+class="cmtt-12">myBoxViolinPlot</span></span> function is created.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6253"><span 
+class="cmtt-12">myBoxViolinPlot</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6254"><span 
+class="cmtt-12">&#x003C;-</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6255"><span 
+class="cmtt-12">function</span></span><span id="textcolor6256"><span 
+class="cmtt-12">(</span></span><span id="textcolor6257"><span 
+class="cmtt-12">data</span></span><span id="textcolor6258"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6259"><span 
+class="cmtt-12">hoffset</span></span><span id="textcolor6260"><span 
+class="cmtt-12">=</span></span><span id="textcolor6261"><span 
+class="cmtt-12">0</span></span><span id="textcolor6262"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6263"><span 
+class="cmtt-12">outlier.method</span></span><span id="textcolor6264"><span 
+class="cmtt-12">=</span></span><span id="textcolor6265"><span 
+class="cmtt-12">&#x0022;quantile&#x0022;</span></span><span id="textcolor6266"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6267"><span 
+class="cmtt-12">alpha</span></span><span id="textcolor6268"><span 
+class="cmtt-12">=</span></span><span id="textcolor6269"><span 
+class="cmtt-12">0.001</span></span><span id="textcolor6270"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6271"><span 
+class="cmtt-12">coef</span></span><span id="textcolor6272"><span 
+class="cmtt-12">=</span></span><span id="textcolor6273"><span 
+class="cmtt-12">1.5</span></span><span id="textcolor6274"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6275"><span 
+class="cmtt-12">if</span></span><span id="textcolor6276"><span 
+class="cmtt-12">((outlier.method</span></span><span id="textcolor6277"><span 
+class="cmtt-12">==</span></span><span id="textcolor6278"><span 
+class="cmtt-12">&#x0022;quantile&#x0022;</span></span><span id="textcolor6279"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6280"><span 
+class="cmtt-12">||</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6281"><span 
+class="cmtt-12">(outlier.method</span></span><span id="textcolor6282"><span 
+class="cmtt-12">==</span></span><span id="textcolor6283"><span 
+class="cmtt-12">&#x0022;both&#x0022;</span></span><span id="textcolor6284"><span 
+class="cmtt-12">))</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6285"><span 
+class="cmtt-12">box.marks</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6286"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6287"><span 
+class="cmtt-12">quantile</span></span><span id="textcolor6288"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6289"><span 
+class="cmtt-12">data,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6290"><span 
+class="cmtt-12">probs</span></span><span id="textcolor6291"><span 
+class="cmtt-12">=</span></span><span id="textcolor6292"><span 
+class="cmtt-12">c</span></span><span id="textcolor6293"><span 
+class="cmtt-12">(</span></span><span id="textcolor6294"><span 
+class="cmtt-12">0</span></span><span id="textcolor6295"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> (alpha</span></span><span id="textcolor6296"><span 
+class="cmtt-12">/</span></span><span id="textcolor6297"><span 
+class="cmtt-12">2</span></span><span id="textcolor6298"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6299"><span 
+class="cmtt-12">.25</span></span><span id="textcolor6300"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6301"><span 
+class="cmtt-12">.5</span></span><span id="textcolor6302"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6303"><span 
+class="cmtt-12">.75</span></span><span id="textcolor6304"><span 
+class="cmtt-12">,</span><span 
+class="cmtt-12"> (</span></span><span id="textcolor6305"><span 
+class="cmtt-12">1</span></span><span id="textcolor6306"><span 
+class="cmtt-12">-</span></span><span id="textcolor6307"><span 
+class="cmtt-12">(alpha</span></span><span id="textcolor6308"><span 
+class="cmtt-12">/</span></span><span id="textcolor6309"><span 
+class="cmtt-12">2</span></span><span id="textcolor6310"><span 
+class="cmtt-12">)),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6311"><span 
+class="cmtt-12">1</span></span><span id="textcolor6312"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6313"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6314"><span 
+class="cmtt-12">myBoxplot.Out</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6315"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6316"><span 
+class="cmtt-12">data[(data</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6317"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6318"><span 
+class="cmtt-12">box.marks[</span></span><span id="textcolor6319"><span 
+class="cmtt-12">2</span></span><span id="textcolor6320"><span 
+class="cmtt-12">])</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6321"><span 
+class="cmtt-12">|</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6322"><span 
+class="cmtt-12">(data</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6323"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6324"><span 
+class="cmtt-12">box.marks[</span></span><span id="textcolor6325"><span 
+class="cmtt-12">6</span></span><span id="textcolor6326"><span 
+class="cmtt-12">])]</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6327"><span 
+class="cmtt-12">plot</span></span><span id="textcolor6328"><span 
+class="cmtt-12">(</span></span><span id="textcolor6329"><span 
+class="cmtt-12">NA</span></span><span id="textcolor6330"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6331"><span 
+class="cmtt-12">ylim</span></span><span id="textcolor6332"><span 
+class="cmtt-12">=</span></span><span id="textcolor6333"><span 
+class="cmtt-12">c</span></span><span id="textcolor6334"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6335"><span 
+class="cmtt-12">&#x0022;0%&#x0022;</span></span><span id="textcolor6336"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> box.marks[</span></span><span id="textcolor6337"><span 
+class="cmtt-12">&#x0022;100%&#x0022;</span></span><span id="textcolor6338"><span 
+class="cmtt-12">]),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6339"><span 
+class="cmtt-12">xaxt</span></span><span id="textcolor6340"><span 
+class="cmtt-12">=</span></span><span id="textcolor6341"><span 
+class="cmtt-12">&#x0022;n&#x0022;</span></span><span id="textcolor6342"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6343"><span 
+class="cmtt-12">xlab</span></span><span id="textcolor6344"><span 
+class="cmtt-12">=</span></span><span id="textcolor6345"><span 
+class="cmtt-12">NA</span></span><span id="textcolor6346"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6347"><span 
+class="cmtt-12">ylab</span></span><span id="textcolor6348"><span 
+class="cmtt-12">=</span></span><span id="textcolor6349"><span 
+class="cmtt-12">&#x0022;Boxplot&#x0022;</span></span><span id="textcolor6350"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6351"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6352"><span 
+class="cmtt-12">(</span></span><span id="textcolor6353"><span 
+class="cmtt-12">c</span></span><span id="textcolor6354"><span 
+class="cmtt-12">(</span></span><span id="textcolor6355"><span 
+class="cmtt-12">.9</span></span><span id="textcolor6356"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6357"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6358"><span 
+class="cmtt-12">)</span></span><span id="textcolor6359"><span 
+class="cmtt-12">+</span></span><span id="textcolor6360"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6361"><span 
+class="cmtt-12">c</span></span><span id="textcolor6362"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6363"><span 
+class="cmtt-12">2</span></span><span id="textcolor6364"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6365"><span 
+class="cmtt-12">2</span></span><span id="textcolor6366"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6367"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6368"><span 
+class="cmtt-12">(</span></span><span id="textcolor6369"><span 
+class="cmtt-12">c</span></span><span id="textcolor6370"><span 
+class="cmtt-12">(</span></span><span id="textcolor6371"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6372"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6373"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6374"><span 
+class="cmtt-12">)</span></span><span id="textcolor6375"><span 
+class="cmtt-12">+</span></span><span id="textcolor6376"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6377"><span 
+class="cmtt-12">c</span></span><span id="textcolor6378"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6379"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6380"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6381"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6382"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6383"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6384"><span 
+class="cmtt-12">(</span></span><span id="textcolor6385"><span 
+class="cmtt-12">c</span></span><span id="textcolor6386"><span 
+class="cmtt-12">(</span></span><span id="textcolor6387"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6388"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6389"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6390"><span 
+class="cmtt-12">)</span></span><span id="textcolor6391"><span 
+class="cmtt-12">+</span></span><span id="textcolor6392"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6393"><span 
+class="cmtt-12">c</span></span><span id="textcolor6394"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6395"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor6396"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6397"><span 
+class="cmtt-12">&#x0022;50%&#x0022;</span></span><span id="textcolor6398"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6399"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6400"><span 
+class="cmtt-12">=</span></span><span id="textcolor6401"><span 
+class="cmtt-12">3</span></span><span id="textcolor6402"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6403"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6404"><span 
+class="cmtt-12">(</span></span><span id="textcolor6405"><span 
+class="cmtt-12">c</span></span><span id="textcolor6406"><span 
+class="cmtt-12">(</span></span><span id="textcolor6407"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6408"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6409"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6410"><span 
+class="cmtt-12">)</span></span><span id="textcolor6411"><span 
+class="cmtt-12">+</span></span><span id="textcolor6412"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6413"><span 
+class="cmtt-12">c</span></span><span id="textcolor6414"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6415"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6416"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6417"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6418"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6419"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6420"><span 
+class="cmtt-12">(</span></span><span id="textcolor6421"><span 
+class="cmtt-12">c</span></span><span id="textcolor6422"><span 
+class="cmtt-12">(</span></span><span id="textcolor6423"><span 
+class="cmtt-12">.9</span></span><span id="textcolor6424"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6425"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6426"><span 
+class="cmtt-12">)</span></span><span id="textcolor6427"><span 
+class="cmtt-12">+</span></span><span id="textcolor6428"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6429"><span 
+class="cmtt-12">c</span></span><span id="textcolor6430"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6431"><span 
+class="cmtt-12">6</span></span><span id="textcolor6432"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6433"><span 
+class="cmtt-12">6</span></span><span id="textcolor6434"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6435"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6436"><span 
+class="cmtt-12">(</span></span><span id="textcolor6437"><span 
+class="cmtt-12">c</span></span><span id="textcolor6438"><span 
+class="cmtt-12">(</span></span><span id="textcolor6439"><span 
+class="cmtt-12">1</span></span><span id="textcolor6440"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6441"><span 
+class="cmtt-12">1</span></span><span id="textcolor6442"><span 
+class="cmtt-12">)</span></span><span id="textcolor6443"><span 
+class="cmtt-12">+</span></span><span id="textcolor6444"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6445"><span 
+class="cmtt-12">c</span></span><span id="textcolor6446"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6447"><span 
+class="cmtt-12">2</span></span><span id="textcolor6448"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6449"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6450"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6451"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6452"><span 
+class="cmtt-12">=</span></span><span id="textcolor6453"><span 
+class="cmtt-12">2</span></span><span id="textcolor6454"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6455"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6456"><span 
+class="cmtt-12">(</span></span><span id="textcolor6457"><span 
+class="cmtt-12">c</span></span><span id="textcolor6458"><span 
+class="cmtt-12">(</span></span><span id="textcolor6459"><span 
+class="cmtt-12">1</span></span><span id="textcolor6460"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6461"><span 
+class="cmtt-12">1</span></span><span id="textcolor6462"><span 
+class="cmtt-12">)</span></span><span id="textcolor6463"><span 
+class="cmtt-12">+</span></span><span id="textcolor6464"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6465"><span 
+class="cmtt-12">c</span></span><span id="textcolor6466"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6467"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6468"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6469"><span 
+class="cmtt-12">6</span></span><span id="textcolor6470"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6471"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6472"><span 
+class="cmtt-12">=</span></span><span id="textcolor6473"><span 
+class="cmtt-12">2</span></span><span id="textcolor6474"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6475"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6476"><span 
+class="cmtt-12">(</span></span><span id="textcolor6477"><span 
+class="cmtt-12">c</span></span><span id="textcolor6478"><span 
+class="cmtt-12">(</span></span><span id="textcolor6479"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6480"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6481"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6482"><span 
+class="cmtt-12">)</span></span><span id="textcolor6483"><span 
+class="cmtt-12">+</span></span><span id="textcolor6484"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6485"><span 
+class="cmtt-12">c</span></span><span id="textcolor6486"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6487"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6488"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6489"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6490"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6491"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6492"><span 
+class="cmtt-12">(</span></span><span id="textcolor6493"><span 
+class="cmtt-12">c</span></span><span id="textcolor6494"><span 
+class="cmtt-12">(</span></span><span id="textcolor6495"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6496"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6497"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6498"><span 
+class="cmtt-12">)</span></span><span id="textcolor6499"><span 
+class="cmtt-12">+</span></span><span id="textcolor6500"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6501"><span 
+class="cmtt-12">c</span></span><span id="textcolor6502"><span 
+class="cmtt-12">(box.marks[</span></span><span id="textcolor6503"><span 
+class="cmtt-12">&#x0022;25%&#x0022;</span></span><span id="textcolor6504"><span 
+class="cmtt-12">],box.marks[</span></span><span id="textcolor6505"><span 
+class="cmtt-12">&#x0022;75%&#x0022;</span></span><span id="textcolor6506"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6507"><span 
+class="cmtt-12">points</span></span><span id="textcolor6508"><span 
+class="cmtt-12">(</span></span><span id="textcolor6509"><span 
+class="cmtt-12">rep</span></span><span id="textcolor6510"><span 
+class="cmtt-12">(</span></span><span id="textcolor6511"><span 
+class="cmtt-12">1</span></span><span id="textcolor6512"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6513"><span 
+class="cmtt-12">length</span></span><span id="textcolor6514"><span 
+class="cmtt-12">(myBoxplot.Out))</span></span><span id="textcolor6515"><span 
+class="cmtt-12">+</span></span><span id="textcolor6516"><span 
+class="cmtt-12">hoffset,</span><span 
+class="cmtt-12"> myBoxplot.Out)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6517"><span 
+class="cmtt-12">data.density</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6518"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6519"><span 
+class="cmtt-12">density</span></span><span id="textcolor6520"><span 
+class="cmtt-12">(data)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6521"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6522"><span 
+class="cmtt-12">(data.density</span></span><span id="textcolor6523"><span 
+class="cmtt-12">$</span></span><span id="textcolor6524"><span 
+class="cmtt-12">y</span></span><span id="textcolor6525"><span 
+class="cmtt-12">+</span></span><span id="textcolor6526"><span 
+class="cmtt-12">1</span></span><span id="textcolor6527"><span 
+class="cmtt-12">+</span></span><span id="textcolor6528"><span 
+class="cmtt-12">hoffset,</span><span 
+class="cmtt-12"> data.density</span></span><span id="textcolor6529"><span 
+class="cmtt-12">$</span></span><span id="textcolor6530"><span 
+class="cmtt-12">x)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6531"><span 
+class="cmsy-10x-x-120">}</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6532"><span 
+class="cmtt-12">if</span></span><span id="textcolor6533"><span 
+class="cmtt-12">((outlier.method</span></span><span id="textcolor6534"><span 
+class="cmtt-12">==</span></span><span id="textcolor6535"><span 
+class="cmtt-12">&#x0022;relToBox&#x0022;</span></span><span id="textcolor6536"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6537"><span 
+class="cmtt-12">||</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6538"><span 
+class="cmtt-12">(outlier.method</span></span><span id="textcolor6539"><span 
+class="cmtt-12">==</span></span><span id="textcolor6540"><span 
+class="cmtt-12">&#x0022;both&#x0022;</span></span><span id="textcolor6541"><span 
+class="cmtt-12">))</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6542"><span 
+class="cmtt-12">myBoxplot.stats</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6543"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6544"><span 
+class="cmtt-12">boxplot.stats</span></span><span id="textcolor6545"><span 
+class="cmtt-12">(data,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6546"><span 
+class="cmtt-12">coef</span></span><span id="textcolor6547"><span 
+class="cmtt-12">=coef)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6548"><span 
+class="cmtt-12">plot</span></span><span id="textcolor6549"><span 
+class="cmtt-12">(</span></span><span id="textcolor6550"><span 
+class="cmtt-12">NA</span></span><span id="textcolor6551"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6552"><span 
+class="cmtt-12">ylim</span></span><span id="textcolor6553"><span 
+class="cmtt-12">=</span></span><span id="textcolor6554"><span 
+class="cmtt-12">c</span></span><span id="textcolor6555"><span 
+class="cmtt-12">(</span></span><span id="textcolor6556"><span 
+class="cmtt-12">min</span></span><span id="textcolor6557"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6558"><span 
+class="cmtt-12">$</span></span><span id="textcolor6559"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6560"><span 
+class="cmtt-12">1</span></span><span id="textcolor6561"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6562"><span 
+class="cmtt-12">$</span></span><span id="textcolor6563"><span 
+class="cmtt-12">out),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6564"><span 
+class="cmtt-12">max</span></span><span id="textcolor6565"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6566"><span 
+class="cmtt-12">$</span></span><span id="textcolor6567"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6568"><span 
+class="cmtt-12">5</span></span><span id="textcolor6569"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6570"><span 
+class="cmtt-12">$</span></span><span id="textcolor6571"><span 
+class="cmtt-12">out)),</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6572"><span 
+class="cmtt-12">xaxt</span></span><span id="textcolor6573"><span 
+class="cmtt-12">=</span></span><span id="textcolor6574"><span 
+class="cmtt-12">&#x0022;n&#x0022;</span></span><span id="textcolor6575"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6576"><span 
+class="cmtt-12">xlab</span></span><span id="textcolor6577"><span 
+class="cmtt-12">=</span></span><span id="textcolor6578"><span 
+class="cmtt-12">NA</span></span><span id="textcolor6579"><span 
+class="cmtt-12">,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6580"><span 
+class="cmtt-12">ylab</span></span><span id="textcolor6581"><span 
+class="cmtt-12">=</span></span><span id="textcolor6582"><span 
+class="cmtt-12">&#x0022;Boxplot&#x0022;</span></span><span id="textcolor6583"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6584"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6585"><span 
+class="cmtt-12">(</span></span><span id="textcolor6586"><span 
+class="cmtt-12">c</span></span><span id="textcolor6587"><span 
+class="cmtt-12">(</span></span><span id="textcolor6588"><span 
+class="cmtt-12">.9</span></span><span id="textcolor6589"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6590"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6591"><span 
+class="cmtt-12">)</span></span><span id="textcolor6592"><span 
+class="cmtt-12">+</span></span><span id="textcolor6593"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6594"><span 
+class="cmtt-12">c</span></span><span id="textcolor6595"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6596"><span 
+class="cmtt-12">$</span></span><span id="textcolor6597"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6598"><span 
+class="cmtt-12">1</span></span><span id="textcolor6599"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6600"><span 
+class="cmtt-12">$</span></span><span id="textcolor6601"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6602"><span 
+class="cmtt-12">1</span></span><span id="textcolor6603"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6604"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6605"><span 
+class="cmtt-12">(</span></span><span id="textcolor6606"><span 
+class="cmtt-12">c</span></span><span id="textcolor6607"><span 
+class="cmtt-12">(</span></span><span id="textcolor6608"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6609"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6610"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6611"><span 
+class="cmtt-12">)</span></span><span id="textcolor6612"><span 
+class="cmtt-12">+</span></span><span id="textcolor6613"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6614"><span 
+class="cmtt-12">c</span></span><span id="textcolor6615"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6616"><span 
+class="cmtt-12">$</span></span><span id="textcolor6617"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6618"><span 
+class="cmtt-12">2</span></span><span id="textcolor6619"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6620"><span 
+class="cmtt-12">$</span></span><span id="textcolor6621"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6622"><span 
+class="cmtt-12">2</span></span><span id="textcolor6623"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6624"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6625"><span 
+class="cmtt-12">(</span></span><span id="textcolor6626"><span 
+class="cmtt-12">c</span></span><span id="textcolor6627"><span 
+class="cmtt-12">(</span></span><span id="textcolor6628"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6629"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6630"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6631"><span 
+class="cmtt-12">)</span></span><span id="textcolor6632"><span 
+class="cmtt-12">+</span></span><span id="textcolor6633"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6634"><span 
+class="cmtt-12">c</span></span><span id="textcolor6635"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6636"><span 
+class="cmtt-12">$</span></span><span id="textcolor6637"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6638"><span 
+class="cmtt-12">3</span></span><span id="textcolor6639"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6640"><span 
+class="cmtt-12">$</span></span><span id="textcolor6641"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6642"><span 
+class="cmtt-12">3</span></span><span id="textcolor6643"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6644"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6645"><span 
+class="cmtt-12">=</span></span><span id="textcolor6646"><span 
+class="cmtt-12">3</span></span><span id="textcolor6647"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6648"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6649"><span 
+class="cmtt-12">(</span></span><span id="textcolor6650"><span 
+class="cmtt-12">c</span></span><span id="textcolor6651"><span 
+class="cmtt-12">(</span></span><span id="textcolor6652"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6653"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6654"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6655"><span 
+class="cmtt-12">)</span></span><span id="textcolor6656"><span 
+class="cmtt-12">+</span></span><span id="textcolor6657"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6658"><span 
+class="cmtt-12">c</span></span><span id="textcolor6659"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6660"><span 
+class="cmtt-12">$</span></span><span id="textcolor6661"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6662"><span 
+class="cmtt-12">4</span></span><span id="textcolor6663"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6664"><span 
+class="cmtt-12">$</span></span><span id="textcolor6665"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6666"><span 
+class="cmtt-12">4</span></span><span id="textcolor6667"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6668"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6669"><span 
+class="cmtt-12">(</span></span><span id="textcolor6670"><span 
+class="cmtt-12">c</span></span><span id="textcolor6671"><span 
+class="cmtt-12">(</span></span><span id="textcolor6672"><span 
+class="cmtt-12">.9</span></span><span id="textcolor6673"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6674"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6675"><span 
+class="cmtt-12">)</span></span><span id="textcolor6676"><span 
+class="cmtt-12">+</span></span><span id="textcolor6677"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6678"><span 
+class="cmtt-12">c</span></span><span id="textcolor6679"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6680"><span 
+class="cmtt-12">$</span></span><span id="textcolor6681"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6682"><span 
+class="cmtt-12">5</span></span><span id="textcolor6683"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6684"><span 
+class="cmtt-12">$</span></span><span id="textcolor6685"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6686"><span 
+class="cmtt-12">5</span></span><span id="textcolor6687"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6688"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6689"><span 
+class="cmtt-12">(</span></span><span id="textcolor6690"><span 
+class="cmtt-12">c</span></span><span id="textcolor6691"><span 
+class="cmtt-12">(</span></span><span id="textcolor6692"><span 
+class="cmtt-12">1</span></span><span id="textcolor6693"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6694"><span 
+class="cmtt-12">1</span></span><span id="textcolor6695"><span 
+class="cmtt-12">)</span></span><span id="textcolor6696"><span 
+class="cmtt-12">+</span></span><span id="textcolor6697"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6698"><span 
+class="cmtt-12">c</span></span><span id="textcolor6699"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6700"><span 
+class="cmtt-12">$</span></span><span id="textcolor6701"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6702"><span 
+class="cmtt-12">1</span></span><span id="textcolor6703"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6704"><span 
+class="cmtt-12">$</span></span><span id="textcolor6705"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6706"><span 
+class="cmtt-12">2</span></span><span id="textcolor6707"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6708"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6709"><span 
+class="cmtt-12">=</span></span><span id="textcolor6710"><span 
+class="cmtt-12">2</span></span><span id="textcolor6711"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6712"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6713"><span 
+class="cmtt-12">(</span></span><span id="textcolor6714"><span 
+class="cmtt-12">c</span></span><span id="textcolor6715"><span 
+class="cmtt-12">(</span></span><span id="textcolor6716"><span 
+class="cmtt-12">1</span></span><span id="textcolor6717"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6718"><span 
+class="cmtt-12">1</span></span><span id="textcolor6719"><span 
+class="cmtt-12">)</span></span><span id="textcolor6720"><span 
+class="cmtt-12">+</span></span><span id="textcolor6721"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6722"><span 
+class="cmtt-12">c</span></span><span id="textcolor6723"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6724"><span 
+class="cmtt-12">$</span></span><span id="textcolor6725"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6726"><span 
+class="cmtt-12">4</span></span><span id="textcolor6727"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6728"><span 
+class="cmtt-12">$</span></span><span id="textcolor6729"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6730"><span 
+class="cmtt-12">5</span></span><span id="textcolor6731"><span 
+class="cmtt-12">]),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6732"><span 
+class="cmtt-12">lty</span></span><span id="textcolor6733"><span 
+class="cmtt-12">=</span></span><span id="textcolor6734"><span 
+class="cmtt-12">2</span></span><span id="textcolor6735"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6736"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6737"><span 
+class="cmtt-12">(</span></span><span id="textcolor6738"><span 
+class="cmtt-12">c</span></span><span id="textcolor6739"><span 
+class="cmtt-12">(</span></span><span id="textcolor6740"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6741"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6742"><span 
+class="cmtt-12">.8</span></span><span id="textcolor6743"><span 
+class="cmtt-12">)</span></span><span id="textcolor6744"><span 
+class="cmtt-12">+</span></span><span id="textcolor6745"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6746"><span 
+class="cmtt-12">c</span></span><span id="textcolor6747"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6748"><span 
+class="cmtt-12">$</span></span><span id="textcolor6749"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6750"><span 
+class="cmtt-12">2</span></span><span id="textcolor6751"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6752"><span 
+class="cmtt-12">$</span></span><span id="textcolor6753"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6754"><span 
+class="cmtt-12">4</span></span><span id="textcolor6755"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6756"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6757"><span 
+class="cmtt-12">(</span></span><span id="textcolor6758"><span 
+class="cmtt-12">c</span></span><span id="textcolor6759"><span 
+class="cmtt-12">(</span></span><span id="textcolor6760"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6761"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6762"><span 
+class="cmtt-12">1.0</span></span><span id="textcolor6763"><span 
+class="cmtt-12">)</span></span><span id="textcolor6764"><span 
+class="cmtt-12">+</span></span><span id="textcolor6765"><span 
+class="cmtt-12">hoffset,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6766"><span 
+class="cmtt-12">c</span></span><span id="textcolor6767"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6768"><span 
+class="cmtt-12">$</span></span><span id="textcolor6769"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6770"><span 
+class="cmtt-12">2</span></span><span id="textcolor6771"><span 
+class="cmtt-12">],</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6772"><span 
+class="cmtt-12">$</span></span><span id="textcolor6773"><span 
+class="cmtt-12">stats[</span></span><span id="textcolor6774"><span 
+class="cmtt-12">4</span></span><span id="textcolor6775"><span 
+class="cmtt-12">]))</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6776"><span 
+class="cmtt-12">points</span></span><span id="textcolor6777"><span 
+class="cmtt-12">(</span></span><span id="textcolor6778"><span 
+class="cmtt-12">rep</span></span><span id="textcolor6779"><span 
+class="cmtt-12">(</span></span><span id="textcolor6780"><span 
+class="cmtt-12">1</span></span><span id="textcolor6781"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6782"><span 
+class="cmtt-12">length</span></span><span id="textcolor6783"><span 
+class="cmtt-12">(myBoxplot.stats</span></span><span id="textcolor6784"><span 
+class="cmtt-12">$</span></span><span id="textcolor6785"><span 
+class="cmtt-12">out))</span></span><span id="textcolor6786"><span 
+class="cmtt-12">+</span></span><span id="textcolor6787"><span 
+class="cmtt-12">hoffset,</span><span 
+class="cmtt-12"> myBoxplot.stats</span></span><span id="textcolor6788"><span 
+class="cmtt-12">$</span></span><span id="textcolor6789"><span 
+class="cmtt-12">out)</span></span>
+                                                                                            
+                                                                                            
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6790"><span 
+class="cmtt-12">data.density</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6791"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6792"><span 
+class="cmtt-12">density</span></span><span id="textcolor6793"><span 
+class="cmtt-12">(data)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6794"><span 
+class="cmtt-12">lines</span></span><span id="textcolor6795"><span 
+class="cmtt-12">(data.density</span></span><span id="textcolor6796"><span 
+class="cmtt-12">$</span></span><span id="textcolor6797"><span 
+class="cmtt-12">y</span></span><span id="textcolor6798"><span 
+class="cmtt-12">+</span></span><span id="textcolor6799"><span 
+class="cmtt-12">1</span></span><span id="textcolor6800"><span 
+class="cmtt-12">+</span></span><span id="textcolor6801"><span 
+class="cmtt-12">hoffset,</span><span 
+class="cmtt-12"> data.density</span></span><span id="textcolor6802"><span 
+class="cmtt-12">$</span></span><span id="textcolor6803"><span 
+class="cmtt-12">x)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6804"><span 
+class="cmsy-10x-x-120">}</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6805"><span 
+class="cmtt-12">else</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6806"><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6807"><span 
+class="cmtt-12">stop</span></span><span id="textcolor6808"><span 
+class="cmtt-12">(</span></span><span id="textcolor6809"><span 
+class="cmtt-12">&#x0022;Please</span><span 
+class="cmtt-12"> specifiy</span><span 
+class="cmtt-12"> a</span><span 
+class="cmtt-12"> valid</span><span 
+class="cmtt-12"> outlier</span><span 
+class="cmtt-12"> method</span><span 
+class="cmtt-12"> (either</span><span 
+class="cmtt-12"> quantile,</span><span 
+class="cmtt-12"> relToBox</span><span 
+class="cmtt-12"> or</span><span 
+class="cmtt-12"> both)&#x0022;</span></span><span id="textcolor6810"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor6811"><span 
+class="cmsy-10x-x-120">}</span></span>
+<br /><span id="textcolor6812"><span 
+class="cmsy-10x-x-120">}</span></span>
+<br />
+<br /><span id="textcolor6813"><span 
+class="cmtt-12">myBoxViolinPlot</span></span><span id="textcolor6814"><span 
+class="cmtt-12">(heights,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6815"><span 
+class="cmtt-12">outlier.method</span></span><span id="textcolor6816"><span 
+class="cmtt-12">=</span></span><span id="textcolor6817"><span 
+class="cmtt-12">&#x0022;both&#x0022;</span></span><span id="textcolor6818"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<img 
+src="figure/session34boxplot5-1.png" alt="PIC"  
+width="481" height="481"  />
+<!--l. 5462--><p class="noindent" ><img 
+src="figure/session34boxplot5-2.png" alt="PIC"  
+width="481" height="481"  />
+                                                                                            
+                                                                                            
+</p>
+<!--l. 5475--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse12.html" >next</a>] [<a 
+href="QuMWikiMasterse10.html" >prev</a>] [<a 
+href="QuMWikiMasterse10.html#tailQuMWikiMasterse10.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse11.html" >front</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse11.html" >up</a>] </p></div>
+<!--l. 5475--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse11.html"></a> </p> 
+</body> 
+</html>

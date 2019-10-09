@@ -1,0 +1,3060 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QM1 – Session 1 (Getting to know R)</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 576--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse2.html" >next</a>] [<a 
+href="#tailQuMWikiMasterse1.html">tail</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse1.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x4-30001.1"></a>QM1 – Session 1 (Getting to know <span 
+class="cmss-12">R</span>)</h3>
+<!--l. 578--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">&#x003C;video</span><span 
+class="cmtt-12"> width=&#x0022;1280&#x0022;</span><span 
+class="cmtt-12"> height=&#x0022;720&#x0022;</span><span 
+class="cmtt-12"> controls&#x003E;</span><span 
+class="cmtt-12"> &#x003C;source</span><span 
+class="cmtt-12"> src=&#x0022;1-1E_Statistician-at-Work_Einfuehrung1.mp4&#x0022;</span><span 
+class="cmtt-12"> type=&#x0022;video/mp4&#x0022;&#x003E;</span><span 
+class="cmtt-12"> &#x003C;/video&#x003E;</span></span></span>
+¡video width=”1280” height=”720” controls¿ ¡source src=”1-1E˙Statistician-at-Work˙Einfuehrung1.mp4”
+type=”video/mp4”¿ ¡/video¿
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor8"><span 
+class="cmtt-12">rm</span></span><span id="textcolor9"><span 
+class="cmtt-12">(</span></span><span id="textcolor10"><span 
+class="cmtt-12">list</span></span><span 
+class="cmtt-12"> </span><span id="textcolor11"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor12"><span 
+class="cmtt-12">setdiff</span></span><span id="textcolor13"><span 
+class="cmtt-12">(</span></span><span id="textcolor14"><span 
+class="cmtt-12">ls</span></span><span id="textcolor15"><span 
+class="cmtt-12">(),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor16"><span 
+class="cmtt-12">c</span></span><span id="textcolor17"><span 
+class="cmtt-12">(</span></span><span id="textcolor18"><span 
+class="cmtt-12">&#x0022;MyRnwFile&#x0022;</span></span><span id="textcolor19"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor20"><span 
+class="cmtt-12">&#x0022;MyFilePath&#x0022;</span></span><span id="textcolor21"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor22"><span 
+class="cmtt-12">&#x0022;MyFilePathOut&#x0022;</span></span><span id="textcolor23"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+</div>
+<!--l. 589--><p class="noindent" >In plain <span 
+class="cmss-12">R</span> you only have the console to input commands. This is one (endless) line, in which you can
+write meaningful texts, e. g. commands, calculations, et cetera. By pressing <span 
+class="cmtt-12">Enter </span>(or <span 
+class="cmtt-12">Return</span>), these
+lines of text get interpreted and executed. <span 
+class="cmss-12">R</span>is ready for input, when <span id="textcolor24"><span 
+class="cmtt-12">&#x003E;</span></span> is displayed. For example
+typing <span id="textcolor25"><span 
+class="cmtt-12">1 + 2</span></span> and pressing <span 
+class="cmtt-12">Return</span>, <span 
+class="cmss-12">R</span> returns in the line below the input <span 
+class="cmtt-12">[1] 3</span>. <span 
+class="cmtt-12">[1] </span>indicates that
+the following element is the first element of the output, and the <span 
+class="cmtt-12">3 </span>after the blank space is the
+result.
+</p><!--l. 599--><p class="noindent" >However in every-day life, where code gets longer, interpreted command lines are often not enough.
+Therefore, many interfaces dealing with this problem. RStudio is the most common for many of the
+applications. In standard configuration its user interface is seperated in four quarters. One is the
+known console, another one lists the variables per environment, the history of commands and
+connections, the third one displays among others the help page, packages and plots, and last but not
+least, the scipt window (only if a script is opened). In the script window input can be
+written in a text file. Lines get executed by pressing <span 
+class="cmtt-12">Ctrl + Enter </span>(or <span 
+class="cmtt-12">Ctrl + Return</span>). In
+order to have R skripts readable later or by others, please mind your coding style [<span 
+class="cmti-12">Note:</span>
+<span 
+class="cmti-12">Take some ideas from </span><a 
+href="https://google.github.io/styleguide/Rguide.xml" class="url" ><span 
+class="cmitt-10x-x-120">https://google.github.io/styleguide/Rguide.xml</span></a> <span 
+class="cmti-12">and</span>
+                                                                                            
+                                                                                            
+<a 
+href="https://www.r-bloggers.com/\%F0\%9F\%96\%8A-r-coding-style-guide/" class="url" ><span 
+class="cmitt-10x-x-120">https://www.r-bloggers.com/\</span><span 
+class="cmitt-10x-x-120">%F0\</span><span 
+class="cmitt-10x-x-120">%9F\</span><span 
+class="cmitt-10x-x-120">%96\</span><span 
+class="cmitt-10x-x-120">%8A-r-coding-style-guide/</span></a><span 
+class="cmti-12">.</span>]      and use
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">#&#x0027;</span></span></span>_ at the begin of a line to write text, or <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">#</span></span></span>.
+</p><!--l. 615--><p class="noindent" >The <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">#</span></span></span> sign symbolises comments in your <span 
+class="cmss-12">R</span> code, which will not get executed. It is either used for
+commenting your code to make it more readable later on or to omit code snippets. For better
+readability, when commenting for better understanding at the end of the line, leave one two blank
+spaces to the code and one after <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">#</span></span></span>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor26"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Section</span><span 
+class="cmitt-10x-x-120"> breaks</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> done</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> four</span><span 
+class="cmitt-10x-x-120"> hash</span><span 
+class="cmitt-10x-x-120"> symbols</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> RStudio</span><span 
+class="cmitt-10x-x-120"> (default</span><span 
+class="cmitt-10x-x-120"> settings).</span></span>
+<br /><span id="textcolor27"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> With</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> small</span><span 
+class="cmitt-10x-x-120"> downwards</span><span 
+class="cmitt-10x-x-120"> facing</span><span 
+class="cmitt-10x-x-120"> triangle</span><span 
+class="cmitt-10x-x-120"> on</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> left</span></span>
+<br /><span id="textcolor28"><span 
+class="cmitt-10x-x-120">#####</span></span>
+<br /><span id="textcolor29"><span 
+class="cmitt-10x-x-120">####</span><span 
+class="cmitt-10x-x-120"> Title</span></span>
+<br /><span id="textcolor30"><span 
+class="cmitt-10x-x-120">###</span><span 
+class="cmitt-10x-x-120"> Subtitle</span></span>
+<br /><span id="textcolor31"><span 
+class="cmitt-10x-x-120">##</span><span 
+class="cmitt-10x-x-120"> Notes</span><span 
+class="cmitt-10x-x-120"> from</span><span 
+class="cmitt-10x-x-120"> output,</span><span 
+class="cmitt-10x-x-120"> e.g.</span><span 
+class="cmitt-10x-x-120"> results</span><span 
+class="cmitt-10x-x-120"> after</span><span 
+class="cmitt-10x-x-120"> time</span><span 
+class="cmitt-10x-x-120"> consuming</span><span 
+class="cmitt-10x-x-120"> calculations</span><span 
+class="cmitt-10x-x-120"> (1.2345678)</span></span>
+<br /><span id="textcolor32"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Buzzwords</span><span 
+class="cmitt-10x-x-120"> (avoid</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> use</span><span 
+class="cmitt-10x-x-120"> at)</span></span>
+<br /><span id="textcolor33"><span 
+class="cmitt-10x-x-120">#1</span><span 
+class="cmitt-10x-x-120"> +</span><span 
+class="cmitt-10x-x-120"> 2</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> #</span><span 
+class="cmitt-10x-x-120"> This</span><span 
+class="cmitt-10x-x-120"> line</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> code</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> part</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> input,</span><span 
+class="cmitt-10x-x-120"> but</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> interpreted.</span></span>
+<br /><span id="textcolor34"><span 
+class="cmitt-10x-x-120">#####</span></span>
+<br /><span id="textcolor35"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> This</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> continous</span><span 
+class="cmitt-10x-x-120"> running</span><span 
+class="cmitt-10x-x-120"> text.</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor36"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> It</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> used</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> describe</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> next</span><span 
+class="cmitt-10x-x-120"> part</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> code.</span></span>
+<br /><span id="textcolor37"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Pleas</span><span 
+class="cmitt-10x-x-120"> also</span><span 
+class="cmitt-10x-x-120"> mind</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> maximum</span><span 
+class="cmitt-10x-x-120"> amount</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> 80</span><span 
+class="cmitt-10x-x-120"> characters</span><span 
+class="cmitt-10x-x-120"> per</span><span 
+class="cmitt-10x-x-120"> line</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> such</span><span 
+class="cmitt-10x-x-120"> texts,</span><span 
+class="cmitt-10x-x-120"> </span></span>
+<br /><span id="textcolor38"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> by</span><span 
+class="cmitt-10x-x-120"> manually</span><span 
+class="cmitt-10x-x-120"> inserting</span><span 
+class="cmitt-10x-x-120"> line</span><span 
+class="cmitt-10x-x-120"> breaks.</span></span>
+</div>
+</div>
+</div>
+<!--l. 643--><p class="noindent" >In this online script output is styled with two <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">#</span></span></span>, i. e. <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12">##</span></span></span>. You are able to copy the code chunks and
+run them in your <span 
+class="cmss-12">R</span> console.
+</p><!--l. 646--><p class="noindent" >Blank spaces are not interpreted in <span 
+class="cmss-12">R</span> and, thus, they can be placed for readability and optical
+reasons only.
+</p><!--l. 649--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">R</span><span 
+class="cmcsc-10x-x-144"> <span 
+class="small-caps">a</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">a</span> <span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">c</span><span 
+class="small-caps">u</span><span 
+class="small-caps">l</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span></span>
+</p><!--l. 651--><p class="noindent" >The four basic arithmetical operations work rather intuitively:
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor39"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor40"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor41"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor42"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Summation</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-1">
+## [1] 3
+</div>
+<!--l. 660--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor43"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor44"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor45"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor46"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Subtraction</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-2">
+## [1] -1
+</div>
+<!--l. 666--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor47"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor48"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor49"><span 
+class="cmtt-12">6</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor50"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Multiplication</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-3">
+## [1] 30
+</div>
+<!--l. 672--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor51"><span 
+class="cmtt-12">8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor52"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor53"><span 
+class="cmtt-12">7</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor54"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Division</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-4">
+## [1] 1.142857
+</div>
+<!--l. 678--><p class="nopar" >
+</p>
+</div>
+<!--l. 682--><p class="noindent" >Of course playing around and linking is possible:
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor55"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor56"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor57"><span 
+class="cmtt-12">(</span></span><span id="textcolor58"><span 
+class="cmtt-12">-</span></span><span id="textcolor59"><span 
+class="cmtt-12">2</span></span><span id="textcolor60"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-5">
+## [1] -1
+</div>
+<!--l. 691--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor61"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor62"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor63"><span 
+class="cmtt-12">4</span></span><span id="textcolor64"><span 
+class="cmtt-12">^</span></span><span id="textcolor65"><span 
+class="cmtt-12">(</span></span><span id="textcolor66"><span 
+class="cmtt-12">-</span></span><span id="textcolor67"><span 
+class="cmtt-12">1</span></span><span id="textcolor68"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-6">
+## [1] 0.75
+</div>
+<!--l. 697--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor69"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor70"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor71"><span 
+class="cmtt-12">(</span></span><span id="textcolor72"><span 
+class="cmtt-12">-</span></span><span id="textcolor73"><span 
+class="cmtt-12">6</span></span><span id="textcolor74"><span 
+class="cmtt-12">)</span></span><span id="textcolor75"><span 
+class="cmtt-12">^</span></span><span id="textcolor76"><span 
+class="cmtt-12">(</span></span><span id="textcolor77"><span 
+class="cmtt-12">-</span></span><span id="textcolor78"><span 
+class="cmtt-12">1</span></span><span id="textcolor79"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-7">
+## [1] -0.8333333
+</div>
+<!--l. 703--><p class="nopar" >
+</p>
+</div>
+<!--l. 716--><p class="noindent" >Be careful, to use <a 
+href="QuMWikiMasterli5.html#glo:parentheses">parentheses</a>, in order to have the programm code interpreted correctly.
+</p><!--l. 720--><p class="noindent" >Values can also be stored for further purposes. This can be done in many different ways.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor80"><span 
+class="cmtt-12">myStorageName</span></span><span 
+class="cmtt-12"> </span><span id="textcolor81"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor82"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor83"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor84"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor85"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> myStorageName</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> +</span><span 
+class="cmitt-10x-x-120"> 2</span></span>
+<br /><span id="textcolor86"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> In</span><span 
+class="cmitt-10x-x-120"> other</span><span 
+class="cmitt-10x-x-120"> words:</span></span>
+<br /><span id="textcolor87"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> +</span><span 
+class="cmitt-10x-x-120"> 2</span><span 
+class="cmitt-10x-x-120"> gets</span><span 
+class="cmitt-10x-x-120"> assigned</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> myStorageName.</span><span 
+class="cmitt-10x-x-120"> It</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> stored</span><span 
+class="cmitt-10x-x-120"> there.</span></span>
+<br /><span id="textcolor88"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span id="textcolor89"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor90"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor91"><span 
+class="cmtt-12">-&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor92"><span 
+class="cmtt-12">my.storage.name</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor93"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Avoid</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> use.</span></span>
+<br /><span id="textcolor94"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> The</span><span 
+class="cmitt-10x-x-120"> assignment</span><span 
+class="cmitt-10x-x-120"> takes</span><span 
+class="cmitt-10x-x-120"> place</span><span 
+class="cmitt-10x-x-120"> into</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> direction</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0027;gets-arrow&#x0027;</span></span>
+<br /><span id="textcolor95"><span 
+class="cmtt-12">assign</span></span><span id="textcolor96"><span 
+class="cmtt-12">(</span></span><span id="textcolor97"><span 
+class="cmtt-12">&#x0022;mystoragename&#x0022;</span></span><span id="textcolor98"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor99"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span id="textcolor100"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor101"><span 
+class="cmtt-12">6</span></span><span id="textcolor102"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor103"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> assign()</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> Assign</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> value</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> name</span></span>
+<br /><span id="textcolor104"><span 
+class="cmtt-12">myStorageName</span></span><span 
+class="cmtt-12"> </span><span id="textcolor105"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor106"><span 
+class="cmtt-12">mystoragename</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor107"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> ==</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> (vectorized)</span><span 
+class="cmitt-10x-x-120"> comparison</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> equality</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-8">
+## [1] FALSE
+</div>
+<!--l. 735--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor108"><span 
+class="cmtt-12">myStorageName</span></span><span 
+class="cmtt-12"> </span><span id="textcolor109"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor110"><span 
+class="cmtt-12">myStorageName</span></span><span 
+class="cmtt-12"> </span><span id="textcolor111"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor112"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor113"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> &#x0022;old&#x0022;</span><span 
+class="cmitt-10x-x-120"> myStorageName</span><span 
+class="cmitt-10x-x-120"> woll</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> overwritten</span></span>
+</div>
+</div>
+</div>
+<!--l. 742--><p class="noindent" >Object names have to start with a letter.
+</p><!--l. 744--><p class="noindent" >The <span id="textcolor114"><span 
+class="cmtt-12">assign</span></span> command can do special assignments in situations where <span id="textcolor115"><span 
+class="cmtt-12">&#x003C;-</span></span> does not work as wanted. At
+the end you can find a glossary with <span 
+class="cmss-12">R</span> commands, such as <span id="textcolor116"><span 
+class="cmtt-12">assign</span></span>.
+</p><!--l. 747--><p class="noindent" ><span id="textcolor117"><span 
+class="cmtt-12">=</span></span> can also be used for assign, but is avoided except when handing over parameters to a function. It
+does not compare two objects.
+</p><!--l. 750--><p class="noindent" >In contrast, <span id="textcolor118"><span 
+class="cmtt-12">==</span></span> compares two (vectorised) objects and gives back an object of the sam type.
+Therefore, it shall be avoided when testing exact equality, to get a single logical value, e. g. in
+conditions. In such situations <span id="textcolor119"><span 
+class="cmtt-12">identical</span></span> shall be used.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor120"><span 
+class="cmtt-12">points</span></span><span 
+class="cmtt-12"> </span><span id="textcolor121"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor122"><span 
+class="cmtt-12">30</span></span><span 
+class="cmtt-12"> </span><span id="textcolor123"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor124"><span 
+class="cmtt-12">((</span></span><span 
+class="cmtt-12"> </span><span id="textcolor125"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor126"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor127"><span 
+class="cmtt-12">.8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor128"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor129"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor130"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor131"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor132"><span 
+class="cmtt-12">3</span></span><span id="textcolor133"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor134"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> No</span><span 
+class="cmitt-10x-x-120"> need</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> leading</span><span 
+class="cmitt-10x-x-120"> zeros</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> front</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x0027;.&#x0027;</span></span>
+<br /><span id="textcolor135"><span 
+class="cmtt-12">(points</span></span><span 
+class="cmtt-12"> </span><span id="textcolor136"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor137"><span 
+class="cmtt-12">30</span></span><span 
+class="cmtt-12"> </span><span id="textcolor138"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor139"><span 
+class="cmtt-12">((</span></span><span 
+class="cmtt-12"> </span><span id="textcolor140"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor141"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor142"><span 
+class="cmtt-12">.8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor143"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor144"><span 
+class="cmtt-12">1.1</span></span><span id="textcolor145"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor146"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor147"><span 
+class="cmtt-12">3</span></span><span id="textcolor148"><span 
+class="cmtt-12">))</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor149"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Result</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> displayed</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-9">
+## [1] 29
+</div>
+<!--l. 764--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor150"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor151"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor152"><span 
+class="cmtt-12">10</span></span><span id="textcolor153"><span 
+class="cmtt-12">^</span></span><span id="textcolor154"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor155"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor156"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor157"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor158"><span 
+class="cmtt-12">10</span></span><span id="textcolor159"><span 
+class="cmtt-12">^</span></span><span id="textcolor160"><span 
+class="cmtt-12">0</span></span><span 
+class="cmtt-12"> </span><span id="textcolor161"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor162"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor163"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor164"><span 
+class="cmtt-12">10</span></span><span id="textcolor165"><span 
+class="cmtt-12">^</span></span><span id="textcolor166"><span 
+class="cmtt-12">(</span></span><span id="textcolor167"><span 
+class="cmtt-12">-</span></span><span id="textcolor168"><span 
+class="cmtt-12">1</span></span><span id="textcolor169"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor170"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor171"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor172"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor173"><span 
+class="cmtt-12">10</span></span><span id="textcolor174"><span 
+class="cmtt-12">^</span></span><span id="textcolor175"><span 
+class="cmtt-12">(</span></span><span id="textcolor176"><span 
+class="cmtt-12">-</span></span><span id="textcolor177"><span 
+class="cmtt-12">2</span></span><span id="textcolor178"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-10">
+## [1] 42.14
+</div>
+<!--l. 770--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor179"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor180"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor181"><span 
+class="cmtt-12">100000000</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor182"><span 
+class="cmitt-10x-x-120">##</span><span 
+class="cmitt-10x-x-120"> 1e-08</span><span 
+class="cmitt-10x-x-120"> =</span><span 
+class="cmitt-10x-x-120"> 10^(-8)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-11">
+## [1] 1e-08
+</div>
+<!--l. 776--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor183"><span 
+class="cmtt-12">2.34e-02</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor184"><span 
+class="cmitt-10x-x-120">##</span><span 
+class="cmitt-10x-x-120"> 0.0234</span><span 
+class="cmitt-10x-x-120"> =</span><span 
+class="cmitt-10x-x-120"> 2.34</span><span 
+class="cmitt-10x-x-120"> *</span><span 
+class="cmitt-10x-x-120"> 10^(-2)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-12">
+## [1] 0.0234
+</div>
+<!--l. 782--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor185"><span 
+class="cmtt-12">points</span></span><span id="textcolor186"><span 
+class="cmtt-12">^</span></span><span id="textcolor187"><span 
+class="cmtt-12">2</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-13">
+## [1] 841
+</div>
+<!--l. 788--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor188"><span 
+class="cmtt-12">13</span></span><span 
+class="cmtt-12"> </span><span id="textcolor189"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor190"><span 
+class="cmtt-12">11</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor191"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> cutoff</span><span 
+class="cmitt-10x-x-120"> after</span><span 
+class="cmitt-10x-x-120"> 6</span><span 
+class="cmitt-10x-x-120"> digits</span><span 
+class="cmitt-10x-x-120"> (per</span><span 
+class="cmitt-10x-x-120"> default)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-14">
+## [1] 1.181818
+</div>
+<!--l. 794--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor192"><span 
+class="cmtt-12">print</span></span><span id="textcolor193"><span 
+class="cmtt-12">(</span></span><span id="textcolor194"><span 
+class="cmtt-12">13</span></span><span 
+class="cmtt-12"> </span><span id="textcolor195"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor196"><span 
+class="cmtt-12">11</span></span><span id="textcolor197"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor198"><span 
+class="cmtt-12">digits</span></span><span 
+class="cmtt-12"> </span><span id="textcolor199"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor200"><span 
+class="cmtt-12">9</span></span><span id="textcolor201"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor202"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> display</span><span 
+class="cmitt-10x-x-120"> 9</span><span 
+class="cmitt-10x-x-120"> digits</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-15">
+## [1] 1.18181818
+</div>
+<!--l. 800--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor203"><span 
+class="cmtt-12">13</span></span><span 
+class="cmtt-12"> </span><span id="textcolor204"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor205"><span 
+class="cmtt-12">11</span></span><span 
+class="cmtt-12"> </span><span id="textcolor206"><span 
+class="cmtt-12">-&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor207"><span 
+class="cmtt-12">somenumber</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor208"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> variable</span><span 
+class="cmitt-10x-x-120"> list</span><span 
+class="cmitt-10x-x-120"> 14</span><span 
+class="cmitt-10x-x-120"> decimal</span><span 
+class="cmitt-10x-x-120"> digits</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> displayed</span></span>
+</div>
+</div>
+</div>
+<!--l. 807--><p class="noindent" >The <!--l. 807--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mo 
+class="MathClass-bin">n</mo></math><sup class="textsuperscript"><span 
+class="cmr-10x-x-109">th</span></sup>-root
+<!--l. 807--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mroot><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></mroot></math> can be written as
+<!--l. 807--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>x</mi></math> to the power of
+the reciprocal of <!--l. 807--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi></math>,
+i. e. <!--l. 808--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mroot><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mi 
+>n</mi></mrow></mroot> <mo 
+class="MathClass-rel">=</mo> <msup><mrow 
+><mi 
+>x</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-bin">∕</mo><mi 
+>n</mi></mrow></msup 
+></math>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor209"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor210"><span 
+class="cmtt-12">(</span></span><span id="textcolor211"><span 
+class="cmtt-12">2</span></span><span id="textcolor212"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-16">
+## [1] 1.414214
+</div>
+<!--l. 817--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor213"><span 
+class="cmtt-12">2</span></span><span id="textcolor214"><span 
+class="cmtt-12">^</span></span><span id="textcolor215"><span 
+class="cmtt-12">.5</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor216"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> taking</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> square</span><span 
+class="cmitt-10x-x-120"> root</span><span 
+class="cmitt-10x-x-120"> by</span><span 
+class="cmitt-10x-x-120"> taking</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> 0.5th</span><span 
+class="cmitt-10x-x-120"> power</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-17">
+## [1] 1.414214
+</div>
+<!--l. 823--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor217"><span 
+class="cmtt-12">pi</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor218"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> constants</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> available</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> R</span><span 
+class="cmitt-10x-x-120"> more</span><span 
+class="cmitt-10x-x-120"> precisely</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> displayed</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-18">
+## [1] 3.141593
+</div>
+<!--l. 829--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor219"><span 
+class="cmtt-12">1000</span></span><span 
+class="cmtt-12"> </span><span id="textcolor220"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor221"><span 
+class="cmtt-12">1.02</span></span><span id="textcolor222"><span 
+class="cmtt-12">^</span></span><span id="textcolor223"><span 
+class="cmtt-12">5</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-19">
+## [1] 1104.081
+</div>
+<!--l. 835--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor224"><span 
+class="cmtt-12">27</span></span><span id="textcolor225"><span 
+class="cmtt-12">^</span></span><span id="textcolor226"><span 
+class="cmtt-12">(</span></span><span id="textcolor227"><span 
+class="cmtt-12">1</span></span><span id="textcolor228"><span 
+class="cmtt-12">/</span></span><span id="textcolor229"><span 
+class="cmtt-12">3</span></span><span id="textcolor230"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-20">
+## [1] 3
+</div>
+<!--l. 841--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor231"><span 
+class="cmtt-12">(</span></span><span id="textcolor232"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor233"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor234"><span 
+class="cmtt-12">32</span></span><span id="textcolor235"><span 
+class="cmtt-12">)</span></span><span id="textcolor236"><span 
+class="cmtt-12">^</span></span><span id="textcolor237"><span 
+class="cmtt-12">(</span></span><span id="textcolor238"><span 
+class="cmtt-12">1</span></span><span id="textcolor239"><span 
+class="cmtt-12">/</span></span><span id="textcolor240"><span 
+class="cmtt-12">5</span></span><span id="textcolor241"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-21">
+## [1] 0.5
+</div>
+<!--l. 847--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor242"><span 
+class="cmtt-12">.0001</span></span><span id="textcolor243"><span 
+class="cmtt-12">^</span></span><span id="textcolor244"><span 
+class="cmtt-12">.25</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-22">
+## [1] 0.1
+</div>
+<!--l. 853--><p class="nopar" >
+</p>
+</div>
+<!--l. 857--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">C<span 
+class="small-caps">o</span><span 
+class="small-caps">m</span><span 
+class="small-caps">p</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">s</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">o</span><span 
+class="small-caps">p</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">s</span></span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor245"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor246"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor247"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor248"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> ==</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> used</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> compare</span><span 
+class="cmitt-10x-x-120"> left-</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> right-hand</span><span 
+class="cmitt-10x-x-120"> side</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-23">
+## [1] TRUE
+</div>
+<!--l. 867--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor249"><span 
+class="cmtt-12">identical</span></span><span id="textcolor250"><span 
+class="cmtt-12">(</span></span><span id="textcolor251"><span 
+class="cmtt-12">1</span></span><span id="textcolor252"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor253"><span 
+class="cmtt-12">1</span></span><span id="textcolor254"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor255"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> but</span><span 
+class="cmitt-10x-x-120"> it</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> advised</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> use</span><span 
+class="cmitt-10x-x-120"> this,</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> no</span><span 
+class="cmitt-10x-x-120"> vectors</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> compared</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-24">
+## [1] TRUE
+</div>
+<!--l. 873--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor256"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor257"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor258"><span 
+class="cmtt-12">3</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-25">
+## [1] FALSE
+</div>
+<!--l. 879--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor259"><span 
+class="cmtt-12">identical</span></span><span id="textcolor260"><span 
+class="cmtt-12">(</span></span><span id="textcolor261"><span 
+class="cmtt-12">2</span></span><span id="textcolor262"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor263"><span 
+class="cmtt-12">3</span></span><span id="textcolor264"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-26">
+## [1] FALSE
+</div>
+<!--l. 885--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor265"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor266"><span 
+class="cmtt-12">!=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor267"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor268"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> !=</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> used</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> ask</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> unequality</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-27">
+## [1] FALSE
+</div>
+<!--l. 891--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor269"><span 
+class="cmtt-12">!</span></span><span id="textcolor270"><span 
+class="cmtt-12">(</span></span><span id="textcolor271"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor272"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor273"><span 
+class="cmtt-12">1</span></span><span id="textcolor274"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor275"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> !</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> negates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> statement</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-28">
+## [1] FALSE
+</div>
+<!--l. 897--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor276"><span 
+class="cmtt-12">!</span></span><span id="textcolor277"><span 
+class="cmtt-12">identical</span></span><span id="textcolor278"><span 
+class="cmtt-12">(</span></span><span id="textcolor279"><span 
+class="cmtt-12">1</span></span><span id="textcolor280"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor281"><span 
+class="cmtt-12">1</span></span><span id="textcolor282"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-29">
+## [1] FALSE
+</div>
+<!--l. 903--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor283"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor284"><span 
+class="cmtt-12">!=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor285"><span 
+class="cmtt-12">3</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-30">
+## [1] TRUE
+</div>
+<!--l. 909--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor286"><span 
+class="cmtt-12">!</span></span><span id="textcolor287"><span 
+class="cmtt-12">identical</span></span><span id="textcolor288"><span 
+class="cmtt-12">(</span></span><span id="textcolor289"><span 
+class="cmtt-12">2</span></span><span id="textcolor290"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor291"><span 
+class="cmtt-12">3</span></span><span id="textcolor292"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-31">
+## [1] TRUE
+</div>
+<!--l. 915--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor293"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor294"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor295"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor296"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x003C;</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> lhs</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> smaller</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> rhs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-32">
+## [1] TRUE
+</div>
+<!--l. 921--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor297"><span 
+class="cmtt-12">6</span></span><span 
+class="cmtt-12"> </span><span id="textcolor298"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor299"><span 
+class="cmtt-12">7</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor300"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x003E;</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> lhs</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> greater</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> rhs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-33">
+## [1] FALSE
+</div>
+<!--l. 927--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor301"><span 
+class="cmtt-12">(</span></span><span id="textcolor302"><span 
+class="cmtt-12">8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor303"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor304"><span 
+class="cmtt-12">9</span></span><span id="textcolor305"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor306"><span 
+class="cmtt-12">&#x0026;&#x0026;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor307"><span 
+class="cmtt-12">(</span></span><span id="textcolor308"><span 
+class="cmtt-12">6</span></span><span 
+class="cmtt-12"> </span><span id="textcolor309"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor310"><span 
+class="cmtt-12">7</span></span><span id="textcolor311"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor312"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0026;&#x0026;</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> logical</span><span 
+class="cmitt-10x-x-120"> &#x0027;and&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-34">
+## [1] FALSE
+</div>
+<!--l. 933--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor313"><span 
+class="cmtt-12">(</span></span><span id="textcolor314"><span 
+class="cmtt-12">8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor315"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor316"><span 
+class="cmtt-12">9</span></span><span id="textcolor317"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor318"><span 
+class="cmtt-12">||</span></span><span 
+class="cmtt-12"> </span><span id="textcolor319"><span 
+class="cmtt-12">(</span></span><span id="textcolor320"><span 
+class="cmtt-12">6</span></span><span 
+class="cmtt-12"> </span><span id="textcolor321"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor322"><span 
+class="cmtt-12">7</span></span><span id="textcolor323"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor324"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> ||</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> logical</span><span 
+class="cmitt-10x-x-120"> &#x0027;(including)</span><span 
+class="cmitt-10x-x-120"> or&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-35">
+## [1] TRUE
+</div>
+<!--l. 939--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor325"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor326"><span 
+class="cmtt-12">&#x003C;=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor327"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor328"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x003C;=</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> lhs</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> smaller</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> equal</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> rhs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-36">
+## [1] TRUE
+</div>
+<!--l. 945--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor329"><span 
+class="cmtt-12">4</span></span><span 
+class="cmtt-12"> </span><span id="textcolor330"><span 
+class="cmtt-12">&#x003E;=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor331"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor332"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x003E;=</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> lhs</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> greater</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> equal</span><span 
+class="cmitt-10x-x-120"> than</span><span 
+class="cmitt-10x-x-120"> rhs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-37">
+## [1] TRUE
+</div>
+<!--l. 951--><p class="nopar" >
+</p>
+</div>
+<!--l. 955--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">G<span 
+class="small-caps">e</span><span 
+class="small-caps">t</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> <span 
+class="small-caps">h</span><span 
+class="small-caps">e</span><span 
+class="small-caps">l</span><span 
+class="small-caps">p</span> <span 
+class="small-caps">i</span><span 
+class="small-caps">n</span> R</span>
+</p><!--l. 957--><p class="noindent" >How can I get help with built in functions?
+</p><!--l. 959--><p class="noindent" >The help can be accesed by typing a questionmark and the command without parentheses, i. e.
+without any argument. If the name of the command is unknown, typing two qustion marks activates
+a buzzword search. Additionally, when the command does not start with a letter, tick marks or
+quotation marks have to be used. Executing only the name of the command returns the source code,
+or – if not coded in <span 
+class="cmss-12">R</span> – the head of the function.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor333"><span 
+class="cmtt-12">?</span></span><span id="textcolor334"><span 
+class="cmtt-12">assign</span></span>
+<br /><span id="textcolor335"><span 
+class="cmtt-12">?</span></span><span id="textcolor336"><span 
+class="cmtt-12">identical</span></span>
+<br /><span id="textcolor337"><span 
+class="cmtt-12">??</span></span><span id="textcolor338"><span 
+class="cmtt-12">&#x0027;!=&#x0027;</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor339"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> Click</span><span 
+class="cmitt-10x-x-120"> on</span><span 
+class="cmitt-10x-x-120"> &#x0027;base::&#x003C;&#x0027;</span><span 
+class="cmitt-10x-x-120"> which</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> equivalent</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> help</span><span 
+class="cmitt-10x-x-120"> page</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> &#x003C;</span><span 
+class="cmitt-10x-x-120"> (?&#x0027;&#x003C;&#x0027;)</span></span>
+<br /><span id="textcolor340"><span 
+class="cmtt-12">identical</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor341"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> (Without</span><span 
+class="cmitt-10x-x-120"> argument)</span><span 
+class="cmitt-10x-x-120"> Gives</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> head</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> function</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-38">
+## function (x, y, num.eq = TRUE, single.NA = TRUE, attrib.as.set = TRUE,
+ <br />##     ignore.bytecode = TRUE, ignore.environment = FALSE, ignore.srcref = TRUE)
+ <br />## .Internal(identical(x, y, num.eq, single.NA, attrib.as.set, ignore.bytecode,
+ <br />##     ignore.environment, ignore.srcref))
+ <br />## &#x003C;bytecode: 0x000000000950d398&#x003E;
+ <br />## &#x003C;environment: namespace:base&#x003E;
+</div>
+<!--l. 983--><p class="nopar" >
+</p>
+</div>
+<!--l. 987--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">S<span 
+class="small-caps">o</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> <span 
+class="small-caps">b</span><span 
+class="small-caps">u</span><span 
+class="small-caps">i</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span>-<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">s</span></span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor342"><span 
+class="cmtt-12">exp</span></span><span id="textcolor343"><span 
+class="cmtt-12">(</span></span><span id="textcolor344"><span 
+class="cmtt-12">4</span></span><span id="textcolor345"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor346"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> exponential</span><span 
+class="cmitt-10x-x-120"> function</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-39">
+## [1] 54.59815
+</div>
+<!--l. 996--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor347"><span 
+class="cmtt-12">log</span></span><span id="textcolor348"><span 
+class="cmtt-12">(</span></span><span id="textcolor349"><span 
+class="cmtt-12">5</span></span><span id="textcolor350"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor351"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> natural</span><span 
+class="cmitt-10x-x-120"> logarithm</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-40">
+## [1] 1.609438
+</div>
+<!--l. 1002--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor352"><span 
+class="cmtt-12">factorial</span></span><span id="textcolor353"><span 
+class="cmtt-12">(</span></span><span id="textcolor354"><span 
+class="cmtt-12">6</span></span><span id="textcolor355"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor356"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> factorial</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-41">
+## [1] 720
+</div>
+<!--l. 1008--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor357"><span 
+class="cmtt-12">choose</span></span><span id="textcolor358"><span 
+class="cmtt-12">(</span></span><span id="textcolor359"><span 
+class="cmtt-12">4</span></span><span id="textcolor360"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor361"><span 
+class="cmtt-12">2</span></span><span id="textcolor362"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor363"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> binomial</span><span 
+class="cmitt-10x-x-120"> coefficient</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-42">
+## [1] 6
+</div>
+<!--l. 1014--><p class="nopar" >
+</p>
+</div>
+<!--l. 1018--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">R</span><span 
+class="cmcsc-10x-x-144"> <span 
+class="small-caps">i</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">v</span><span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">z</span><span 
+class="small-caps">e</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">a</span>.<span 
+class="small-caps">k</span>.<span 
+class="small-caps">a</span>.</span><span 
+class="cmcsc-10x-x-144"> </span><span id="textcolor364"><span 
+class="cmtcsc-10x-x-144"><span 
+class="small-caps">c</span></span></span> <span 
+class="cmcsc-10x-x-144"><span 
+class="small-caps">i</span><span 
+class="small-caps">s</span> <span 
+class="small-caps">y</span><span 
+class="small-caps">o</span><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">d</span></span>
+</p><!--l. 1020--><p class="noindent" ><span 
+class="cmss-12">R</span>is vectorized. This means that it can calcualte with vectors and matrices without having to break
+down the operations to simple calculations by hand.
+</p><!--l. 1023--><p class="noindent" >In order to create a vector <span id="textcolor365"><span 
+class="cmtt-12">c( ... )</span></span> – for combine – has to be used. The entries of the vector are
+written inside the parantheses as comma separated values.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor366"><span 
+class="cmtt-12">c</span></span><span id="textcolor367"><span 
+class="cmtt-12">(</span></span><span id="textcolor368"><span 
+class="cmtt-12">1</span></span><span id="textcolor369"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor370"><span 
+class="cmtt-12">2</span></span><span id="textcolor371"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor372"><span 
+class="cmtt-12">3</span></span><span id="textcolor373"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor374"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> 1,</span><span 
+class="cmitt-10x-x-120"> 2</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> 3</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> generated</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-43">
+## [1] 1 2 3
+</div>
+<!--l. 1033--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor375"><span 
+class="cmtt-12">1</span></span><span id="textcolor376"><span 
+class="cmtt-12">:</span></span><span id="textcolor377"><span 
+class="cmtt-12">3</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor378"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> same</span><span 
+class="cmitt-10x-x-120"> result</span><span 
+class="cmitt-10x-x-120"> can</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> achieved</span><span 
+class="cmitt-10x-x-120"> creating</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> sequence</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> steplength</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> 1</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-44">
+## [1] 1 2 3
+</div>
+<!--l. 1039--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor379"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor380"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor381"><span 
+class="cmtt-12">4</span></span><span id="textcolor382"><span 
+class="cmtt-12">:</span></span><span id="textcolor383"><span 
+class="cmtt-12">9</span></span>
+<br /><span id="textcolor384"><span 
+class="cmtt-12">myVector</span></span><span id="textcolor385"><span 
+class="cmtt-12">^</span></span><span id="textcolor386"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor387"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> squares</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> elementwise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-45">
+## [1] 16 25 36 49 64 81
+</div>
+<!--l. 1046--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor388"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor389"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor390"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor391"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> multiplies</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> elementwise</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-46">
+## [1] 16 25 36 49 64 81
+</div>
+<!--l. 1052--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor392"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor393"><span 
+class="cmtt-12">%*%</span></span><span 
+class="cmtt-12"> </span><span id="textcolor394"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor395"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> multiples</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> vectors</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-47">
+##      [,1]
+ <br />## [1,]  271
+</div>
+<!--l. 1059--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor396"><span 
+class="cmtt-12">crossprod</span></span><span id="textcolor397"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor398"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> built</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> function</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> multiplying</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> vectors</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-48">
+##      [,1]
+ <br />## [1,]  271
+</div>
+<!--l. 1066--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor399"><span 
+class="cmtt-12">myVector2Times</span></span><span 
+class="cmtt-12"> </span><span id="textcolor400"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor401"><span 
+class="cmtt-12">c</span></span><span id="textcolor402"><span 
+class="cmtt-12">(myVector,</span><span 
+class="cmtt-12"> myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor403"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> combine</span><span 
+class="cmitt-10x-x-120"> two</span><span 
+class="cmitt-10x-x-120"> vectors</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> one</span><span 
+class="cmitt-10x-x-120"> new</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+<br /><span id="textcolor404"><span 
+class="cmtt-12">myVector2Times</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-49">
+##  [1] 4 5 6 7 8 9 4 5 6 7 8 9
+</div>
+<!--l. 1073--><p class="nopar" >
+</p>
+</div>
+<!--l. 1077--><p class="noindent" >The elements of a vector can be accesed like this
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor405"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor406"><span 
+class="cmtt-12">2</span></span><span id="textcolor407"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor408"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> access</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> second</span><span 
+class="cmitt-10x-x-120"> element</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-50">
+## [1] 5
+</div>
+<!--l. 1086--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor409"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor410"><span 
+class="cmtt-12">-</span></span><span id="textcolor411"><span 
+class="cmtt-12">3</span></span><span id="textcolor412"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor413"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> return</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> without</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> third</span><span 
+class="cmitt-10x-x-120"> element</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-51">
+## [1] 4 5 7 8 9
+</div>
+<!--l. 1092--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor414"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor415"><span 
+class="cmtt-12">c</span></span><span id="textcolor416"><span 
+class="cmtt-12">(</span></span><span id="textcolor417"><span 
+class="cmtt-12">1</span></span><span id="textcolor418"><span 
+class="cmtt-12">,</span></span><span id="textcolor419"><span 
+class="cmtt-12">4</span></span><span id="textcolor420"><span 
+class="cmtt-12">)]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor421"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> access</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> first</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> third</span><span 
+class="cmitt-10x-x-120"> element</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-52">
+## [1] 4 7
+</div>
+<!--l. 1098--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor422"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor423"><span 
+class="cmtt-12">1</span></span><span id="textcolor424"><span 
+class="cmtt-12">:</span></span><span id="textcolor425"><span 
+class="cmtt-12">3</span></span><span id="textcolor426"><span 
+class="cmtt-12">]</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-53">
+## [1] 4 5 6
+</div>
+<!--l. 1104--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor427"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor428"><span 
+class="cmtt-12">!=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor429"><span 
+class="cmtt-12">6</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor430"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> boolian</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> FALSE</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> at</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> position</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> 6</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-54">
+## [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE
+</div>
+<!--l. 1110--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor431"><span 
+class="cmtt-12">myVector[myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor432"><span 
+class="cmtt-12">!=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor433"><span 
+class="cmtt-12">6</span></span><span id="textcolor434"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor435"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> which</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> not</span><span 
+class="cmitt-10x-x-120"> 6</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-55">
+## [1] 4 5 7 8 9
+</div>
+<!--l. 1116--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor436"><span 
+class="cmtt-12">myVector[myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor437"><span 
+class="cmtt-12">&#x003E;=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor438"><span 
+class="cmtt-12">7</span></span><span id="textcolor439"><span 
+class="cmtt-12">]</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor440"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> greater</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> equal</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 87</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-56">
+## [1] 7 8 9
+</div>
+<!--l. 1122--><p class="nopar" >
+</p>
+</div>
+<!--l. 1126--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">M<span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> <span 
+class="small-caps">c</span><span 
+class="small-caps">o</span><span 
+class="small-caps">m</span><span 
+class="small-caps">p</span><span 
+class="small-caps">l</span><span 
+class="small-caps">e</span><span 
+class="small-caps">x</span> <span 
+class="small-caps">s</span><span 
+class="small-caps">e</span><span 
+class="small-caps">q</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor441"><span 
+class="cmtt-12">1</span></span><span id="textcolor442"><span 
+class="cmtt-12">:</span></span><span id="textcolor443"><span 
+class="cmtt-12">12</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor444"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> sequence</span><span 
+class="cmitt-10x-x-120"> from</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 12</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-57">
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
+</div>
+<!--l. 1135--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor445"><span 
+class="cmtt-12">seq</span></span><span id="textcolor446"><span 
+class="cmtt-12">(</span></span><span id="textcolor447"><span 
+class="cmtt-12">1</span></span><span id="textcolor448"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor449"><span 
+class="cmtt-12">12</span></span><span id="textcolor450"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor451"><span 
+class="cmtt-12">by</span></span><span 
+class="cmtt-12"> </span><span id="textcolor452"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor453"><span 
+class="cmtt-12">1</span></span><span id="textcolor454"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor455"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> same</span><span 
+class="cmitt-10x-x-120"> sequence</span><span 
+class="cmitt-10x-x-120"> from</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 12</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> step</span><span 
+class="cmitt-10x-x-120"> length</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> (explicitely)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-58">
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
+</div>
+<!--l. 1141--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor456"><span 
+class="cmtt-12">seq</span></span><span id="textcolor457"><span 
+class="cmtt-12">(</span></span><span id="textcolor458"><span 
+class="cmtt-12">1</span></span><span id="textcolor459"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor460"><span 
+class="cmtt-12">12</span></span><span id="textcolor461"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor462"><span 
+class="cmtt-12">by</span></span><span 
+class="cmtt-12"> </span><span id="textcolor463"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor464"><span 
+class="cmtt-12">2</span></span><span id="textcolor465"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor466"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> sequence</span><span 
+class="cmitt-10x-x-120"> from</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> 12</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> step</span><span 
+class="cmitt-10x-x-120"> length</span><span 
+class="cmitt-10x-x-120"> 2</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-59">
+## [1]  1  3  5  7  9 11
+</div>
+<!--l. 1147--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor467"><span 
+class="cmtt-12">rep</span></span><span id="textcolor468"><span 
+class="cmtt-12">(myVector,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor469"><span 
+class="cmtt-12">3</span></span><span id="textcolor470"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor471"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> replicates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> 3</span><span 
+class="cmitt-10x-x-120"> times</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-60">
+##  [1] 4 5 6 7 8 9 4 5 6 7 8 9 4 5 6 7 8 9
+</div>
+<!--l. 1153--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor472"><span 
+class="cmtt-12">rep</span></span><span id="textcolor473"><span 
+class="cmtt-12">(myVector,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor474"><span 
+class="cmtt-12">1</span></span><span id="textcolor475"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor476"><span 
+class="cmtt-12">each</span></span><span 
+class="cmtt-12"> </span><span id="textcolor477"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor478"><span 
+class="cmtt-12">2</span></span><span id="textcolor479"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor480"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> replicates</span><span 
+class="cmitt-10x-x-120"> each</span><span 
+class="cmitt-10x-x-120"> entry</span><span 
+class="cmitt-10x-x-120"> 2</span><span 
+class="cmitt-10x-x-120"> times</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-61">
+##  [1] 4 4 5 5 6 6 7 7 8 8 9 9
+</div>
+<!--l. 1159--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor481"><span 
+class="cmtt-12">rep</span></span><span id="textcolor482"><span 
+class="cmtt-12">(myVector,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor483"><span 
+class="cmtt-12">3</span></span><span id="textcolor484"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor485"><span 
+class="cmtt-12">each</span></span><span 
+class="cmtt-12"> </span><span id="textcolor486"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor487"><span 
+class="cmtt-12">2</span></span><span id="textcolor488"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor489"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> replicates</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> 3</span><span 
+class="cmitt-10x-x-120"> times</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> each</span><span 
+class="cmitt-10x-x-120"> entry</span><span 
+class="cmitt-10x-x-120"> 2</span><span 
+class="cmitt-10x-x-120"> times</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-62">
+##  [1] 4 4 5 5 6 6 7 7 8 8 9 9 4 4 5 5 6 6 7 7 8 8 9 9 4 4 5 5 6 6 7 7 8 8 9 9
+</div>
+<!--l. 1165--><p class="nopar" >
+</p>
+</div>
+<!--l. 1169--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">S<span 
+class="small-caps">o</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span> <span 
+class="small-caps">v</span><span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">i</span><span 
+class="small-caps">z</span><span 
+class="small-caps">e</span><span 
+class="small-caps">d</span> <span 
+class="small-caps">b</span><span 
+class="small-caps">u</span><span 
+class="small-caps">i</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span> <span 
+class="small-caps">i</span><span 
+class="small-caps">n</span> <span 
+class="small-caps">f</span><span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 1171--><p class="noindent" >Many commands and functions in <span 
+class="cmss-12">R</span> take vectors as imputs. Furthermore <span 
+class="cmss-12">R</span> can calcualte with
+vectors elementwise.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor490"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor491"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor492"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor493"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor494"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor495"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vetor</span><span 
+class="cmitt-10x-x-120"> on</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> rhs</span><span 
+class="cmitt-10x-x-120"> 1</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> added</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-63">
+## [1] FALSE FALSE FALSE FALSE FALSE FALSE
+</div>
+<!--l. 1181--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor496"><span 
+class="cmtt-12">any</span></span><span id="textcolor497"><span 
+class="cmtt-12">(myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor498"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor499"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor500"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor501"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor502"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor503"><span 
+class="cmtt-12">3</span></span><span id="textcolor504"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor505"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> any</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> TRUE,</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> any</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> TRUE</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-64">
+## [1] TRUE
+</div>
+<!--l. 1187--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor506"><span 
+class="cmtt-12">all</span></span><span id="textcolor507"><span 
+class="cmtt-12">(myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor508"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor509"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor510"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor511"><span 
+class="cmtt-12">1</span></span><span id="textcolor512"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor513"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> TRUE,</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> elements</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> TRUE</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-65">
+## [1] FALSE
+</div>
+<!--l. 1193--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor514"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor515"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor516"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor517"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor518"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor519"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> lower,</span><span 
+class="cmitt-10x-x-120"> greater</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> equality</span><span 
+class="cmitt-10x-x-120"> (and</span><span 
+class="cmitt-10x-x-120"> combinations)</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> vetorized</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-66">
+## [1] TRUE TRUE TRUE TRUE TRUE TRUE
+</div>
+<!--l. 1199--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor520"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor521"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor522"><span 
+class="cmtt-12">8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor523"><span 
+class="cmtt-12">&#x0026;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor524"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor525"><span 
+class="cmtt-12">&#x003E;=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor526"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor527"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0026;</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> vectorized</span><span 
+class="cmitt-10x-x-120"> logical</span><span 
+class="cmitt-10x-x-120"> &#x0027;and&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-67">
+## [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE
+</div>
+<!--l. 1205--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor528"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor529"><span 
+class="cmtt-12">&#x003E;=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor530"><span 
+class="cmtt-12">8</span></span><span 
+class="cmtt-12"> </span><span id="textcolor531"><span 
+class="cmtt-12">|</span></span><span 
+class="cmtt-12"> </span><span id="textcolor532"><span 
+class="cmtt-12">myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor533"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor534"><span 
+class="cmtt-12">5</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor535"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> |</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> vectoriezd</span><span 
+class="cmitt-10x-x-120"> logical</span><span 
+class="cmitt-10x-x-120"> &#x0027;(including)</span><span 
+class="cmitt-10x-x-120"> or&#x0027;</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-68">
+## [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE
+</div>
+<!--l. 1211--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor536"><span 
+class="cmtt-12">which</span></span><span id="textcolor537"><span 
+class="cmtt-12">(myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor538"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor539"><span 
+class="cmtt-12">7</span></span><span id="textcolor540"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor541"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> position/</span><span 
+class="cmitt-10x-x-120"> index</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> TRUEs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-69">
+## [1] 1 2 3
+</div>
+<!--l. 1217--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor542"><span 
+class="cmtt-12">myVector[</span></span><span id="textcolor543"><span 
+class="cmtt-12">which</span></span><span id="textcolor544"><span 
+class="cmtt-12">(myVector</span></span><span 
+class="cmtt-12"> </span><span id="textcolor545"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor546"><span 
+class="cmtt-12">7</span></span><span id="textcolor547"><span 
+class="cmtt-12">)]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor548"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> thus,</span><span 
+class="cmitt-10x-x-120"> it</span><span 
+class="cmitt-10x-x-120"> can</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> used</span><span 
+class="cmitt-10x-x-120"> as</span><span 
+class="cmitt-10x-x-120"> index</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> another</span><span 
+class="cmitt-10x-x-120"> one</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-70">
+## [1] 4 5 6
+</div>
+<!--l. 1223--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor549"><span 
+class="cmtt-12">length</span></span><span id="textcolor550"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor551"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> length</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-71">
+## [1] 6
+</div>
+<!--l. 1234--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor552"><span 
+class="cmtt-12">sum</span></span><span id="textcolor553"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor554"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> sum</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> components</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-72">
+## [1] 39
+</div>
+<!--l. 1240--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor555"><span 
+class="cmtt-12">min</span></span><span id="textcolor556"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor557"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> minimum</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> entries</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-73">
+## [1] 4
+</div>
+<!--l. 1246--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor558"><span 
+class="cmtt-12">median</span></span><span id="textcolor559"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor560"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> median</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> value</span><span 
+class="cmitt-10x-x-120"> in</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> middle</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> ordered</span><span 
+class="cmitt-10x-x-120"> list</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-74">
+## [1] 6.5
+</div>
+<!--l. 1252--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor561"><span 
+class="cmtt-12">max</span></span><span id="textcolor562"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor563"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> maximum</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> components</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-75">
+## [1] 9
+</div>
+<!--l. 1258--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor564"><span 
+class="cmtt-12">mean</span></span><span id="textcolor565"><span 
+class="cmtt-12">(myVector)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor566"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> arithmetic</span><span 
+class="cmitt-10x-x-120"> mean</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> vector</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-76">
+## [1] 6.5
+</div>
+<!--l. 1264--><p class="nopar" >
+</p>
+</div>
+<!--l. 1268--><p class="noindent" ><span 
+class="cmcsc-10x-x-144">W<span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">k</span><span 
+class="small-caps">s</span><span 
+class="small-caps">p</span><span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> <span 
+class="small-caps">m</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">g</span><span 
+class="small-caps">e</span><span 
+class="small-caps">m</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">t</span></span>
+</p><!--l. 1270--><p class="noindent" >In <span 
+class="cmss-12">R</span> workspace management can be importent because <span 
+class="cmss-12">R</span> needs a lot of memory.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor567"><span 
+class="cmtt-12">ls</span></span><span id="textcolor568"><span 
+class="cmtt-12">()</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor569"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> ls</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> return</span><span 
+class="cmitt-10x-x-120"> all</span><span 
+class="cmitt-10x-x-120"> variable</span><span 
+class="cmitt-10x-x-120"> names</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-77">
+##  [1] &#x0022;my.storage.name&#x0022; &#x0022;MyFilePath&#x0022;      &#x0022;MyFilePathOut&#x0022;   &#x0022;MyRnwFile&#x0022;
+ <br />##  [5] &#x0022;mystoragename&#x0022;   &#x0022;myStorageName&#x0022;   &#x0022;myVector&#x0022;        &#x0022;myVector2Times&#x0022;
+ <br />##  [9] &#x0022;points&#x0022;          &#x0022;somenumber&#x0022;
+</div>
+<!--l. 1282--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor570"><span 
+class="cmtt-12">rm</span></span><span id="textcolor571"><span 
+class="cmtt-12">(</span></span><span id="textcolor572"><span 
+class="cmtt-12">&#x0022;myVector2Times&#x0022;</span></span><span id="textcolor573"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor574"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> rm</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> delete</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> certain</span><span 
+class="cmitt-10x-x-120"> variable</span></span>
+<br /><span id="textcolor575"><span 
+class="cmtt-12">ls</span></span><span id="textcolor576"><span 
+class="cmtt-12">()</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-78">
+## [1] &#x0022;my.storage.name&#x0022; &#x0022;MyFilePath&#x0022;      &#x0022;MyFilePathOut&#x0022;   &#x0022;MyRnwFile&#x0022;
+ <br />## [5] &#x0022;mystoragename&#x0022;   &#x0022;myStorageName&#x0022;   &#x0022;myVector&#x0022;        &#x0022;points&#x0022;
+ <br />## [9] &#x0022;somenumber&#x0022;
+</div>
+<!--l. 1291--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor577"><span 
+class="cmtt-12">rm</span></span><span id="textcolor578"><span 
+class="cmtt-12">(</span></span><span id="textcolor579"><span 
+class="cmtt-12">list</span></span><span 
+class="cmtt-12"> </span><span id="textcolor580"><span 
+class="cmtt-12">=</span></span><span 
+class="cmtt-12"> </span><span id="textcolor581"><span 
+class="cmtt-12">setdiff</span></span><span id="textcolor582"><span 
+class="cmtt-12">(</span></span><span id="textcolor583"><span 
+class="cmtt-12">ls</span></span><span id="textcolor584"><span 
+class="cmtt-12">(),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor585"><span 
+class="cmtt-12">c</span></span><span id="textcolor586"><span 
+class="cmtt-12">(</span></span><span id="textcolor587"><span 
+class="cmtt-12">&#x0022;MyRnwFile&#x0022;</span></span><span id="textcolor588"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor589"><span 
+class="cmtt-12">&#x0022;MyFilePath&#x0022;</span></span><span id="textcolor590"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor591"><span 
+class="cmtt-12">&#x0022;MyFilePathOut&#x0022;</span></span><span id="textcolor592"><span 
+class="cmtt-12">)))</span></span>
+<br /><span id="textcolor593"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> This</span><span 
+class="cmitt-10x-x-120"> command</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> useful,</span><span 
+class="cmitt-10x-x-120"> if</span><span 
+class="cmitt-10x-x-120"> you</span><span 
+class="cmitt-10x-x-120"> want</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> delete</span><span 
+class="cmitt-10x-x-120"> everything</span><span 
+class="cmitt-10x-x-120"> except</span><span 
+class="cmitt-10x-x-120"> some</span><span 
+class="cmitt-10x-x-120"> objects.</span></span>
+<br /><span id="textcolor594"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> In</span><span 
+class="cmitt-10x-x-120"> this</span><span 
+class="cmitt-10x-x-120"> case</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> variables</span><span 
+class="cmitt-10x-x-120"> &#x0022;MyRnwFile&#x0022;,</span><span 
+class="cmitt-10x-x-120"> &#x0022;MyFilePath&#x0022;</span><span 
+class="cmitt-10x-x-120"> are</span><span 
+class="cmitt-10x-x-120"> needed</span><span 
+class="cmitt-10x-x-120"> &#x0022;MyFilePathOut&#x0022;</span></span>
+<br /><span id="textcolor595"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> create</span><span 
+class="cmitt-10x-x-120"> this</span><span 
+class="cmitt-10x-x-120"> online</span><span 
+class="cmitt-10x-x-120"> ressource.</span></span>
+<br /><span id="textcolor596"><span 
+class="cmtt-12">gc</span></span><span id="textcolor597"><span 
+class="cmtt-12">()</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor598"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> performs</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> garbage</span><span 
+class="cmitt-10x-x-120"> collection</span><span 
+class="cmitt-10x-x-120"> and</span><span 
+class="cmitt-10x-x-120"> gives</span><span 
+class="cmitt-10x-x-120"> back</span><span 
+class="cmitt-10x-x-120"> unused</span><span 
+class="cmitt-10x-x-120"> memory</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> OS</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-79">
+##           used (Mb) gc trigger  (Mb) max used  (Mb)
+ <br />## Ncells 1242903 66.4    3520447 188.1  6576090 351.3
+ <br />## Vcells 2846536 21.8   31805711 242.7 59230971 451.9
+</div>
+<!--l. 1303--><p class="nopar" >
+</p>
+</div>
+<!--l. 1307--><p class="noindent" >In <span 
+class="cmss-12">R</span> objects can be generated and saved as well as loaded. Keep in mind, setting your working
+directory first.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor599"><span 
+class="cmtt-12">getwd</span></span><span id="textcolor600"><span 
+class="cmtt-12">()</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor601"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> getwd()</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> returns</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> current</span><span 
+class="cmitt-10x-x-120"> working</span><span 
+class="cmitt-10x-x-120"> directory</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-80">
+## [1] &#x0022;E:/QuMWiki/Out&#x0022;
+</div>
+<!--l. 1317--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor602"><span 
+class="cmtt-12">setwd</span></span><span id="textcolor603"><span 
+class="cmtt-12">(</span></span><span id="textcolor604"><span 
+class="cmtt-12">&#x0022;E:</span><span 
+class="cmsy-10x-x-120">∖∖</span><span 
+class="cmtt-12">QuMWiki</span><span 
+class="cmsy-10x-x-120">∖∖</span><span 
+class="cmtt-12">Out&#x0022;</span></span><span id="textcolor605"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor606"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> setwd(&#x0022;SomePath&#x0022;)</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> sets</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> existing</span><span 
+class="cmitt-10x-x-120"> working</span><span 
+class="cmitt-10x-x-120"> directory</span></span>
+<br /><span id="textcolor607"><span 
+class="cmtt-12">dir.create</span></span><span id="textcolor608"><span 
+class="cmtt-12">(</span></span><span id="textcolor609"><span 
+class="cmtt-12">&#x0022;E:/QuMWiki/Out&#x0022;</span></span><span id="textcolor610"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor611"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> dir.create</span><span 
+class="cmitt-10x-x-120"> ...</span><span 
+class="cmitt-10x-x-120"> creates</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> new</span><span 
+class="cmitt-10x-x-120"> folder</span></span>
+</div>
+</div>
+<!--l. 1324--><p class="noindent" ><span 
+class="cmtt-12">## Warning in dir.create(&#x0022;E:/QuMWiki/Out&#x0022;): ’E:</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">QuMWiki</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">Out’ already exists</span></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor612"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> The</span><span 
+class="cmitt-10x-x-120"> working</span><span 
+class="cmitt-10x-x-120"> directory</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> set</span><span 
+class="cmitt-10x-x-120"> additionally</span><span 
+class="cmitt-10x-x-120"> ti</span><span 
+class="cmitt-10x-x-120"> &#x0027;dir.create&#x0027;</span></span>
+<br /><span id="textcolor613"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> The</span><span 
+class="cmitt-10x-x-120"> path</span><span 
+class="cmitt-10x-x-120"> has</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> be</span><span 
+class="cmitt-10x-x-120"> stated</span><span 
+class="cmitt-10x-x-120"> either</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> &#x0022;/&#x0022;</span><span 
+class="cmitt-10x-x-120"> or</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmsy-10x-x-120">∖∖</span><span 
+class="cmitt-10x-x-120">&#x0022;</span><span 
+class="cmitt-10x-x-120"> for</span><span 
+class="cmitt-10x-x-120"> Windows.</span></span>
+<br /><span id="textcolor614"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> &#x0022;</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmitt-10x-x-120">&#x0022;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> an</span><span 
+class="cmitt-10x-x-120"> escape</span><span 
+class="cmitt-10x-x-120"> character</span><span 
+class="cmitt-10x-x-120"> (/</span><span 
+class="cmitt-10x-x-120"> begins</span><span 
+class="cmitt-10x-x-120"> something</span><span 
+class="cmitt-10x-x-120"> special).</span></span>
+<br /><span id="textcolor615"><span 
+class="cmtt-12">newvec</span></span><span 
+class="cmtt-12"> </span><span id="textcolor616"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor617"><span 
+class="cmtt-12">c</span></span><span id="textcolor618"><span 
+class="cmtt-12">(</span></span><span id="textcolor619"><span 
+class="cmtt-12">1</span></span><span id="textcolor620"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor621"><span 
+class="cmtt-12">3</span></span><span id="textcolor622"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor623"><span 
+class="cmtt-12">4</span></span><span id="textcolor624"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor625"><span 
+class="cmtt-12">2</span></span><span id="textcolor626"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor627"><span 
+class="cmtt-12">3</span></span><span id="textcolor628"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor629"><span 
+class="cmtt-12">5</span></span><span id="textcolor630"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor631"><span 
+class="cmtt-12">save</span></span><span id="textcolor632"><span 
+class="cmtt-12">(newvec,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor633"><span 
+class="cmtt-12">file</span></span><span id="textcolor634"><span 
+class="cmtt-12">=</span></span><span id="textcolor635"><span 
+class="cmtt-12">&#x0022;myfirstfile.RData&#x0022;</span></span><span id="textcolor636"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor637"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> saving</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> &#x0027;newvec&#x0027;</span></span>
+<br /><span id="textcolor638"><span 
+class="cmtt-12">rm</span></span><span id="textcolor639"><span 
+class="cmtt-12">(</span></span><span id="textcolor640"><span 
+class="cmtt-12">&#x0022;newvec&#x0022;</span></span><span id="textcolor641"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor642"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> removing</span><span 
+class="cmitt-10x-x-120"> the</span><span 
+class="cmitt-10x-x-120"> vector</span><span 
+class="cmitt-10x-x-120"> &#x0027;newvec&#x0027;</span></span>
+<br /><span id="textcolor643"><span 
+class="cmtt-12">ls</span></span><span id="textcolor644"><span 
+class="cmtt-12">()</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor645"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0027;newvec&#x0027;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> removed</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-81">
+## [1] &#x0022;MyFilePath&#x0022;    &#x0022;MyFilePathOut&#x0022; &#x0022;MyRnwFile&#x0022;
+</div>
+<!--l. 1335--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor646"><span 
+class="cmtt-12">load</span></span><span id="textcolor647"><span 
+class="cmtt-12">(</span></span><span id="textcolor648"><span 
+class="cmtt-12">&#x0022;myfirstfile.RData&#x0022;</span></span><span id="textcolor649"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor650"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> loading</span><span 
+class="cmitt-10x-x-120"> &#x0027;newvec&#x0027;</span></span>
+<br /><span id="textcolor651"><span 
+class="cmtt-12">newvec</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor652"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> &#x0027;newvec&#x0027;</span><span 
+class="cmitt-10x-x-120"> is</span><span 
+class="cmitt-10x-x-120"> loaded</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-82">
+## [1] 1 3 4 2 3 5
+</div>
+<!--l. 1342--><p class="nopar" >
+</p>
+</div>
+                                                                                            
+                                                                                            
+<!--l. 1352--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse2.html" >next</a>] [<a 
+href="QuMWikiMasterse1.html" >front</a>] [<a 
+href="QuMWikiMasterch1.html#QuMWikiMasterse1.html" >up</a>] </p></div>
+<!--l. 1352--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse1.html"></a> </p> 
+</body> 
+</html>

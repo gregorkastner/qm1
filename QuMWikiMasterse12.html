@@ -1,0 +1,1924 @@
+<!DOCTYPE html> 
+<html lang="en" xml:lang="en" > 
+<head><title>QuM2 – Session 5</title> 
+<meta  charset="utf-8" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
+<link rel="stylesheet" type="text/css" href="QuMWikiMaster.css" /> 
+<meta name="src" content="QuMWikiMaster.tex" /> 
+ 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script> 
+</head><body 
+>
+<!--l. 5475--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse13.html" >next</a>] [<a 
+href="QuMWikiMasterse11.html" >prev</a>] [<a 
+href="QuMWikiMasterse11.html#tailQuMWikiMasterse11.html" >prev-tail</a>] [<a 
+href="#tailQuMWikiMasterse12.html">tail</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse12.html" >up</a>] </p></div>
+<h3 class="sectionHead"><span class="titlemark">2.5   </span> <a 
+ id="x16-150002.5"></a>QuM2 – Session 5</h3>
+<!--l. 5477--><p class="noindent" >First:  </p><div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6819"><span 
+class="cmtt-12">rm</span></span><span id="textcolor6820"><span 
+class="cmtt-12">(</span></span><span id="textcolor6821"><span 
+class="cmtt-12">list</span></span><span id="textcolor6822"><span 
+class="cmtt-12">=</span></span><span id="textcolor6823"><span 
+class="cmtt-12">setdiff</span></span><span id="textcolor6824"><span 
+class="cmtt-12">(</span></span><span id="textcolor6825"><span 
+class="cmtt-12">ls</span></span><span id="textcolor6826"><span 
+class="cmtt-12">(),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6827"><span 
+class="cmtt-12">c</span></span><span id="textcolor6828"><span 
+class="cmtt-12">(</span></span><span id="textcolor6829"><span 
+class="cmtt-12">&#x0022;MyRnwFile&#x0022;</span></span><span id="textcolor6830"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6831"><span 
+class="cmtt-12">&#x0022;MyFilePath&#x0022;</span></span><span id="textcolor6832"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6833"><span 
+class="cmtt-12">&#x0022;MyFilePathOut&#x0022;</span></span><span id="textcolor6834"><span 
+class="cmtt-12">)))</span></span>
+<br /><span id="textcolor6835"><span 
+class="cmtt-12">gc</span></span><span id="textcolor6836"><span 
+class="cmtt-12">()</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-346">
+##           used (Mb) gc trigger  (Mb) max used  (Mb)
+ <br />## Ncells 1244494 66.5    3852653 205.8  6576090 351.3
+ <br />## Vcells 2881018 22.0   41365331 315.6 59230971 451.9
+</div>
+<!--l. 5488--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6837"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Set</span><span 
+class="cmitt-10x-x-120"> seed</span></span>
+<br /><span id="textcolor6838"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor6839"><span 
+class="cmtt-12">(</span></span><span id="textcolor6840"><span 
+class="cmtt-12">2603</span></span><span id="textcolor6841"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+</div>
+<!--l. 5501--><p class="noindent" >Let the body heights of the people in the population be normal distributed with
+<!--l. 5501--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>μ</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>7</mn><mn>5</mn></math> and
+<!--l. 5501--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>σ</mi> <mo 
+class="MathClass-rel">=</mo> <mn>7</mn><mo 
+class="MathClass-punc">.</mo><mn>5</mn></math>.
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6842"><span 
+class="cmtt-12">mu.population</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6843"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6844"><span 
+class="cmtt-12">175</span></span>
+<br /><span id="textcolor6845"><span 
+class="cmtt-12">sigma.population</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6846"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6847"><span 
+class="cmtt-12">7.5</span></span>
+</div>
+</div>
+</div>
+<!--l. 5512--><p class="noindent" >In the following four code snippets the calculation of confidence intervals is presented.
+</p><!--l. 5514--><p class="noindent" ><span 
+class="cmcsc-10x-x-120"><span 
+class="small-caps">c</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span><span 
+class="small-caps">f</span><span 
+class="small-caps">i</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> <span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">t</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">s</span></span>
+</p><!--l. 5516--><p class="noindent" >As you can see in this table, there are some differences in calculating the CIs:
+</p>
+<div class="table">
+                                                                                            
+                                                                                            
+<!--l. 5520--><p class="noindent" ><a 
+ id="x16-150011"></a></p><hr class="float" /><div class="float" 
+>
+                                                                                            
+                                                                                            
+ <div class="caption" 
+><span class="id">Table 2.1: </span><span  
+class="content">Calculating CIs depending on sample size and knowledge of sigma</span></div><!--tex4ht:label?: x16-150011 -->
+<div class="tabular"> <table id="TBL-19" class="tabular" 
+rules="groups" 
+><colgroup id="TBL-19-1g"><col 
+id="TBL-19-1" /><col 
+id="TBL-19-2" /></colgroup><colgroup id="TBL-19-3g"><col 
+id="TBL-19-3" /><col 
+id="TBL-19-4" /></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-19-1-"><td  style="text-align:left; white-space:nowrap;" id="TBL-19-1-1"  
+class="td11">                                                                               </td><td  style="text-align:left; white-space:nowrap;" id="TBL-19-1-2"  
+class="td11">        </td><td colspan="2" style="text-align:center; white-space:nowrap;" id="TBL-19-1-3"  
+class="td11">                            <div class="multicolumn"  style="text-align:center; white-space:nowrap;">sample size</div>
+</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-2-"><td colspan="2" style="text-align:left; white-space:nowrap;" id="TBL-19-2-1"  
+class="td11"><div class="multicolumn"  style="text-align:left; white-space:nowrap;"></div>                                                                                                         </td><td  style="text-align:left;" id="TBL-19-2-3"  
+class="td11"><!--l. 5525--><p class="noindent" >large                                           </p></td><td  style="text-align:left;" id="TBL-19-2-4"  
+class="td11"><!--l. 5525--><p class="noindent" >small                                          </p></td>
+</tr><tr 
+class="hline"><td><hr /></td><td><hr /></td><td><hr /></td><td><hr /></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-3-"><td  style="text-align:left; white-space:nowrap;" id="TBL-19-3-1"  
+class="td11"><!--l. 5526--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>σ</mi></math> is</td><td  style="text-align:left; white-space:nowrap;" id="TBL-19-3-2"  
+class="td11">known   </td><td  style="text-align:left;" id="TBL-19-3-3"  
+class="td11"><!--l. 5526--><p class="noindent" >take the known sigma and the quantile
+of the normal distribution               </p></td><td  style="text-align:left;" id="TBL-19-3-4"  
+class="td11"><!--l. 5526--><p class="noindent" >take the known sigma and the quantile
+of the normal distribution               </p></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-19-4-"><td  style="text-align:left; white-space:nowrap;" id="TBL-19-4-1"  
+class="td11">                                                                                </td><td  style="text-align:left; white-space:nowrap;" id="TBL-19-4-2"  
+class="td11">unknown</td><td  style="text-align:left;" id="TBL-19-4-3"  
+class="td11"><!--l. 5527--><p class="noindent" >take  the  sample  standard  deviation
+and   the   quantile   of   the   normal
+distribution due to CLT                  </p></td><td  style="text-align:left;" id="TBL-19-4-4"  
+class="td11"><!--l. 5527--><p class="noindent" >take  the  sample  standard  deviation
+and  the  quantile  of  the  student’s
+t-distribution                                </p></td>
+</tr></table>
+</div>
+                                                                                            
+                                                                                            
+</div><hr class="endfloat" />
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6848"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Large</span><span 
+class="cmitt-10x-x-120"> sample,</span><span 
+class="cmitt-10x-x-120"> sigma</span><span 
+class="cmitt-10x-x-120"> known</span></span>
+<br /><span id="textcolor6849"><span 
+class="cmtt-12">sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6850"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6851"><span 
+class="cmtt-12">1000</span></span>
+<br /><span id="textcolor6852"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor6853"><span 
+class="cmtt-12">(</span></span><span id="textcolor6854"><span 
+class="cmtt-12">0404</span></span><span id="textcolor6855"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6856"><span 
+class="cmtt-12">heights.sample.large</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6857"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6858"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor6859"><span 
+class="cmtt-12">(sample.n,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6860"><span 
+class="cmtt-12">mean</span></span><span id="textcolor6861"><span 
+class="cmtt-12">=mu.population,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6862"><span 
+class="cmtt-12">sd</span></span><span id="textcolor6863"><span 
+class="cmtt-12">=sigma.population)</span></span>
+<br />
+<br /><span id="textcolor6864"><span 
+class="cmtt-12">(x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6865"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6866"><span 
+class="cmtt-12">mean</span></span><span id="textcolor6867"><span 
+class="cmtt-12">(heights.sample.large))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-347">
+## [1] 174.9212
+</div>
+<!--l. 5546--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6868"><span 
+class="cmtt-12">(se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6869"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6870"><span 
+class="cmtt-12">sigma.population</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6871"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6872"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor6873"><span 
+class="cmtt-12">(sample.n))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-348">
+## [1] 0.2371708
+</div>
+<!--l. 5552--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6874"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6875"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6876"><span 
+class="cmtt-12">0.01</span></span><span id="textcolor6877"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-349">
+## [1] 0.01
+</div>
+<!--l. 5558--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6878"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6879"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6880"><span 
+class="cmtt-12">qnorm</span></span><span id="textcolor6881"><span 
+class="cmtt-12">(</span></span><span id="textcolor6882"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6883"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6884"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6885"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6886"><span 
+class="cmtt-12">2</span></span><span id="textcolor6887"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-350">
+## [1] 2.575829
+</div>
+<!--l. 5564--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6888"><span 
+class="cmtt-12">(delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6889"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6890"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6891"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6892"><span 
+class="cmtt-12">se.mean)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-351">
+## [1] 0.6109116
+</div>
+<!--l. 5570--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6893"><span 
+class="cmtt-12">(CI.LS.SK</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6894"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6895"><span 
+class="cmtt-12">x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6896"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6897"><span 
+class="cmtt-12">c</span></span><span id="textcolor6898"><span 
+class="cmtt-12">(</span></span><span id="textcolor6899"><span 
+class="cmtt-12">-</span></span><span id="textcolor6900"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6901"><span 
+class="cmtt-12">+</span></span><span id="textcolor6902"><span 
+class="cmtt-12">delta))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-352">
+## [1] 174.3103 175.5321
+</div>
+<!--l. 5576--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6903"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Large</span><span 
+class="cmitt-10x-x-120"> sample,</span><span 
+class="cmitt-10x-x-120"> sigma</span><span 
+class="cmitt-10x-x-120"> unknown</span></span>
+<br /><span id="textcolor6904"><span 
+class="cmtt-12">sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6905"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6906"><span 
+class="cmtt-12">1000</span></span>
+<br /><span id="textcolor6907"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor6908"><span 
+class="cmtt-12">(</span></span><span id="textcolor6909"><span 
+class="cmtt-12">0404</span></span><span id="textcolor6910"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6911"><span 
+class="cmtt-12">heights.sample.large</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6912"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6913"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor6914"><span 
+class="cmtt-12">(sample.n,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6915"><span 
+class="cmtt-12">mean</span></span><span id="textcolor6916"><span 
+class="cmtt-12">=mu.population,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6917"><span 
+class="cmtt-12">sd</span></span><span id="textcolor6918"><span 
+class="cmtt-12">=sigma.population)</span></span>
+<br />
+<br /><span id="textcolor6919"><span 
+class="cmtt-12">sigma.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6920"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6921"><span 
+class="cmtt-12">sd</span></span><span id="textcolor6922"><span 
+class="cmtt-12">(heights.sample.large)</span></span>
+<br />
+<br /><span id="textcolor6923"><span 
+class="cmtt-12">(x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6924"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6925"><span 
+class="cmtt-12">mean</span></span><span id="textcolor6926"><span 
+class="cmtt-12">(heights.sample.large))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-353">
+## [1] 174.9212
+</div>
+<!--l. 5594--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6927"><span 
+class="cmtt-12">(se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6928"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6929"><span 
+class="cmtt-12">sigma.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6930"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6931"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor6932"><span 
+class="cmtt-12">(sample.n))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-354">
+## [1] 0.2309176
+</div>
+<!--l. 5600--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6933"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Same</span><span 
+class="cmitt-10x-x-120"> procedure</span><span 
+class="cmitt-10x-x-120"> due</span><span 
+class="cmitt-10x-x-120"> to</span><span 
+class="cmitt-10x-x-120"> CLT</span></span>
+<br /><span id="textcolor6934"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6935"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6936"><span 
+class="cmtt-12">0.01</span></span><span id="textcolor6937"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-355">
+## [1] 0.01
+</div>
+<!--l. 5607--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6938"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6939"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6940"><span 
+class="cmtt-12">qnorm</span></span><span id="textcolor6941"><span 
+class="cmtt-12">(</span></span><span id="textcolor6942"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6943"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6944"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6945"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6946"><span 
+class="cmtt-12">2</span></span><span id="textcolor6947"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-356">
+## [1] 2.575829
+</div>
+<!--l. 5613--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6948"><span 
+class="cmtt-12">(delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6949"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6950"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6951"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6952"><span 
+class="cmtt-12">se.mean)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-357">
+## [1] 0.5948044
+</div>
+<!--l. 5619--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6953"><span 
+class="cmtt-12">(CI.LS.SU</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6954"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6955"><span 
+class="cmtt-12">x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6956"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6957"><span 
+class="cmtt-12">c</span></span><span id="textcolor6958"><span 
+class="cmtt-12">(</span></span><span id="textcolor6959"><span 
+class="cmtt-12">-</span></span><span id="textcolor6960"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6961"><span 
+class="cmtt-12">+</span></span><span id="textcolor6962"><span 
+class="cmtt-12">delta))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-358">
+## [1] 174.3264 175.5160
+</div>
+<!--l. 5625--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6963"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Small</span><span 
+class="cmitt-10x-x-120"> sample,</span><span 
+class="cmitt-10x-x-120"> sigma</span><span 
+class="cmitt-10x-x-120"> known</span></span>
+<br /><span id="textcolor6964"><span 
+class="cmtt-12">sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6965"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6966"><span 
+class="cmtt-12">20</span></span>
+<br /><span id="textcolor6967"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor6968"><span 
+class="cmtt-12">(</span></span><span id="textcolor6969"><span 
+class="cmtt-12">0504</span></span><span id="textcolor6970"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor6971"><span 
+class="cmtt-12">heights.sample.small</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6972"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6973"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor6974"><span 
+class="cmtt-12">(sample.n,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6975"><span 
+class="cmtt-12">mean</span></span><span id="textcolor6976"><span 
+class="cmtt-12">=mu.population,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6977"><span 
+class="cmtt-12">sd</span></span><span id="textcolor6978"><span 
+class="cmtt-12">=sigma.population)</span></span>
+<br />
+<br /><span id="textcolor6979"><span 
+class="cmtt-12">(x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6980"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6981"><span 
+class="cmtt-12">mean</span></span><span id="textcolor6982"><span 
+class="cmtt-12">(heights.sample.small))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-359">
+## [1] 178.9374
+</div>
+<!--l. 5641--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6983"><span 
+class="cmtt-12">(se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6984"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6985"><span 
+class="cmtt-12">sigma.population</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6986"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6987"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor6988"><span 
+class="cmtt-12">(sample.n))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-360">
+## [1] 1.677051
+</div>
+<!--l. 5647--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6989"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6990"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6991"><span 
+class="cmtt-12">0.01</span></span><span id="textcolor6992"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-361">
+## [1] 0.01
+</div>
+<!--l. 5653--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor6993"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6994"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6995"><span 
+class="cmtt-12">qnorm</span></span><span id="textcolor6996"><span 
+class="cmtt-12">(</span></span><span id="textcolor6997"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6998"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor6999"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7000"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7001"><span 
+class="cmtt-12">2</span></span><span id="textcolor7002"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-362">
+## [1] 2.575829
+</div>
+<!--l. 5659--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7003"><span 
+class="cmtt-12">(delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7004"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7005"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7006"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7007"><span 
+class="cmtt-12">se.mean)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-363">
+## [1] 4.319797
+</div>
+<!--l. 5665--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7008"><span 
+class="cmtt-12">(CI.SS.SK</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7009"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7010"><span 
+class="cmtt-12">x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7011"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7012"><span 
+class="cmtt-12">c</span></span><span id="textcolor7013"><span 
+class="cmtt-12">(</span></span><span id="textcolor7014"><span 
+class="cmtt-12">-</span></span><span id="textcolor7015"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7016"><span 
+class="cmtt-12">+</span></span><span id="textcolor7017"><span 
+class="cmtt-12">delta))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-364">
+## [1] 174.6176 183.2572
+</div>
+<!--l. 5671--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7018"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Small</span><span 
+class="cmitt-10x-x-120"> sample,</span><span 
+class="cmitt-10x-x-120"> sigma</span><span 
+class="cmitt-10x-x-120"> unknown</span></span>
+<br /><span id="textcolor7019"><span 
+class="cmtt-12">sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7020"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7021"><span 
+class="cmtt-12">20</span></span>
+<br /><span id="textcolor7022"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor7023"><span 
+class="cmtt-12">(</span></span><span id="textcolor7024"><span 
+class="cmtt-12">0504</span></span><span id="textcolor7025"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor7026"><span 
+class="cmtt-12">heights.sample.small</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7027"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7028"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor7029"><span 
+class="cmtt-12">(sample.n,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7030"><span 
+class="cmtt-12">mean</span></span><span id="textcolor7031"><span 
+class="cmtt-12">=mu.population,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7032"><span 
+class="cmtt-12">sd</span></span><span id="textcolor7033"><span 
+class="cmtt-12">=sigma.population)</span></span>
+<br />
+<br /><span id="textcolor7034"><span 
+class="cmtt-12">sigma.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7035"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7036"><span 
+class="cmtt-12">sd</span></span><span id="textcolor7037"><span 
+class="cmtt-12">(heights.sample.small)</span></span>
+<br />
+<br /><span id="textcolor7038"><span 
+class="cmtt-12">(x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7039"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7040"><span 
+class="cmtt-12">mean</span></span><span id="textcolor7041"><span 
+class="cmtt-12">(heights.sample.small))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-365">
+## [1] 178.9374
+</div>
+<!--l. 5689--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7042"><span 
+class="cmtt-12">(se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7043"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7044"><span 
+class="cmtt-12">sigma.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7045"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7046"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor7047"><span 
+class="cmtt-12">(sample.n))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-366">
+## [1] 1.680329
+</div>
+<!--l. 5695--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7048"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Use</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> student&#x0027;s</span><span 
+class="cmitt-10x-x-120"> t-distribution</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> (sample.n</span><span 
+class="cmitt-10x-x-120"> -</span><span 
+class="cmitt-10x-x-120"> 1)</span><span 
+class="cmitt-10x-x-120"> degrees</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> freedom</span></span>
+<br /><span id="textcolor7049"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7050"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7051"><span 
+class="cmtt-12">0.01</span></span><span id="textcolor7052"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-367">
+## [1] 0.01
+</div>
+<!--l. 5702--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7053"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7054"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7055"><span 
+class="cmtt-12">qt</span></span><span id="textcolor7056"><span 
+class="cmtt-12">(</span></span><span id="textcolor7057"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7058"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7059"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7060"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7061"><span 
+class="cmtt-12">2</span></span><span id="textcolor7062"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7063"><span 
+class="cmtt-12">df</span></span><span id="textcolor7064"><span 
+class="cmtt-12">=(sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7065"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7066"><span 
+class="cmtt-12">1</span></span><span id="textcolor7067"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-368">
+## [1] 2.860935
+</div>
+<!--l. 5708--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7068"><span 
+class="cmtt-12">(delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7069"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7070"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7071"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7072"><span 
+class="cmtt-12">se.mean)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-369">
+## [1] 4.807312
+</div>
+<!--l. 5714--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7073"><span 
+class="cmtt-12">(CI.SS.SU</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7074"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7075"><span 
+class="cmtt-12">x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7076"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7077"><span 
+class="cmtt-12">c</span></span><span id="textcolor7078"><span 
+class="cmtt-12">(</span></span><span id="textcolor7079"><span 
+class="cmtt-12">-</span></span><span id="textcolor7080"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7081"><span 
+class="cmtt-12">+</span></span><span id="textcolor7082"><span 
+class="cmtt-12">delta))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-370">
+## [1] 174.1301 183.7447
+</div>
+<!--l. 5720--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7083"><span 
+class="cmtt-12">CIs</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7084"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7085"><span 
+class="cmtt-12">rbind</span></span><span id="textcolor7086"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7087"><span 
+class="cmtt-12">CI.LS.SK,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7088"><span 
+class="cmtt-12">CI.LS.SU,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7089"><span 
+class="cmtt-12">CI.SS.SK,</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7090"><span 
+class="cmtt-12">CI.SS.SU</span></span>
+<br /><span id="textcolor7091"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor7092"><span 
+class="cmtt-12">colnames</span></span><span id="textcolor7093"><span 
+class="cmtt-12">(CIs)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7094"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7095"><span 
+class="cmtt-12">c</span></span><span id="textcolor7096"><span 
+class="cmtt-12">(</span></span><span id="textcolor7097"><span 
+class="cmtt-12">&#x0022;lower</span><span 
+class="cmtt-12"> bound&#x0022;</span></span><span id="textcolor7098"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7099"><span 
+class="cmtt-12">&#x0022;upper</span><span 
+class="cmtt-12"> bound&#x0022;</span></span><span id="textcolor7100"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor7101"><span 
+class="cmtt-12">CIs</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-371">
+##          lower bound upper bound
+ <br />## CI.LS.SK    174.3103    175.5321
+ <br />## CI.LS.SU    174.3264    175.5160
+ <br />## CI.SS.SK    174.6176    183.2572
+ <br />## CI.SS.SU    174.1301    183.7447
+</div>
+<!--l. 5742--><p class="nopar" >
+</p>
+</div>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7102"><span 
+class="cmtt-12">coverage</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7103"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7104"><span 
+class="cmtt-12">matrix</span></span><span id="textcolor7105"><span 
+class="cmtt-12">(</span></span><span id="textcolor7106"><span 
+class="cmtt-12">NA</span></span><span id="textcolor7107"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7108"><span 
+class="cmtt-12">nrow</span></span><span id="textcolor7109"><span 
+class="cmtt-12">=</span></span><span id="textcolor7110"><span 
+class="cmtt-12">100</span></span><span id="textcolor7111"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7112"><span 
+class="cmtt-12">ncol</span></span><span id="textcolor7113"><span 
+class="cmtt-12">=</span></span><span id="textcolor7114"><span 
+class="cmtt-12">9</span></span><span id="textcolor7115"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor7116"><span 
+class="cmtt-12">empiric.coverage</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7117"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7118"><span 
+class="cmtt-12">rep</span></span><span id="textcolor7119"><span 
+class="cmtt-12">(</span></span><span id="textcolor7120"><span 
+class="cmtt-12">NA</span></span><span id="textcolor7121"><span 
+class="cmtt-12">,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7122"><span 
+class="cmtt-12">100</span></span><span id="textcolor7123"><span 
+class="cmtt-12">)</span></span>
+<br />
+<br /><span id="textcolor7124"><span 
+class="cmtt-12">alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7125"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7126"><span 
+class="cmtt-12">0.05</span></span>
+<br /><span id="textcolor7127"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7128"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7129"><span 
+class="cmtt-12">qt</span></span><span id="textcolor7130"><span 
+class="cmtt-12">(</span></span><span id="textcolor7131"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7132"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7133"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7134"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7135"><span 
+class="cmtt-12">2</span></span><span id="textcolor7136"><span 
+class="cmtt-12">),</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7137"><span 
+class="cmtt-12">df</span></span><span id="textcolor7138"><span 
+class="cmtt-12">=(sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7139"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7140"><span 
+class="cmtt-12">1</span></span><span id="textcolor7141"><span 
+class="cmtt-12">))</span></span>
+<br />
+<br /><span id="textcolor7142"><span 
+class="cmtt-12">set.seed</span></span><span id="textcolor7143"><span 
+class="cmtt-12">(</span></span><span id="textcolor7144"><span 
+class="cmtt-12">2019</span></span><span id="textcolor7145"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor7146"><span 
+class="cmtt-12">for</span></span><span id="textcolor7147"><span 
+class="cmtt-12">(j</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7148"><span 
+class="cmtt-12">in</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7149"><span 
+class="cmtt-12">1</span></span><span id="textcolor7150"><span 
+class="cmtt-12">:</span></span><span id="textcolor7151"><span 
+class="cmtt-12">100</span></span><span id="textcolor7152"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7153"><span 
+class="cmtt-12">for</span></span><span id="textcolor7154"><span 
+class="cmtt-12">(i</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7155"><span 
+class="cmtt-12">in</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7156"><span 
+class="cmtt-12">1</span></span><span id="textcolor7157"><span 
+class="cmtt-12">:</span></span><span id="textcolor7158"><span 
+class="cmtt-12">100</span></span><span id="textcolor7159"><span 
+class="cmtt-12">)</span><span 
+class="cmtt-12"> </span><span 
+class="cmsy-10x-x-120">{</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7160"><span 
+class="cmtt-12">sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7161"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7162"><span 
+class="cmtt-12">20</span></span>
+<br /><span id="textcolor7163"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,1]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> sample.n</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7164"><span 
+class="cmtt-12">heights.sample.small</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7165"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7166"><span 
+class="cmtt-12">rnorm</span></span><span id="textcolor7167"><span 
+class="cmtt-12">(sample.n,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7168"><span 
+class="cmtt-12">mean</span></span><span id="textcolor7169"><span 
+class="cmtt-12">=mu.population,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7170"><span 
+class="cmtt-12">sd</span></span><span id="textcolor7171"><span 
+class="cmtt-12">=sigma.population)</span></span>
+<br />
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7172"><span 
+class="cmtt-12">sigma.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7173"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7174"><span 
+class="cmtt-12">sd</span></span><span id="textcolor7175"><span 
+class="cmtt-12">(heights.sample.small)</span></span>
+<br /><span id="textcolor7176"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,2]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> sigma.hat</span></span>
+<br />
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7177"><span 
+class="cmtt-12">x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7178"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7179"><span 
+class="cmtt-12">mean</span></span><span id="textcolor7180"><span 
+class="cmtt-12">(heights.sample.small)</span></span>
+<br /><span id="textcolor7181"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,3]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> x.bar</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7182"><span 
+class="cmtt-12">se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7183"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7184"><span 
+class="cmtt-12">sigma.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7185"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7186"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor7187"><span 
+class="cmtt-12">(sample.n)</span></span>
+<br /><span id="textcolor7188"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,4]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> se.mean</span></span>
+<br />
+<br /><span id="textcolor7189"><span 
+class="cmitt-10x-x-120">#&#x0027;</span><span 
+class="cmitt-10x-x-120"> Use</span><span 
+class="cmitt-10x-x-120"> a</span><span 
+class="cmitt-10x-x-120"> student&#x0027;s</span><span 
+class="cmitt-10x-x-120"> t-distribution</span><span 
+class="cmitt-10x-x-120"> with</span><span 
+class="cmitt-10x-x-120"> (sample.n</span><span 
+class="cmitt-10x-x-120"> -</span><span 
+class="cmitt-10x-x-120"> 1)</span><span 
+class="cmitt-10x-x-120"> degrees</span><span 
+class="cmitt-10x-x-120"> of</span><span 
+class="cmitt-10x-x-120"> freedom</span></span>
+<br /><span id="textcolor7190"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> alpha</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> 0.05</span></span>
+<br /><span id="textcolor7191"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,5]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> alpha</span></span>
+<br /><span id="textcolor7192"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> z.alpha</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> qt(1</span><span 
+class="cmitt-10x-x-120"> -</span><span 
+class="cmitt-10x-x-120"> (alpha</span><span 
+class="cmitt-10x-x-120"> /</span><span 
+class="cmitt-10x-x-120"> 2),</span><span 
+class="cmitt-10x-x-120"> df=(sample.n</span><span 
+class="cmitt-10x-x-120"> -</span><span 
+class="cmitt-10x-x-120"> 1))</span></span>
+<br /><span id="textcolor7193"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,6]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> z.alpha</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7194"><span 
+class="cmtt-12">delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7195"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7196"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7197"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7198"><span 
+class="cmtt-12">se.mean</span></span>
+<br /><span id="textcolor7199"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> coverage[i,7]</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> delta</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7200"><span 
+class="cmtt-12">coverage[i,</span></span><span id="textcolor7201"><span 
+class="cmtt-12">c</span></span><span id="textcolor7202"><span 
+class="cmtt-12">(</span></span><span id="textcolor7203"><span 
+class="cmtt-12">8</span></span><span id="textcolor7204"><span 
+class="cmtt-12">,</span></span><span id="textcolor7205"><span 
+class="cmtt-12">9</span></span><span id="textcolor7206"><span 
+class="cmtt-12">)]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7207"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7208"><span 
+class="cmtt-12">x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7209"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7210"><span 
+class="cmtt-12">c</span></span><span id="textcolor7211"><span 
+class="cmtt-12">(</span></span><span id="textcolor7212"><span 
+class="cmtt-12">-</span></span><span id="textcolor7213"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7214"><span 
+class="cmtt-12">+</span></span><span id="textcolor7215"><span 
+class="cmtt-12">delta)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7216"><span 
+class="cmsy-10x-x-120">}</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7217"><span 
+class="cmtt-12">empiric.coverage[j]</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7218"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7219"><span 
+class="cmtt-12">sum</span></span><span id="textcolor7220"><span 
+class="cmtt-12">(</span></span>
+                                                                                            
+                                                                                            
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7221"><span 
+class="cmtt-12">(</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7222"><span 
+class="cmtt-12">(mu.population</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7223"><span 
+class="cmtt-12">&#x003E;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7224"><span 
+class="cmtt-12">coverage[,</span></span><span id="textcolor7225"><span 
+class="cmtt-12">8</span></span><span id="textcolor7226"><span 
+class="cmtt-12">])</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7227"><span 
+class="cmtt-12">&#x0026;</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7228"><span 
+class="cmtt-12">(mu.population</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7229"><span 
+class="cmtt-12">&#x003C;</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7230"><span 
+class="cmtt-12">coverage[,</span></span><span id="textcolor7231"><span 
+class="cmtt-12">9</span></span><span id="textcolor7232"><span 
+class="cmtt-12">])</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7233"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7234"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7235"><span 
+class="cmtt-12">cat</span></span><span id="textcolor7236"><span 
+class="cmtt-12">(</span></span><span id="textcolor7237"><span 
+class="cmtt-12">&#x0022;.&#x0022;</span></span><span id="textcolor7238"><span 
+class="cmtt-12">)</span></span>
+<br /><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7239"><span 
+class="cmtt-12">if</span></span><span id="textcolor7240"><span 
+class="cmtt-12">(j</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7241"><span 
+class="cmtt-12">==</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7242"><span 
+class="cmtt-12">100</span></span><span id="textcolor7243"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7244"><span 
+class="cmtt-12">cat</span></span><span id="textcolor7245"><span 
+class="cmtt-12">(</span></span><span id="textcolor7246"><span 
+class="cmtt-12">&#x0022;</span><span 
+class="cmsy-10x-x-120">∖</span><span 
+class="cmtt-12">n&#x0022;</span></span><span id="textcolor7247"><span 
+class="cmtt-12">)</span></span>
+<br /><span id="textcolor7248"><span 
+class="cmsy-10x-x-120">}</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-372">
+## ....................................................................................................
+</div>
+<!--l. 5791--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7249"><span 
+class="cmtt-12">table</span></span><span id="textcolor7250"><span 
+class="cmtt-12">(empiric.coverage)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-373">
+## empiric.coverage
+ <br />##  89  90  91  92  93  94  95  96  97  98  99 100
+ <br />##   2   4   5   7  12  14  18  18  11   6   2   1
+</div>
+<!--l. 5799--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7251"><span 
+class="cmtt-12">mean</span></span><span id="textcolor7252"><span 
+class="cmtt-12">(empiric.coverage)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-374">
+## [1] 94.6
+</div>
+<!--l. 5805--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7253"><span 
+class="cmitt-10x-x-120">#hist(empiric.coverage)</span></span>
+<br /><span id="textcolor7254"><span 
+class="cmitt-10x-x-120">#abline(v=mean(empiric.coverage))</span></span>
+<br /><span id="textcolor7255"><span 
+class="cmitt-10x-x-120">#text(x=mean(empiric.coverage),y=0,labels=mean(empiric.coverage),adj=c(0,1))</span></span>
+<br /><span id="textcolor7256"><span 
+class="cmitt-10x-x-120">#abline(v=median(empiric.coverage))</span></span>
+<br /><span id="textcolor7257"><span 
+class="cmitt-10x-x-120">#text(x=median(empiric.coverage),y=0,labels=median(empiric.coverage),adj=c(0,0))</span></span>
+</div>
+</div>
+</div>
+<!--l. 5816--><p class="noindent" ><span id="textcolor7258">Confidence Interval for Population Mean: <br 
+class="newline" />Large Samples</span>
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7259"><span 
+class="cmtt-12">(sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7260"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7261"><span 
+class="cmtt-12">100</span></span><span id="textcolor7262"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-375">
+## [1] 100
+</div>
+<!--l. 5824--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7263"><span 
+class="cmtt-12">(x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7264"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7265"><span 
+class="cmtt-12">3</span></span><span id="textcolor7266"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-376">
+## [1] 3
+</div>
+<!--l. 5830--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7267"><span 
+class="cmtt-12">(sigma</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7268"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7269"><span 
+class="cmtt-12">2</span></span><span id="textcolor7270"><span 
+class="cmtt-12">)</span></span><span 
+class="cmtt-12"> </span><span 
+class="cmtt-12"> </span><span id="textcolor7271"><span 
+class="cmitt-10x-x-120">#</span><span 
+class="cmitt-10x-x-120"> sigma</span><span 
+class="cmitt-10x-x-120"> known</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-377">
+## [1] 2
+</div>
+<!--l. 5836--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7272"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7273"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7274"><span 
+class="cmtt-12">0.05</span></span><span id="textcolor7275"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-378">
+## [1] 0.05
+</div>
+<!--l. 5842--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7276"><span 
+class="cmtt-12">(se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7277"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7278"><span 
+class="cmtt-12">sigma</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7279"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7280"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor7281"><span 
+class="cmtt-12">(sample.n))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-379">
+## [1] 0.2
+</div>
+<!--l. 5848--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7282"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7283"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7284"><span 
+class="cmtt-12">qnorm</span></span><span id="textcolor7285"><span 
+class="cmtt-12">(</span></span><span id="textcolor7286"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7287"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7288"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7289"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7290"><span 
+class="cmtt-12">2</span></span><span id="textcolor7291"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-380">
+## [1] 1.959964
+</div>
+<!--l. 5854--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7292"><span 
+class="cmtt-12">(delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7293"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7294"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7295"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7296"><span 
+class="cmtt-12">se.mean)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-381">
+## [1] 0.3919928
+</div>
+<!--l. 5860--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7297"><span 
+class="cmtt-12">(x.bar</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7298"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7299"><span 
+class="cmtt-12">c</span></span><span id="textcolor7300"><span 
+class="cmtt-12">(</span></span><span id="textcolor7301"><span 
+class="cmtt-12">-</span></span><span id="textcolor7302"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7303"><span 
+class="cmtt-12">+</span></span><span id="textcolor7304"><span 
+class="cmtt-12">delta))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-382">
+## [1] 2.608007 3.391993
+</div>
+<!--l. 5866--><p class="nopar" >
+</p>
+</div>
+<!--l. 5871--><p class="noindent" ><span id="textcolor7305">Large-Sample Confidence Interval for a Population Proportion</span>
+</p><!--l. 5873--><p class="noindent" >Consider a large hotel that wants to estimate the average length of stay of its customers
+<!--l. 5873--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>μ</mi></math>. The hotel
+randomly chooses <!--l. 5874--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>n</mi> <mo 
+class="MathClass-rel">=</mo> <mn>1</mn><mn>0</mn><mn>0</mn></math>
+of its customers and finds that the sample mean length of stay is
+<!--l. 5874--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover> <mo 
+class="MathClass-rel">=</mo> <mn>3</mn></math> days.
+Also, assume that the hotel knows the standard deviation of the length of stay for all hotel customers,
+<!--l. 5875--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>σ</mi> <mo 
+class="MathClass-rel">=</mo> <mn>2</mn></math> days. How can we evaluate
+the accuracy of <!--l. 5876--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="true"><mrow 
+><mi 
+>x</mi></mrow><mo 
+class="MathClass-op">̄</mo></mover></math> as an
+estimator of population mean <!--l. 5876--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>μ</mi></math>
+at the confidence level 95%?
+</p><!--l. 5879--><p class="noindent" >In this example the random variable (overpriced, not overpriced) follows a Bernoulli distribution. Thus, it
+is known <!--l. 5880--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi mathvariant="bold">E</mi><mspace width="-1.17505pt"/><mfenced separators="" 
+open="("  close=")" ><mrow><mi 
+>X</mi></mrow></mfenced> <mo 
+class="MathClass-rel">=</mo> <mi 
+>p</mi></math>
+and <!--l. 5880--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi mathvariant="bold">V</mi><mspace width="-1.17505pt"/><mfenced separators="" 
+open="("  close=")" ><mrow><mi 
+>X</mi></mrow></mfenced> <mo 
+class="MathClass-rel">=</mo> <mi 
+>p</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>p</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></math>.
+</p><!--l. 5882--><p class="noindent" >A natural estimator of <!--l. 5882--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi></math> could
+be according to Laplace’s rule <!--l. 5882--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mover 
+accent="true"><mrow 
+><mi 
+>p</mi></mrow><mo 
+class="MathClass-op">̂</mo></mover> <mo 
+class="MathClass-rel">=</mo> <mfrac><mrow 
+><mi mathvariant="normal">favourable</mi><mspace width="1em" class="nbsp" /><mi mathvariant="normal">cases</mi></mrow> 
+  <mrow 
+><mi mathvariant="normal">possible</mi><mspace width="1em" class="nbsp" /><mi mathvariant="normal">cases</mi></mrow></mfrac>  </math>.
+</p><!--l. 5884--><p class="noindent" >Consequentely, the confidence interval is composed by
+</p>
+<div class="math-display"><!--l. 5885--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="block" ><mrow 
+>
+                         <mfenced separators="" 
+open="["  close="]" ><mrow><mi 
+>n</mi><mi 
+>p</mi> <mo 
+class="MathClass-bin">−</mo> <msub><mrow 
+><mi 
+>z</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-bin">−</mo><mi 
+>α</mi></mrow></msub 
+><msqrt><mrow><mfrac><mrow 
+><mi 
+>p</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>p</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow>
+    <mrow 
+><mi 
+>n</mi></mrow></mfrac></mrow></msqrt>    <mo 
+class="MathClass-punc">,</mo><mi 
+>n</mi><mi 
+>p</mi> <mo 
+class="MathClass-bin">+</mo> <msub><mrow 
+><mi 
+>z</mi></mrow><mrow 
+><mn>1</mn><mo 
+class="MathClass-bin">−</mo><mi 
+>α</mi></mrow></msub 
+><msqrt><mrow><mfrac><mrow 
+><mi 
+>p</mi><mrow ><mo 
+class="MathClass-open">(</mo><mrow><mn>1</mn> <mo 
+class="MathClass-bin">−</mo> <mi 
+>p</mi></mrow><mo 
+class="MathClass-close">)</mo></mrow></mrow>
+    <mrow 
+><mi 
+>n</mi></mrow></mfrac></mrow></msqrt>    </mrow></mfenced>
+</mrow></math></div>
+<!--l. 5887--><p class="nopar" >
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7306"><span 
+class="cmtt-12">(sample.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7307"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7308"><span 
+class="cmtt-12">500</span></span><span id="textcolor7309"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-383">
+## [1] 500
+</div>
+<!--l. 5896--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7310"><span 
+class="cmtt-12">(favourable.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7311"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7312"><span 
+class="cmtt-12">300</span></span><span id="textcolor7313"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-384">
+## [1] 300
+</div>
+<!--l. 5902--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7314"><span 
+class="cmtt-12">(p.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7315"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7316"><span 
+class="cmtt-12">favourable.n</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7317"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7318"><span 
+class="cmtt-12">sample.n)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-385">
+## [1] 0.6
+</div>
+<!--l. 5908--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7319"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7320"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7321"><span 
+class="cmtt-12">0.05</span></span><span id="textcolor7322"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-386">
+## [1] 0.05
+</div>
+<!--l. 5914--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7323"><span 
+class="cmtt-12">(se.mean</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7324"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7325"><span 
+class="cmtt-12">sqrt</span></span><span id="textcolor7326"><span 
+class="cmtt-12">(</span><span 
+class="cmtt-12"> p.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7327"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7328"><span 
+class="cmtt-12">(</span></span><span id="textcolor7329"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7330"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7331"><span 
+class="cmtt-12">p.hat)</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7332"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7333"><span 
+class="cmtt-12">sample.n))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-387">
+## [1] 0.0219089
+</div>
+<!--l. 5920--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7334"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7335"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7336"><span 
+class="cmtt-12">qnorm</span></span><span id="textcolor7337"><span 
+class="cmtt-12">(</span></span><span id="textcolor7338"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7339"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7340"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7341"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7342"><span 
+class="cmtt-12">2</span></span><span id="textcolor7343"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-388">
+## [1] 1.959964
+</div>
+<!--l. 5926--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7344"><span 
+class="cmtt-12">(delta</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7345"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7346"><span 
+class="cmtt-12">z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7347"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7348"><span 
+class="cmtt-12">se.mean)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-389">
+## [1] 0.04294066
+</div>
+<!--l. 5932--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7349"><span 
+class="cmtt-12">(p.hat</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7350"><span 
+class="cmtt-12">+</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7351"><span 
+class="cmtt-12">c</span></span><span id="textcolor7352"><span 
+class="cmtt-12">(</span></span><span id="textcolor7353"><span 
+class="cmtt-12">-</span></span><span id="textcolor7354"><span 
+class="cmtt-12">delta,</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7355"><span 
+class="cmtt-12">+</span></span><span id="textcolor7356"><span 
+class="cmtt-12">delta))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-390">
+## [1] 0.5570593 0.6429407
+</div>
+<!--l. 5938--><p class="nopar" >
+</p>
+</div>
+<!--l. 5943--><p class="noindent" ><span id="textcolor7357">Sample Size</span>
+</p><!--l. 5945--><p class="noindent" >Suppose a quality control department of a factory has received complaints regarding the defective items
+from <!--l. 5945--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>1</mn><mn>0</mn></math> %
+of their customers. How many items produced in this factory should be
+sampled and checked in order to estimate the fraction of defective items
+<!--l. 5946--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mi 
+>p</mi></math> to lie within
+0.01 with <!--l. 5946--><math 
+ xmlns="http://www.w3.org/1998/Math/MathML"  
+display="inline" ><mn>9</mn><mn>0</mn></math> %
+confidence?
+</p>
+<div class="framedenv" id="kframe-1">
+<div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7358"><span 
+class="cmitt-10x-x-120">#sample.n</span><span 
+class="cmitt-10x-x-120"> &#x003C;-</span><span 
+class="cmitt-10x-x-120"> ?</span><span 
+class="cmitt-10x-x-120"> </span><span 
+class="cmitt-10x-x-120"> #</span><span 
+class="cmitt-10x-x-120"> Searched</span><span 
+class="cmitt-10x-x-120"> for</span></span>
+<br /><span id="textcolor7359"><span 
+class="cmtt-12">p.complaints</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7360"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7361"><span 
+class="cmtt-12">0.10</span></span>
+<br /><span id="textcolor7362"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7363"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7364"><span 
+class="cmtt-12">0.10</span></span><span id="textcolor7365"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-391">
+## [1] 0.1
+</div>
+<!--l. 5957--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7366"><span 
+class="cmtt-12">(z.alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7367"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7368"><span 
+class="cmtt-12">qnorm</span></span><span id="textcolor7369"><span 
+class="cmtt-12">(</span></span><span id="textcolor7370"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7371"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7372"><span 
+class="cmtt-12">(alpha</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7373"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7374"><span 
+class="cmtt-12">2</span></span><span id="textcolor7375"><span 
+class="cmtt-12">)))</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-392">
+## [1] 1.644854
+</div>
+<!--l. 5963--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7376"><span 
+class="cmtt-12">(S</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7377"><span 
+class="cmtt-12">&#x003C;-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7378"><span 
+class="cmtt-12">0.01</span></span><span id="textcolor7379"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-393">
+## [1] 0.01
+</div>
+<!--l. 5969--><p class="nopar" ></p><div class="alltt">
+<div class="obeylines-v">
+<span id="textcolor7380"><span 
+class="cmtt-12">(z.alpha</span></span><span id="textcolor7381"><span 
+class="cmtt-12">^</span></span><span id="textcolor7382"><span 
+class="cmtt-12">2</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7383"><span 
+class="cmtt-12">*</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7384"><span 
+class="cmtt-12">(p.complaints</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7385"><span 
+class="cmtt-12">*</span></span><span id="textcolor7386"><span 
+class="cmtt-12">(</span></span><span id="textcolor7387"><span 
+class="cmtt-12">1</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7388"><span 
+class="cmtt-12">-</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7389"><span 
+class="cmtt-12">p.complaints)))</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7390"><span 
+class="cmtt-12">/</span></span><span 
+class="cmtt-12"> </span><span id="textcolor7391"><span 
+class="cmtt-12">(S</span></span><span id="textcolor7392"><span 
+class="cmtt-12">^</span></span><span id="textcolor7393"><span 
+class="cmtt-12">2</span></span><span id="textcolor7394"><span 
+class="cmtt-12">)</span></span>
+</div>
+</div>
+                                                                                            
+                                                                                            
+<div class="verbatim" id="verbatim-394">
+## [1] 2434.989
+</div>
+<!--l. 5975--><p class="nopar" >
+</p>
+</div>
+                                                                                            
+                                                                                            
+<!--l. 5987--><div class="crosslinks"><p class="noindent">[<a 
+href="QuMWikiMasterse13.html" >next</a>] [<a 
+href="QuMWikiMasterse11.html" >prev</a>] [<a 
+href="QuMWikiMasterse11.html#tailQuMWikiMasterse11.html" >prev-tail</a>] [<a 
+href="QuMWikiMasterse12.html" >front</a>] [<a 
+href="QuMWikiMasterch2.html#QuMWikiMasterse12.html" >up</a>] </p></div>
+<!--l. 5987--><p class="noindent" ><a 
+ id="tailQuMWikiMasterse12.html"></a> </p> 
+</body> 
+</html>
